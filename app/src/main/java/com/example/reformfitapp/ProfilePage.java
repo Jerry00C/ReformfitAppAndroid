@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -1132,7 +1133,19 @@ public class ProfilePage extends AppCompatActivity {
     public void showLoginDialog(String title) {
         final Dialog dialog = new Dialog(ProfilePage.this);
         dialog.setContentView(R.layout.sign_in_dialog_new);
+
+
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager()
+                .getDefaultDisplay()
+                .getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        dialog.getWindow().setLayout((int) ((int)width*0.8), WindowManager.LayoutParams.WRAP_CONTENT);
 
         MaterialButton apply = dialog.findViewById(R.id.confirm_button);
         MaterialButton cancel = dialog.findViewById(R.id.cancel_button);
@@ -1171,9 +1184,9 @@ public class ProfilePage extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog.dismiss();
-                ProfilePage.this.finish();
 
+                ProfilePage.this.finish();
+                dialog.dismiss();
             }
         });
 
@@ -1295,6 +1308,15 @@ public class ProfilePage extends AppCompatActivity {
 
         dialog.setContentView(R.layout.signup_dialog_new);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager()
+                .getDefaultDisplay()
+                .getMetrics(displayMetrics);
+        int height2 = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        dialog.getWindow().setLayout((int) ((int)width*0.92), WindowManager.LayoutParams.WRAP_CONTENT);
 
         MaterialButton apply = dialog.findViewById(R.id.confirm_button);
         MaterialButton cancel = dialog.findViewById(R.id.cancel_button);

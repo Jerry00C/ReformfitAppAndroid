@@ -1,5 +1,6 @@
 package com.example.reformfitapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -32,10 +33,12 @@ public class PrivateClass extends Fragment {
 
     private boolean fragment;
 
-   public PrivateClass(boolean fragment){
+    private Button initCheck;
+
+    public PrivateClass(boolean fragment){
         this.fragment = fragment;
 
-   }
+    }
 
     public PrivateClass() {
         // Required empty public constructor
@@ -101,6 +104,23 @@ public class PrivateClass extends Fragment {
 
             }
         });
+
+        initCheck = view.findViewById(R.id.group_service);
+        initCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent switchActivityIntent = new Intent(getContext(), PrivateTrainingInfo.class);
+
+                switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
+                startActivity(switchActivityIntent);
+
+            }
+        });
+
+
+
 
 
         return view;

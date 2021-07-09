@@ -1,39 +1,28 @@
 package com.example.reformfitapp;
 
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.Activity;
-import android.app.ActivityManager;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.content.Intent;
-import android.media.Image;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.example.reformfitapp.serviceInfo.PrivateClassInfo;
 
-import java.util.Calendar;
+public class PrivateTrainingInfo extends AppCompatActivity {
 
-public class LocationInfo extends AppCompatActivity {
     ViewPager viewPager;
     LinearLayout sliderDotspanel;
 
@@ -41,16 +30,18 @@ public class LocationInfo extends AppCompatActivity {
     private ImageView[] dots = new ImageView[imageId.length];
     private int custom_position = 0;
 
-    TextView description;
+    TextView classDes;
+    ImageView classDesImage;
 
-    TextView phoneNum;
+    TextView classEffectDes;
+    ImageView classEffectDesImage;
 
-    TextView password_textView;
-    TextView init_copy_password;
+    TextView faqDes;
+    ImageView faqDesImage;
 
-    TextView address;
+    TextView staffDes;
+    ImageView staffDesImage;
 
-    TextView init_map;
 
     ScrollView scrollView;
     ConstraintLayout constraintLayout;
@@ -64,60 +55,41 @@ public class LocationInfo extends AppCompatActivity {
     CardView info_thresh;
     CardView warning_thresh;
 
-    Button group_service;
-    Button private_service;
-    Button online_training;
+
+    TextView heartRateDes;
+    ImageView heartRateDesImage;
 
 
-    MindbodyLocationModel mindbodyLocationModel;
-
-    View view;
-    FrameLayout frameLayout;
-
-    ImageView initHome;
     ImageView initBack;
+    ImageView initHome;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
         super.onCreate(savedInstanceState);
-
-
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
-        setContentView(R.layout.activity_progress_bar);
-
-
-
-        frameLayout = findViewById(R.id.container);
-
-        view = getLayoutInflater().inflate(R.layout.activity_location_info, null);
-
-        initBack = view.findViewById(R.id.init_back);
+        setContentView(R.layout.activity_private_training_info);initBack = findViewById(R.id.init_back);
         initBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LocationInfo.this.finish();
+                PrivateTrainingInfo.this.finish();
             }
         });
 
-        initHome = view.findViewById(R.id.init_home);
+        initHome = findViewById(R.id.init_home);
         initHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+
                 ((GlobalVariableApplication) getApplication()).setHome(true);
-
-
                 Intent switchActivityIntent = new Intent(getApplicationContext(), MainBottomNaviService.class);
 
-                switchActivityIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP) ;
                 startActivity(switchActivityIntent);
 
 
@@ -125,114 +97,9 @@ public class LocationInfo extends AppCompatActivity {
         });
 
 
+        sliderDotspanel = findViewById(R.id.SliderDots);
 
-
-
-
-
-        //image gallery construction
-        sliderDotspanel = view.findViewById(R.id.SliderDots);
-
-        viewPager = view.findViewById(R.id.viewpager);
-
-
-
-
-
-        //location description
-        description = view.findViewById(R.id.des);
-        //Toast.makeText(getApplicationContext(), mindbodyLocationModel.getDescription(), Toast.LENGTH_SHORT).show();
-
-
-        //password copy
-        init_copy_password = view.findViewById(R.id.copy_password);
-        password_textView = view.findViewById(R.id.wifi_password);
-
-
-
-
-        phoneNum = view.findViewById(R.id.phoneNum);
-
-        address = view.findViewById(R.id.address_text);
-
-
-        init_map = view.findViewById(R.id.init_map);
-
-
-
-
-        scrollView = (ScrollView) view.findViewById(R.id.scrollview);
-        constraintLayout = view.findViewById(R.id.constraintLayout);
-
-
-
-        info_tab = view.findViewById(R.id.info_tab);
-        warning_tab = view.findViewById(R.id.warning_tab);
-
-        info_tab1 = view.findViewById(R.id.info_tab1);
-        warning_tab1 = view.findViewById(R.id.warning_tab1);
-
-        info_thresh = view.findViewById(R.id.service);
-        warning_thresh = view.findViewById(R.id.step);
-
-
-
-
-
-
-        group_service = view.findViewById(R.id.group_service);
-
-
-        private_service = view.findViewById(R.id.private_service);
-
-        online_training = view.findViewById(R.id.online_servie);
-
-
-        fetchInfo();
-
-    }
-
-    //TODO: clear Toast message and Log.d
-    private void fetchInfo(){
-        MindbodyLocation mindbodyLocation = new MindbodyLocation(getApplicationContext());
-        mindbodyLocation.getUserToken(new MindbodyLocation.VolleyResponseListener() {
-            @Override
-            public void onError(String message) {
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(), "something wrong try again later", Toast.LENGTH_SHORT).show();
-                LocationInfo.this.finish();
-            }
-
-            @Override
-            public void onResponse(String response) {
-                mindbodyLocation.getLocationInfo(new MindbodyLocation.VolleyResponseListener() {
-                    @Override
-                    public void onError(String message) {
-                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                        Toast.makeText(getApplicationContext(), "something wrong try again later", Toast.LENGTH_SHORT).show();
-                        LocationInfo.this.finish();
-                    }
-
-                    @RequiresApi(api = Build.VERSION_CODES.M)
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                        Log.d("mindbody_response", response);
-
-                        mindbodyLocationModel = mindbodyLocation.getMindbodyLocationModel();
-
-                        initialize();
-                    }
-                });
-            }
-        });
-
-    }
-
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    private void initialize(){
-              //swipeRefreshLayout.canChildScrollUp();
+        viewPager = findViewById(R.id.viewpager);
 
 
         PagerAdapter adapter = new CustomAdapter(this,imageId);
@@ -259,41 +126,22 @@ public class LocationInfo extends AppCompatActivity {
             }
         });
 
-        description.setText(mindbodyLocationModel.getDescription());
-
-        init_copy_password.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-                String password = (String) password_textView.getText();
-                ClipData clip = ClipData.newPlainText("simple text", password);
-                clipboard.setPrimaryClip(clip);
-
-                Toast.makeText(getApplicationContext(), "Password has been copied", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        init_map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Map point based on address
-                //Uri location = Uri.parse("geo:0,0?q=/ReformFit+fitness");
-                // Or map point based on latitude/longitude
-                //Uri location = Uri.parse("geo:37.422219,-122.08364?z=14"); // z param is zoom level
-                Uri location = Uri.parse("geo:" + mindbodyLocationModel.getLat() + "," + mindbodyLocationModel.getLon() + "?z=14"); // z param is zoom level
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW, location);
-
-                String title = getResources().getString(R.string.chooser_title);
-                // Create intent to show chooser
-                Intent chooser = Intent.createChooser(mapIntent, title);
 
 
-                // Try to invoke the intent.
-                if(chooser.resolveActivity(getPackageManager()) != null) startActivity(chooser);
-            }
-        });
+
+        scrollView = (ScrollView) findViewById(R.id.scrollview);
+        constraintLayout = findViewById(R.id.constraintLayout);
 
 
+
+        info_tab = findViewById(R.id.info_tab);
+        warning_tab = findViewById(R.id.warning_tab);
+
+        info_tab1 = findViewById(R.id.info_tab1);
+        warning_tab1 = findViewById(R.id.warning_tab1);
+
+        info_thresh = findViewById(R.id.service);
+        warning_thresh = findViewById(R.id.step);
 
         info_tab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -302,8 +150,8 @@ public class LocationInfo extends AppCompatActivity {
                     public void run() {
 
 
-                        scrollView.smoothScrollTo(0, sliderDotspanel.getBottom());
-                        constraintLayout.setBackgroundColor(getResources().getColor(R.color.black));
+                        scrollView.smoothScrollTo(0, sliderDotspanel.getBottom()-85);
+                        constraintLayout.setBackgroundColor(getColor(R.color.black));
 
                         info_tab.setClickable(false);
                         warning_tab.setClickable(false);
@@ -317,7 +165,7 @@ public class LocationInfo extends AppCompatActivity {
                             public void onClick(View v) {
                                 scrollView.post(new Runnable() {
                                     public void run() {
-                                        scrollView.smoothScrollTo(0, info_thresh.getTop()+constraintLayout.getBottom()+136);
+                                        scrollView.smoothScrollTo(0, info_thresh.getTop()+constraintLayout.getBottom()+85);
 
                                     }
 
@@ -330,7 +178,7 @@ public class LocationInfo extends AppCompatActivity {
                             public void onClick(View v) {
                                 scrollView.post(new Runnable() {
                                     public void run() {
-                                        scrollView.smoothScrollTo(0, warning_thresh.getTop()+constraintLayout.getBottom()+136);
+                                        scrollView.smoothScrollTo(0, warning_thresh.getTop()+constraintLayout.getBottom()+85);
 
                                     }
                                 });
@@ -348,7 +196,7 @@ public class LocationInfo extends AppCompatActivity {
             public void onClick(View v) {
                 scrollView.post(new Runnable() {
                     public void run() {
-                        scrollView.smoothScrollTo(0, warning_thresh.getTop()+constraintLayout.getBottom()+136);
+                        scrollView.smoothScrollTo(0, warning_thresh.getTop()+constraintLayout.getBottom()+85);
 
                         constraintLayout.setBackgroundColor(getColor(R.color.black));
                         info_tab.setClickable(false);
@@ -363,7 +211,7 @@ public class LocationInfo extends AppCompatActivity {
                             public void onClick(View v) {
                                 scrollView.post(new Runnable() {
                                     public void run() {
-                                        scrollView.smoothScrollTo(0, info_thresh.getTop()+constraintLayout.getBottom()+136);
+                                        scrollView.smoothScrollTo(0, info_thresh.getTop()+constraintLayout.getBottom()+85);
 
                                     }
 
@@ -376,7 +224,7 @@ public class LocationInfo extends AppCompatActivity {
                             public void onClick(View v) {
                                 scrollView.post(new Runnable() {
                                     public void run() {
-                                        scrollView.smoothScrollTo(0, warning_thresh.getTop()+constraintLayout.getBottom()+136);
+                                        scrollView.smoothScrollTo(0, warning_thresh.getTop()+constraintLayout.getBottom()+85);
 
                                     }
                                 });
@@ -397,9 +245,9 @@ public class LocationInfo extends AppCompatActivity {
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
                 //above warning thresh
 
-                if(scrollY >= sliderDotspanel.getBottom()){
+                if(scrollY >= sliderDotspanel.getBottom()-85){
 
-                    constraintLayout.setBackgroundColor(getColor(R.color.black));
+                    constraintLayout.setBackgroundColor(getResources().getColor(R.color.black));
 
                     info_tab.setClickable(false);
                     warning_tab.setClickable(false);
@@ -413,7 +261,7 @@ public class LocationInfo extends AppCompatActivity {
                         public void onClick(View v) {
                             scrollView.post(new Runnable() {
                                 public void run() {
-                                    scrollView.smoothScrollTo(0, info_thresh.getTop()+constraintLayout.getBottom()+136);
+                                    scrollView.smoothScrollTo(0, info_thresh.getTop()+constraintLayout.getBottom()+85);
 
                                 }
 
@@ -426,7 +274,7 @@ public class LocationInfo extends AppCompatActivity {
                         public void onClick(View v) {
                             scrollView.post(new Runnable() {
                                 public void run() {
-                                    scrollView.smoothScrollTo(0, warning_thresh.getTop()+constraintLayout.getBottom()+136);
+                                    scrollView.smoothScrollTo(0, warning_thresh.getTop()+constraintLayout.getBottom()+85);
 
                                 }
                             });
@@ -447,7 +295,7 @@ public class LocationInfo extends AppCompatActivity {
                     info_tab1.setClickable(false);
                     warning_tab1.setClickable(false);
                 }
-                if(scrollY >= warning_thresh.getTop()+constraintLayout.getBottom()+136){
+                if(scrollY >= warning_thresh.getTop()+constraintLayout.getBottom()+85){
                     info_tab1.setTextColor(getResources().getColor(R.color.grey));
                     warning_tab1.setTextColor(getResources().getColor(R.color.white));
                 }
@@ -462,59 +310,167 @@ public class LocationInfo extends AppCompatActivity {
         });
 
 
+        staffDes = findViewById(R.id.staff_des);
+        staffDesImage = findViewById(R.id.staff_des_image);
 
-        group_service.setOnClickListener(new View.OnClickListener() {
+        staffDes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serviceTabCall(0);
+                if(staffDes.getMaxLines() != 2){
+                    staffDes.setMaxLines(2);
+                }
+                else{
+                    staffDes.setMaxLines(Integer.MAX_VALUE);
+                }
+
+            }
+        });
+        staffDesImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(staffDes.getMaxLines() != 2){
+                    staffDes.setMaxLines(2);
+                }
+                else{
+                    staffDes.setMaxLines(Integer.MAX_VALUE);
+                }
+
             }
         });
 
 
-        private_service.setOnClickListener(new View.OnClickListener() {
+
+        classDes = findViewById(R.id.class_des);
+        classDesImage = findViewById(R.id.class_des_image);
+
+        classDes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serviceTabCall(1);
+                if(classDes.getMaxLines() != 3){
+                    classDes.setMaxLines(3);
+                }
+                else{
+                    classDes.setMaxLines(Integer.MAX_VALUE);
+                }
+
+            }
+        });
+        classDesImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(classDes.getMaxLines() != 3){
+                    classDes.setMaxLines(3);
+                }
+                else{
+                    classDes.setMaxLines(Integer.MAX_VALUE);
+                }
 
             }
         });
 
-        online_training.setOnClickListener(new View.OnClickListener() {
+
+        classEffectDes = findViewById(R.id.class_effect_text);
+        classEffectDesImage = findViewById(R.id.class_effect_image);
+
+        classEffectDes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                serviceTabCall(2);
+                if(classEffectDes.getMaxLines() != 3){
+                    classEffectDes.setMaxLines(3);
+                }
+                else{
+                    classEffectDes.setMaxLines(Integer.MAX_VALUE);
+                }
+
+            }
+        });
+        classEffectDesImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(classEffectDes.getMaxLines() != 3){
+                    classEffectDes.setMaxLines(3);
+                }
+                else{
+                    classEffectDes.setMaxLines(Integer.MAX_VALUE);
+                }
+
             }
         });
 
 
 
-        phoneNum.setText(mindbodyLocationModel.getPhone());
 
-        address.setText(mindbodyLocationModel.getAddress());
 
-        frameLayout.removeAllViews();
-        frameLayout.addView(view);
+
+
+
+        faqDes = findViewById(R.id.faq_des);
+        faqDesImage = findViewById(R.id.faq_des_image);
+
+        faqDes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(faqDes.getMaxLines() != 3){
+                    faqDes.setMaxLines(3);
+                }
+                else{
+                    faqDes.setMaxLines(Integer.MAX_VALUE);
+                }
+
+            }
+        });
+        faqDesImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(faqDes.getMaxLines() != 3){
+                    faqDes.setMaxLines(3);
+                }
+                else{
+                    faqDes.setMaxLines(Integer.MAX_VALUE);
+                }
+
+            }
+        });
+
+
+        TextView warnDes;
+        ImageView warnDesImage;
+
+
+        warnDes = findViewById(R.id.warn_des);
+        warnDesImage = findViewById(R.id.warn_des_image);
+
+        warnDes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(warnDes.getMaxLines() != 3){
+                    warnDes.setMaxLines(3);
+                }
+                else{
+                    warnDes.setMaxLines(Integer.MAX_VALUE);
+                }
+
+            }
+        });
+        warnDesImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(warnDes.getMaxLines() != 3){
+                    warnDes.setMaxLines(3);
+                }
+                else{
+                    warnDes.setMaxLines(Integer.MAX_VALUE);
+                }
+
+            }
+        });
+
+
+
 
 
     }
 
-
-
-
-
-
-    private void serviceTabCall(int pos){
-
-
-
-        Intent switchActivityIntent = new Intent(getApplicationContext(), ServiceTabbed.class);
-
-        switchActivityIntent.putExtra("startPagePos", pos);
-
-        switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(switchActivityIntent);
-
-    }
 
     private void prepareDots(int currPosition){
 

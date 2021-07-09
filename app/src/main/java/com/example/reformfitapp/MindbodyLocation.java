@@ -97,14 +97,14 @@ public class MindbodyLocation {
                     Log.d("ERROR",e.toString());
                 }
 
-               //for(int locationEx = 0; locationEx < locations.length(); locationEx++){
-               for(int locationEx = 0; locationEx < 1; locationEx++){
-                   JSONObject locationInfoEx = null;
-                   try {
-                       locationInfoEx = locations.getJSONObject(locationEx);
-                   } catch (JSONException e) {
-                       e.printStackTrace();
-                   }
+                //for(int locationEx = 0; locationEx < locations.length(); locationEx++){
+                for(int locationEx = 0; locationEx < 1; locationEx++){
+                    JSONObject locationInfoEx = null;
+                    try {
+                        locationInfoEx = locations.getJSONObject(locationEx);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
 
 
@@ -125,54 +125,54 @@ public class MindbodyLocation {
 
                    mindbodyLocationModel.setAdditionalImageURLs(imageUrls);
 */
-                   try {
-                       mindbodyLocationModel.setAddress(locationInfoEx.getString("Address"));
-                   } catch (JSONException e) {
-                       e.printStackTrace();
+                    try {
+                        mindbodyLocationModel.setAddress(locationInfoEx.getString("Address"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
 
-                   }
+                    }
 
-                   try {
-                       mindbodyLocationModel.setAddress2(locationInfoEx.getString("Address2"));
-                   } catch (JSONException e) {
-                       e.printStackTrace();
-                   }
+                    try {
+                        mindbodyLocationModel.setAddress2(locationInfoEx.getString("Address2"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
-                   try {
-                       mindbodyLocationModel.setDescription(locationInfoEx.getString("Description"));
-                   } catch (JSONException e) {
-                       e.printStackTrace();
-                   }
+                    try {
+                        mindbodyLocationModel.setDescription(locationInfoEx.getString("Description"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
-                   try {
-                       mindbodyLocationModel.setLat(locationInfoEx.getDouble("Latitude"));
-                   } catch (JSONException e) {
-                       e.printStackTrace();
-                   }
+                    try {
+                        mindbodyLocationModel.setLat(locationInfoEx.getDouble("Latitude"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
-                   try {
-                       mindbodyLocationModel.setLon(locationInfoEx.getDouble("Longitude"));
-                   } catch (JSONException e) {
-                       e.printStackTrace();
-                   }
-                   try {
-                       mindbodyLocationModel.setName(locationInfoEx.getString("Name"));
-                   } catch (JSONException e) {
-                       e.printStackTrace();
-                   }
-                   try {
-                       mindbodyLocationModel.setPhone(locationInfoEx.getString("Phone"));
-                   } catch (JSONException e) {
-                       e.printStackTrace();
-                   }
-                   try {
-                       mindbodyLocationModel.setPostalCode(locationInfoEx.getString("PostalCode"));
-                   } catch (JSONException e) {
-                       e.printStackTrace();
-                   }
+                    try {
+                        mindbodyLocationModel.setLon(locationInfoEx.getDouble("Longitude"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        mindbodyLocationModel.setName(locationInfoEx.getString("Name"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        mindbodyLocationModel.setPhone(locationInfoEx.getString("Phone"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    try {
+                        mindbodyLocationModel.setPostalCode(locationInfoEx.getString("PostalCode"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
 
 
-               }
+                }
 
 
                 volleyResponseListener.onResponse(mindbodyLocationModel.toString());
