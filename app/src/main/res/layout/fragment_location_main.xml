@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".LocationMain"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".LocationMain"
+                    android:background="@color/black">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.04" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.96" />
+
+                    <RelativeLayout
+                        android:id="@+id/first_half"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:id="@+id/city_and_location_select"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginTop="10dp"
+
+
+                            android:orientation="horizontal">
+
+
+                            <RelativeLayout
+                                android:id="@+id/city_list"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+
+                                android:clickable="true">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true">
+
+
+                                    <TextView
+                                        android:id="@+id/city_list_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:text="全部城市"
+                                        android:textColor="@color/white" />
+
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginLeft="0dp"
+                                        android:layout_toRightOf="@+id/city_list_text"
+                                        android:src="@drawable/down_arrow" />
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/location_list"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:clickable="true">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true">
+
+                                    <TextView
+                                        android:id="@+id/location_list_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:text="全部门店"
+                                        android:textColor="@color/white"/>
+
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginLeft="0dp"
+                                        android:layout_toRightOf="@+id/location_list_text"
+                                        android:src="@drawable/down_arrow"/>
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+
+                        <VideoView
+                            android:id="@+id/startoff_video"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_below="@+id/city_and_location_select"
+                            android:layout_marginTop="10dp">
+
+
+                        </VideoView>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/startoff_video"
+                            android:layout_marginVertical="10dp"
+                            android:background ="@color/black3">
+
+                            <RelativeLayout
+                                android:id="@+id/announcement"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginVertical="10dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/speaker_icon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginStart="20dp"
+                                    android:src="@drawable/speaker_icon">
+
+                                </ImageView>
+
+                                <TextView
+                                    android:id="@+id/announcement_text"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+
+                                    android:layout_toEndOf="@+id/speaker_icon"
+                                    android:text="疫情期间门店暂时关闭，欢迎咨询线上课ddddddddddddddddddddddddddd程"
+                                    android:textColor="@color/yellow"
+                                    />
+
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/service_navi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/announcement"
+                                android:layout_marginVertical="10dp"
+                                android:orientation="horizontal">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/burn_group_service"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:clickable="true">
+
+                                    <ImageView
+                                        android:id="@+id/burn_group_service_icon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/burn_group_service">
+
+                                    </ImageView>
+
+                                    <TextView
+                                        android:id="@+id/burn_group_service_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/burn_group_service_icon"
+                                        android:layout_centerHorizontal="true"
+                                        android:text="燃脂团课"
+                                        android:textColor="@color/white">
+
+                                    </TextView>
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/shape_group_service"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:clickable="true">
+
+                                    <ImageView
+                                        android:id="@+id/shape_group_service_icon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/burn_group_service">
+
+                                    </ImageView>
+
+                                    <TextView
+                                        android:id="@+id/shape_group_service_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/shape_group_service_icon"
+                                        android:layout_centerHorizontal="true"
+                                        android:text="塑性团课"
+                                        android:textColor="@color/white">
+
+                                    </TextView>
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/private_service"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:clickable="true">
+
+                                    <ImageView
+                                        android:id="@+id/one_on_one_service_icon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/burn_group_service">
+
+                                    </ImageView>
+
+                                    <TextView
+                                        android:id="@+id/one_on_one_service_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/one_on_one_service_icon"
+                                        android:layout_centerHorizontal="true"
+                                        android:text="精品私教"
+                                        android:textColor="@color/white">
+
+                                    </TextView>
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/online_group_service"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:clickable="true">
+
+                                    <ImageView
+                                        android:id="@+id/online_group_service_icon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/burn_group_service">
+
+                                    </ImageView>
+
+                                    <TextView
+                                        android:id="@+id/online_group_service_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/online_group_service_icon"
+                                        android:layout_centerHorizontal="true"
+                                        android:text="线上训练"
+                                        android:textColor="@color/white">
+
+                                    </TextView>
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/healthy_diet_service"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:clickable="true">
+
+                                    <ImageView
+                                        android:id="@+id/healthy_diet_service_icon"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:src="@drawable/burn_group_service">
+
+                                    </ImageView>
+
+                                    <TextView
+                                        android:id="@+id/healthy_diet_service_text"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/healthy_diet_service_icon"
+                                        android:layout_centerHorizontal="true"
+                                        android:text="燃脂团课"
+                                        android:textColor="@color/white">
+
+                                    </TextView>
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+
+                            <LinearLayout
+                                android:id="@+id/scrollView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:isScrollContainer="true"
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintLeft_toRightOf="@+id/guideline3"
+                                app:layout_constraintRight_toLeftOf="@+id/guideline4"
+                                app:layout_constraintTop_toBottomOf="@+id/first_half"
+                                android:orientation="vertical">
+
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/location1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="10dp"
+                                    android:layout_weight="1"
+                                    android:background="@color/black4"
+                                    app:cardCornerRadius="10dp"
+                                    android:clickable="true">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/black4"
+                                        android:paddingVertical="10dp">
+
+
+                                        <ImageView
+                                            android:id="@+id/location1_image"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="150dp"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_centerHorizontal="true"
+                                            android:src="@mipmap/location1"/>
+
+                                        <TextView
+                                            android:id="@+id/location1_name"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/location1_image"
+                                            android:layout_alignParentStart="true"
+                                            android:layout_marginStart="10dp"
+                                            android:text="万锦Ferrier实验店"
+                                            android:textColor="@color/yellow"/>
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/location1_name"
+                                            android:text="85 Ferrier Street Unit 3, Markham On efjwoe"
+                                            android:textColor="@color/white"
+                                            android:layout_marginStart="10dp"/>
+
+
+
+                                        <ImageView
+                                            android:id="@+id/location_icon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_below="@+id/location1_image"
+                                            android:layout_alignParentEnd="true"
+                                            android:layout_marginEnd="10dp"
+                                            android:src="@drawable/burn_group_service" />
+
+
+                                    </RelativeLayout>
+
+
+                                </androidx.cardview.widget.CardView>
+
+
+
+                                <View
+                                    android:layout_height="100dp"
+                                    android:layout_width="match_parent"
+                                    android:background="@color/transparent"
+                                    >
+                                </View>
+
+
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+
+</FrameLayout>

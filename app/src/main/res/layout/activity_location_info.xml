@@ -1,0 +1,1389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LocationMain"
+    android:background="@color/black"
+    android:id="@+id/outer_container">
+
+
+
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view8"
+        android:layout_marginTop="8dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96" />
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </androidx.viewpager.widget.ViewPager>
+
+            <LinearLayout
+                android:id="@+id/SliderDots"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/viewpager"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_vertical|center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/viewpager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <TextView
+                android:id="@+id/info_tab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:text="场地信息"
+                android:textColor="@color/grey"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/SliderDots" />
+
+            <TextView
+                android:id="@+id/warning_tab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:clickable="true"
+                android:text="注意事项"
+                android:textColor="@color/grey"
+                app:layout_constraintBaseline_toBaselineOf="@+id/info_tab"
+                app:layout_constraintLeft_toRightOf="@id/info_tab" />
+
+            <LinearLayout
+                android:id="@+id/all"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+
+                app:layout_constraintEnd_toEndOf="@+id/guideline4"
+                app:layout_constraintStart_toStartOf="@+id/guideline3"
+                app:layout_constraintTop_toBottomOf="@+id/info_tab">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/service"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black3"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="10dp">
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.04" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.96" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.026" />
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/burn_group_service"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline5"
+                            app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="场地服务"
+                            android:textColor="@color/yellow"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                            app:layout_constraintStart_toEndOf="@+id/imageView2"
+                            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="18dp"
+                            android:text="健身团课"
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="@+id/guideline5"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="精品私教"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/textView3"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/textView3"
+                            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="线上训练"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/textView2"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/textView2"
+                            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/group_service"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/yellow"
+                            android:minWidth="1dp"
+                            android:minHeight="1dp"
+                            android:text="查看"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/black"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                            app:layout_constraintTop_toTopOf="@+id/textView3"
+
+                            />
+
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/private_service"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/yellow"
+                            android:insetLeft="0dp"
+                            android:insetTop="0dp"
+                            android:insetRight="0dp"
+                            android:insetBottom="0dp"
+                            android:minWidth="1dp"
+                            android:minHeight="1dp"
+                            android:text="查看"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/black"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/online_servie"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/yellow"
+                            android:minWidth="1dp"
+                            android:minHeight="1dp"
+                            android:text="查看"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/black"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+                            app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black3"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="10dp">
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.04" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.96" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.026" />
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/burn_group_service"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline9"
+                            app:layout_constraintTop_toTopOf="@+id/guideline11" />
+
+                        <TextView
+                            android:id="@+id/location_intro"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="场地简介"
+                            android:textColor="@color/yellow"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+                            app:layout_constraintStart_toEndOf="@+id/imageView3"
+                            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+                        <TextView
+                            android:id="@+id/des"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/grey"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                            app:layout_constraintStart_toStartOf="@+id/guideline9"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:src="@drawable/burn_group_service"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline9"
+                            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="场地设施"
+                            android:textColor="@color/yellow"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                            app:layout_constraintStart_toEndOf="@+id/imageView4"
+                            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+
+                        <TextView
+                            android:id="@+id/copy_password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:text="@string/copy"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/wifi_password"
+                            app:layout_constraintStart_toEndOf="@+id/wifi_password"
+                            app:layout_constraintTop_toTopOf="@+id/wifi_password" />
+
+
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="免费wifi："
+                            android:textColor="@color/grey"
+                            app:layout_constraintStart_toStartOf="@+id/guideline9"
+                            app:layout_constraintTop_toBottomOf="@+id/des" />
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="密码："
+                            android:textColor="@color/grey"
+                            app:layout_constraintEnd_toEndOf="@+id/textView21"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/textView21"
+                            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="RF_GUEST"
+                            android:textColor="@color/grey"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView21"
+                            app:layout_constraintStart_toEndOf="@+id/textView21"
+                            app:layout_constraintTop_toTopOf="@+id/textView21" />
+
+                        <TextView
+                            android:id="@+id/wifi_password"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="25dp"
+                            android:text="9037120932"
+                            android:textColor="@color/grey"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView22"
+                            app:layout_constraintStart_toEndOf="@+id/textView22"
+                            app:layout_constraintTop_toTopOf="@+id/textView22"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                        <androidx.gridlayout.widget.GridLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="20dp"
+                            app:columnCount="4"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+                            app:layout_constraintStart_toStartOf="@+id/guideline9"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                            app:rowCount="4">
+
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="0"
+                                app:layout_columnWeight="1"
+                                app:layout_row="0" />
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="1"
+                                app:layout_columnWeight="1"
+                                app:layout_row="0"
+
+                                />
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="2"
+                                app:layout_columnWeight="1"
+                                app:layout_row="0"
+
+                                />
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="3"
+                                app:layout_columnWeight="1"
+                                app:layout_row="0"
+
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:paddingBottom="8dp"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="0"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="1"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="1" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="2"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="1" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="3"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="1" />
+
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="0"
+                                app:layout_columnWeight="1"
+                                app:layout_row="2"
+
+                                />
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="1"
+                                app:layout_columnWeight="1"
+                                app:layout_row="2"
+
+                                />
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="2"
+                                app:layout_columnWeight="1"
+                                app:layout_row="2"
+
+                                />
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="3"
+                                app:layout_columnWeight="1"
+                                app:layout_row="2"
+
+                                />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="0"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="3" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="1"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="3" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="2"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="3" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="3"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="3" />
+
+
+                        </androidx.gridlayout.widget.GridLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/step"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black3"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="10dp">
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.04" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.96" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.026" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/burn_group_service"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline12"
+                            app:layout_constraintTop_toTopOf="@+id/guideline14" />
+
+                        <TextView
+                            android:id="@+id/textView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="健身步骤"
+                            android:textColor="@color/yellow"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                            app:layout_constraintStart_toEndOf="@+id/imageView5"
+                            app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+
+                            android:background="@color/black3"
+                            android:orientation="vertical"
+
+                            android:paddingTop="10dp"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline13"
+                            app:layout_constraintStart_toStartOf="@+id/guideline12"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView5">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:layout_weight="1"
+                                android:background="@color/black4"
+                                app:cardCornerRadius="10dp">
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/black4">
+
+
+                                    <ImageView
+                                        android:id="@+id/number1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="10dp"
+                                        android:src="@drawable/burn_group_service" />
+
+
+                                    <TextView
+                                        android:id="@+id/textView8"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginTop="10dp"
+                                        android:text="联系客服领取免费体验"
+                                        android:textColor="@color/white" />
+
+
+                                </RelativeLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:layout_weight="1"
+                                android:background="@color/black4"
+                                app:cardCornerRadius="10dp">
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/black4">
+
+
+                                    <ImageView
+                                        android:id="@+id/number2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="10dp"
+                                        android:src="@drawable/burn_group_service" />
+
+
+                                    <TextView
+                                        android:id="@+id/textView9"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginTop="10dp"
+                                        android:text="联系客服领取免费体验"
+                                        android:textColor="@color/white" />
+
+
+                                </RelativeLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:layout_weight="1"
+                                android:background="@color/black4"
+                                app:cardCornerRadius="10dp">
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/black4">
+
+
+                                    <ImageView
+                                        android:id="@+id/number3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="10dp"
+                                        android:src="@drawable/burn_group_service" />
+
+
+                                    <TextView
+                                        android:id="@+id/textView10"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginTop="10dp"
+                                        android:text="联系客服领取免费体验"
+                                        android:textColor="@color/white" />
+
+
+                                </RelativeLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                android:layout_weight="1"
+                                android:background="@color/black4"
+                                app:cardCornerRadius="10dp">
+
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:background="@color/black4">
+
+
+                                    <ImageView
+                                        android:id="@+id/number4"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="10dp"
+                                        android:src="@drawable/burn_group_service" />
+
+
+                                    <TextView
+                                        android:id="@+id/textView11"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginTop="10dp"
+                                        android:text="联系客服领取免费体验"
+                                        android:textColor="@color/white" />
+
+
+                                </RelativeLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/warning"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black3"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="10dp">
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.04" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.96" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.0" />
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/burn_group_service"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline15"
+                            app:layout_constraintTop_toTopOf="@+id/guideline17" />
+
+                        <TextView
+                            android:id="@+id/warning_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="注意事项"
+                            android:textColor="@color/yellow"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+                            app:layout_constraintStart_toEndOf="@+id/imageView6"
+                            app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="和了飞书治极很，深体门便标将想，决C听因扭。按几速个压确要，明拉写面改始反，近W罐度态。 就华将易林该，积标无才样心，代居呀红。约学委如界从包领万际打明理，青别再带八照证认果高件口眼，除张丽个马抖没呀议呆吵。六六元问效少北养自，除器积较面山，加去3旱内准伶。量于布据件因十参，想具引出要劳，我设C属杨领。 元力边县法热方二车里列再，花水又看村红万应报。认元此料眼好问种平历分须，美劳间低看指战选格断业，她原孟达历度僚接E杠。 打度引记而品级年切及，平先物十拉过省争，交将该县茅抛京。物每政带北强走见局作，专农打况保管色样素，严基录直积不展杠。习传话转统外备自社切团习解方，导养日现干医志影箩磨选。 小关育集好从圆，些从住E名苗。质技制到家性新数报即了，取更平于下他火生速，厂各Z张弦芳连五飞。构期律决以商军，就较命进青活，示4提什红。那门形院结部而意京这工不样展发厂，层利造查表今O用做格况思声。至斯着五片济声广究，下适政术打置带要，及连I热确县决。明处多立转县米，今革始切平，热8节称次。联加出的方活，难她正方便都，京承响却。 但信军识拉查阶半，要段在片长安眼特，细李I联律心。记用相族处气件流江素，金他权必它别因格单，华门询材线抗伸岗。问还说细调备火现厂较身，教性家提极存一认文，江持屈更但丽龙查变。两完连江断象好月，争被织社十机京"
+                            android:textColor="@color/white"
+
+                            app:layout_constraintEnd_toStartOf="@+id/guideline16"
+                            app:layout_constraintStart_toStartOf="@+id/guideline15"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black3"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="10dp">
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.04" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.96" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.0" />
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/burn_group_service"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline18"
+                            app:layout_constraintTop_toTopOf="@+id/guideline20" />
+
+                        <TextView
+                            android:id="@+id/contact_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="联系我们"
+                            android:textColor="@color/yellow"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView7"
+                            app:layout_constraintStart_toEndOf="@+id/imageView7"
+                            app:layout_constraintTop_toTopOf="@+id/imageView7" />
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:text="电话："
+                            android:textColor="@color/white"
+                            app:layout_constraintStart_toStartOf="@+id/guideline18"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="邮件："
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/textView13"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/textView13"
+                            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="LiveChat："
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="@+id/textView14"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/guideline18"
+                            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+                        <TextView
+                            android:id="@+id/phoneNum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="（905）604-7348"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline19"
+                            app:layout_constraintTop_toTopOf="@+id/textView13"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <TextView
+                            android:id="@+id/textView18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="info@reformfit.ca"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline19"
+                            app:layout_constraintTop_toTopOf="@+id/textView14"
+                            app:layout_constraintVertical_bias="0.0" />
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="点击发起对话"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView16"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline19"
+                            app:layout_constraintTop_toTopOf="@+id/textView16"
+                            app:layout_constraintVertical_bias="1.0" />
+
+                        <!--TODO: 外接小助手-->
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black3"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingVertical="10dp">
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.04" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.96" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.0" />
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/burn_group_service"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline21"
+                            app:layout_constraintTop_toTopOf="@+id/guideline23" />
+
+                        <TextView
+                            android:id="@+id/address_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="地址"
+                            android:textColor="@color/yellow"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+                            app:layout_constraintStart_toEndOf="@+id/imageView8"
+                            app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline22"
+                            app:layout_constraintStart_toStartOf="@+id/guideline21"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView8"
+                            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+                        <TextView
+                            android:id="@+id/address_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="85 Ferrier Street Unit3"
+                            android:textColor="@color/grey"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline22"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/guideline21"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+                        <TextView
+                            android:id="@+id/init_map"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:text="@string/init_map"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline22"
+                            app:layout_constraintTop_toBottomOf="@+id/address_text" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/extras"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/black3"
+                    app:cardCornerRadius="10dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/black3"
+                        android:paddingVertical="10dp">
+
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.04" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline25"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            app:layout_constraintGuide_percent="0.96" />
+
+                        <androidx.constraintlayout.widget.Guideline
+                            android:id="@+id/guideline26"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            app:layout_constraintGuide_percent="0.0" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/burn_group_service"
+                            app:layout_constraintLeft_toRightOf="@+id/guideline24"
+                            app:layout_constraintTop_toTopOf="@+id/guideline26" />
+
+                        <TextView
+                            android:id="@+id/extras_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="更多服务"
+                            android:textColor="@color/yellow"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+                            app:layout_constraintStart_toEndOf="@+id/imageView10"
+                            app:layout_constraintTop_toTopOf="@+id/imageView10" />
+
+
+                        <androidx.gridlayout.widget.GridLayout
+
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:paddingHorizontal="20dp"
+                            app:columnCount="4"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline25"
+                            app:layout_constraintStart_toStartOf="@+id/guideline24"
+                            app:layout_constraintTop_toBottomOf="@+id/imageView10"
+                            app:rowCount="2">
+
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="0"
+                                app:layout_columnWeight="1"
+                                app:layout_row="0" />
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="1"
+                                app:layout_columnWeight="1"
+                                app:layout_row="0"
+
+                                />
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="2"
+                                app:layout_columnWeight="1"
+                                app:layout_row="0"
+
+                                />
+
+                            <ImageView
+                                android:paddingTop="3dp"
+                                android:src="@drawable/burn_group_service"
+                                app:layout_column="3"
+                                app:layout_columnWeight="1"
+                                app:layout_row="0"
+
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:paddingBottom="8dp"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="0"
+                                app:layout_columnWeight="1"
+                                app:layout_row="1" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="1"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="1" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="2"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="1" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="3"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="1" />
+
+
+                        </androidx.gridlayout.widget.GridLayout>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:background="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+
+        <TextView
+            android:id="@+id/info_tab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:clickable="true"
+            android:text="场地信息"
+            android:textColor="@color/grey"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelin"
+            app:layout_constraintTop_toBottomOf="@+id/include3" />
+
+        <TextView
+            android:id="@+id/warning_tab1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:clickable="true"
+            android:text="注意事项"
+            android:textColor="@color/grey"
+            android:visibility="invisible"
+            app:layout_constraintBaseline_toBaselineOf="@+id/info_tab1"
+            app:layout_constraintLeft_toRightOf="@id/info_tab1" />
+
+        <TextView
+            android:id="@+id/textView62"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="万锦实验点"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/include3"
+            layout="@layout/top_navigation_button"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="5dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelin"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

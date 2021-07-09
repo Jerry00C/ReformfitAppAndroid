@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    app:cardBackgroundColor="@color/white_background"
+    app:cardCornerRadius="10dp">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/titleGuideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="20dp" />
+
+                <TextView
+                    android:id="@+id/popup_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="70dp"
+                    android:text="(新用户注册)"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/titleGuideline"
+                    app:layout_constraintVertical_bias="0.014" />
+
+
+                <TextView
+                    android:id="@+id/have_read"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="我已阅读并同意相关"
+                    android:textColor="@color/grey"
+
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/buttonHeight"
+                    app:layout_constraintEnd_toStartOf="@+id/have_read_clickable"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress" />
+
+                <TextView
+                    android:id="@+id/have_read_clickable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agree_clickable"
+                    android:textColor="@color/teal_200"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="@id/have_read"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/agreement_checkbox"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/have_read"
+                    app:layout_constraintTop_toTopOf="@id/have_read" />
+
+                <CheckBox
+                    android:id="@+id/agreement_checkbox"
+                    style="@style/CustomCheckboxCircular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/grey"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/have_read_clickable"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/have_read_clickable"
+                    app:layout_constraintTop_toTopOf="@id/have_read_clickable" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/vertMidline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/buttonHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="50dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cancel_button"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:backgroundTint="@color/grey"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="取消"
+                    android:textColor="@color/white"
+                    app:cornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/vertMidline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/buttonHeight" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/confirm_button"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:backgroundTint="@color/yellow"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="确认"
+                    android:textColor="@color/black"
+                    app:cornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/vertMidline"
+                    app:layout_constraintTop_toTopOf="@id/buttonHeight" />
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="Email: "
+                    android:paddingVertical="5dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextEmailAddress"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress" />
+
+                <EditText
+                    android:id="@+id/editTextTextEmailAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:hint="Enter you email"
+                    android:paddingVertical="5dp"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView46"
+                    app:layout_constraintTop_toBottomOf="@+id/popup_title" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.04"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline58"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.96"
+                    />
+
+                <EditText
+                    android:id="@+id/editTextTextPostalAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:paddingVertical="5dp"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:hint="请输入邮编"
+                    android:inputType="textPostalAddress"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView60"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+                <EditText
+                    android:id="@+id/editTextTextPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:paddingVertical="5dp"
+                    android:hint="请设置密码"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView47"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+                    />
+
+                <EditText
+                    android:id="@+id/editTextTextPassword3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:paddingVertical="5dp"
+                    android:hint="确认密码"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView48"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+                <EditText
+                    android:id="@+id/editTextNumberDecimal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:hint="请输入身高"
+                    android:inputType="numberDecimal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView53"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+                    android:paddingVertical="5dp"/>
+
+                <EditText
+                    android:id="@+id/editTextNumberDecimal2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:hint="请输入体重"
+                    android:paddingVertical="5dp"
+                    android:inputType="numberDecimal"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView57"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+
+                <EditText
+                    android:id="@+id/editTextPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:hint="请输入电话"
+                    android:paddingVertical="5dp"
+                    android:inputType="phone"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView59"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:hint="请输入姓"
+                    android:paddingVertical="5dp"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView49"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="密码: "
+                    android:paddingVertical="5dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPassword" />
+
+                <TextView
+                    android:id="@+id/textView48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="确认密码: "
+                    android:paddingVertical="5dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPassword3"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPassword3" />
+
+                <TextView
+                    android:id="@+id/textView49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:textColor="@color/black"
+                    android:text="Last Name: "
+                    android:paddingVertical="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName" />
+
+                <TextView
+                    android:id="@+id/textView53"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="身高(cm): "
+                    android:textColor="@color/black"
+                    android:paddingVertical="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextNumberDecimal"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/editTextNumberDecimal" />
+
+                <TextView
+                    android:id="@+id/textView57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="体重(kg): "
+                    android:textColor="@color/black"
+                    android:paddingVertical="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextNumberDecimal2"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/editTextNumberDecimal2" />
+
+                <TextView
+                    android:id="@+id/textView59"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="电话："
+                    android:textColor="@color/black"
+                    android:paddingVertical="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextPhone"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/editTextPhone" />
+
+                <TextView
+                    android:id="@+id/textView60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="邮编: "
+                    android:textColor="@color/black"
+                    android:paddingVertical="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPostalAddress"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPostalAddress" />
+
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal2" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress" />
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+
+                <TextView
+                    android:id="@+id/textView61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="First Name: "
+                    android:paddingVertical="5dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName2"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName2" />
+
+                <EditText
+                    android:id="@+id/editTextTextPersonName2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:paddingVertical="5dp"
+                    android:hint="请输入名"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView61"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+</com.google.android.material.card.MaterialCardView>

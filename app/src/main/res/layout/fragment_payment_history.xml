@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context=".FragmentPaymentHistory">
+
+
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/swipView">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="18dp">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardView4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#242424"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="12dp">
+
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/vertGuideline1_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.04" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/vertGuideline1_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.96" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/horGuideline1_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintGuide_begin="0dp" />
+
+
+                            <ImageView
+                                android:id="@+id/payment_modifier"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:src="@drawable/ic_agreement"
+
+                                app:layout_constraintBottom_toBottomOf="@id/payment_method"
+                                app:layout_constraintEnd_toStartOf="@+id/vertGuideline1_2"
+                                app:layout_constraintTop_toTopOf="@+id/payment_method" />
+
+                            <TextView
+                                android:id="@+id/payment_method"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="付款方式"
+                                android:textColor="@color/yellow"
+                                android:textSize="18sp"
+
+                                app:layout_constraintHorizontal_bias="0.07"
+                                app:layout_constraintStart_toEndOf="@id/vertGuideline1_1"
+
+                                app:layout_constraintTop_toTopOf="@+id/horGuideline1_1" />
+
+                            <View
+                                android:id="@+id/divider"
+                                android:layout_width="0dp"
+                                android:layout_height="2dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@color/grey"
+                                app:layout_constraintEnd_toEndOf="@id/vertGuideline1_2"
+                                app:layout_constraintStart_toStartOf="@id/info_first"
+                                app:layout_constraintTop_toBottomOf="@id/payment_modifier" />
+
+                            <TextView
+                                android:id="@+id/info_first"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="信用卡号："
+                                android:textColor="#DEDEDE"
+
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+
+                            <TextView
+                                android:id="@+id/info_first_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#DEDEDE"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="@id/info_first"
+                                app:layout_constraintEnd_toStartOf="@id/vertGuideline1_2"
+                                app:layout_constraintTop_toTopOf="@+id/info_first"
+
+                                />
+
+                            <TextView
+                                android:id="@+id/info_second"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="12dp"
+                                android:text="有效日期："
+                                android:textColor="#DEDEDE"
+
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                                app:layout_constraintTop_toBottomOf="@id/info_first" />
+
+
+                            <TextView
+                                android:id="@+id/info_second_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#DEDEDE"
+                                android:textSize="14sp"
+                                app:layout_constraintBottom_toBottomOf="@id/info_second"
+                                app:layout_constraintEnd_toStartOf="@id/vertGuideline1_2"
+                                app:layout_constraintTop_toTopOf="@+id/info_second"
+
+                                />
+
+                            <View
+                                android:id="@+id/divider1_2"
+                                android:layout_width="0dp"
+                                android:layout_height="2dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@color/grey"
+                                app:layout_constraintEnd_toEndOf="@id/vertGuideline1_2"
+                                app:layout_constraintStart_toStartOf="@id/info_first"
+                                app:layout_constraintTop_toBottomOf="@id/info_second" />
+
+                            <TextView
+                                android:id="@+id/info_third"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginTop="12dp"
+                                android:text="Branch Number:"
+                                android:textColor="#DEDEDE"
+
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                                app:layout_constraintTop_toBottomOf="@id/divider1_2" />
+
+                            <TextView
+                                android:id="@+id/info_third_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#DEDEDE"
+                                android:textSize="14dp"
+                                app:layout_constraintBottom_toBottomOf="@id/info_third"
+                                app:layout_constraintEnd_toStartOf="@id/vertGuideline1_2"
+                                app:layout_constraintTop_toTopOf="@+id/info_third" />
+
+                            <TextView
+                                android:id="@+id/info_fourth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginTop="12dp"
+                                android:text="Transit Number:"
+                                android:textColor="#DEDEDE"
+
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                                app:layout_constraintTop_toBottomOf="@id/info_third" />
+
+                            <TextView
+                                android:id="@+id/info_fourth_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#DEDEDE"
+                                android:textSize="14dp"
+                                app:layout_constraintBottom_toBottomOf="@id/info_fourth"
+                                app:layout_constraintEnd_toStartOf="@id/vertGuideline1_2"
+                                app:layout_constraintTop_toTopOf="@+id/info_fourth" />
+
+                            <TextView
+                                android:id="@+id/info_fifth"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginTop="12dp"
+                                android:text="Account Number:"
+                                android:textColor="#DEDEDE"
+
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                                app:layout_constraintTop_toBottomOf="@id/info_fourth" />
+
+                            <TextView
+                                android:id="@+id/info_fifth_display"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textColor="#DEDEDE"
+                                android:textSize="14dp"
+                                app:layout_constraintBottom_toBottomOf="@id/info_fifth"
+                                app:layout_constraintEnd_toStartOf="@id/vertGuideline1_2"
+                                app:layout_constraintTop_toTopOf="@+id/info_fifth" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="18dp">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardView5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#242424"
+                        app:cardCornerRadius="10dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingVertical="12dp">
+
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/vertGuideline2_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.04" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/vertGuideline2_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.96" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/horGuideline2_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                app:layout_constraintGuide_begin="0dp" />
+
+
+                            <ImageView
+                                android:id="@+id/history_date_selector"
+                                android:layout_width="wrap_content"
+                                android:layout_height="0dp"
+                                android:src="@drawable/ic_agreement"
+
+                                app:layout_constraintBottom_toBottomOf="@id/payment_history"
+                                app:layout_constraintEnd_toStartOf="@+id/vertGuideline2_2"
+                                app:layout_constraintTop_toTopOf="@+id/payment_history" />
+
+                            <TextView
+                                android:id="@+id/payment_history"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="付款方式"
+                                android:textColor="@color/yellow"
+                                android:textSize="18sp"
+
+                                app:layout_constraintHorizontal_bias="0.07"
+                                app:layout_constraintStart_toEndOf="@id/vertGuideline2_1"
+
+                                app:layout_constraintTop_toTopOf="@+id/horGuideline2_1" />
+
+                            <View
+                                android:id="@+id/divider2"
+                                android:layout_width="0dp"
+                                android:layout_height="2dp"
+                                android:layout_marginTop="12dp"
+                                android:background="@color/grey"
+                                app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
+                                app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
+                                app:layout_constraintTop_toBottomOf="@id/history_date_selector" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/history_recycler_view"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:overScrollMode="never"
+                                android:paddingVertical="12dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
+                                app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
+                                app:layout_constraintTop_toBottomOf="@id/divider2" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_height="100dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/transparent"
+                    >
+                </View>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+
+
+</FrameLayout>

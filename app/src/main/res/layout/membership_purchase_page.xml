@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        app:cornerRadius="0dp"
+        android:backgroundTint="@color/yellow"
+        android:textColor="@color/black"
+        android:text="前往付款"
+        android:id="@+id/confirm_purchase_button"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04"
+        android:id="@+id/VertGuidelineStart"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96"
+        android:id="@+id/VertGuidelineEnd"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/HorGuidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.026004728" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="@+id/VertGuidelineEnd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/VertGuidelineStart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/confirm_purchase_button"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/black3"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="18dp"
+
+
+
+                >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="12dp"
+                    >
+
+
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/vertGuideline1_1"
+                        app:layout_constraintGuide_percent="0.04"
+                        />
+                    <androidx.constraintlayout.widget.Guideline
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/vertGuideline1_2"
+                        app:layout_constraintGuide_percent="0.96"
+                        />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/horGuideline1_1"
+                        app:layout_constraintGuide_begin="2dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/burn_group_service"
+                        app:layout_constraintStart_toStartOf="@+id/vertGuideline1_1"
+                        app:layout_constraintTop_toTopOf="@+id/horGuideline1_1"
+                        android:id="@+id/membership_purchase_icon"/>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/yellow"
+                        app:layout_constraintBottom_toBottomOf="@+id/membership_purchase_icon"
+                        app:layout_constraintStart_toEndOf="@id/membership_purchase_icon"
+                        app:layout_constraintTop_toTopOf="@+id/membership_purchase_icon"
+                        android:textSize="20sp"
+                        android:text="place_holder"
+                        android:id="@+id/membership_purchase_title"
+
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_info_icon_2"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                        app:layout_constraintTop_toBottomOf="@id/membership_purchase_icon"
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/info_icon_1_1"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20次店内团课"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="@id/info_icon_1_1"
+                        app:layout_constraintStart_toEndOf="@id/info_icon_1_1"
+                        app:layout_constraintTop_toTopOf="@+id/info_icon_1_1"
+                        android:id="@+id/purchase_info_1"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_info_icon_include"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline1_2"
+                        app:layout_constraintTop_toTopOf="@id/purchase_info_1"
+                        app:layout_constraintBottom_toBottomOf="@+id/purchase_info_1"
+                        android:id="@+id/checkmark1"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_info_icon_2"
+                        app:layout_constraintTop_toBottomOf="@id/info_icon_1_1"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                        android:layout_marginTop="6dp"
+                        android:id="@+id/info_icon_1_2"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(place holder)"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintTop_toTopOf="@id/info_icon_1_2"
+                        app:layout_constraintBottom_toBottomOf="@+id/info_icon_1_2"
+                        app:layout_constraintStart_toEndOf="@id/info_icon_1_2"
+                        android:id="@+id/purchase_info_2"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_info_icon_include"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline1_2"
+                        app:layout_constraintTop_toTopOf="@id/purchase_info_2"
+                        app:layout_constraintBottom_toBottomOf="@id/purchase_info_2"
+                        android:id="@+id/checkmark2"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_info_icon_2"
+                        app:layout_constraintTop_toBottomOf="@id/info_icon_1_2"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                        android:layout_marginTop="6dp"
+                        android:id="@+id/info_icon_1_3"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(place holder)"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintTop_toTopOf="@id/info_icon_1_3"
+                        app:layout_constraintBottom_toBottomOf="@+id/info_icon_1_3"
+                        app:layout_constraintStart_toEndOf="@id/info_icon_1_3"
+                        android:id="@+id/purchase_info_3"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_info_icon_include"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline1_2"
+                        app:layout_constraintTop_toTopOf="@id/purchase_info_3"
+                        app:layout_constraintBottom_toBottomOf="@id/purchase_info_3"
+                        android:id="@+id/checkmark3"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_info_icon_2"
+                        app:layout_constraintTop_toBottomOf="@id/info_icon_1_3"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                        android:layout_marginTop="6dp"
+                        android:id="@+id/info_icon_1_4"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(place holder)"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintTop_toTopOf="@id/info_icon_1_4"
+                        app:layout_constraintBottom_toBottomOf="@+id/info_icon_1_4"
+                        app:layout_constraintStart_toEndOf="@id/info_icon_1_4"
+                        android:id="@+id/purchase_info_4"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_info_icon_include"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline1_2"
+                        app:layout_constraintTop_toTopOf="@id/purchase_info_4"
+                        app:layout_constraintBottom_toBottomOf="@id/purchase_info_4"
+                        android:id="@+id/checkmark4"
+                        />
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/black3"
+                android:layout_marginBottom="18dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:paddingVertical="12dp">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/vertGuideline2_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.04" />
+                    <androidx.constraintlayout.widget.Guideline
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/vertGuideline2_2"
+                        app:layout_constraintGuide_percent="0.96"
+                        />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/horGuideline2_1"
+                        app:layout_constraintGuide_begin="2dp"
+                        />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_price_icon"
+                        app:layout_constraintStart_toStartOf="@+id/vertGuideline2_1"
+                        app:layout_constraintTop_toTopOf="@+id/horGuideline2_1"
+                        android:id="@+id/pass_price_icon"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/yellow"
+                        app:layout_constraintBottom_toBottomOf="@+id/pass_price_icon"
+                        app:layout_constraintStart_toEndOf="@id/pass_price_icon"
+                        app:layout_constraintTop_toTopOf="@+id/pass_price_icon"
+                        android:textSize="18sp"
+                        android:text="费用安排"
+                        android:id="@+id/pass_price_title"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/activation_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="激活时间:"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="6dp"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
+                        app:layout_constraintTop_toBottomOf="@id/pass_price_icon" />
+
+                    <ImageView
+                        android:id="@+id/activation_date_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add_info"
+                        app:layout_constraintBottom_toBottomOf="@+id/activation_date"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
+                        app:layout_constraintTop_toTopOf="@id/activation_date" />
+
+                    <TextView
+                        android:id="@+id/entered_activation_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:textColor="@color/yellow"
+                        app:layout_constraintBottom_toBottomOf="@+id/activation_date"
+                        app:layout_constraintEnd_toStartOf="@id/activation_date_icon"
+                        app:layout_constraintTop_toTopOf="@id/activation_date"
+                        tools:visibility="invisible" />
+
+
+                    <TextView
+                        android:id="@+id/entered_payment_start_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/payment_start_date"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
+                        app:layout_constraintTop_toTopOf="@id/payment_start_date"
+                        android:layout_marginRight="3dp"
+                        android:textColor="@color/white"
+                        android:text="x th date of the month "
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/payment_start_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="付款日期:"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="6dp"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
+                        app:layout_constraintTop_toBottomOf="@id/activation_date"
+                        android:visibility="gone"
+                        />
+
+
+
+
+
+                    <TextView
+                        android:id="@+id/monthly_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="月费:"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="6dp"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
+                        app:layout_constraintTop_toBottomOf="@id/payment_start_date" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
+                        app:layout_constraintTop_toTopOf="@id/monthly_fee"
+                        app:layout_constraintBottom_toBottomOf="@+id/monthly_fee"
+                        android:text="$(place holder)"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/recurring_subtotal"
+                        />
+                    <TextView
+                        android:id="@+id/tax_on_monthly_fee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="HST:"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="6dp"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
+                        app:layout_constraintTop_toBottomOf="@id/monthly_fee" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
+                        app:layout_constraintTop_toTopOf="@id/tax_on_monthly_fee"
+                        app:layout_constraintBottom_toBottomOf="@+id/tax_on_monthly_fee"
+                        android:text="$(place holder)"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/recurring_tax"
+                        />
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"
+                        app:layout_constraintStart_toStartOf="@id/tax_on_monthly_fee"
+                        app:layout_constraintEnd_toEndOf="@id/recurring_tax"
+                        app:layout_constraintTop_toBottomOf="@id/tax_on_monthly_fee"
+                        android:layout_marginTop="6dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/total_monthly_payment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="总计:"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="6dp"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
+                        app:layout_constraintTop_toBottomOf="@id/divider1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
+                        app:layout_constraintTop_toTopOf="@id/total_monthly_payment"
+                        app:layout_constraintBottom_toBottomOf="@+id/total_monthly_payment"
+                        android:text="$(place holder)"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/recurring_total"
+                        android:layout_marginEnd="3dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/black3"
+                android:layout_marginBottom="18dp"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:paddingVertical="12dp">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/vertGuideline3_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.04" />
+                    <androidx.constraintlayout.widget.Guideline
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/vertGuideline3_2"
+                        app:layout_constraintGuide_percent="0.96"
+                        />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/horGuideline3_1"
+                        app:layout_constraintGuide_begin="2dp"
+                        />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_price_icon"
+                        app:layout_constraintStart_toStartOf="@+id/vertGuideline3_1"
+                        app:layout_constraintTop_toTopOf="@+id/horGuideline3_1"
+                        android:id="@+id/member_payment_icon"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/yellow"
+                        app:layout_constraintBottom_toBottomOf="@+id/member_payment_icon"
+                        app:layout_constraintStart_toEndOf="@id/member_payment_icon"
+                        app:layout_constraintTop_toTopOf="@+id/member_payment_icon"
+                        android:textSize="18sp"
+                        android:text="首月费用 课时费用"
+                        android:id="@+id/member_payment_title"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/promo_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Promo Code:"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="6dp"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline3_1"
+                        app:layout_constraintTop_toBottomOf="@id/member_payment_icon" />
+
+                    <ImageView
+                        android:id="@+id/promo_code_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add_info"
+                        app:layout_constraintBottom_toBottomOf="@+id/promo_code"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline3_2"
+                        app:layout_constraintTop_toTopOf="@id/promo_code" />
+
+                    <TextView
+                        android:id="@+id/entered_promo_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/promo_code"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline3_2"
+                        app:layout_constraintTop_toTopOf="@id/promo_code"
+                        android:layout_marginRight="3dp"
+                        android:textColor="@color/white"
+                        tools:visibility="invisible" />
+
+
+
+
+                    <TextView
+                        android:id="@+id/before_tax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="小计:"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="6dp"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline3_1"
+                        app:layout_constraintTop_toBottomOf="@id/promo_code" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline3_2"
+                        app:layout_constraintTop_toTopOf="@id/before_tax"
+                        app:layout_constraintBottom_toBottomOf="@+id/before_tax"
+                        android:text="$(place holder)"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/first_subtotal"
+                        />
+                    <TextView
+                        android:id="@+id/tax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="HST:"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="6dp"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline3_1"
+                        app:layout_constraintTop_toBottomOf="@id/before_tax" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline3_2"
+                        app:layout_constraintTop_toTopOf="@id/tax"
+                        app:layout_constraintBottom_toBottomOf="@+id/tax"
+                        android:text="$(place holder)"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/first_tax"
+                        />
+
+                    <TextView
+                        android:id="@+id/promo_deducted_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline3_2"
+                        app:layout_constraintTop_toBottomOf="@id/divider"
+                        android:textSize="14sp"
+                        android:textColor="@color/white"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginTop="6dp"
+                        android:text=""
+                        android:visibility="gone"/>
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"
+                        app:layout_constraintStart_toStartOf="@id/tax"
+                        app:layout_constraintEnd_toEndOf="@id/first_tax"
+                        app:layout_constraintTop_toBottomOf="@id/tax"
+                        android:layout_marginTop="6dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/overall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="总计:"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="6dp"
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline3_1"
+                        app:layout_constraintTop_toBottomOf="@id/promo_deducted_amount" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="@id/vertGuideline3_2"
+                        app:layout_constraintTop_toTopOf="@id/overall"
+                        app:layout_constraintBottom_toBottomOf="@+id/overall"
+                        android:text="$(place holder)"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:layout_marginRight="3dp"
+                        android:id="@+id/first_total"
+                        android:layout_marginEnd="3dp" />
+
+                    <ProgressBar
+                        android:id="@+id/grand_total_progress_bar"
+                        style="@style/Widget.AppCompat.ProgressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:indeterminateTint="@color/yellow"
+
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@id/first_total"
+                        app:layout_constraintEnd_toStartOf="@id/first_total"
+                        app:layout_constraintTop_toTopOf="@id/first_total" />
+
+                    <ProgressBar
+                        android:id="@+id/promo_code_progress_bar"
+                        style="@style/Widget.AppCompat.ProgressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:indeterminateTint="@color/yellow"
+
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="@id/promo_code"
+                        app:layout_constraintEnd_toStartOf="@id/promo_code_barrier"
+                        app:layout_constraintTop_toTopOf="@id/promo_code" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/promo_code_barrier"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="start"
+                        app:constraint_referenced_ids="promo_code_icon,entered_promo_code" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/chosen_payment_method"
+                android:layout_marginBottom="18dp"
+                android:orientation="vertical"
+                android:visibility="gone"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/black3"
+                android:layout_marginBottom="18dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingVertical="12dp"
+                    >
+                    <androidx.constraintlayout.widget.Guideline
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/vertGuideline4_1"
+                        app:layout_constraintGuide_percent="0.04"
+                        />
+                    <androidx.constraintlayout.widget.Guideline
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/vertGuideline4_2"
+                        app:layout_constraintGuide_percent="0.96"
+                        />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/horGuideline4_1"
+                        app:layout_constraintGuide_begin="2dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_agreement"
+                        app:layout_constraintStart_toStartOf="@+id/vertGuideline4_1"
+                        app:layout_constraintTop_toTopOf="@+id/horGuideline4_1"
+                        android:id="@+id/service_agreement_icon"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/yellow"
+                        app:layout_constraintBottom_toBottomOf="@+id/service_agreement_icon"
+                        app:layout_constraintStart_toEndOf="@id/service_agreement_icon"
+                        app:layout_constraintTop_toTopOf="@+id/service_agreement_icon"
+                        android:textSize="18sp"
+                        android:text="服务协议"
+                        android:id="@+id/agreement_title"
+                        />
+
+                    <TextView
+                        android:id="@+id/have_read"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="我已阅读并同意相关"
+                        android:textColor="@color/grey"
+                        android:textSize="14sp"
+
+                        app:layout_constraintStart_toStartOf="@id/vertGuideline4_1"
+                        app:layout_constraintTop_toBottomOf="@id/service_agreement_icon" />
+                    <TextView
+                        android:id="@+id/have_read_clickable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/agree_clickable"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintTop_toTopOf="@id/have_read"
+                        app:layout_constraintBottom_toBottomOf="@id/have_read"
+                        app:layout_constraintStart_toEndOf="@id/have_read"
+                        />
+                    <CheckBox
+                        android:id="@+id/agreement_checkbox"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:minWidth="0dp"
+                        android:minHeight="0dp"
+                        style="@style/CustomCheckboxCircular"
+                        android:buttonTint="@color/grey"
+                        app:layout_constraintBottom_toBottomOf="@+id/have_read_clickable"
+                        app:layout_constraintTop_toTopOf="@id/have_read_clickable"
+                        app:layout_constraintEnd_toStartOf="@id/vertGuideline4_2" />
+
+
+                    <View
+                        android:id="@+id/divider2_1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"
+                        app:layout_constraintStart_toStartOf="@id/have_read"
+                        app:layout_constraintEnd_toEndOf="@id/agreement_checkbox"
+                        app:layout_constraintTop_toBottomOf="@id/have_read"
+                        android:layout_marginTop="6dp"
+                        />
+
+                    <EditText
+                        android:id="@+id/full_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="@id/divider2_1"
+                        app:layout_constraintEnd_toEndOf="@id/divider2_1"
+                        app:layout_constraintTop_toBottomOf="@id/divider2_1"
+                        android:background="@null"
+                        android:hint="Type your full name to confirm"
+                        android:textColorHint="@color/white"
+                        android:textSize="15dp"
+                        android:textColor="@color/white"
+                        android:inputType="text"
+                        android:layout_marginTop="3dp"/>
+
+                    <View
+                        android:id="@+id/divider2_2"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:background="@color/grey"
+                        app:layout_constraintStart_toStartOf="@id/full_name"
+                        app:layout_constraintEnd_toEndOf="@id/agreement_checkbox"
+                        app:layout_constraintTop_toBottomOf="@id/full_name"
+                        android:layout_marginTop="3dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/agreement_final_text"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="@id/divider2_2"
+                        app:layout_constraintEnd_toEndOf="@id/divider2_2"
+                        app:layout_constraintTop_toBottomOf="@id/divider2_2"
+                        android:layout_marginTop="6dp"
+                        android:text=",Parties shall take co-ordinated measures to maintain migratory waterbird species in a favourable
+conservation status or to restore them to such a status. To this end, they shall apply within the limits of
+their national jurisdiction the measures prescribed in Article III, together with the specific actions
+determined in the Action Plan provided for in Article IV, of this Agreement,Parties shall take co-ordinated measures to maintain migratory waterbird species in a favourable
+conservation status or to restore them to such a status. To this end, they shall apply within the limits of
+their national jurisdiction the measures prescribed in Article III, together with the specific actions
+determined in the Action Plan provided for in Article IV, of this Agreement,Parties shall take co-ordinated measures to maintain migratory waterbird species in a favourable
+conservation status or to restore them to such a status. To this end, they shall apply within the limits of
+their national jurisdiction the measures prescribed in Article III, together with the specific actions
+determined in the Action Plan provided for in Article IV, of this Agreement，Parties shall take co-ordinated measures to maintain migratory waterbird species in a favourable
+conservation status or to restore them to such a status. To this end, they shall apply within the limits of
+their national jurisdiction the measures prescribed in Article III, together with the specific actions
+determined in the Action Plan provided for in Article IV, of this Agreement"
+                        android:textColor="@color/white"/>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

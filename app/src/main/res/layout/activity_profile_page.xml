@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfilePage"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/textView62"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:text="修改个人资料"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/include3"
+            layout="@layout/top_navigation_button"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline63"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/view2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:elevation="12dp"
+        android:innerRadius="0dp"
+        android:shape="ring"
+        app:cardCornerRadius="40dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline47"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@mipmap/post"
+
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.96" />
+
+    <ImageView
+        android:id="@+id/imageView28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline52"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        app:srcCompat="@drawable/down_arrow" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Christian C"
+        app:layout_constraintEnd_toStartOf="@+id/guideline52"
+        app:layout_constraintTop_toBottomOf="@+id/imageView28"
+        android:textColor="@color/white"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginVertical="10dp"
+
+        app:layout_constraintEnd_toStartOf="@+id/guideline52"
+        app:layout_constraintStart_toStartOf="@+id/guideline47"
+        app:layout_constraintTop_toBottomOf="@+id/view2"
+
+        >
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:background="@color/black3"
+            android:paddingBottom="10dp">
+
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:fitsSystemWindows="true"
+                android:theme="@style/Theme.ReformfitApp.NavigationView"
+                app:itemIconTint="@color/grey"
+                app:itemTextColor="@color/grey"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="我的预约"
+                android:textColor="@color/yellow"
+                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.04" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline49"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.96" />
+
+            <TextView
+                android:id="@+id/textView64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Email:"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/textView64"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView64" />
+
+
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="电话："
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                app:layout_constraintTop_toBottomOf="@+id/textView64" />
+
+            <ProgressBar
+                android:id="@+id/progressBar_phoneNum"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/yellow"
+                android:indeterminateTintMode="src_atop"
+                app:layout_constraintBottom_toBottomOf="@+id/phoneNum"
+                app:layout_constraintEnd_toStartOf="@+id/phoneNum"
+                app:layout_constraintTop_toTopOf="@+id/phoneNum"
+                android:visibility="invisible"
+                android:layout_marginRight="3dp"/>
+
+
+
+            <ImageView
+                android:id="@+id/init_phoneNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView50"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView50"
+                app:srcCompat="@drawable/down_arrow"
+                android:clickable="true"/>
+
+            <TextView
+                android:id="@+id/phoneNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView50"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView50"
+                android:textColor="@color/white"/>
+
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="性别："
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar_gender"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/yellow"
+                android:indeterminateTintMode="src_atop"
+                app:layout_constraintBottom_toBottomOf="@+id/gender"
+                app:layout_constraintEnd_toStartOf="@+id/gender"
+                app:layout_constraintTop_toTopOf="@+id/gender"
+                android:visibility="invisible"
+                android:layout_marginRight="3dp"/>
+
+            <ImageView
+                android:id="@+id/init_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView51"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView51"
+                app:srcCompat="@drawable/down_arrow"
+                android:clickable="true"/>
+
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView51"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView51"
+                android:textColor="@color/white"/>
+
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="出生年月日"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
+
+
+            <ProgressBar
+                android:id="@+id/progressBar_birthdate"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/yellow"
+                android:indeterminateTintMode="src_atop"
+                app:layout_constraintBottom_toBottomOf="@+id/birthdate"
+                app:layout_constraintEnd_toStartOf="@+id/birthdate"
+                app:layout_constraintTop_toTopOf="@+id/birthdate"
+                android:visibility="invisible"
+                android:layout_marginRight="3dp"/>
+
+            <ImageView
+                android:id="@+id/inti_birthdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView52"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView52"
+                app:srcCompat="@drawable/down_arrow"
+                android:clickable="true"/>
+
+
+            <TextView
+                android:id="@+id/birthdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView52"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView52"
+                android:textColor="@color/white"/>
+
+
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="身高："
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                app:layout_constraintTop_toBottomOf="@+id/textView52" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar_height"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/yellow"
+                android:indeterminateTintMode="src_atop"
+                app:layout_constraintBottom_toBottomOf="@+id/height"
+                app:layout_constraintEnd_toStartOf="@+id/height"
+                app:layout_constraintTop_toTopOf="@+id/height"
+                android:visibility="invisible"
+                android:layout_marginRight="3dp"/>
+
+
+            <ImageView
+                android:id="@+id/init_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView54"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView54"
+                app:srcCompat="@drawable/down_arrow"
+                android:clickable="true"/>
+
+
+            <TextView
+                android:id="@+id/height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView54"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView54"
+                android:textColor="@color/white"/>
+
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="体重："
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                app:layout_constraintTop_toBottomOf="@+id/textView54" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar_weight"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/yellow"
+                android:indeterminateTintMode="src_atop"
+                app:layout_constraintBottom_toBottomOf="@+id/weight"
+                app:layout_constraintEnd_toStartOf="@+id/weight"
+                app:layout_constraintTop_toTopOf="@+id/weight"
+                android:visibility="invisible"
+                android:layout_marginRight="3dp"/>
+
+
+
+            <ImageView
+                android:id="@+id/init_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView55"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView55"
+                app:srcCompat="@drawable/down_arrow"
+                android:clickable="true"/>
+
+
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView55"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView55"
+                android:textColor="@color/white"/>
+
+
+            <TextView
+                android:id="@+id/textView56"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="邮编"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+
+            <ProgressBar
+                android:id="@+id/progressBar_postalCode"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/yellow"
+                android:indeterminateTintMode="src_atop"
+                app:layout_constraintBottom_toBottomOf="@+id/postalCode"
+                app:layout_constraintEnd_toStartOf="@+id/postalCode"
+                app:layout_constraintTop_toTopOf="@+id/postalCode"
+                android:visibility="invisible"
+                android:layout_marginRight="3dp"/>
+
+
+            <ImageView
+                android:id="@+id/init_postalCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView56"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView56"
+                app:srcCompat="@drawable/down_arrow"
+                android:clickable="true"/>
+
+
+            <TextView
+                android:id="@+id/postalCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@+id/textView56"
+                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                app:layout_constraintTop_toTopOf="@+id/textView56"
+                android:textColor="@color/white"/>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MineInfoPage3">
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/init_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginVertical="10dp"
+
+                        >
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/black3"
+                            android:paddingBottom="10dp">
+
+
+                            <ImageView
+                                android:id="@+id/init_calendarU2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@drawable/down_arrow"
+                                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                                app:layout_constraintStart_toStartOf="@+id/linearLayout"
+                                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                                android:clickable="true"
+                                android:focusable="true"/>
+
+                            <com.google.android.material.navigation.NavigationView
+                                android:id="@+id/divider"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="16dp"
+                                android:fitsSystemWindows="true"
+                                android:theme="@style/Theme.ReformfitApp.NavigationView"
+                                app:itemIconTint="@color/grey"
+                                app:itemTextColor="@color/grey"
+                                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                                app:layout_constraintTop_toBottomOf="@+id/textView35" />
+
+                            <TextView
+                                android:id="@+id/textView35"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="我的预约"
+                                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:textColor="@color/yellow"/>
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guideline48"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.04" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guideline49"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.96" />
+
+                            <ImageView
+                                android:id="@+id/init_calendarU"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:src="@drawable/down_arrow"
+                                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                                app:layout_constraintTop_toTopOf="parent"
+                                />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                app:layout_constraintEnd_toStartOf="@+id/guideline49"
+                                app:layout_constraintStart_toStartOf="@+id/guideline48"
+                                app:layout_constraintTop_toBottomOf="@+id/divider"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="10dp"
+                                    android:text="没有预约"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/grey">
+
+                                </TextView>
+
+                            </LinearLayout>
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="10dp"
+                        android:layout_marginVertical="10dp">
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/black3"
+                            android:paddingBottom="10dp"
+                            >
+
+
+                            <ImageView
+                                android:id="@+id/init_calendarH2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:src="@drawable/down_arrow"
+                                app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+                                app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+                                app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+                            <com.google.android.material.navigation.NavigationView
+                                android:id="@+id/divider2"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="16dp"
+                                android:fitsSystemWindows="true"
+                                android:theme="@style/Theme.ReformfitApp.NavigationView"
+                                app:itemIconTint="@color/grey"
+                                app:itemTextColor="@color/grey"
+                                app:layout_constraintEnd_toStartOf="@+id/guideline51"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/guideline50"
+                                app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+                            <TextView
+                                android:id="@+id/textView36"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="我已完成"
+                                app:layout_constraintStart_toStartOf="@+id/guideline50"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:textColor="@color/yellow"/>
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guideline50"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.04" />
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guideline51"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.96" />
+
+                            <ImageView
+                                android:id="@+id/init_calendarH"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:src="@drawable/down_arrow"
+                                app:layout_constraintEnd_toStartOf="@+id/guideline51"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <LinearLayout
+                                android:id="@+id/linearLayout2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="10dp"
+                                app:layout_constraintEnd_toStartOf="@+id/guideline51"
+                                app:layout_constraintStart_toStartOf="@+id/guideline50"
+                                app:layout_constraintTop_toBottomOf="@+id/divider2"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="10dp"
+                                    android:text="Empty"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/grey" />
+
+
+                            </LinearLayout>
+
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+                    <View
+                        android:layout_height="100dp"
+                        android:layout_width="match_parent"
+                        android:background="@color/transparent"
+                        >
+                    </View>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline46"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+
+
+
+</FrameLayout>

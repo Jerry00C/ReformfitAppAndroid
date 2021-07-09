@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrivateClass">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:id="@+id/scrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline29"
+            app:layout_constraintStart_toStartOf="@+id/guideline28"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+
+                <LinearLayout
+                    android:id="@+id/location1all"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/location1"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginVertical="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/black4"
+                        app:cardCornerRadius="10dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/black">
+
+
+                            <androidx.constraintlayout.widget.Guideline
+                                android:id="@+id/guideline30"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                app:layout_constraintGuide_percent="0.05" />
+
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:background="@color/black4"
+                                android:translationZ="-100dp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/guideline30"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline34"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_begin="120dp" />
+
+                                <androidx.constraintlayout.widget.Guideline
+                                    android:id="@+id/guideline35"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    app:layout_constraintGuide_percent="0.95" />
+
+                                <TextView
+                                    android:id="@+id/textView26"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="16dp"
+                                    android:text="Cindy Sun"
+                                    android:textColor="@color/white"
+                                    app:layout_constraintStart_toStartOf="@+id/guideline34"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/des"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="18dp"
+                                    android:clickable="true"
+                                    android:maxLines="3"
+                                    android:text="和了飞书治极很，深体门便标将想，决C听因扭。按几速个压确要，明拉写面改始反，近W罐度态。 就华将易林该，积标无才样心，代居呀红。约学委如界从包领万际打明理，青别再带八照证认果高件口眼，除张丽个马抖没呀议呆吵。六六元问效少北养自，除器积较面山，加去3旱内准伶。量于布据件因十参，想具引出要劳，我设C属杨领。 元力边县法热方二车里列再，花水又看村红万应报。认元此料眼好问种平历分须，美劳间低看指战选格断业，她原孟达历度僚接E杠。 打度引记而品级年切及，平先物十拉过省争，交将该县茅抛京。物每政带北强走见局作，专农打况保管色样素，严基录直积不展杠。习传话转统外备自社切团习解方，导养日现干医志影箩磨选。 小关育集好从圆，些从住E名苗。质技制到家性新和了飞书治极很，深体门便标将想，决C听因扭。按几速个压确要，明拉写面改始反，近W罐度态。 就华将易林该，积标无才样心，代居呀红。约学委如界从包领万际打明理，青别再带八照证认果高件口眼，除张丽个马抖没呀议呆吵。六六元问效少北养自，除器积较面山，加去3旱内准伶。量于布据件因十参，想具引出要劳，我设C属杨领。 元力边县法热方二车里列再，花水又看村红万应报。认元此料眼好问种平历分须，美劳间低看指战选格断业，她原孟达历度僚接E杠。 打度引记而品级年切及，平先物十拉过省争，交将该县茅抛京。物每政带北强走见局作，专农打况保管色样素，严基录直积不展杠。习传话转统外备自社切团习解方，导养日现干医志影箩磨选。 小关育集好从圆，些从住E名苗。质技制到家性新数报即了，取更平于下他火生速，厂各                                数报即了，取更平于下他火生速，厂各"
+                                    android:textColor="@color/grey"
+                                    app:layout_constraintEnd_toEndOf="@+id/guideline35"
+                                    app:layout_constraintHorizontal_bias="1.0"
+                                    app:layout_constraintStart_toStartOf="@+id/guideline34"
+                                    app:layout_constraintTop_toBottomOf="@+id/textView26" />
+
+
+                                <com.google.android.material.button.MaterialButton
+                                    android:id="@+id/group_service"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:backgroundTint="@color/yellow"
+                                    android:minWidth="1dp"
+                                    android:minHeight="1dp"
+                                    android:text="查看"
+                                    android:textAlignment="gravity"
+                                    android:textColor="@color/black"
+                                    android:textSize="10sp"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@+id/guideline35"
+
+                                    app:layout_constraintTop_toBottomOf="@+id/text_collaps_btn"
+                                    app:layout_constraintVertical_bias="0.0" />
+
+                                <ImageView
+                                    android:id="@+id/text_collaps_btn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:clickable="true"
+                                    android:src="@drawable/down_arrow"
+                                    app:layout_constraintEnd_toEndOf="@+id/des"
+                                    app:layout_constraintStart_toStartOf="@+id/des"
+                                    app:layout_constraintTop_toBottomOf="@+id/des" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <ImageView
+                                android:id="@+id/imageView13"
+                                android:layout_width="120dp"
+                                android:layout_height="150dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:src="@mipmap/post"/>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
