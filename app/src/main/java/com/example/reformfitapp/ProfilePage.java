@@ -213,126 +213,6 @@ public class ProfilePage extends AppCompatActivity {
     }
 
 
-    /*private void showEmailRequestDialog(){
-
-
-        Dialog dialog = new Dialog(ProfilePage.this);
-        dialog.setContentView(R.layout.profile_update_pop_up);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        TextView title = dialog.findViewById(R.id.popup_title);
-        title.setText("Email");
-
-        MaterialButton confirm = dialog.findViewById(R.id.confirm_button);
-        Button cancel = dialog.findViewById(R.id.cancel_button);
-
-        TextInputEditText textView = dialog.findViewById(R.id.input_text);
-
-
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                initEmail.setVisibility(View.GONE);
-                initEmail.setClickable(false);
-                progressBarEmail.setVisibility(View.VISIBLE);
-
-                dialog.dismiss();
-                String email_inserted = textView.getText().toString();
-
-                Log.d("email_inserted", email_inserted);
-
-                HashMap<String, Object> params = new HashMap<String, Object>();
-
-                HashMap<String, String> params_client = new HashMap<>();
-                String clientId = ((GlobalVariableApplication) getApplication()).getClientId();
-
-                params_client.put("Id", clientId);
-
-                params_client.put("Email", email_inserted);
-
-                params.put("Client", params_client);
-                params.put("CrossRegionalUpdate", false);
-                params.put("Test", false);
-
-                Log.d("params", params.toString());
-
-
-                MindbodyUpdateClient mindbodyUpdateClient = new MindbodyUpdateClient(getApplicationContext());
-                mindbodyUpdateClient.getUserToken(new MindbodyClass.VolleyResponseListener() {
-                    @Override
-                    public void onError(String message) {
-                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                        Log.d("mindbody_response", response);
-
-
-                        mindbodyUpdateClient.updateClient(new MindbodyClass.VolleyResponseListener() {
-                            @Override
-                            public void onError(String message) {
-                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onResponse(String response) {
-                                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                                Log.d("mindbody_response", response);
-
-
-
-                                MindbodyClientResponseModel mindbodyClientResponseModel = ((GlobalVariableApplication) getApplication()).getMindbodyClientResponseModel();
-
-                                mindbodyClientResponseModel.setEmail(email_inserted);
-                                ((GlobalVariableApplication) getApplication()).setMindbodyClientResponseModel(mindbodyClientResponseModel);
-
-                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-                                user.updateEmail(email_inserted)
-                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                if (task.isSuccessful()) {
-                                                    Log.d("database email", "User email address updated.");
-
-                                                    textEmail.setText(email_inserted);
-                                                    progressBarEmail.setVisibility(View.INVISIBLE);
-
-                                                    textEmail.setClickable(true);
-                                                    textEmail.setOnClickListener(new View.OnClickListener() {
-                                                        @Override
-                                                        public void onClick(View v) {
-                                                            showEmailRequestDialog();
-                                                        }
-                                                    });
-                                                }
-                                            }
-                                        });
-
-
-                            }
-                        }, params);
-                    }
-                });
-            }
-        });
-
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-
-        dialog.show();
-
-    }*/
-
     private void showPhoneNumRequestDialog(){
 
 
@@ -384,6 +264,8 @@ public class ProfilePage extends AppCompatActivity {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                        progressBarPhoneNum.setVisibility(View.INVISIBLE);
                     }
 
                     @Override
@@ -396,6 +278,8 @@ public class ProfilePage extends AppCompatActivity {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                                progressBarPhoneNum.setVisibility(View.INVISIBLE);
                             }
 
                             @Override
@@ -492,6 +376,9 @@ public class ProfilePage extends AppCompatActivity {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                        progressBarGender.setVisibility(View.INVISIBLE);
                     }
 
                     @Override
@@ -504,6 +391,9 @@ public class ProfilePage extends AppCompatActivity {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                progressBarGender.setVisibility(View.INVISIBLE);
                             }
 
                             @Override
@@ -602,6 +492,8 @@ public class ProfilePage extends AppCompatActivity {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                        progressBarBirthDate.setVisibility(View.INVISIBLE);
                     }
 
                     @Override
@@ -614,6 +506,8 @@ public class ProfilePage extends AppCompatActivity {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                                progressBarBirthDate.setVisibility(View.INVISIBLE);
                             }
 
                             @Override
@@ -724,6 +618,8 @@ public class ProfilePage extends AppCompatActivity {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                        progressBarHeight.setVisibility(View.INVISIBLE);
                     }
 
                     @Override
@@ -736,6 +632,8 @@ public class ProfilePage extends AppCompatActivity {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                                progressBarHeight.setVisibility(View.INVISIBLE);
                             }
 
                             @Override
@@ -846,6 +744,8 @@ public class ProfilePage extends AppCompatActivity {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                        progressBarWeight.setVisibility(View.INVISIBLE);
                     }
 
                     @Override
@@ -858,6 +758,8 @@ public class ProfilePage extends AppCompatActivity {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                                progressBarWeight.setVisibility(View.INVISIBLE);
                             }
 
                             @Override
@@ -957,6 +859,9 @@ public class ProfilePage extends AppCompatActivity {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                        progressBarPostalCode.setVisibility(View.INVISIBLE);
+
                     }
 
                     @Override
@@ -969,6 +874,8 @@ public class ProfilePage extends AppCompatActivity {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                                progressBarPostalCode.setVisibility(View.INVISIBLE);
                             }
 
                             @Override
@@ -1129,12 +1036,9 @@ public class ProfilePage extends AppCompatActivity {
 
 
 
-
     public void showLoginDialog(String title) {
         final Dialog dialog = new Dialog(ProfilePage.this);
         dialog.setContentView(R.layout.sign_in_dialog_new);
-
-
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
 
@@ -1146,6 +1050,7 @@ public class ProfilePage extends AppCompatActivity {
         int width = displayMetrics.widthPixels;
 
         dialog.getWindow().setLayout((int) ((int)width*0.8), WindowManager.LayoutParams.WRAP_CONTENT);
+
 
         MaterialButton apply = dialog.findViewById(R.id.confirm_button);
         MaterialButton cancel = dialog.findViewById(R.id.cancel_button);
@@ -1184,9 +1089,8 @@ public class ProfilePage extends AppCompatActivity {
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                ProfilePage.this.finish();
                 dialog.dismiss();
+
             }
         });
 
@@ -1214,6 +1118,7 @@ public class ProfilePage extends AppCompatActivity {
                                     Log.d("login", "success");
 
                                     dialog.setContentView(R.layout.progress_bar);
+                                    dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
                                     dialog.setCanceledOnTouchOutside(false);
 
                                     userID = firebaseAuth.getCurrentUser().getUid();
@@ -1234,6 +1139,11 @@ public class ProfilePage extends AppCompatActivity {
                                                         @Override
                                                         public void onError(String message) {
                                                             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                            dialog.setCancelable(true);
+                                                            dialog.dismiss();
                                                         }
 
                                                         @Override
@@ -1242,6 +1152,11 @@ public class ProfilePage extends AppCompatActivity {
                                                                 @Override
                                                                 public void onError(String message) {
                                                                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                                    dialog.setCancelable(true);
+                                                                    dialog.dismiss();
                                                                 }
 
                                                                 @Override
@@ -1257,40 +1172,46 @@ public class ProfilePage extends AppCompatActivity {
 
 
                                                                     dialog.setCancelable(true);
-
-                                                                    initalized_profile(dialog);
-
+                                                                    dialog.dismiss();
                                                                 }
                                                             }, clientId);
                                                         }
                                                     });
 
                                                     Log.d("response", "DocumentSnapshot data: " + document.getData().get("ClientId"));
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                    dialog.setCancelable(true);
+                                                    dialog.dismiss();
+
 
                                                 } else {
                                                     Log.d("response", "No such document");
+
+
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                    dialog.setCancelable(true);
+                                                    dialog.dismiss();
                                                 }
                                             } else {
                                                 Log.d("response", "get failed with ", task.getException());
+
+                                                Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                dialog.setCancelable(true);
+                                                dialog.dismiss();
                                             }
                                         }
                                     });
-
-
-
-
-
-
-
-                                    /*
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    updateUI(user);*/
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.d("login", task.getException().toString());
 
                                     Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
 
+
+                                    dialog.getWindow().setLayout((int) ((int)width*0.8), WindowManager.LayoutParams.WRAP_CONTENT);
                                 }
                             }
                         });
@@ -1317,6 +1238,7 @@ public class ProfilePage extends AppCompatActivity {
         int width = displayMetrics.widthPixels;
 
         dialog.getWindow().setLayout((int) ((int)width*0.92), WindowManager.LayoutParams.WRAP_CONTENT);
+
 
         MaterialButton apply = dialog.findViewById(R.id.confirm_button);
         MaterialButton cancel = dialog.findViewById(R.id.cancel_button);
@@ -1439,6 +1361,7 @@ public class ProfilePage extends AppCompatActivity {
 
                                                 previousDialog.dismiss();
                                                 dialog.setContentView(R.layout.progress_bar);
+                                                dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
                                                 dialog.setCancelable(false);
 
@@ -1453,6 +1376,25 @@ public class ProfilePage extends AppCompatActivity {
                                                     @Override
                                                     public void onError(String message) {
                                                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_SHORT).show();
+                                                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                                        user.delete()
+                                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                    @Override
+                                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                                        if (task.isSuccessful()) {
+                                                                            Log.d("firebase", "User account deleted.");
+                                                                        }
+                                                                    }
+                                                                });
+
+
+                                                        dialog.setCancelable(true);
+                                                        dialog.dismiss();
+
+
+
                                                     }
 
                                                     @Override
@@ -1461,6 +1403,22 @@ public class ProfilePage extends AppCompatActivity {
                                                             @Override
                                                             public void onError(String message) {
                                                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_SHORT).show();
+                                                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                                                user.delete()
+                                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                            @Override
+                                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                                if (task.isSuccessful()) {
+                                                                                    Log.d("firebase", "User account deleted.");
+                                                                                }
+                                                                            }
+                                                                        });
+
+                                                                dialog.setCancelable(true);
+                                                                dialog.dismiss();
+
                                                             }
 
                                                             @Override
@@ -1492,8 +1450,7 @@ public class ProfilePage extends AppCompatActivity {
                                                                 //nonSwipeableViewPager.setCurrentItem(currPos);
 
                                                                 dialog.setCancelable(true);
-                                                               // dialog.dismiss();
-                                                                initalized_profile(dialog);
+                                                                dialog.dismiss();
 
                                                             }
                                                         }, params);
@@ -1503,6 +1460,14 @@ public class ProfilePage extends AppCompatActivity {
                                             }
                                             else{
                                                 Log.d("register", task.getException().toString());
+                                                if(task.getException().toString().equals("com.google.firebase.auth.FirebaseAuthInvalidCredentialsException: The email address is badly formatted.")){
+
+                                                    Toast.makeText(getApplicationContext(), "The email address is badly formatted", Toast.LENGTH_LONG).show();
+                                                }
+                                                else{
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_LONG).show();
+
+                                                }
                                             }
                                         }
                                     });

@@ -160,6 +160,9 @@ public class ServiceTabbed extends AppCompatActivity {
             @Override
             public void onError(String message) {
                 Toast.makeText(ServiceTabbed.this, message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ServiceTabbed.this, "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                ServiceTabbed.this.finish();
+
             }
 
             @Override
@@ -168,6 +171,9 @@ public class ServiceTabbed extends AppCompatActivity {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(ServiceTabbed.this, message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ServiceTabbed.this, "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                        ServiceTabbed.this.finish();
+
                     }
 
                     @Override

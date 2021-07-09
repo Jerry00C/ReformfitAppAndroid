@@ -252,14 +252,6 @@ public class MineInfoPage1 extends Fragment {
 
 
 
-/*
-        initWristbandBrand.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showBrandRequestDialog();
-            }
-        });*/
-
 
         initalized_profile();
 
@@ -273,128 +265,6 @@ public class MineInfoPage1 extends Fragment {
         });
         return view;
     }
-
-
-/*
-    private void showBrandRequestDialog(){
-
-
-        Dialog dialog = new Dialog(getContext());
-        dialog.setContentView(R.layout.profile_update_pop_up);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
-        TextView title = dialog.findViewById(R.id.popup_title);
-        title.setText("Wristband Brand");
-
-        MaterialButton confirm = dialog.findViewById(R.id.confirm_button);
-        Button cancel = dialog.findViewById(R.id.cancel_button);
-
-        TextInputEditText textView = dialog.findViewById(R.id.input_text);
-
-
-        confirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                initEmail.setVisibility(View.GONE);
-                initEmail.setClickable(false);
-                progressBarEmail.setVisibility(View.VISIBLE);
-
-                dialog.dismiss();
-                String email_inserted = textView.getText().toString();
-
-                Log.d("email_inserted", email_inserted);
-
-                HashMap<String, Object> params = new HashMap<String, Object>();
-
-                HashMap<String, String> params_client = new HashMap<>();
-                String clientId = ((GlobalVariableApplication) getApplication()).getClientId();
-
-                params_client.put("Id", clientId);
-
-                params_client.put("Email", email_inserted);
-
-                params.put("Client", params_client);
-                params.put("CrossRegionalUpdate", false);
-                params.put("Test", false);
-
-                Log.d("params", params.toString());
-
-
-                MindbodyUpdateClient mindbodyUpdateClient = new MindbodyUpdateClient(getApplicationContext());
-                mindbodyUpdateClient.getUserToken(new MindbodyClass.VolleyResponseListener() {
-                    @Override
-                    public void onError(String message) {
-                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                        Log.d("mindbody_response", response);
-
-
-                        mindbodyUpdateClient.updateClient(new MindbodyClass.VolleyResponseListener() {
-                            @Override
-                            public void onError(String message) {
-                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                            }
-
-                            @Override
-                            public void onResponse(String response) {
-                                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                                Log.d("mindbody_response", response);
-
-
-
-                                MindbodyClientResponseModel mindbodyClientResponseModel = ((GlobalVariableApplication) getApplication()).getMindbodyClientResponseModel();
-
-                                mindbodyClientResponseModel.setEmail(email_inserted);
-                                ((GlobalVariableApplication) getApplication()).setMindbodyClientResponseModel(mindbodyClientResponseModel);
-
-                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-                                user.updateEmail(email_inserted)
-                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                if (task.isSuccessful()) {
-                                                    Log.d("database email", "User email address updated.");
-
-                                                    textEmail.setText(email_inserted);
-                                                    progressBarEmail.setVisibility(View.INVISIBLE);
-
-                                                    textEmail.setClickable(true);
-                                                    textEmail.setOnClickListener(new View.OnClickListener() {
-                                                        @Override
-                                                        public void onClick(View v) {
-                                                            showEmailRequestDialog();
-                                                        }
-                                                    });
-                                                }
-                                            }
-                                        });
-
-
-                            }
-                        }, params);
-                    }
-                });
-            }
-        });
-
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
-
-
-        dialog.show();
-
-    }*/
 
 
 
@@ -424,7 +294,6 @@ public class MineInfoPage1 extends Fragment {
                 initWristbandNum.setClickable(false);
                 progressBarNum.setVisibility(View.VISIBLE);
 
-                dialog.dismiss();
                 String wristbandNum_inserted = textView.getText().toString();
 
                 Log.d("wristbandNum_inserted", wristbandNum_inserted);
@@ -464,6 +333,9 @@ public class MineInfoPage1 extends Fragment {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Something wrong, try it later", Toast.LENGTH_SHORT).show();
+                        progressBarNum.setVisibility(View.INVISIBLE);
+
                     }
 
                     @Override
@@ -476,6 +348,9 @@ public class MineInfoPage1 extends Fragment {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+
+                                Toast.makeText(getContext(), "Something wrong, try it later", Toast.LENGTH_SHORT).show();
+                                progressBarNum.setVisibility(View.INVISIBLE);
                             }
 
                             @Override
