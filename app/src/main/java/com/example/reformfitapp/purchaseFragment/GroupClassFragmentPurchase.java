@@ -1,7 +1,10 @@
 package com.example.reformfitapp.purchaseFragment;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -62,6 +65,10 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
     private HashMap<String,ServiceData> name_serviceId_pair;
     private HashMap<String,ContractData> name_contractId_pair;
 
+    private Dialog loadingDialog;
+
+    private boolean synchronizeBoolean = false;
+
     public GroupClassFragmentPurchase() {
         // Required empty public constructor
     }
@@ -107,6 +114,7 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
         service_category = "Classes"; /* correspond to the two type of class format */
         context = getActivity();
         mindbodyService = new MindbodyService(context);
+        showLoadingBar();
         mindbodyService.getAuthToken(new MindbodyService.AuthTokenResponseListener() {
             @Override
             public void onError(String errorMessage) {
@@ -121,6 +129,7 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
                     @Override
                     public void onError(String errorMessage) {
                         Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+                        synchronizedCount();
                     }
 
                     @Override
@@ -168,6 +177,7 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
 
                         }
                         Log.d("name_contractId_pair",name_contractId_pair.toString());
+                        synchronizedCount();
 
 
                     }
@@ -177,6 +187,7 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
                     @Override
                     public void onError(String errorMessage) {
                         Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+                        synchronizedCount();
                     }
 
                     @Override
@@ -196,6 +207,7 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
                                 @Override
                                 public void onError(String errorMessage) {
                                     Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+                                    synchronizedCount();
                                 }
 
                                 @Override
@@ -227,6 +239,7 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
                                         }
                                          */
                                     }
+                                    synchronizedCount();
 
                                 }
                             },programId);
@@ -393,5 +406,26 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
         switchToMembershipPurchasePage(pass_name, descriptions);
 
     }
+    public void showLoadingBar() {
+        loadingDialog = new Dialog(context);
+        loadingDialog.setContentView(R.layout.progress_bar);
+        loadingDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        loadingDialog.show();
+
+    }
+    public void stopLoadingBar(){
+        loadingDialog.dismiss();
+    }
+
+
+    private void synchronizedCount(){
+        if (!synchronizeBoolean){
+            synchronizeBoolean = true;
+        }
+        else {
+            stopLoadingBar();
+        }
+    }
+
 
 }

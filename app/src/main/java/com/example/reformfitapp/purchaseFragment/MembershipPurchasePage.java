@@ -432,7 +432,26 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
 
 
     public void showLoginDialog(String title) {
-        final Dialog dialog = new Dialog(MembershipPurchasePage.this);
+        final Dialog dialog = new Dialog(MembershipPurchasePage.this){
+            @Override
+            public boolean onTouchEvent(@NonNull MotionEvent event) {
+                if(event.getAction()==MotionEvent.ACTION_UP ){
+
+                    Rect r = new Rect(0,0,0,0);
+                    this.getWindow().getDecorView().getHitRect(r);
+                    boolean intersects = r.contains((int)event.getX(), (int)event.getY());
+                    if(!intersects) {
+                        this.dismiss();
+                        MembershipPurchasePage.this.finish();
+                        return true;
+                    }
+
+                }
+                return false;
+
+            }
+
+        };
         dialog.setContentView(R.layout.sign_in_dialog_new);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
@@ -484,6 +503,7 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+                MembershipPurchasePage.this.finish();
 
             }
         });
