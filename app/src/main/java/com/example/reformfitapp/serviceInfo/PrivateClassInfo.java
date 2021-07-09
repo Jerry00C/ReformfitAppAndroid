@@ -134,7 +134,7 @@ public class PrivateClassInfo extends AppCompatActivity {
 
 
 
-            scrollView = (ScrollView) findViewById(R.id.scrollview);
+        scrollView = (ScrollView) findViewById(R.id.scrollview);
         constraintLayout = findViewById(R.id.constraintLayout);
 
 

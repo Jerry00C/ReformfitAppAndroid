@@ -200,9 +200,9 @@ public class MainBottomNaviService extends AppCompatActivity implements BottomNa
         if (fragment.size() > 1){
             if (getSupportFragmentManager().getFragments().contains(mineInfo)){
 
-
-                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.sliding_down,R.anim.sliding_down).remove(mineInfo).commitNow();
                 bottomAppBar.performShow();
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.sliding_down,R.anim.sliding_down).remove(mineInfo).commitNow();
+
                 location_main.enableAllClickable();
 
                 textView.setAlpha((float) 1);
@@ -240,9 +240,10 @@ public class MainBottomNaviService extends AppCompatActivity implements BottomNa
            super.onResume();
            List<Fragment> fragments = getSupportFragmentManager().getFragments();
            Log.d("main", "fragment " + fragments.size());
-           getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, location_main).commitNow();
 
            bottomAppBar.performShow();
+           getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, location_main).commitNow();
+
            location_main.enableAllClickable();
 
            textView.setAlpha((float) 1);

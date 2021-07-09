@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.example.reformfitapp.MindbodyClassModel;
@@ -51,6 +52,11 @@ public class YongjiuReportEx extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
 
+
+                webView.setWebViewClient(new WebViewClient());
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.getSettings().setStandardFontFamily((String) "Time New Roman");
+                webView.loadUrl(response);
                 setContentView(view);
 
             }

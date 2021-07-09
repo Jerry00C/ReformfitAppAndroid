@@ -86,7 +86,7 @@ public class YongjiuReportDetail {
 
 
 
-    public void getReport2(String measurementIdEx, WebView webView){
+    public String getReport2(String measurementIdEx, WebView webView){
 
         long timestamp = System.currentTimeMillis() / 1000L;
         String userToken2 = "third." + measurementIdEx+ "." + app_id + "."+ timestamp + "."+ md5(app_id + app_secret + timestamp + measurementIdEx);
@@ -94,10 +94,7 @@ public class YongjiuReportDetail {
         String url =  "https://c.youjiuhealth.com/index.html#/pages/report/show/show?id=" + measurementIdEx + "&token=" + userToken2 + "&lang=en_CA";
 
 
-        webView.setWebViewClient(new WebViewClient());
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setStandardFontFamily((String) "Time New Roman");
-        webView.loadUrl(url);
+       return url;
 
     }
 
@@ -142,10 +139,10 @@ public class YongjiuReportDetail {
                 Log.d("response",response.toString());
 
 
-                getReport2(measurementId, webView);
+                String url = getReport2(measurementId, webView);
 
 
-                volleyResponseListener.onResponse("success");
+                volleyResponseListener.onResponse(url);
 
 
             }
