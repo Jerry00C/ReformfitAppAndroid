@@ -447,7 +447,26 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
 
 
     public void showLoginDialog(String title) {
-        final Dialog dialog = new Dialog(PassPurchasePage.this);
+        final Dialog dialog = new Dialog(PassPurchasePage.this){
+            @Override
+            public boolean onTouchEvent(@NonNull MotionEvent event) {
+                if(event.getAction()==MotionEvent.ACTION_UP ){
+
+                    Rect r = new Rect(0,0,0,0);
+                    this.getWindow().getDecorView().getHitRect(r);
+                    boolean intersects = r.contains((int)event.getX(), (int)event.getY());
+                    if(!intersects) {
+                        this.dismiss();
+                        PassPurchasePage.this.finish();
+                        return true;
+                    }
+
+                }
+                return false;
+
+            }
+
+        };
         dialog.setContentView(R.layout.sign_in_dialog_new);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
@@ -498,7 +517,9 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 dialog.dismiss();
+                PassPurchasePage.this.finish();
 
             }
         });

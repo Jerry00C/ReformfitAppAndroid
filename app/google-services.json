@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "407555923058",
-    "project_id": "iconic-rampart-317219",
-    "storage_bucket": "iconic-rampart-317219.appspot.com"
+    "project_number": "359890376547",
+    "project_id": "reformfitapp-830e1",
+    "storage_bucket": "reformfitapp-830e1.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:407555923058:android:366fc7eda22d699383f6eb",
+        "mobilesdk_app_id": "1:359890376547:android:3f4d302e6012914cf32556",
         "android_client_info": {
           "package_name": "com.example.reformfitapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "407555923058-rhrvtc9u5ctl9u63ofmkp3h4dlhmm9a2.apps.googleusercontent.com",
+          "client_id": "359890376547-1ulkm4onno695p3pj616brakmdmqo9rj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDYeOBIMmTpXmS1APxndLE81WP6fQXhNVc"
+          "current_key": "AIzaSyCAeSqGICPQncDIE1MjcW0Zv2GN3mVQxeY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "407555923058-rhrvtc9u5ctl9u63ofmkp3h4dlhmm9a2.apps.googleusercontent.com",
+              "client_id": "359890376547-1ulkm4onno695p3pj616brakmdmqo9rj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
