@@ -479,6 +479,7 @@ public class MineInfoPage3 extends Fragment {
             @Override
             public void onError(String message) {
                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayout.setRefreshing(false);
             }
 
@@ -488,6 +489,7 @@ public class MineInfoPage3 extends Fragment {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                         swipeRefreshLayout.setRefreshing(false);
                     }
 
@@ -503,6 +505,7 @@ public class MineInfoPage3 extends Fragment {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getActivity(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                                 swipeRefreshLayout.setRefreshing(false);
                             }
 
@@ -516,6 +519,7 @@ public class MineInfoPage3 extends Fragment {
                                     @Override
                                     public void onError(String message) {
                                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getActivity(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                                         swipeRefreshLayout.setRefreshing(false);
                                     }
 
@@ -530,6 +534,8 @@ public class MineInfoPage3 extends Fragment {
                                                 @Override
                                                 public void onError(String message) {
                                                     Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(getActivity(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                                                    swipeRefreshLayout.setRefreshing(false);
                                                 }
 
                                                 @Override
@@ -666,6 +672,7 @@ public class MineInfoPage3 extends Fragment {
             @Override
             public void onError(String message) {
                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayout.setRefreshing(false);
             }
 
@@ -675,6 +682,7 @@ public class MineInfoPage3 extends Fragment {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                         swipeRefreshLayout.setRefreshing(false);
                     }
 
@@ -687,6 +695,8 @@ public class MineInfoPage3 extends Fragment {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                                swipeRefreshLayout.setRefreshing(false);
                             }
 
                             @Override
@@ -813,6 +823,7 @@ public class MineInfoPage3 extends Fragment {
             @Override
             public void onError(String message) {
                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayout.setRefreshing(false);
             }
 
@@ -822,6 +833,7 @@ public class MineInfoPage3 extends Fragment {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                         swipeRefreshLayout.setRefreshing(false);
                     }
 
@@ -837,6 +849,7 @@ public class MineInfoPage3 extends Fragment {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                                 swipeRefreshLayout.setRefreshing(false);
                             }
 
@@ -850,6 +863,7 @@ public class MineInfoPage3 extends Fragment {
                                     @Override
                                     public void onError(String message) {
                                         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                                         swipeRefreshLayout.setRefreshing(false);
                                     }
 
@@ -864,6 +878,8 @@ public class MineInfoPage3 extends Fragment {
                                                 @Override
                                                 public void onError(String message) {
                                                     Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(getActivity(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                                                    swipeRefreshLayout.setRefreshing(false);
                                                 }
 
                                                 @Override
@@ -1008,6 +1024,7 @@ public class MineInfoPage3 extends Fragment {
             @Override
             public void onError(String message) {
                 Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                 swipeRefreshLayout.setRefreshing(false);
             }
 
@@ -1017,6 +1034,7 @@ public class MineInfoPage3 extends Fragment {
                     @Override
                     public void onError(String message) {
                         Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
                         swipeRefreshLayout.setRefreshing(false);
                     }
 
@@ -1029,6 +1047,8 @@ public class MineInfoPage3 extends Fragment {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+                                swipeRefreshLayout.setRefreshing(false);
                             }
 
                             @Override

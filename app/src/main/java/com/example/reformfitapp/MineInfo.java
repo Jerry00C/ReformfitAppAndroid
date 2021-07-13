@@ -42,6 +42,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -266,17 +267,21 @@ public class MineInfo extends Fragment {
 
             @Override
             protected void onCreate(Bundle savedInstanceState) {
-                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
                 super.onCreate(savedInstanceState);
+
+                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
             }
 
             @Override
             public void create() {
-                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
                 super.create();
+
+                getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
             }
         };
+
+
         dialog.setContentView(R.layout.sign_in_dialog_new);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
@@ -291,18 +296,6 @@ public class MineInfo extends Fragment {
         dialog.getWindow().setLayout((int) ((int)width*0.8), WindowManager.LayoutParams.WRAP_CONTENT);
 
 
-
-/*
-
-
-        Window window = dialog.getWindow();
-        WindowManager.LayoutParams wlp = window.getAttributes();
-
-        wlp.gravity = Gravity.BOTTOM;
-        wlp.flags &= ~WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.);
-        window.setAttributes(wlp);
-*/
 
 
 
@@ -374,6 +367,7 @@ public class MineInfo extends Fragment {
                                     Log.d("login", "success");
 
                                     dialog.setContentView(R.layout.progress_bar);
+                                    dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
                                     dialog.setCanceledOnTouchOutside(false);
 
                                     userID = firebaseAuth.getCurrentUser().getUid();
@@ -394,6 +388,16 @@ public class MineInfo extends Fragment {
                                                         @Override
                                                         public void onError(String message) {
                                                             Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                            dialog.setContentView(R.layout.sign_in_dialog_new);
+                                                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+
+
+                                                            dialog.setCancelable(true);
+                                                            dialog.dismiss();
+                                                            nonSwipeableViewPager.setCurrentItem(0);
                                                         }
 
                                                         @Override
@@ -402,6 +406,12 @@ public class MineInfo extends Fragment {
                                                                 @Override
                                                                 public void onError(String message) {
                                                                     Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                                    dialog.setCancelable(true);
+                                                                    dialog.dismiss();
+                                                                    nonSwipeableViewPager.setCurrentItem(0);
                                                                 }
 
                                                                 @Override
@@ -429,11 +439,25 @@ public class MineInfo extends Fragment {
 
                                                     Log.d("response", "DocumentSnapshot data: " + document.getData().get("ClientId"));
 
+
                                                 } else {
                                                     Log.d("response", "No such document");
+
+                                                    Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                    dialog.setCancelable(true);
+                                                    dialog.dismiss();
                                                 }
                                             } else {
                                                 Log.d("response", "get failed with ", task.getException());
+
+                                                Toast.makeText(getContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                dialog.setCancelable(true);
+                                                dialog.dismiss();
+                                                nonSwipeableViewPager.setCurrentItem(0);
                                             }
                                         }
                                     });
@@ -444,6 +468,8 @@ public class MineInfo extends Fragment {
                                     Log.d("login", task.getException().toString());
 
                                     Toast.makeText(getContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
+
+                                    nonSwipeableViewPager.setCurrentItem(0);
 
                                 }
                             }
@@ -609,8 +635,21 @@ public class MineInfo extends Fragment {
 
                                                 previousDialog.dismiss();
                                                 dialog.setContentView(R.layout.progress_bar);
+                                                dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
-                                                dialog.setCancelable(false);
+
+                                                dialog.setContentView(R.layout.signup_dialog_new);
+                                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+
+                                                DisplayMetrics displayMetrics = new DisplayMetrics();
+                                                ((Activity) getContext()).getWindowManager()
+                                                        .getDefaultDisplay()
+                                                        .getMetrics(displayMetrics);
+                                                int height2 = displayMetrics.heightPixels;
+                                                int width = displayMetrics.widthPixels;
+
+                                                dialog.getWindow().setLayout((int) ((int)width*0.92), WindowManager.LayoutParams.WRAP_CONTENT);
 
 
 
@@ -623,7 +662,24 @@ public class MineInfo extends Fragment {
                                                                                    @Override
                                                                                    public void onError(String message) {
                                                                                        Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-                                                                                   }
+                                                                                       Toast.makeText(getContext(), "something wrong, try again", Toast.LENGTH_LONG).show();
+
+                                                                                       FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                                                                       user.delete()
+                                                                                               .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                                                   @Override
+                                                                                                   public void onComplete(@NonNull Task<Void> task) {
+                                                                                                       if (task.isSuccessful()) {
+                                                                                                           Log.d("firebase", "User account deleted.");
+                                                                                                       }
+                                                                                                   }
+                                                                                               });
+
+                                                                                       dialog.setCancelable(true);
+                                                                                       dialog.dismiss();
+
+                                                                                    }
 
                                                                                    @Override
                                                                                    public void onResponse(String response) {
@@ -631,7 +687,23 @@ public class MineInfo extends Fragment {
                                                                                            @Override
                                                                                            public void onError(String message) {
                                                                                                Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
-                                                                                               Toast.makeText(getContext(), "something wrong", Toast.LENGTH_LONG).show();
+                                                                                               Toast.makeText(getContext(), "something wrong, try again", Toast.LENGTH_LONG).show();
+
+                                                                                               FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                                                                               user.delete()
+                                                                                                       .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                                                           @Override
+                                                                                                           public void onComplete(@NonNull Task<Void> task) {
+                                                                                                               if (task.isSuccessful()) {
+                                                                                                                   Log.d("firebase", "User account deleted.");
+                                                                                                               }
+                                                                                                           }
+                                                                                                       });
+
+
+                                                                                               dialog.setCancelable(true);
+                                                                                               dialog.dismiss();
                                                                                            }
 
                                                                                            @Override
@@ -678,6 +750,15 @@ public class MineInfo extends Fragment {
                                             }
                                             else{
                                                 Log.d("register", task.getException().toString());
+
+                                                if(task.getException().toString().equals("com.google.firebase.auth.FirebaseAuthInvalidCredentialsException: The email address is badly formatted.")){
+
+                                                    Toast.makeText(getContext(), "The email address is badly formatted", Toast.LENGTH_LONG).show();
+                                                }
+                                                else{
+                                                    Toast.makeText(getContext(), "Something wrong, try again", Toast.LENGTH_LONG).show();
+
+                                                }
                                             }
                                         }
                                     });

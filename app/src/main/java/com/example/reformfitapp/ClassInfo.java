@@ -48,6 +48,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -576,11 +577,26 @@ public class ClassInfo extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), registered.toString(), Toast.LENGTH_LONG).show();
 
                     if(registered){
+
+
+                        Dialog dialog = new Dialog(ClassInfo.this);
+                        dialog.setContentView(R.layout.progress_bar);
+                        dialog.show();
+
                         MindbodyAddClientToClass mindbodyAddClientToClass = new MindbodyAddClientToClass(getApplicationContext());
                         mindbodyAddClientToClass.addClientToClass(new MindbodyClass.VolleyResponseListener() {
                             @Override
                             public void onError(String message) {
                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+
+
+                                if(message.equals("{\"Error\":{\"Message\":\"Client is already booked at this time\",\"Code\":\"ClientIsAlreadyBooked\"}}")){
+                                    Toast.makeText(getApplicationContext(), "You have booked already", Toast.LENGTH_LONG).show();
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "Something wrong, please try again", Toast.LENGTH_LONG).show();
+                                }
+                                dialog.dismiss();
                             }
 
                             @Override
@@ -659,30 +675,6 @@ public class ClassInfo extends AppCompatActivity {
                                 calendarIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, location);
 
                                 startActivity(calendarIntent);
-
-                        /*      Calendar beginTime = Calendar.getInstance();
-                                beginTime.setTimeInMillis(classEx.getStartTimestamp());
-                                Log.d("beginTime", String.valueOf(beginTime.getTimeInMillis()));
-                                Log.d("begintime", String.valueOf(classEx.getStartTimestamp()));
-
-
-                                Intent calendarIntent = new Intent(Intent.ACTION_INSERT, CalendarContract.Events.CONTENT_URI);
-                                calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, classEx.getStartTimestamp());
-                                calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, classEx.getEndTImeStamp());
-                                calendarIntent.putExtra(CalendarContract.Events.TITLE, classEx.getClass());
-                                calendarIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, "ReformFIT");
-                                startActivity(calendarIntent);
-*/
-
-                                /*Log.d("calendar intent", calendarIntent.toString());
-                                String title = getResources().getString(R.string.chooser_title);
-                                // Create intent to show chooser
-                                Intent chooser = Intent.createChooser(calendarIntent, title);
-
-
-                                // Try to invoke the intent.
-                                if(chooser.resolveActivity(getPackageManager()) != null) startActivity(chooser);
-*/
                             }
                         }, classId, clientId);
 
@@ -808,6 +800,7 @@ public class ClassInfo extends AppCompatActivity {
                                     Log.d("login", "success");
 
                                     dialog.setContentView(R.layout.progress_bar);
+                                    dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
                                     dialog.setCanceledOnTouchOutside(false);
 
                                     userID = firebaseAuth.getCurrentUser().getUid();
@@ -828,6 +821,11 @@ public class ClassInfo extends AppCompatActivity {
                                                         @Override
                                                         public void onError(String message) {
                                                             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                            dialog.setCancelable(true);
+                                                            dialog.dismiss();
                                                         }
 
                                                         @Override
@@ -836,6 +834,11 @@ public class ClassInfo extends AppCompatActivity {
                                                                 @Override
                                                                 public void onError(String message) {
                                                                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                                    dialog.setCancelable(true);
+                                                                    dialog.dismiss();
                                                                 }
 
                                                                 @Override
@@ -858,31 +861,39 @@ public class ClassInfo extends AppCompatActivity {
                                                     });
 
                                                     Log.d("response", "DocumentSnapshot data: " + document.getData().get("ClientId"));
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                    dialog.setCancelable(true);
+                                                    dialog.dismiss();
+
 
                                                 } else {
                                                     Log.d("response", "No such document");
+
+
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                    dialog.setCancelable(true);
+                                                    dialog.dismiss();
                                                 }
                                             } else {
                                                 Log.d("response", "get failed with ", task.getException());
+
+                                                Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                dialog.setCancelable(true);
+                                                dialog.dismiss();
                                             }
                                         }
                                     });
-
-
-
-
-
-
-
-                                    /*
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    updateUI(user);*/
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.d("login", task.getException().toString());
 
                                     Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
 
+
+                                    dialog.getWindow().setLayout((int) ((int)width*0.8), WindowManager.LayoutParams.WRAP_CONTENT);
                                 }
                             }
                         });
@@ -1032,6 +1043,7 @@ public class ClassInfo extends AppCompatActivity {
 
                                                 previousDialog.dismiss();
                                                 dialog.setContentView(R.layout.progress_bar);
+                                                dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
                                                 dialog.setCancelable(false);
 
@@ -1046,6 +1058,25 @@ public class ClassInfo extends AppCompatActivity {
                                                     @Override
                                                     public void onError(String message) {
                                                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_SHORT).show();
+                                                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                                        user.delete()
+                                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                    @Override
+                                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                                        if (task.isSuccessful()) {
+                                                                            Log.d("firebase", "User account deleted.");
+                                                                        }
+                                                                    }
+                                                                });
+
+
+                                                        dialog.setCancelable(true);
+                                                        dialog.dismiss();
+
+
+
                                                     }
 
                                                     @Override
@@ -1054,6 +1085,22 @@ public class ClassInfo extends AppCompatActivity {
                                                             @Override
                                                             public void onError(String message) {
                                                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_SHORT).show();
+                                                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                                                user.delete()
+                                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                            @Override
+                                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                                if (task.isSuccessful()) {
+                                                                                    Log.d("firebase", "User account deleted.");
+                                                                                }
+                                                                            }
+                                                                        });
+
+                                                                dialog.setCancelable(true);
+                                                                dialog.dismiss();
+
                                                             }
 
                                                             @Override
@@ -1095,6 +1142,14 @@ public class ClassInfo extends AppCompatActivity {
                                             }
                                             else{
                                                 Log.d("register", task.getException().toString());
+                                                if(task.getException().toString().equals("com.google.firebase.auth.FirebaseAuthInvalidCredentialsException: The email address is badly formatted.")){
+
+                                                    Toast.makeText(getApplicationContext(), "The email address is badly formatted", Toast.LENGTH_LONG).show();
+                                                }
+                                                else{
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_LONG).show();
+
+                                                }
                                             }
                                         }
                                     });
