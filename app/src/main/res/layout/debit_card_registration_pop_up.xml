@@ -1,228 +1,330 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="300dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
-    app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="@color/white_background"
+    app:cardCornerRadius="10dp">
 
 
-    >
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.constraintlayout.widget.Guideline
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="20dp"
-            android:id="@+id/titleGuideline"/>
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
-
-
-
-        <TextView
-            android:id="@+id/popup_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:text="请输入Gift Card #:"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toTopOf="@+id/buttonHeight"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/titleGuideline"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <RadioGroup
-            app:layout_constraintTop_toBottomOf="@+id/popup_title"
-            app:layout_constraintBottom_toTopOf="@id/branch_number"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="40dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:orientation="horizontal"
-            android:id="@+id/buttons"
-            android:weightSum="1.5"
-            android:gravity="right">
-
-
-
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.75"
-                android:text="Checking"
-                android:textColor="@color/grey"
-                android:button="@drawable/checkbox_selector"
-                android:buttonTint="@color/grey"
-                style="@style/CustomCheckboxCircular"
-                android:gravity="center"
-                android:id="@+id/checking"
-                />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.75"
-                android:text="Saving"
-                android:textColor="@color/grey"
-                android:button="@drawable/checkbox_selector"
-                android:buttonTint="@color/grey"
-                style="@style/CustomCheckboxCircular"
-                android:gravity="center"
-                android:id="@+id/saving"
-                />
-
-        </RadioGroup>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/branch_number"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/transit_number"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:hint="Branch Number (5 digits)"
-            app:layout_constraintStart_toStartOf="parent"
-
-            app:layout_constraintTop_toBottomOf="@+id/buttons">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:paddingVertical="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/input_text_branch_number"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/transit_number"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/account_number"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:hint="Transit Number (3 digits)"
-            app:layout_constraintStart_toStartOf="parent"
-
-            app:layout_constraintTop_toBottomOf="@+id/branch_number">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:paddingVertical="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/input_text_transit_number"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/account_number"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-
-            android:layout_marginBottom="32dp"
-            app:layout_constraintBottom_toTopOf="@+id/name"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:hint="Account Number (7 digits)"
-            app:layout_constraintStart_toStartOf="parent"
-
-            app:layout_constraintTop_toBottomOf="@+id/transit_number">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:paddingVertical="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/input_text_account_number"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/name"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHeight"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:hint="账户持有者姓名"
-        app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toBottomOf="@+id/account_number">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:paddingVertical="5dp"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/input_text_name"
-            android:inputType="text"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <androidx.constraintlayout.widget.Guideline
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintGuide_percent="0.5"
-            android:orientation="vertical"
-            android:id="@+id/vertMidline"/>
+            android:orientation="vertical">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintGuide_end="50dp"
-            android:orientation="horizontal"
-            android:id="@+id/buttonHeight"/>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/vertMidline"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="@id/buttonHeight"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            app:cornerRadius="0dp"
-            android:backgroundTint="@color/grey"
-            android:textColor="@color/white"
-            android:text="取消"
-            android:id="@+id/cancel_button"/>
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/titleGuideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="20dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintStart_toStartOf="@id/vertMidline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="@id/buttonHeight"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            app:cornerRadius="0dp"
-            android:backgroundTint="@color/yellow"
-            android:textColor="@color/black"
-            android:text="确认"
-            android:id="@+id/confirm_button"
-            />
+                <RadioGroup
+                    app:layout_constraintTop_toBottomOf="@+id/popup_title"
+                    app:layout_constraintBottom_toTopOf="@id/input_text_branch_number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="40dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/buttons"
+                    android:weightSum="1.5"
+                    android:gravity="right">
 
 
 
 
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.75"
+                        android:text="Checking"
+                        android:textColor="@color/grey"
+                        android:button="@drawable/checkbox_selector"
+                        android:buttonTint="@color/grey"
+                        style="@style/CustomCheckboxCircular"
+                        android:gravity="center"
+                        android:id="@+id/checking"
+                        />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.75"
+                        android:text="Saving"
+                        android:textColor="@color/grey"
+                        android:button="@drawable/checkbox_selector"
+                        android:buttonTint="@color/grey"
+                        style="@style/CustomCheckboxCircular"
+                        android:gravity="center"
+                        android:id="@+id/saving"
+                        />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                </RadioGroup>
 
+                <TextView
+                    android:id="@+id/popup_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="70dp"
+                    android:text="(新用户注册)"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/titleGuideline"
+                    app:layout_constraintVertical_bias="0.014" />
+
+
+
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/vertMidline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/buttonHeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_end="50dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/cancel_button"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:backgroundTint="@color/grey"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="取消"
+                    android:textColor="@color/white"
+                    app:cornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/vertMidline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/buttonHeight" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/confirm_button"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:backgroundTint="@color/yellow"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:text="确认"
+                    android:textColor="@color/black"
+                    app:cornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/vertMidline"
+                    app:layout_constraintTop_toTopOf="@id/buttonHeight" />
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="Branching number:"
+                    android:paddingVertical="5dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/input_text_branch_number"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/input_text_branch_number" />
+
+                <EditText
+                    android:id="@+id/input_text_branch_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:hint="Enter you credit card"
+                    android:paddingVertical="5dp"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView46"
+                    app:layout_constraintTop_toBottomOf="@+id/buttons" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.04"/>
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline58"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.96"
+                    />
+
+
+
+                <EditText
+                    android:id="@+id/input_text_transit_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:paddingVertical="5dp"
+                    android:hint="请设置密码"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView47"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_branch_number"
+                    />
+
+                <EditText
+                    android:id="@+id/input_text_account_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:paddingVertical="5dp"
+                    android:hint="确认密码"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView48"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_transit_number"
+                    />
+
+
+
+
+
+
+
+                <EditText
+                    android:id="@+id/input_text_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/null_drawable"
+                    android:ems="10"
+                    android:gravity="right"
+                    android:hint="请输入姓"
+                    android:paddingVertical="5dp"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toEndOf="@+id/textView49"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_account_number"
+                    app:layout_constraintBottom_toTopOf="@id/buttonHeight"
+                    android:layout_marginBottom="16dp"/>
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="Transit Number: "
+                    android:paddingVertical="5dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/input_text_transit_number"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/input_text_transit_number" />
+
+                <TextView
+                    android:id="@+id/textView48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:text="Account Number: "
+                    android:paddingVertical="5dp"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/input_text_account_number"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/input_text_account_number" />
+
+                <TextView
+                    android:id="@+id/textView49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:textColor="@color/black"
+                    android:text="Name: "
+                    android:paddingVertical="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/input_text_name"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/input_text_name" />
+
+
+
+
+
+
+
+
+
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_branch_number" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_transit_number" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_account_number" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_name" />
+
+
+
+
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
 </com.google.android.material.card.MaterialCardView>

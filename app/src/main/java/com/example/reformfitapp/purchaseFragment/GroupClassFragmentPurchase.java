@@ -340,6 +340,7 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
         TextView description1_view = current_view.findViewById(purchase_info1);
         TextView description2_view = current_view.findViewById(purchase_info2);
 
+        //   TODO: official version must set the title passed-in as the displayed name, pass name from view must equal to the existing pass nam ein the system in order for it to work
         String pass_name = pass_name_view.getText().toString();
         String description1 = description1_view.getText().toString();
         String description2 = description2_view.getText().toString();
@@ -423,6 +424,8 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
             synchronizeBoolean = true;
         }
         else {
+            Log.d("contracts : ", name_contractId_pair.toString());
+            Log.d("services : ", name_serviceId_pair.toString());
             stopLoadingBar();
         }
     }

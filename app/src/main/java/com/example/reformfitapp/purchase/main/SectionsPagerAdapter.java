@@ -21,7 +21,7 @@ import com.example.reformfitapp.purchaseFragment.VirtualLessonFragmentPurchase;
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2,R.string.tab_text_3};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -37,8 +37,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return new GroupClassFragmentPurchase();
             case 1:
-                return new VirtualLessonFragmentPurchase() ;
-            case 2:
                 return new PrivateLessonFragmentPurchase();
             default:
                 return new PlaceholderFragment();
@@ -54,6 +52,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // Show 2 total pages.
-        return 3;
+        return 2;
     }
 }

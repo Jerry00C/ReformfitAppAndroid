@@ -131,13 +131,13 @@
                             android:id="@+id/info_first"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Premier BURN!"
+                            android:layout_marginTop="12dp"
+                            android:text="100-Session Pack"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/divider"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            android:layout_marginTop="12dp"/>
+                            app:layout_constraintTop_toBottomOf="@id/divider" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -217,13 +217,13 @@
                             android:id="@+id/one_on_one_option2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Premier BURN!"
+                            android:layout_marginTop="12dp"
+                            android:text="75-Session Pack"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_1_2"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            android:layout_marginTop="12dp"/>
+                            app:layout_constraintTop_toBottomOf="@id/info_icon_1_2" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -303,13 +303,13 @@
                             android:id="@+id/one_on_one_option3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Premier BURN!"
+                            android:layout_marginTop="12dp"
+                            android:text="50-Session Pack"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_2_2"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            android:layout_marginTop="12dp"/>
+                            app:layout_constraintTop_toBottomOf="@id/info_icon_2_2" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -389,13 +389,13 @@
                             android:id="@+id/one_on_one_option4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Premier BURN!"
+                            android:layout_marginTop="12dp"
+                            android:text="Single Session"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_3_2"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            android:layout_marginTop="12dp"/>
+                            app:layout_constraintTop_toBottomOf="@id/info_icon_3_2" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -549,8 +549,10 @@
                             android:layout_height="0dp"
                             app:layout_constraintBottom_toBottomOf="@id/info_icon_5_3"
                             app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/comp_prep_option1"/>
+                            app:layout_constraintTop_toTopOf="@id/comp_prep_option1"
+                            app:layout_constraintVertical_bias="0.0" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -589,13 +591,13 @@
                             android:id="@+id/comp_prep_option1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Premier BURN!"
+                            android:layout_marginTop="12dp"
+                            android:text="20-Week Prep"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/divide2"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="12dp"/>
+                            app:layout_constraintTop_toBottomOf="@id/divide2" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -614,7 +616,7 @@
                             app:layout_constraintBottom_toBottomOf="@id/info_icon_5_1"
                             app:layout_constraintStart_toEndOf="@id/info_icon_5_1"
                             app:layout_constraintTop_toTopOf="@+id/info_icon_5_1"
-                            android:id="@+id/virtual_10_info_1"/>
+                            android:id="@+id/purchase_info_5_1"/>
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -696,13 +698,13 @@
                             android:id="@+id/comp_prep_option2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Premier BURN!"
+                            android:layout_marginTop="12dp"
+                            android:text="16-Week Prep"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_5_3"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="12dp"/>
+                            app:layout_constraintTop_toBottomOf="@id/info_icon_5_3" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -806,13 +808,13 @@
                             android:id="@+id/comp_prep_option3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Premier BURN!"
+                            android:layout_marginTop="12dp"
+                            android:text="12-Week Prep"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_6_3"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="12dp"/>
+                            app:layout_constraintTop_toBottomOf="@id/info_icon_6_3" />
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -916,13 +918,13 @@
                             android:id="@+id/comp_prep_option4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Premier BURN!"
+                            android:layout_marginTop="12dp"
+                            android:text="4-Week Prep"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
                             android:textStyle="bold"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_7_3"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="12dp"/>
+                            app:layout_constraintTop_toBottomOf="@id/info_icon_7_3" />
 
                         <ImageView
                             android:layout_width="wrap_content"

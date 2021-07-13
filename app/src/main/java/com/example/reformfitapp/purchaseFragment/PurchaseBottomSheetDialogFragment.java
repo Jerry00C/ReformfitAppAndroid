@@ -336,7 +336,7 @@ public class PurchaseBottomSheetDialogFragment extends BottomSheetDialogFragment
         MaterialButton cancel = dialog.findViewById(R.id.cancel_button);
 
 
-        TextView popupTitle = dialog.findViewById(R.id.popup_title_real);
+        TextView popupTitle = dialog.findViewById(R.id.popup_title);
         TextInputEditText credit_card_number = dialog.findViewById(R.id.input_text_credit_card);
         TextInputEditText year = dialog.findViewById(R.id.input_text_date_valid);
         TextInputEditText month = dialog.findViewById(R.id.input_text_cvv);
