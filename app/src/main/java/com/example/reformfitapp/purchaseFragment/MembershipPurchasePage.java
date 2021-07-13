@@ -59,6 +59,7 @@ import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClic
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -532,6 +533,7 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                     Log.d("login", "success");
 
                                     dialog.setContentView(R.layout.progress_bar);
+                                    dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
                                     dialog.setCanceledOnTouchOutside(false);
 
                                     userID = firebaseAuth.getCurrentUser().getUid();
@@ -544,7 +546,7 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                                 DocumentSnapshot document = task.getResult();
                                                 if (document.exists()) {
 
-                                                    clientId = (String) document.getData().get("ClientId");
+                                                    String clientId = (String) document.getData().get("ClientId");
 
                                                     MindbodyClient mindbodyClient = new MindbodyClient(getApplicationContext());
 
@@ -552,6 +554,11 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                                         @Override
                                                         public void onError(String message) {
                                                             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                            dialog.setCancelable(true);
+                                                            dialog.dismiss();
                                                         }
 
                                                         @Override
@@ -560,6 +567,11 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                                                 @Override
                                                                 public void onError(String message) {
                                                                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                                    dialog.setCancelable(true);
+                                                                    dialog.dismiss();
                                                                 }
 
                                                                 @Override
@@ -582,31 +594,39 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                                     });
 
                                                     Log.d("response", "DocumentSnapshot data: " + document.getData().get("ClientId"));
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                    dialog.setCancelable(true);
+                                                    dialog.dismiss();
+
 
                                                 } else {
                                                     Log.d("response", "No such document");
+
+
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                    dialog.setCancelable(true);
+                                                    dialog.dismiss();
                                                 }
                                             } else {
                                                 Log.d("response", "get failed with ", task.getException());
+
+                                                Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                dialog.setCancelable(true);
+                                                dialog.dismiss();
                                             }
                                         }
                                     });
-
-
-
-
-
-
-
-                                    /*
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    updateUI(user);*/
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.d("login", task.getException().toString());
 
                                     Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
 
+
+                                    dialog.getWindow().setLayout((int) ((int)width*0.8), WindowManager.LayoutParams.WRAP_CONTENT);
                                 }
                             }
                         });
@@ -756,6 +776,7 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
 
                                                 previousDialog.dismiss();
                                                 dialog.setContentView(R.layout.progress_bar);
+                                                dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
                                                 dialog.setCancelable(false);
 
@@ -770,6 +791,25 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                                     @Override
                                                     public void onError(String message) {
                                                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_SHORT).show();
+                                                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                                        user.delete()
+                                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                    @Override
+                                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                                        if (task.isSuccessful()) {
+                                                                            Log.d("firebase", "User account deleted.");
+                                                                        }
+                                                                    }
+                                                                });
+
+
+                                                        dialog.setCancelable(true);
+                                                        dialog.dismiss();
+
+
+
                                                     }
 
                                                     @Override
@@ -778,6 +818,22 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                                             @Override
                                                             public void onError(String message) {
                                                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_SHORT).show();
+                                                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                                                user.delete()
+                                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                            @Override
+                                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                                if (task.isSuccessful()) {
+                                                                                    Log.d("firebase", "User account deleted.");
+                                                                                }
+                                                                            }
+                                                                        });
+
+                                                                dialog.setCancelable(true);
+                                                                dialog.dismiss();
+
                                                             }
 
                                                             @Override
@@ -785,7 +841,7 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                                                 Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
                                                                 Log.d("mindbody_response", response);
 
-                                                                clientId = mindbodyAddClient.getClientId();
+                                                                String clientId = mindbodyAddClient.getClientId();
                                                                 MindbodyClientResponseModel mindbodyClientResponseModel = mindbodyAddClient.getMindbodyClientResponseModel();
 
 
@@ -819,6 +875,14 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                             }
                                             else{
                                                 Log.d("register", task.getException().toString());
+                                                if(task.getException().toString().equals("com.google.firebase.auth.FirebaseAuthInvalidCredentialsException: The email address is badly formatted.")){
+
+                                                    Toast.makeText(getApplicationContext(), "The email address is badly formatted", Toast.LENGTH_LONG).show();
+                                                }
+                                                else{
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_LONG).show();
+
+                                                }
                                             }
                                         }
                                     });

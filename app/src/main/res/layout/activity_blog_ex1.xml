@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".expandedFunc.BlogEx1"
+    android:background="@color/black">
+
+
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingBottom="10dp">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline75"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.02" />
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline76"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.98" />
+
+
+                <ImageView
+                    android:id="@+id/imageView32"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher_round"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/thresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Muscle Hypertrophy vs Muscle Endurance"
+                    android:textColor="@color/yellow"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView32" />
+
+                <TextView
+                    android:id="@+id/textView122"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Posted on May 12, 2021 | "
+                    android:textColor="@color/grey"
+                    android:textSize="12dp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/thresh" />
+
+                <TextView
+                    android:id="@+id/textView124"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="In the fitness and weight-training world, people are often wondering how many reps of each exercise they should be doing or how heavy they should be lifting in order to achieve their goal. These goals often include muscle hypertrophy or muscle endurance. Understanding the difference between the two can help you decide which is right for you."
+                    android:textColor="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline76"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/textView122" />
+
+                <TextView
+                    android:id="@+id/textView123"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text=" In Exercises Tips"
+                    android:textColor="@color/yellow"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView122"
+                    app:layout_constraintTop_toTopOf="@+id/textView122" />
+
+                <TextView
+                    android:id="@+id/textView125"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Muscle Hypertrophy"
+                    android:textColor="@color/yellow"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/textView124" />
+
+                <TextView
+                    android:id="@+id/textView126"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="Muscle hypertrophy refers to an increase in your muscle mass overtime, in particular the physical size and strength of your muscles. For instance, measuring the circumference of your arms in week 1 of your training and seeing physical growth in measurement the following weeks is an indication of muscle hypertrophy. Exercises that help with muscle hypertrophy (growth) is by lifting heavier weights at least 2-3 days a week and alternating between upper-body and lower-body days. However, allowing your body recovery time in between is important because rest and recovery is essential for muscle growth. Lifting heavy weights consistently along with proper nutrition and lifestyle can help increase your overall physical body size."
+                    android:textColor="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline76"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/textView125" />
+
+                <ImageView
+                    android:id="@+id/imageView33"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/ic_launcher"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline76"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/textView126" />
+
+
+                <TextView
+                    android:id="@+id/textView127"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Muscle Endurance"
+                    android:textColor="@color/yellow"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView33" />
+
+                <TextView
+                    android:id="@+id/textView128"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:lineSpacingExtra="5dp"
+                    android:text="Muscle endurance is the ability of a muscle or group of muscles to perform a repeated activity for an extended period of time. Therefore, the higher your muscle endurance, the greater number of repetitions you could do in a particular exercise. For instance, on week 1 you were able to perform 15 push ups straight and on week 2 you can now complete 20 push ups straight. This is an indication of your muscle endurance improving. Lacking muscle endurance can be seen when your muscles tire out easily and a reduced amount of work those muscle groups can perform. Exercises that often involve muscle endurance include but not limited to: walking, cycling, resistance training, swimming, circuit training, holding a plank etc."
+                    android:textColor="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline76"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/textView127" />
+
+
+                <ImageView
+                    android:id="@+id/imageView34"
+                    android:layout_width="0dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="12dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline76"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/textView128"
+                    app:srcCompat="@mipmap/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/textView137"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/sheet_boarder_header"
+                    android:paddingHorizontal="10dp"
+                    android:text="Type of Training"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView140"
+                    app:layout_constraintEnd_toStartOf="@+id/textView140"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toTopOf="@+id/textView140" />
+
+                <TextView
+                    android:id="@+id/textView138"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sheet_border_content"
+                    android:text="Hypertrophy"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/textView137"
+                    app:layout_constraintEnd_toStartOf="@+id/textView143"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/textView137"
+                    app:layout_constraintTop_toBottomOf="@+id/textView137" />
+
+                <TextView
+                    android:id="@+id/textView139"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sheet_border_content"
+                    android:text="Endurance"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/textView138"
+                    app:layout_constraintStart_toStartOf="@+id/textView138"
+                    app:layout_constraintTop_toBottomOf="@+id/textView138" />
+
+                <TextView
+                    android:id="@+id/textView140"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:background="@drawable/sheet_boarder_header"
+                    android:text="% of 1 Rep-Max(RM)*"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toStartOf="@+id/textView141"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView137"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView34" />
+
+                <TextView
+                    android:id="@+id/textView141"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:background="@drawable/sheet_boarder_header"
+                    android:paddingHorizontal="8dp"
+                    android:text="Sets"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView140"
+                    app:layout_constraintEnd_toStartOf="@+id/textView142"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView140"
+                    app:layout_constraintTop_toTopOf="@+id/textView140" />
+
+                <TextView
+                    android:id="@+id/textView142"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:background="@drawable/sheet_boarder_header"
+                    android:paddingHorizontal="12dp"
+                    android:text="reps"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView141"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline76"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView141"
+                    app:layout_constraintTop_toTopOf="@+id/textView141" />
+
+                <TextView
+                    android:id="@+id/textView143"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sheet_border_content"
+                    android:text="60 – 75%"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/textView140"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/textView138"
+                    app:layout_constraintStart_toStartOf="@+id/textView140"
+                    app:layout_constraintTop_toBottomOf="@+id/textView140" />
+
+
+                <TextView
+                    android:id="@+id/textView145"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sheet_border_content"
+                    android:text="8-12"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/textView142"
+                    app:layout_constraintStart_toStartOf="@+id/textView142"
+                    app:layout_constraintTop_toBottomOf="@+id/textView142" />
+
+                <TextView
+                    android:id="@+id/textView146"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sheet_border_content"
+                    android:text="50 – 60%"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/textView143"
+                    app:layout_constraintStart_toStartOf="@+id/textView143"
+                    app:layout_constraintTop_toBottomOf="@+id/textView143" />
+
+                <TextView
+                    android:id="@+id/textView147"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sheet_border_content"
+                    android:text="3"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/textView149"
+                    app:layout_constraintStart_toStartOf="@+id/textView149"
+                    app:layout_constraintTop_toBottomOf="@+id/textView149" />
+
+                <TextView
+                    android:id="@+id/textView148"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sheet_border_content"
+                    android:text="15 - 20"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/textView145"
+                    app:layout_constraintStart_toStartOf="@+id/textView145"
+                    app:layout_constraintTop_toBottomOf="@+id/textView145" />
+
+                <TextView
+                    android:id="@+id/textView149"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/sheet_border_content"
+                    android:text="3 - 5"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/textView141"
+                    app:layout_constraintStart_toStartOf="@+id/textView141"
+                    app:layout_constraintTop_toBottomOf="@+id/textView141" />
+
+
+                <TextView
+                    android:id="@+id/component1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline76"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/textView139" />
+
+
+                <TextView
+                    android:id="@+id/component2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline76"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/component1" />
+
+
+                <TextView
+                    android:id="@+id/component3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="5dp"
+                    android:layout_marginTop="12dp"
+                    android:text="At ReformFIT, we offer a variety of classes with an extensive selection of fitness equipment and weights that can help you achieve your goals of muscle hypertrophy or muscle endurance! Our experienced instructors can help you figure out what exercise is best for your fitness goals."
+                    android:textColor="@color/grey"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline76"
+                    app:layout_constraintStart_toStartOf="@+id/guideline75"
+                    app:layout_constraintTop_toBottomOf="@+id/component2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </ScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingBottom="5dp">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <include
+            android:id="@+id/include3"
+            layout="@layout/top_navigation_button"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginVertical="5dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelin"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

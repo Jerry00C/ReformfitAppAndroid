@@ -70,6 +70,7 @@ public class MainBottomNaviService extends AppCompatActivity implements BottomNa
 
 
         fab = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+        Log.d("top2", String.valueOf(fab.getTop()));
 
         location_main = new LocationMain();
 
@@ -242,6 +243,7 @@ public class MainBottomNaviService extends AppCompatActivity implements BottomNa
            Log.d("main", "fragment " + fragments.size());
 
            bottomAppBar.performShow();
+           bottomNavigationView.setSelectedItemId(R.id.navigation_location);
            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, location_main).commitNow();
 
            location_main.enableAllClickable();

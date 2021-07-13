@@ -35,4 +35,13 @@
         <item>高强度，每周运动6-7次</item>
         <item>极强，无时无刻都在运动</item>
     </string-array>
+
+
+    <string name="blog_component1">
+ <![CDATA[<font color=#dedede>One Rep Max</font><font color=#848484> : The maximum amount of weight you can lift from one single repetition of a certain exercise</font>]]>
+  </string>
+    <string name="blog_component2">
+ <![CDATA[<font color=#dedede>Example:</font><font color=#848484> 50% of 1 RM = RM x 0.5 will give you the weight you should be lifting at to improve muscle endurance. Complete 3 sets of 15-20 reps at 50% of your 1 Rep Max. Circuit training and HIIT workouts at ReformFIT is a great way to improve your muscle endurance. </font>]]>
+  </string>
+
 </resources>

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -52,6 +53,14 @@ public class CitySelector extends Fragment {
 
     Button location_selected;
     Button city_selected;
+
+    TextView cityList;
+
+
+    public CitySelector(TextView cityList) {
+        // Required empty public constructor
+        this.cityList = cityList;
+    }
 
     public CitySelector() {
         // Required empty public constructor
@@ -105,7 +114,7 @@ public class CitySelector extends Fragment {
 
 
         city1.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
+            @SuppressLint({"SetTextI18n", "ResourceType"})
             @Override
             public void onClick(View v) {
 
@@ -131,8 +140,7 @@ public class CitySelector extends Fragment {
                 String [] location_list_text = location_list_All[pos];
                 Toast.makeText(getContext(), "loop start", Toast.LENGTH_SHORT).show();
 
-                for(int index = 0; index < location_list_text.length; index++){
-                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                             LinearLayout.LayoutParams.MATCH_PARENT,
                             LinearLayout.LayoutParams.WRAP_CONTENT);
                     params.setMargins(3, 10, 3, 10);
@@ -142,9 +150,9 @@ public class CitySelector extends Fragment {
 
                     //Button btn = new Button(getApplicationContext());
                     final Button btn = (Button) getLayoutInflater().inflate(R.layout.default_button, null);
-                    btn.setId(index);
+                    btn.setId(1);
                     final int id_ = btn.getId();
-                    btn.setText(location_list_text[index]);
+                    btn.setText("1");
                     btn.setBackgroundColor(getResources().getColor(R.color.black4));
 
                     location_list.addView(btn, params);
@@ -169,7 +177,7 @@ public class CitySelector extends Fragment {
                         }
                     });
                 }
-            }
+
         });
         return view;
     }

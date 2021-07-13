@@ -1,5 +1,10 @@
 package com.example.reformfitapp.expandedFunc;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class YongjiuReportModel{
 
     private String id;
@@ -8,6 +13,7 @@ public class YongjiuReportModel{
     private String muscleAmt;
     private String muscleIndex;
     private String reportTime;
+    private int gender;
 
 
     public YongjiuReportModel() {
@@ -58,19 +64,28 @@ public class YongjiuReportModel{
     }
 
     public void setReportTime(String reportTime) {
-        this.reportTime = reportTime;
+        Date localTime = null;
+
+        try {
+            localTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).parse(reportTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+
+        this.reportTime = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault()).format(localTime);
+
     }
 
 
-    @Override
-    public String toString() {
-        return "YongjiuReportModel{" +
-                "id='" + id + '\'' +
-                ", weight='" + weight + '\'' +
-                ", bodyFat='" + bodyFat + '\'' +
-                ", muscleAmt='" + muscleAmt + '\'' +
-                ", muscleIndex='" + muscleIndex + '\'' +
-                ", reportTime='" + reportTime + '\'' +
-                '}';
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+
+
+        this.gender = gender;
     }
 }

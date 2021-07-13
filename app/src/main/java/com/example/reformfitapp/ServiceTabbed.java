@@ -4,28 +4,23 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.reformfitapp.databinding.ActivityServiceTabbedBinding;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.reformfitapp.ui.main.SectionsPagerAdapter;
-import com.example.reformfitapp.databinding.ActivityServiceTabbedBinding;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -44,6 +39,8 @@ public class ServiceTabbed extends AppCompatActivity {
 
     ImageView initBack;
     ImageView initHome;
+
+    TextView initPurchase;
 
 
     @Override
@@ -90,6 +87,19 @@ public class ServiceTabbed extends AppCompatActivity {
 
         viewPager = view1.findViewById(R.id.view_pager);
         tabs = view1.findViewById(R.id.tabs);
+
+
+
+        initPurchase = view1.findViewById(R.id.init_purchase);
+        initPurchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivity = new Intent(getApplicationContext(), TabbedActivityPurchase.class);
+                switchActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(switchActivity);
+            }
+        });
 
         initialize();
 

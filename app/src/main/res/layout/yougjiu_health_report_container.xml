@@ -4,73 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp"
+    android:layout_weight="1"
+    android:background="@color/black4"
     app:cardCornerRadius="10dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black3"
-        android:id="@+id/constraintLayout">
+        android:paddingVertical="10dp">
 
 
         <ImageView
             android:id="@+id/imageView25"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/weight"
-            app:layout_constraintEnd_toStartOf="@+id/weight"
-            app:layout_constraintTop_toTopOf="@+id/weight"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageView29"
+            app:layout_constraintTop_toBottomOf="@+id/imageView29"
             app:srcCompat="@drawable/burn_group_service" />
 
         <ImageView
             android:id="@+id/imageView29"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/muscle_amt"
-            app:layout_constraintEnd_toStartOf="@+id/muscle_amt"
-            app:layout_constraintTop_toTopOf="@+id/muscle_amt"
+
+            app:layout_constraintBottom_toTopOf="@+id/imageView25"
+            app:layout_constraintStart_toStartOf="@+id/imageView30"
+            app:layout_constraintTop_toBottomOf="@+id/imageView30"
             app:srcCompat="@drawable/burn_group_service" />
 
         <ImageView
             android:id="@+id/imageView30"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/body_fat"
-            app:layout_constraintEnd_toStartOf="@+id/body_fat"
-            app:layout_constraintTop_toTopOf="@+id/body_fat"
+            android:layout_marginRight="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView29"
+            app:layout_constraintEnd_toStartOf="@+id/weight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@+id/star_list"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/burn_group_service" />
 
         <TextView
             android:id="@+id/weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:gravity="center"
             android:text="81.2kg"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/muscle_amt"
-            app:layout_constraintEnd_toStartOf="@+id/guideline68"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/imageView30"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView30"
+            app:layout_constraintTop_toTopOf="@+id/imageView30" />
 
         <TextView
             android:id="@+id/muscle_amt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
             android:text="35.9kg"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/body_fat"
-            app:layout_constraintEnd_toStartOf="@+id/guideline68"
-            app:layout_constraintTop_toBottomOf="@+id/weight" />
+            app:layout_constraintBottom_toBottomOf="@+id/imageView29"
+            app:layout_constraintStart_toEndOf="@+id/imageView29"
+            app:layout_constraintTop_toTopOf="@+id/imageView29" />
 
         <TextView
             android:id="@+id/body_fat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
             android:text="19.0%"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline68"
-            app:layout_constraintTop_toBottomOf="@+id/muscle_amt" />
+            app:layout_constraintBottom_toBottomOf="@+id/imageView25"
+            app:layout_constraintStart_toEndOf="@+id/imageView25"
+            app:layout_constraintTop_toTopOf="@+id/imageView25" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline67"
@@ -100,12 +113,14 @@
 
         <TextView
             android:id="@+id/muscle_index"
-            android:layout_width="170dp"
-            android:layout_height="81dp"
-            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:text="19.2"
-            android:textSize="50sp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/textView118"
             app:layout_constraintTop_toBottomOf="@+id/report_time" />
 
@@ -118,18 +133,27 @@
             app:layout_constraintEnd_toEndOf="@+id/muscle_index"
             app:layout_constraintStart_toEndOf="@+id/textView118"
             app:layout_constraintStart_toStartOf="@+id/textView118"
-            app:layout_constraintTop_toBottomOf="@+id/muscle_index" />
+            app:layout_constraintTop_toBottomOf="@+id/muscle_index">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_star_24"/>
+
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/textView118"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="37dp"
-            android:layout_marginBottom="25dp"
-            android:text="Strength Index"
+            android:text="Strength Index: "
             android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/muscle_index"
-            app:layout_constraintStart_toStartOf="@+id/guideline67"
+            app:layout_constraintStart_toStartOf="@+id/report_time"
             app:layout_constraintTop_toTopOf="@+id/muscle_index" />
 
 

@@ -22,6 +22,8 @@ import android.widget.Toast;
 
 import com.example.reformfitapp.expandedFunc.BMICalculator;
 import com.example.reformfitapp.expandedFunc.BMRCalculator;
+import com.example.reformfitapp.expandedFunc.BlogNews;
+import com.example.reformfitapp.expandedFunc.DietHealth;
 import com.example.reformfitapp.expandedFunc.TDEECalculator;
 import com.example.reformfitapp.expandedFunc.YongjiuHealth;
 import com.example.reformfitapp.expandedFunc.YongjiuReport;
@@ -77,6 +79,12 @@ public class MineInfoPage1 extends Fragment {
 
     ImageView healthImage;
     TextView healthText;
+
+    ImageView dietImage;
+    TextView dietText;
+
+    ImageView blogImage;
+    TextView blogText;
 
 
 
@@ -146,6 +154,12 @@ public class MineInfoPage1 extends Fragment {
 
         healthImage = view.findViewById(R.id.health_image);
         healthText = view.findViewById(R.id.health_text);
+
+        dietImage = view.findViewById(R.id.diet_image);
+        dietText = view.findViewById(R.id.diet_text);
+
+        blogImage = view.findViewById(R.id.blog_image);
+        blogText = view.findViewById(R.id.blog_text);
 
 
         BMIImage.setOnClickListener(new View.OnClickListener() {
@@ -244,6 +258,48 @@ public class MineInfoPage1 extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent switchActivityIntent = new Intent(getContext(), YongjiuHealth.class);
+
+                switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
+                startActivity(switchActivityIntent);
+            }
+        });
+
+
+
+        dietImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivityIntent = new Intent(getContext(), DietHealth.class);
+
+                switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
+                startActivity(switchActivityIntent);
+            }
+        });
+
+        dietText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivityIntent = new Intent(getContext(), DietHealth.class);
+
+                switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
+                startActivity(switchActivityIntent);
+            }
+        });
+
+        blogImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivityIntent = new Intent(getContext(), BlogNews.class);
+
+                switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
+                startActivity(switchActivityIntent);
+            }
+        });
+
+        blogText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivityIntent = new Intent(getContext(), BlogNews.class);
 
                 switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
                 startActivity(switchActivityIntent);

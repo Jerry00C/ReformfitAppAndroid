@@ -29,6 +29,8 @@ public class MindbodyClassModel implements Parcelable {
     private String endTime;   /* 2019-01-11T19:00:00",*/
     private String endTimeCut;
 
+    private boolean over;
+
     private String programName;
 
     private int maxCapacity;
@@ -59,6 +61,8 @@ public class MindbodyClassModel implements Parcelable {
     private String address;
     private String description;
 
+
+
     public MindbodyClassModel(){
 
     }
@@ -76,6 +80,7 @@ public class MindbodyClassModel implements Parcelable {
         endDateCut = in.readString();
         endTime = in.readString();
         endTimeCut = in.readString();
+        over = in.readByte() != 0;
         programName = in.readString();
         maxCapacity = in.readInt();
         totalBooked = in.readInt();
@@ -110,6 +115,7 @@ public class MindbodyClassModel implements Parcelable {
         dest.writeString(endDateCut);
         dest.writeString(endTime);
         dest.writeString(endTimeCut);
+        dest.writeByte((byte) (over ? 1 : 0));
         dest.writeString(programName);
         dest.writeInt(maxCapacity);
         dest.writeInt(totalBooked);
@@ -253,6 +259,12 @@ public class MindbodyClassModel implements Parcelable {
 
         endTImeStamp = localTime.getTime();
 
+
+        if(endTImeStamp < System.currentTimeMillis()){
+            over = true;
+        }
+
+
         endTimeCut = new SimpleDateFormat("HH:mmaa", Locale.getDefault()).format(localTime);
         endTimeCut = endTimeCut.replace("AM", "am").replace("PM","pm");
 
@@ -290,6 +302,13 @@ public class MindbodyClassModel implements Parcelable {
         return endTImeStamp;
     }
 
+    public boolean isOver() {
+        return over;
+    }
+
+    public void setOver(boolean over) {
+        this.over = over;
+    }
 
     public String getProgramName() {
         return programName;
@@ -352,7 +371,7 @@ public class MindbodyClassModel implements Parcelable {
     }
 
     public void setWailistOrder(int wailistOrder) {
-        this.wailistOrder = wailistOrder;
+        this.wailistOrder = wailistOrder + 1;
     }
 
     public int getCancelOffset() {
@@ -440,6 +459,8 @@ public class MindbodyClassModel implements Parcelable {
                 ", cancelOffset=" + cancelOffset +
                 '}';
     }
+
+
 
 
 

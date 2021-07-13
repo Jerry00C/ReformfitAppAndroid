@@ -8,16 +8,21 @@ import android.os.Bundle;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.MediaController;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import com.example.reformfitapp.serviceInfo.FatBurnInfo;
 import com.example.reformfitapp.serviceInfo.PrivateClassInfo;
 import com.example.reformfitapp.serviceInfo.ShapeClassInfo;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -35,9 +40,6 @@ public class LocationMain extends Fragment {
     CardView location_cardView;
 
 
-    final String city_list_sample[] = {"jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"};
-
-
 
     CitySelector citySelector;
 
@@ -47,6 +49,11 @@ public class LocationMain extends Fragment {
     RelativeLayout init_private_service;
 
     String fab = "";
+
+    TextView cityListText;
+
+    View view2;
+    FloatingActionButton floatingActionButton;
 
     public VideoView getSimpleVideoView() {
         return simpleVideoView;
@@ -178,23 +185,32 @@ public class LocationMain extends Fragment {
 
 
 
+        cityListText = view.findViewById(R.id.city_list_text);
 
-        citySelector = new CitySelector();
+
+        citySelector = new CitySelector(cityListText);
 
         dialogView = (View) view.findViewById(R.id.city_list);
         dialogView.setOnClickListener(new View.OnClickListener() {
 
+
             @Override
             public void onClick(View v) {
 
-                if (getActivity().getSupportFragmentManager().getFragments().contains(citySelector)) {
+                Toast.makeText(getContext(), "敬请期待", Toast.LENGTH_LONG).show();
+
+                /*if (getActivity().getSupportFragmentManager().getFragments().contains(citySelector)) {
+
+                   startVideo();
                     getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.sliding_down, R.anim.sliding_down).remove(citySelector).commitNow();
                 }
                 else {
+
+                    simpleVideoView.stopPlayback();
                     getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.sliding_up, R.anim.sliding_up).add(R.id.fragment_container, citySelector).commitNow();
 
                 }
-                /*openDialog();*/
+                *//*openDialog();*/
             }
         });
 
@@ -222,6 +238,21 @@ public class LocationMain extends Fragment {
             Log.d("fab", "setted");
             disableAllClickable();
         }*/
+
+
+        view2 = view.findViewById(R.id.view);
+
+        View view3 = inflater.inflate(R.layout.activity_main_bottom_navi_service, container, false);
+
+        floatingActionButton = view3.findViewById(R.id.floatingActionButton);
+        int top = floatingActionButton.getTop();
+
+        Log.d("top", String.valueOf(top));
+
+        view3.setLayoutParams(new ViewGroup.LayoutParams(WindowManager.LayoutParams.MATCH_PARENT, top));
+
+
+
         return view;
     }
 

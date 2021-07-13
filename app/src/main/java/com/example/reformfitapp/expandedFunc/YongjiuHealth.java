@@ -1,13 +1,8 @@
 package com.example.reformfitapp.expandedFunc;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,14 +11,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.reformfitapp.ClassInfo;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
+
 import com.example.reformfitapp.GlobalVariableApplication;
-import com.example.reformfitapp.LocationInfo;
 import com.example.reformfitapp.MainBottomNaviService;
-import com.example.reformfitapp.MindbodyClassModel;
 import com.example.reformfitapp.R;
 
-import java.sql.Array;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class YongjiuHealth extends AppCompatActivity {
@@ -139,30 +136,64 @@ public class YongjiuHealth extends AppCompatActivity {
                     bodyFat = cardView.findViewById(R.id.body_fat);
 
 
+                    double musInd = Double.parseDouble(yongjiuReportModelEx.getMuscleIndex());
+                    DecimalFormat format = new DecimalFormat("0.0#");
 
                     reportTime.setText(yongjiuReportModelEx.getReportTime());
-                    muscleIndex.setText(yongjiuReportModelEx.getMuscleIndex());
+                    muscleIndex.setText(format.format(musInd));
                     weight.setText(yongjiuReportModelEx.getWeight());
                     muscleAmt.setText(yongjiuReportModelEx.getMuscleAmt());
-                    bodyFat.setText(yongjiuReportModelEx.getBodyFat());
+                    bodyFat.setText(yongjiuReportModelEx.getBodyFat() + "%");
 
 
                     if(starList.getChildCount() > 0)
                         starList.removeAllViews();
 
 
+
+                    double musIndConvert = 0;
+                    int gender = yongjiuReportModelEx.getGender();
+                    if(gender == 1){
+
+                        musIndConvert = Math.floor((musInd - 16.6)*4.0)/4.0;
+                    }
+                    else{
+                        musIndConvert =  Math.floor((musInd - 12.6)*4.0)/4.0;
+                    }
+
+
                     for(int index = 0; index < 5; index++){
 
                         ImageView imageView = new ImageView(getApplicationContext());
 
+                        if(musIndConvert < 1 && musIndConvert > 0){
 
-                        imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_baseline_star_24));
+                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_baseline_star_half_24));
+                            musIndConvert = 0;
+
+                        }
+                        else if(musIndConvert == 0.0){
+
+
+                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_baseline_star_empty_24));
+                        }
+                        else{
+
+
+                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_baseline_star_24));
+
+                            musIndConvert -= 1;
+                        }
 
                         LinearLayout.LayoutParams params2 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
-                        params.setMargins(8, 0, 8, 0);
+                        params2.setMargins(10, 0, 10, 0);
+
 
                         starList.addView(imageView, params2);
+
+
+
 
                     }
 
@@ -183,7 +214,7 @@ public class YongjiuHealth extends AppCompatActivity {
                     });
 
 
-                    reportList.addView(cardView);
+                    reportList.addView(cardView, params);
 
 
                 }

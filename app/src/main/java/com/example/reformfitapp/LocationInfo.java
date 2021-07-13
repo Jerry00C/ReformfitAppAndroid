@@ -5,17 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.Activity;
-import android.app.ActivityManager;
+
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import android.content.Context;
 import android.content.Intent;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -76,6 +73,8 @@ public class LocationInfo extends AppCompatActivity {
 
     ImageView initHome;
     ImageView initBack;
+
+    TextView initPurchase;
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -186,6 +185,9 @@ public class LocationInfo extends AppCompatActivity {
         private_service = view.findViewById(R.id.private_service);
 
         online_training = view.findViewById(R.id.online_servie);
+
+
+        initPurchase = view.findViewById(R.id.init_purchase);
 
 
         fetchInfo();
@@ -492,8 +494,24 @@ public class LocationInfo extends AppCompatActivity {
 
         address.setText(mindbodyLocationModel.getAddress());
 
+
+
+        initPurchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivity = new Intent(getApplicationContext(), TabbedActivityPurchase.class);
+                switchActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(switchActivity);
+            }
+        });
+
+
         frameLayout.removeAllViews();
         frameLayout.addView(view);
+
+
+
 
 
     }

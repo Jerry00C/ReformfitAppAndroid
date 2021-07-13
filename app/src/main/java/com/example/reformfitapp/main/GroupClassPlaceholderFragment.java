@@ -30,6 +30,8 @@ import com.example.reformfitapp.R;
 import com.example.reformfitapp.ServiceTabbed;
 import com.example.reformfitapp.databinding.GroupClassViewpageContainerBinding;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -134,6 +136,27 @@ public class GroupClassPlaceholderFragment extends Fragment {
             }
 
 
+            ConstraintLayout waitlistCondContainer = cardView.findViewById(R.id.waitlist_cond_container);
+            TextView waitlistCond = cardView.findViewById(R.id.waitlist_cond);
+            TextView waitlistCond2 = cardView.findViewById(R.id.waitlist_cond2);
+
+            int waitListNum = mindbodyClassModelEx.getTotalBookedWaitlist();
+            if(waitListNum == 4){
+
+                waitlistCond2.setVisibility(View.GONE);
+                waitlistCond.setVisibility(View.VISIBLE);
+            }
+            else if(waitListNum >= 2){
+                waitlistCond2.setVisibility(View.VISIBLE);
+                waitlistCond.setVisibility(View.GONE);
+
+            }
+            else{
+                waitlistCondContainer.setVisibility(View.GONE);
+
+            }
+
+
 
             ConstraintLayout constraintLayout = cardView.findViewById(R.id.init_detail_info);
 
@@ -170,43 +193,6 @@ public class GroupClassPlaceholderFragment extends Fragment {
         binding = null;
     }
 
-   /* private void refreshPage(){
-
-        getUserToken(new MindbodyClass.VolleyResponseListener() {
-            @Override
-            public void onError(String message) {
-                Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onResponse(String response) {
-                getClassInfo(new MindbodyClass.VolleyResponseListener() {
-                    @Override
-                    public void onError(String message) {
-                        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
-                        Log.d("mindbody_response", response);
-
-
-
-
-                        Intent switchActivityIntent = new Intent(context, ServiceTabbed.class);
-
-                        switchActivityIntent.putExtra("MindbodyCLassModelArray", mindbodyClassModelArray);
-                        switchActivityIntent.putExtra("startPagePos", start_page_pos);
-
-                        switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        context.startActivity(switchActivityIntent);
-
-                    }
-                }, start_date, end_date, -1);
-            }
-        });
-    }*/
 
 
 

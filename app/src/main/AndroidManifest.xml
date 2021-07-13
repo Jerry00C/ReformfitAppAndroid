@@ -4,6 +4,7 @@
     package="com.example.reformfitapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".GlobalVariableApplication"
@@ -13,9 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReformfitApp.NoActionBar">
-        <activity android:name=".PrivateTrainingInfo"></activity>
+        <activity android:name=".LiveChat"></activity>
+        <activity android:name=".expandedFunc.BlogEx1" />
+        <activity android:name=".expandedFunc.BlogNews" />
+        <activity android:name=".expandedFunc.DietHealth" />
+        <activity android:name=".PrivateTrainingInfo" />
         <activity android:name=".expandedFunc.YongjiuReportEx" />
-        <activity android:name=".expandedFunc.YongjiuHealth"></activity>
+        <activity android:name=".expandedFunc.YongjiuHealth" />
         <activity
             android:name=".expandedFunc.BMRCalculator"
             android:windowSoftInputMode="adjustPan" />
@@ -51,7 +56,7 @@
         <activity
             android:name=".TabbedActivityPurchase"
             android:label="@string/title_activity_service_tabbed"
-            android:theme="@style/Theme.ReformfitApp.NoActionBar"></activity>
+            android:theme="@style/Theme.ReformfitApp.NoActionBar" />
         <activity
             android:name=".purchaseFragment.PassPurchasePage"
             android:windowSoftInputMode="adjustPan" />
