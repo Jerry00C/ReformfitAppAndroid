@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -168,16 +169,16 @@ public class PaymentMethodBottomSheetDialogFragment extends BottomSheetDialogFra
         MaterialButton cancel = dialog.findViewById(R.id.cancel_button);
 
 
-        TextView popupTitle = dialog.findViewById(R.id.popup_title_real);
-        TextInputEditText credit_card_number = dialog.findViewById(R.id.input_text_credit_card);
-        TextInputEditText year = dialog.findViewById(R.id.input_text_date_valid);
-        TextInputEditText month = dialog.findViewById(R.id.input_text_cvv);
-        TextInputEditText client_name = dialog.findViewById(R.id.input_text_name);
-        TextInputEditText address = dialog.findViewById(R.id.input_text_address);
-        TextInputEditText type = dialog.findViewById(R.id.input_text_line_2);
-        TextInputEditText city = dialog.findViewById(R.id.input_text_city);
-        TextInputEditText state = dialog.findViewById(R.id.input_text_province);
-        TextInputEditText postal_code = dialog.findViewById(R.id.input_text_postal_code);
+        TextView popupTitle = dialog.findViewById(R.id.popup_title);
+        EditText credit_card_number = dialog.findViewById(R.id.input_text_credit_card);
+        EditText year = dialog.findViewById(R.id.input_text_date_valid);
+        EditText month = dialog.findViewById(R.id.input_text_cvv);
+        EditText client_name = dialog.findViewById(R.id.input_text_name);
+        EditText address = dialog.findViewById(R.id.input_text_address);
+        EditText type = dialog.findViewById(R.id.input_text_line_2);
+        EditText city = dialog.findViewById(R.id.input_text_city);
+        EditText state = dialog.findViewById(R.id.input_text_province);
+        EditText postal_code = dialog.findViewById(R.id.input_text_postal_code);
 
 
 

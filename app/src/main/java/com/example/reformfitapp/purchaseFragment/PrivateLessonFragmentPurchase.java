@@ -1,5 +1,7 @@
 package com.example.reformfitapp.purchaseFragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,15 +9,18 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.reformfitapp.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link PrivateLessonFragmentPurchase#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class PrivateLessonFragmentPurchase extends Fragment {
+public class PrivateLessonFragmentPurchase extends Fragment implements View.OnClickListener{
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +30,21 @@ public class PrivateLessonFragmentPurchase extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private View pack_100_session;
+    private View pack_75_session;
+    private View pack_50_session;
+    private View pack_1_session;
+
+    private View pack_20_week;
+    private View pack_16_week;
+    private View pack_12_week;
+    private View pack_4_week;
+    private Context context;
+    private View current_view;
+
+
+
 
     public PrivateLessonFragmentPurchase() {
         // Required empty public constructor
@@ -62,8 +82,133 @@ public class PrivateLessonFragmentPurchase extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View current_view = inflater.inflate(R.layout.fragment_private_lesson_purchase, container, false);
+        current_view = inflater.inflate(R.layout.fragment_private_lesson_purchase, container, false);
+        context = getActivity();
+
+        pack_100_session = current_view.findViewById(R.id.one_on_one_option1_clickable);
+        pack_75_session = current_view.findViewById(R.id.one_on_one_option2_clickable);
+        pack_50_session = current_view.findViewById(R.id.one_on_one_option3_clickable);
+        pack_1_session = current_view.findViewById(R.id.one_on_one_option4_clickable);
+
+        pack_20_week = current_view.findViewById(R.id.comp_prep_clickable);
+        pack_16_week = current_view.findViewById(R.id.comp_prep_option2_clickable);
+        pack_12_week = current_view.findViewById(R.id.comp_prep_option3_clickable);
+        pack_4_week = current_view.findViewById(R.id.one_on_one_option4_clickable);
+
+        pack_100_session.setOnClickListener(this);
+        pack_75_session.setOnClickListener(this);
+        pack_50_session.setOnClickListener(this);
+        pack_1_session.setOnClickListener(this);
+
+        pack_20_week.setOnClickListener(this);
+        pack_16_week.setOnClickListener(this);
+        pack_12_week.setOnClickListener(this);
+        pack_4_week.setOnClickListener(this);
         return current_view;
     }
 
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
+            case R.id.one_on_one_option1_clickable:
+                initializeChosenOptionMembership(R.id.info_first,R.id.purchase_info_1,R.id.purchase_info_2,R.id.info_first_display);
+                break;
+            case  R.id.one_on_one_option2_clickable:
+                initializeChosenOptionMembership(R.id.one_on_one_option2, R.id.purchase_info_2_1,R.id.purchase_info_2_2,R.id.one_on_one_option2_price);
+                break;
+            case  R.id.one_on_one_option3_clickable:
+                initializeChosenOptionMembership(R.id.one_on_one_option3, R.id.purchase_info_3_1,R.id.purchase_info_3_2,R.id.one_on_one_option3_price);
+                break;
+            case  R.id.one_on_one_option4_clickable:
+                initializeChosenOptionMembership(R.id.one_on_one_option4, R.id.purchase_info_4_1,R.id.purchase_info_4_2,R.id.one_on_one_option4_price);
+                break;
+            case R.id.comp_prep_clickable:
+                initializeChosenOptionPass(R.id.comp_prep_option1,R.id.purchase_info_5_1,R.id.purchase_info_5_2,R.id.purchase_info_5_3,R.id.comp_prep_option1_price);
+                break;
+            case  R.id.comp_prep_option2_clickable:
+                initializeChosenOptionPass(R.id.comp_prep_option2, R.id.purchase_info_6_1,R.id.purchase_info_6_2, R.id.purchase_info_6_3,R.id.comp_prep_option2_price);
+                break;
+            case  R.id.comp_prep_option3_clickable:
+                initializeChosenOptionPass(R.id.comp_prep_option3, R.id.purchase_info_7_1,R.id.purchase_info_7_2,R.id.purchase_info_7_3,R.id.comp_prep_option3_price);
+                break;
+            case  R.id.comp_prep_option4_clickable:
+                initializeChosenOptionPass(R.id.comp_prep_option4, R.id.purchase_info_8_1,R.id.purchase_info_8_2,R.id.purchase_info_8_3,R.id.comp_prep_option4_price);
+                break;
+        }
+
+    }
+
+    ////////////////////////////// switch to pass purchasing page
+    private void switchToPassPurchasePage(String title, ArrayList<String> infos,String price) {
+
+        Intent switchActivityIntent = new Intent(getActivity(), PrivateLessonMemberPurchasePage.class);
+
+
+        switchActivityIntent.putExtra("name",title);
+        for(int it=0; it<infos.size(); it++){
+            switchActivityIntent.putExtra("description"+ (it + 1), infos.get(it));
+        }
+        switchActivityIntent.putExtra("price",price);
+        startActivity(switchActivityIntent);
+    }
+
+    private void initializeChosenOptionPass(int purchase_title, int purchase_info1, int purchase_info2, int purchase_info3, int price){
+        TextView pass_name_view = current_view.findViewById(purchase_title);
+        TextView description1_view = current_view.findViewById(purchase_info1);
+        TextView description2_view = current_view.findViewById(purchase_info2);
+        TextView description3_view = current_view.findViewById(purchase_info3);
+        TextView price_view = current_view.findViewById(price);
+
+
+        String pass_name = pass_name_view.getText().toString();
+        String description1 = description1_view.getText().toString();
+        String description2 = description2_view.getText().toString();
+        String description3 = description3_view.getText().toString();
+        String priceText = price_view.getText().toString();
+        ArrayList<String> descriptions = new ArrayList<>();
+        descriptions.add(description1);
+        descriptions.add(description2);
+        descriptions.add(description3);
+        switchToPassPurchasePage(pass_name,descriptions,priceText);
+    }
+
+    //////////////////////////// switch to membership purchasing page
+
+    private void switchToMembershipPurchasePage(String title, ArrayList<String> infos, String price) {
+
+        Intent switchActivityIntent = new Intent(getActivity(), PrivateLessonMemberPurchasePage.class);
+
+
+        switchActivityIntent.putExtra("name",title);
+        for(int it=0; it<infos.size(); it++){
+            switchActivityIntent.putExtra("description"+ (it + 1), infos.get(it));
+        }
+        switchActivityIntent.putExtra("price",price);
+        startActivity(switchActivityIntent);
+    }
+
+    private void initializeChosenOptionMembership(int purchase_title, int info1, int info2,int price){
+        TextView pass_name_view = current_view.findViewById(purchase_title);
+        TextView description1_view = current_view.findViewById(info1);
+        TextView description2_view = current_view.findViewById(info2);
+        TextView price_view = current_view.findViewById(price);
+
+
+
+        String pass_name = pass_name_view.getText().toString();
+
+
+        String description1 = description1_view.getText().toString();
+        String description2 = description2_view.getText().toString();
+        String description3 = "";
+        String priceText = price_view.getText().toString();
+
+        ArrayList<String> descriptions = new ArrayList<>();
+        descriptions.add(description1);
+        descriptions.add(description2);
+        descriptions.add(description3);
+
+        switchToMembershipPurchasePage(pass_name, descriptions,priceText);
+
+    }
 }

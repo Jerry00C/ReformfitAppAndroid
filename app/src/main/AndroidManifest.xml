@@ -13,9 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReformfitApp.NoActionBar">
-        <activity android:name=".PrivateTrainingInfo"></activity>
+        <activity android:name=".purchaseFragment.PrivateLessonPurchaseWebview"></activity>
+        <activity android:name=".PrivateTrainingInfo" />
         <activity android:name=".expandedFunc.YongjiuReportEx" />
-        <activity android:name=".expandedFunc.YongjiuHealth"></activity>
+        <activity android:name=".expandedFunc.YongjiuHealth" />
         <activity
             android:name=".expandedFunc.BMRCalculator"
             android:windowSoftInputMode="adjustPan" />
@@ -51,13 +52,17 @@
         <activity
             android:name=".TabbedActivityPurchase"
             android:label="@string/title_activity_service_tabbed"
-            android:theme="@style/Theme.ReformfitApp.NoActionBar"></activity>
+            android:theme="@style/Theme.ReformfitApp.NoActionBar" />
         <activity
             android:name=".purchaseFragment.PassPurchasePage"
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".purchaseFragment.MembershipPurchasePage"
             android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".purchaseFragment.PrivateLessonMemberPurchasePage"
+            android:windowSoftInputMode="adjustPan" />
+
     </application>
 
 </manifest>
