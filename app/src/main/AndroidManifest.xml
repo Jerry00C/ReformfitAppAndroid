@@ -13,8 +13,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReformfitApp.NoActionBar">
-        <activity android:name=".purchaseFragment.PrivateLessonPurchaseWebview"></activity>
+        <activity android:name=".expandedFunc.blogNews.BlogEx7"></activity>
+        <activity android:name=".expandedFunc.blogNews.BlogEx6" />
+        <activity android:name=".expandedFunc.blogNews.BlogEx5" />
+        <activity android:name=".expandedFunc.blogNews.BlogEx4" />
+        <activity android:name=".expandedFunc.blogNews.BlogEx3" />
+        <activity android:name=".serviceInfo.LinkWebview" />
+        <activity android:name=".expandedFunc.blogNews.BlogEx2" />
+        <activity android:name=".LiveChat" />
+        <activity android:name=".expandedFunc.blogNews.BlogEx1" />
+        <activity android:name=".expandedFunc.blogNews.BlogNews" />
+        <activity android:name=".expandedFunc.DietHealth" />
         <activity android:name=".PrivateTrainingInfo" />
+        <activity android:name=".purchaseFragment.PrivateLessonPurchaseWebview" />
         <activity android:name=".expandedFunc.YongjiuReportEx" />
         <activity android:name=".expandedFunc.YongjiuHealth" />
         <activity
@@ -62,7 +73,6 @@
         <activity
             android:name=".purchaseFragment.PrivateLessonMemberPurchasePage"
             android:windowSoftInputMode="adjustPan" />
-
     </application>
 
 </manifest>

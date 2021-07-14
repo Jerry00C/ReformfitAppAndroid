@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:clickable="true"
-                android:text="课程信息"
+                android:text="@string/fs_tab1"
                 android:textColor="@color/grey"
                 app:layout_constraintStart_toStartOf="@+id/guideline3"
                 app:layout_constraintTop_toBottomOf="@+id/SliderDots"
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:clickable="true"
-                android:text="注意事项"
+                android:text="@string/fs_tab2"
                 android:textColor="@color/grey"
                 app:layout_constraintBaseline_toBaselineOf="@+id/info_tab"
                 app:layout_constraintLeft_toRightOf="@id/info_tab" />
@@ -138,11 +138,11 @@
                             app:layout_constraintGuide_percent="0.96" />
 
                         <TextView
-                            android:id="@+id/textView33"
+                            android:id="@+id/title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="2dp"
-                            android:text="FAT Shredder 极速燃脂"
+                            android:text="@string/fs_title"
                             android:textColor="@color/yellow"
                             app:layout_constraintBottom_toBottomOf="@+id/imageView22"
                             app:layout_constraintStart_toEndOf="@+id/imageView22"
@@ -197,7 +197,7 @@
                             android:id="@+id/location_intro"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="课程介绍"
+                            android:text="@string/fs_class_intro_title"
                             android:textColor="@color/yellow"
                             app:layout_constraintBottom_toBottomOf="@+id/imageView3"
                             app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -209,8 +209,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
                             android:clickable="true"
+                            android:lineSpacingExtra="5dp"
                             android:maxLines="3"
-                            android:text="@string/luanma"
+                            android:text="@string/fs_class_intro"
                             android:textColor="@color/grey"
                             app:layout_constraintEnd_toStartOf="@+id/guideline10"
                             app:layout_constraintHorizontal_bias="0.0"
@@ -275,7 +276,7 @@
                             android:id="@+id/warning_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="课程效果"
+                            android:text="@string/fs_class_benefit_title"
                             android:textColor="@color/yellow"
                             app:layout_constraintBottom_toBottomOf="@+id/imageView6"
                             app:layout_constraintStart_toEndOf="@+id/imageView6"
@@ -289,7 +290,8 @@
                             android:layout_marginTop="16dp"
                             android:clickable="true"
                             android:maxLines="3"
-                            android:text="@string/luanma"
+                            android:lineSpacingExtra="5dp"
+                            android:text="@string/fs_class_benefit"
                             android:textColor="@color/grey"
                             app:layout_constraintEnd_toStartOf="@+id/guideline16"
                             app:layout_constraintHorizontal_bias="0.0"
@@ -453,7 +455,7 @@
                             android:id="@+id/textView37"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="心率检测"
+                            android:text="@string/fs_heart_rate_title"
                             android:textColor="@color/yellow"
                             app:layout_constraintBottom_toBottomOf="@+id/imageView12"
                             app:layout_constraintStart_toEndOf="@+id/imageView12"
@@ -464,9 +466,11 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:maxLines="3"
-                            android:text="@string/luanma"
+                            android:text="@string/fs_heart_rate"
                             android:textColor="@color/grey"
+                            android:lineSpacingExtra="5dp"
                             app:layout_constraintEnd_toStartOf="@+id/guideline29"
+                            app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="@+id/guideline28"
                             app:layout_constraintTop_toBottomOf="@+id/textView37" />
 
@@ -920,8 +924,9 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:paddingVertical="10dp">
+
 
 
                         <TextView
@@ -929,7 +934,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:text="FAQ"
+                            android:text="@string/fs_class_faq_title"
                             android:textColor="@color/yellow"
                             app:layout_constraintBottom_toBottomOf="@+id/imageView21"
                             app:layout_constraintStart_toEndOf="@+id/imageView21"
@@ -964,12 +969,15 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:clickable="true"
-                            android:maxLines="3"
-                            android:text="@string/luanma"
-                            android:textColor="@color/grey"
+                            android:lineSpacingExtra="5dp"
+                            android:text="@string/fs_class_faq"
+                            android:textColor="@color/white"
+                            android:maxLines="4"
                             app:layout_constraintEnd_toStartOf="@+id/guideline41"
                             app:layout_constraintStart_toStartOf="@+id/guideline40"
                             app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+
 
                         <ImageView
                             android:id="@+id/faq_des_image"
@@ -981,6 +989,7 @@
                             app:layout_constraintStart_toStartOf="@+id/faq_des"
                             app:layout_constraintTop_toBottomOf="@+id/faq_des"
                             app:srcCompat="@drawable/down_arrow" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -996,7 +1005,7 @@
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:paddingVertical="10dp">
 
 
@@ -1027,11 +1036,30 @@
                             android:id="@+id/textView36"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="注意事项"
+                            android:text="@string/fs_class_warning_title"
                             android:textColor="@color/yellow"
                             app:layout_constraintBottom_toBottomOf="@+id/imageView23"
                             app:layout_constraintStart_toEndOf="@+id/imageView23"
                             app:layout_constraintTop_toTopOf="@+id/imageView23" />
+
+
+
+                        <TextView
+                            android:id="@+id/warn_des"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:clickable="true"
+                            android:maxLines="3"
+                            android:lineSpacingExtra="5dp"
+                            android:text="@string/fs_class_warning"
+                            android:textColor="@color/grey"
+                            app:layout_constraintEnd_toStartOf="@+id/guideline44"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/guideline43"
+                            app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
+
 
                         <ImageView
                             android:id="@+id/warn_des_image"
@@ -1043,19 +1071,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/warn_des"
                             app:srcCompat="@drawable/down_arrow" />
 
-                        <TextView
-                            android:id="@+id/warn_des"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
-                            android:clickable="true"
-                            android:maxLines="3"
-                            android:text="@string/luanma"
-                            android:textColor="@color/grey"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline44"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toStartOf="@+id/guideline43"
-                            app:layout_constraintTop_toBottomOf="@+id/textView36" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -1255,7 +1271,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:clickable="true"
-            android:text="课程信息"
+            android:text="@string/fs_tab1"
             android:textColor="@color/grey"
             app:layout_constraintStart_toStartOf="@+id/guidelin"
             app:layout_constraintTop_toBottomOf="@+id/include3" />
@@ -1267,7 +1283,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:clickable="true"
-            android:text="注意事项"
+            android:text="@string/fs_tab2"
             android:textColor="@color/grey"
             app:layout_constraintBaseline_toBaselineOf="@+id/info_tab1"
             app:layout_constraintLeft_toRightOf="@id/info_tab1" />

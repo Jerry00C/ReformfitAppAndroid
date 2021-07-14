@@ -47,6 +47,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.jetbrains.annotations.NotNull;
+import org.w3c.dom.Text;
 
 import java.sql.Time;
 import java.text.SimpleDateFormat;
@@ -581,6 +582,9 @@ public class MineInfoPage3 extends Fragment {
 
 
 
+                                                            ConstraintLayout waitlistCondContainer = cardView.findViewById(R.id.waitlist_cond_container);
+                                                            TextView waitlistCond = cardView.findViewById(R.id.waitlist_cond);
+
                                                             ConstraintLayout constraintLayout = cardView.findViewById(R.id.init_detail_info);
 
 
@@ -601,9 +605,14 @@ public class MineInfoPage3 extends Fragment {
                                                                 }
 
                                                                 int waitlistOrder = mindbodyClassModelEx.getWailistOrder();
+                                                                waitlistCond.setText(waitlistOrder + "/4");
+
+
 
                                                             }
                                                             else{
+
+                                                                waitlistCondContainer.setVisibility(View.GONE);
                                                                 if(mindbodyClassModelEx.getProgramName().equals("Classes")){
 
                                                                     constraintLayout.setOnClickListener(new View.OnClickListener() {
@@ -739,6 +748,8 @@ public class MineInfoPage3 extends Fragment {
                                         classDate.setText(mindbodyClassModelEx.getStartDateCut());
                                         classTime.setText(mindbodyClassModelEx.getStartTimeCut() + "-" + mindbodyClassModelEx.getEndTimeCut());
 
+                                        ConstraintLayout waitlistCondContainer = cardView.findViewById(R.id.waitlist_cond_container);
+                                        waitlistCondContainer.setVisibility(View.GONE);
 
                                         ConstraintLayout constraintLayout = cardView.findViewById(R.id.init_detail_info);
 
@@ -925,6 +936,9 @@ public class MineInfoPage3 extends Fragment {
 
 
 
+                                                            ConstraintLayout waitlistCondContainer = cardView.findViewById(R.id.waitlist_cond_container);
+                                                            TextView waitlistCond = cardView.findViewById(R.id.waitlist_cond);
+
                                                             ConstraintLayout constraintLayout = cardView.findViewById(R.id.init_detail_info);
 
 
@@ -945,9 +959,14 @@ public class MineInfoPage3 extends Fragment {
                                                                 }
 
                                                                 int waitlistOrder = mindbodyClassModelEx.getWailistOrder();
+                                                                waitlistCond.setText(waitlistOrder + "/4");
+
+
 
                                                             }
                                                             else{
+
+                                                                waitlistCondContainer.setVisibility(View.GONE);
                                                                 if(mindbodyClassModelEx.getProgramName().equals("Classes")){
 
                                                                     constraintLayout.setOnClickListener(new View.OnClickListener() {
@@ -976,7 +995,6 @@ public class MineInfoPage3 extends Fragment {
                                                                     });
                                                                 }
                                                             }
-
 
                                                             linearLayout.addView(cardView,params);
                                                             Log.d("child view", String.valueOf(linearLayout.getChildCount()));
@@ -1091,6 +1109,8 @@ public class MineInfoPage3 extends Fragment {
                                         classDate.setText(mindbodyClassModelEx.getStartDateCut());
                                         classTime.setText(mindbodyClassModelEx.getStartTimeCut() + "-" + mindbodyClassModelEx.getEndTimeCut());
 
+                                        ConstraintLayout waitlistCondContainer = cardView.findViewById(R.id.waitlist_cond_container);
+                                        waitlistCondContainer.setVisibility(View.GONE);
 
                                         ConstraintLayout constraintLayout = cardView.findViewById(R.id.init_detail_info);
 

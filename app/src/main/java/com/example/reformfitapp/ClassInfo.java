@@ -45,6 +45,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -52,6 +53,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.livechatinc.inappchat.ChatWindowConfiguration;
+import com.livechatinc.inappchat.ChatWindowErrorType;
+import com.livechatinc.inappchat.ChatWindowView;
+import com.livechatinc.inappchat.models.NewMessageModel;
 
 import org.jetbrains.annotations.NotNull;
 import org.w3c.dom.Text;
@@ -120,6 +125,26 @@ public class ClassInfo extends AppCompatActivity {
     TextView classDescription;
 
 
+    int maxCapacity;
+    int totalBooked;
+    int totalWaitlist;
+    boolean isWaitlistAvailable;
+    boolean isAavilable;
+    boolean isCanceled;
+    boolean isOver;
+
+
+    boolean isLateCancel;
+    MindbodyClassModel classEx;
+    String classId;
+
+
+    TextView initPurchase;
+    TextView initLiveChat;
+    private ChatWindowView fullScreenChatWindow;
+
+    private String licenceNumber = "12951837";
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -162,8 +187,8 @@ public class ClassInfo extends AppCompatActivity {
 
 
 
-        String classId = String.valueOf(getIntent().getSerializableExtra("ClassId"));
-        MindbodyClassModel classEx = (MindbodyClassModel) getIntent().getParcelableExtra("MindbodyClassModel");
+        classId = String.valueOf(getIntent().getSerializableExtra("ClassId"));
+        classEx = (MindbodyClassModel) getIntent().getParcelableExtra("MindbodyClassModel");
 
         Log.d("class info", classEx.toString());
         sliderDotspanel = findViewById(R.id.SliderDots);
@@ -553,142 +578,131 @@ public class ClassInfo extends AppCompatActivity {
 
         init_add_client = findViewById(R.id.init_add_client);
 
-        int maxCapacity = classEx.getMaxCapacity();
-        int totalBooked = classEx.getTotalBooked();
-        int totalWaitlist = classEx.getTotalBookedWaitlist();
-        boolean isWaitlistAvailable = classEx.isWaitlistAvailable();
-        boolean isAavilable = classEx.isAvailable();
-        boolean isCanceled = classEx.isCancel();
+        maxCapacity = classEx.getMaxCapacity();
+        totalBooked = classEx.getTotalBooked();
+        totalWaitlist = classEx.getTotalBookedWaitlist();
+        isWaitlistAvailable = classEx.isWaitlistAvailable();
+        isAavilable = classEx.isAvailable();
+        isCanceled = classEx.isCancel();
+
+        isOver = classEx.isOver();
 
 
-        if(isCanceled){
-            init_add_client.setText("Canceled");
-            init_add_client.setClickable(false);
+        isLateCancel = checkLateCancel(classEx.getCancelOffset(), classEx.getStartTimestamp());
+
+
+
+        initPurchase = findViewById(R.id.init_purchase);
+        initLiveChat = findViewById(R.id.init_liveChat);
+
+        initPurchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivity = new Intent(getApplicationContext(), TabbedActivityPurchase.class);
+                switchActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(switchActivity);
+            }
+        });
+
+        initLiveChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent switchActivity = new Intent(getApplicationContext(), LiveChat.class);
+                switchActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(switchActivity);*/
+
+                startFullScreenChat();
+            }
+        });
+
+
+
+        initialize();
+    }
+
+    private void startFullScreenChat() {
+        String visitorName = "";
+        String visitorEmail = "";
+        if(((GlobalVariableApplication) getApplication()).getLogIn()){
+
+            MindbodyClientResponseModel mindbodyClientResponseModel = ((GlobalVariableApplication) getApplication()).getMindbodyClientResponseModel();
+            visitorName = mindbodyClientResponseModel.getFirstName();
+            visitorEmail = mindbodyClientResponseModel.getEmail();
         }
-        else if(totalBooked==maxCapacity && isWaitlistAvailable){
-            init_add_client.setText("Add to waitlist");
-            init_add_client.setOnClickListener(new View.OnClickListener() {
+
+        HashMap<String, String> customParamsMap = null;
+        ChatWindowConfiguration configuration = new ChatWindowConfiguration(
+                licenceNumber,
+                "",
+                visitorName,
+                visitorEmail,
+                customParamsMap
+        );
+
+        if (fullScreenChatWindow == null) {
+            fullScreenChatWindow = ChatWindowView.createAndAttachChatWindowInstance(ClassInfo.this);
+            fullScreenChatWindow.setUpWindow(configuration);
+            fullScreenChatWindow.onBackPressed();
+            fullScreenChatWindow.setUpListener(new ChatWindowView.ChatWindowEventsListener() {
                 @Override
-                public void onClick(View v) {
+                public void onChatWindowVisibilityChanged(boolean visible) {
 
-                    String clientId = ((GlobalVariableApplication) getApplication()).getClientId();
-                    Boolean registered = ((GlobalVariableApplication) getApplication()).getLogIn();
+                }
 
-                    Toast.makeText(getApplicationContext(), registered.toString(), Toast.LENGTH_LONG).show();
+                @Override
+                public void onNewMessage(NewMessageModel message, boolean windowVisible) {
 
-                    if(registered){
+                }
 
+                @Override
+                public void onStartFilePickerActivity(Intent intent, int requestCode) {
 
-                        Dialog dialog = new Dialog(ClassInfo.this);
-                        dialog.setContentView(R.layout.progress_bar);
-                        dialog.show();
+                }
 
-                        MindbodyAddClientToClass mindbodyAddClientToClass = new MindbodyAddClientToClass(getApplicationContext());
-                        mindbodyAddClientToClass.addClientToClass(new MindbodyClass.VolleyResponseListener() {
-                            @Override
-                            public void onError(String message) {
-                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                @Override
+                public boolean onError(ChatWindowErrorType errorType, int errorCode, String errorDescription) {
+                    return false;
+                }
 
-
-                                if(message.equals("{\"Error\":{\"Message\":\"Client is already booked at this time\",\"Code\":\"ClientIsAlreadyBooked\"}}")){
-                                    Toast.makeText(getApplicationContext(), "You have booked already", Toast.LENGTH_LONG).show();
-                                }
-                                else{
-                                    Toast.makeText(getApplicationContext(), "Something wrong, please try again", Toast.LENGTH_LONG).show();
-                                }
-                                dialog.dismiss();
-                            }
-
-                            @Override
-                            public void onResponse(String response) {
-                                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                                Log.d("add_client", response);
-
-                                Toast.makeText(ClassInfo.this, "added to waitlist", Toast.LENGTH_SHORT).show();
-                            }
-                        }, classId, clientId);
-
-                    }
-                    else{
-
-                        showLoginDialog("登录");
-                    }
+                @Override
+                public boolean handleUri(Uri uri) {
+                    return false;
                 }
             });
+            fullScreenChatWindow.initialize();
         }
-        else if(totalBooked==maxCapacity && !isWaitlistAvailable){
-            init_add_client.setText("full");
-            init_add_client.setClickable(false);
+        fullScreenChatWindow.showChatWindow();
+    }
+    @Override
+    public void onBackPressed() {
+
+        if(fullScreenChatWindow != null && fullScreenChatWindow.onBackPressed()){
+
         }
         else{
-            init_add_client.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    String clientId = ((GlobalVariableApplication) getApplication()).getClientId();
-                    Boolean registered = ((GlobalVariableApplication) getApplication()).getLogIn();
-
-                    Toast.makeText(getApplicationContext(), registered.toString(), Toast.LENGTH_LONG).show();
-
-                    if(registered){
-
-                        Dialog dialog = new Dialog(ClassInfo.this);
-                        dialog.setContentView(R.layout.progress_bar);
-                        dialog.show();
-
-
-                        MindbodyAddClientToClass mindbodyAddClientToClass = new MindbodyAddClientToClass(getApplicationContext());
-                        mindbodyAddClientToClass.addClientToClass(new MindbodyClass.VolleyResponseListener() {
-                            @Override
-                            public void onError(String message) {
-                                //Log.d("error", message);
-                                //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-
-                                if(message.equals("{\"Error\":{\"Message\":\"Client is already booked at this time\",\"Code\":\"ClientIsAlreadyBooked\"}}")){
-                                    Toast.makeText(getApplicationContext(), "You have booked already", Toast.LENGTH_LONG).show();
-                                }
-                                else{
-                                    Toast.makeText(getApplicationContext(), "Something wrong, please try again", Toast.LENGTH_LONG).show();
-                                }
-                                dialog.dismiss();
-                            }
-
-                            @Override
-                            public void onResponse(String response) {
-                                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
-                                Log.d("add_client", response);
-                                dialog.dismiss();
-
-                                Toast.makeText(ClassInfo.this, "added to class", Toast.LENGTH_SHORT).show();
-
-                                Intent calendarIntent = new Intent(Intent.ACTION_INSERT, CalendarContract.Events.CONTENT_URI);
-                                Calendar beginTime = Calendar.getInstance();
-                                beginTime.setTimeInMillis(classEx.getStartTimestamp());
-                                Calendar endTime = Calendar.getInstance();
-                                endTime.setTimeInMillis(classEx.getEndTImeStamp());
-                                String title = classEx.getClassName();
-                                String location = classEx.getAddress();
-
-                                calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis());
-                                calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
-                                calendarIntent.putExtra(CalendarContract.Events.TITLE, title);
-                                calendarIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, location);
-
-                                startActivity(calendarIntent);
-                            }
-                        }, classId, clientId);
-
-                    }
-                    else{
-
-                        showLoginDialog("登录");
-                    }
-                }
-            });
+            super.onBackPressed();
         }
     }
 
+    private boolean checkLateCancel(int cancelOffset, long startTimestamp){
 
+        long today = MaterialDatePicker.todayInUtcMilliseconds();
+        Calendar calendar = Calendar.getInstance();
+        calendar.clear();
+        calendar.setTimeInMillis(today);
+        calendar.add(Calendar.HOUR, cancelOffset);
+        long compared = calendar.getTimeInMillis();
+
+
+        if(compared > startTimestamp){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     private void prepareDots(int currPosition){
 
         if(sliderDotspanel.getChildCount() > 0)
@@ -716,9 +730,7 @@ public class ClassInfo extends AppCompatActivity {
     }
 
 
-
-
-    public void showLoginDialog(String title) {
+    private void showLoginDialog(String title) {
         final Dialog dialog = new Dialog(ClassInfo.this);
         dialog.setContentView(R.layout.sign_in_dialog_new);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -853,6 +865,7 @@ public class ClassInfo extends AppCompatActivity {
                                                                     ((GlobalVariableApplication)  (Application)getApplicationContext()).setLogIn(true);
 
 
+                                                                    initialize();
                                                                     dialog.setCancelable(true);
                                                                     dialog.dismiss();
                                                                 }
@@ -861,10 +874,6 @@ public class ClassInfo extends AppCompatActivity {
                                                     });
 
                                                     Log.d("response", "DocumentSnapshot data: " + document.getData().get("ClientId"));
-                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
-
-                                                    dialog.setCancelable(true);
-                                                    dialog.dismiss();
 
 
                                                 } else {
@@ -906,7 +915,7 @@ public class ClassInfo extends AppCompatActivity {
     }
 
 
-    public void showCreateAccountDialog(String title,Dialog previousDialog){
+    private void showCreateAccountDialog(String title,Dialog previousDialog){
         final Dialog dialog = new Dialog(ClassInfo.this);
 
         dialog.setContentView(R.layout.signup_dialog_new);
@@ -1128,6 +1137,7 @@ public class ClassInfo extends AppCompatActivity {
                                                                     }
                                                                 });
 
+                                                                initialize();
 
                                                                 //nonSwipeableViewPager.setCurrentItem(currPos);
 
@@ -1173,7 +1183,7 @@ public class ClassInfo extends AppCompatActivity {
     }
 
 
-    public void showAgreementDialog(String title, String text){
+    private void showAgreementDialog(String title, String text){
         final Dialog dialog = new Dialog(ClassInfo.this);
         dialog.setContentView(R.layout.agreement_page);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -1206,5 +1216,149 @@ public class ClassInfo extends AppCompatActivity {
 
 
     }
+
+
+    private void initialize(){
+
+
+        isOver = classEx.getEndTImeStamp() < System.currentTimeMillis();
+
+
+        isLateCancel = checkLateCancel(classEx.getCancelOffset(), classEx.getStartTimestamp());
+
+        if(isOver || isLateCancel){
+
+            init_add_client.setText("Over");
+            init_add_client.setClickable(false);
+        }
+
+        else if(isCanceled){
+            init_add_client.setText("Canceled");
+            init_add_client.setClickable(false);
+        }
+
+        else if(totalBooked==maxCapacity && isWaitlistAvailable){
+            init_add_client.setText("Add to waitlist");
+            init_add_client.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    String clientId = ((GlobalVariableApplication) getApplication()).getClientId();
+                    Boolean registered = ((GlobalVariableApplication) getApplication()).getLogIn();
+
+                    Toast.makeText(getApplicationContext(), registered.toString(), Toast.LENGTH_LONG).show();
+
+                    if(registered){
+
+
+                        Dialog dialog = new Dialog(ClassInfo.this);
+                        dialog.setContentView(R.layout.progress_bar);
+                        dialog.show();
+
+                        MindbodyAddClientToClass mindbodyAddClientToClass = new MindbodyAddClientToClass(getApplicationContext());
+                        mindbodyAddClientToClass.addClientToClass(new MindbodyClass.VolleyResponseListener() {
+                            @Override
+                            public void onError(String message) {
+                                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+
+
+                                if(message.equals("{\"Error\":{\"Message\":\"Client is already booked at this time\",\"Code\":\"ClientIsAlreadyBooked\"}}")){
+                                    Toast.makeText(getApplicationContext(), "You have booked already", Toast.LENGTH_LONG).show();
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "Something wrong, please try again", Toast.LENGTH_LONG).show();
+                                }
+                                dialog.dismiss();
+                            }
+
+                            @Override
+                            public void onResponse(String response) {
+                                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                                Log.d("add_client", response);
+
+                                Toast.makeText(ClassInfo.this, "added to waitlist", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+                        }, classId, clientId);
+
+                    }
+                    else{
+
+                        showLoginDialog("登录");
+                    }
+                }
+            });
+        }
+        else if(totalBooked==maxCapacity && !isWaitlistAvailable){
+            init_add_client.setText("full");
+            init_add_client.setClickable(false);
+        }
+        else{
+            init_add_client.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    String clientId = ((GlobalVariableApplication) getApplication()).getClientId();
+                    Boolean registered = ((GlobalVariableApplication) getApplication()).getLogIn();
+
+                    Toast.makeText(getApplicationContext(), registered.toString(), Toast.LENGTH_LONG).show();
+
+                    if(registered){
+
+                        Dialog dialog = new Dialog(ClassInfo.this);
+                        dialog.setContentView(R.layout.progress_bar);
+                        dialog.show();
+
+
+                        MindbodyAddClientToClass mindbodyAddClientToClass = new MindbodyAddClientToClass(getApplicationContext());
+                        mindbodyAddClientToClass.addClientToClass(new MindbodyClass.VolleyResponseListener() {
+                            @Override
+                            public void onError(String message) {
+                                //Log.d("error", message);
+                                //Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+
+                                if(message.equals("{\"Error\":{\"Message\":\"Client is already booked at this time\",\"Code\":\"ClientIsAlreadyBooked\"}}")){
+                                    Toast.makeText(getApplicationContext(), "You have booked already", Toast.LENGTH_LONG).show();
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "Something wrong, please try again", Toast.LENGTH_LONG).show();
+                                }
+                                dialog.dismiss();
+                            }
+
+                            @Override
+                            public void onResponse(String response) {
+                                Toast.makeText(getApplicationContext(), response, Toast.LENGTH_SHORT).show();
+                                Log.d("add_client", response);
+                                dialog.dismiss();
+
+                                Toast.makeText(ClassInfo.this, "added to class", Toast.LENGTH_SHORT).show();
+
+                                Intent calendarIntent = new Intent(Intent.ACTION_INSERT, CalendarContract.Events.CONTENT_URI);
+                                Calendar beginTime = Calendar.getInstance();
+                                beginTime.setTimeInMillis(classEx.getStartTimestamp());
+                                Calendar endTime = Calendar.getInstance();
+                                endTime.setTimeInMillis(classEx.getEndTImeStamp());
+                                String title = classEx.getClassName();
+                                String location = classEx.getAddress();
+
+                                calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis());
+                                calendarIntent.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis());
+                                calendarIntent.putExtra(CalendarContract.Events.TITLE, title);
+                                calendarIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, location);
+
+                                startActivity(calendarIntent);
+                            }
+                        }, classId, clientId);
+
+                    }
+                    else{
+
+                        showLoginDialog("登录");
+                    }
+                }
+            });
+        }
+    };
 
 }

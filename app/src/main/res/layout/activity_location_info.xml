@@ -1302,6 +1302,14 @@
                 </androidx.cardview.widget.CardView>
 
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:background="@color/black">
+
+                </View>
+
+
             </LinearLayout>
 
 
@@ -1384,6 +1392,50 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/yellow"
+            android:clickable="true"
+            android:paddingVertical="8dp"
+            android:text="在线客服"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:id="@+id/init_liveChat">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/init_purchase"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/yellow"
+            android:clickable="true"
+            android:paddingVertical="8dp"
+            android:text="购买课包"
+            android:textAlignment="center"
+
+            android:textColor="@color/black">
+
+        </TextView>
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

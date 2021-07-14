@@ -16,9 +16,6 @@
             android:layout_height="wrap_content">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -418,7 +415,7 @@
 
 
                                 <View
-                                    android:layout_height="100dp"
+                                    android:layout_height="75dp"
                                     android:layout_width="match_parent"
                                     android:background="@color/transparent"
                                     >
@@ -432,7 +429,6 @@
 
 
 
-            </LinearLayout>
 
         </ScrollView>
     </LinearLayout>

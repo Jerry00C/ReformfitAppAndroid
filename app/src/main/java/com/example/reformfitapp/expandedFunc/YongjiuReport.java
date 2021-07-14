@@ -196,6 +196,11 @@ public class YongjiuReport {
 
                 yongjiuReportModel.setId(measurementId);
 
+                try {
+                    yongjiuReportModel.setGender(measurement.getInt("gender"));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
 
                 try {
@@ -244,6 +249,8 @@ public class YongjiuReport {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+
 
 
                 volleyResponseListener.onResponse(yongjiuReportModel);

@@ -44,7 +44,7 @@
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_gravity="bottom"
             app:fabCradleVerticalOffset="5dp"
             android:backgroundTint="@color/black"
@@ -71,12 +71,15 @@
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:fabCustomSize="50dp"
             app:layout_anchor="@id/bottomAppBar"
             android:elevation="20dp"
             app:backgroundTint="@color/yellow"
-            android:src="@drawable/ic_agreement"/>
+            android:src="@drawable/ic_agreement"
+
+            />
 
 
 

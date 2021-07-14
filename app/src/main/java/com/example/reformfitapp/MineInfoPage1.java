@@ -6,14 +6,12 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -22,15 +20,12 @@ import android.widget.Toast;
 
 import com.example.reformfitapp.expandedFunc.BMICalculator;
 import com.example.reformfitapp.expandedFunc.BMRCalculator;
+import com.example.reformfitapp.expandedFunc.blogNews.BlogNews;
+import com.example.reformfitapp.expandedFunc.DietHealth;
 import com.example.reformfitapp.expandedFunc.TDEECalculator;
 import com.example.reformfitapp.expandedFunc.YongjiuHealth;
-import com.example.reformfitapp.expandedFunc.YongjiuReport;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -77,6 +72,12 @@ public class MineInfoPage1 extends Fragment {
 
     ImageView healthImage;
     TextView healthText;
+
+    ImageView dietImage;
+    TextView dietText;
+
+    ImageView blogImage;
+    TextView blogText;
 
 
 
@@ -146,6 +147,12 @@ public class MineInfoPage1 extends Fragment {
 
         healthImage = view.findViewById(R.id.health_image);
         healthText = view.findViewById(R.id.health_text);
+
+        dietImage = view.findViewById(R.id.diet_image);
+        dietText = view.findViewById(R.id.diet_text);
+
+        blogImage = view.findViewById(R.id.blog_image);
+        blogText = view.findViewById(R.id.blog_text);
 
 
         BMIImage.setOnClickListener(new View.OnClickListener() {
@@ -244,6 +251,48 @@ public class MineInfoPage1 extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent switchActivityIntent = new Intent(getContext(), YongjiuHealth.class);
+
+                switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
+                startActivity(switchActivityIntent);
+            }
+        });
+
+
+
+        dietImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivityIntent = new Intent(getContext(), DietHealth.class);
+
+                switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
+                startActivity(switchActivityIntent);
+            }
+        });
+
+        dietText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivityIntent = new Intent(getContext(), DietHealth.class);
+
+                switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
+                startActivity(switchActivityIntent);
+            }
+        });
+
+        blogImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivityIntent = new Intent(getContext(), BlogNews.class);
+
+                switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
+                startActivity(switchActivityIntent);
+            }
+        });
+
+        blogText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivityIntent = new Intent(getContext(), BlogNews.class);
 
                 switchActivityIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK) ;
                 startActivity(switchActivityIntent);

@@ -1334,7 +1334,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
+                    android:layout_height="38dp"
                     android:background="@color/black">
 
                 </View>
@@ -1427,7 +1427,7 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:background="@color/yellow"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -1444,7 +1444,8 @@
             android:paddingVertical="8dp"
             android:text="免费体验"
             android:textAlignment="center"
-            android:textColor="@color/black">
+            android:textColor="@color/black"
+            android:id="@+id/init_liveChat">
 
         </TextView>
 
@@ -1457,7 +1458,8 @@
             android:paddingVertical="8dp"
             android:text="购买课包"
             android:textAlignment="center"
-            android:textColor="@color/black">
+            android:textColor="@color/black"
+            android:id="@+id/init_purchase">
 
         </TextView>
 

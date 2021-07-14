@@ -2,32 +2,33 @@ package com.example.reformfitapp;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.reformfitapp.databinding.ActivityServiceTabbedBinding;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.reformfitapp.ui.main.SectionsPagerAdapter;
-import com.example.reformfitapp.databinding.ActivityServiceTabbedBinding;
+import com.livechatinc.inappchat.ChatWindowConfiguration;
+import com.livechatinc.inappchat.ChatWindowErrorType;
+import com.livechatinc.inappchat.ChatWindowView;
+import com.livechatinc.inappchat.models.NewMessageModel;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class ServiceTabbed extends AppCompatActivity {
 
@@ -44,6 +45,11 @@ public class ServiceTabbed extends AppCompatActivity {
 
     ImageView initBack;
     ImageView initHome;
+
+    TextView initPurchase;
+    TextView initLiveChat;
+    private ChatWindowView fullScreenChatWindow;
+    private String licenceNumber = "12951837";
 
 
     @Override
@@ -90,6 +96,33 @@ public class ServiceTabbed extends AppCompatActivity {
 
         viewPager = view1.findViewById(R.id.view_pager);
         tabs = view1.findViewById(R.id.tabs);
+
+
+
+        initPurchase = view1.findViewById(R.id.init_purchase);
+        initPurchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivity = new Intent(getApplicationContext(), TabbedActivityPurchase.class);
+                switchActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(switchActivity);
+            }
+        });
+
+
+        initLiveChat = view1.findViewById(R.id.init_liveChat);
+        initLiveChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent switchActivity = new Intent(getApplicationContext(), LiveChat.class);
+                switchActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(switchActivity);*/
+
+                startFullScreenChat();
+            }
+        });
 
         initialize();
 
@@ -200,6 +233,70 @@ public class ServiceTabbed extends AppCompatActivity {
                 }, finalStart_date, finalEnd_date, -1);
             }
         });
+    }
+
+    public void startFullScreenChat() {
+        String visitorName = "";
+        String visitorEmail = "";
+        if(((GlobalVariableApplication) getApplication()).getLogIn()){
+
+            MindbodyClientResponseModel mindbodyClientResponseModel = ((GlobalVariableApplication) getApplication()).getMindbodyClientResponseModel();
+            visitorName = mindbodyClientResponseModel.getFirstName();
+            visitorEmail = mindbodyClientResponseModel.getEmail();
+        }
+
+        HashMap<String, String> customParamsMap = null;
+        ChatWindowConfiguration configuration = new ChatWindowConfiguration(
+                licenceNumber,
+                "",
+                visitorName,
+                visitorEmail,
+                customParamsMap
+        );
+
+        if (fullScreenChatWindow == null) {
+            fullScreenChatWindow = ChatWindowView.createAndAttachChatWindowInstance(ServiceTabbed.this);
+            fullScreenChatWindow.setUpWindow(configuration);
+            fullScreenChatWindow.onBackPressed();
+            fullScreenChatWindow.setUpListener(new ChatWindowView.ChatWindowEventsListener() {
+                @Override
+                public void onChatWindowVisibilityChanged(boolean visible) {
+
+                }
+
+                @Override
+                public void onNewMessage(NewMessageModel message, boolean windowVisible) {
+
+                }
+
+                @Override
+                public void onStartFilePickerActivity(Intent intent, int requestCode) {
+
+                }
+
+                @Override
+                public boolean onError(ChatWindowErrorType errorType, int errorCode, String errorDescription) {
+                    return false;
+                }
+
+                @Override
+                public boolean handleUri(Uri uri) {
+                    return false;
+                }
+            });
+            fullScreenChatWindow.initialize();
+        }
+        fullScreenChatWindow.showChatWindow();
+    }
+    @Override
+    public void onBackPressed() {
+
+        if(fullScreenChatWindow != null && fullScreenChatWindow.onBackPressed()){
+
+        }
+        else{
+            super.onBackPressed();
+        }
     }
 
 }

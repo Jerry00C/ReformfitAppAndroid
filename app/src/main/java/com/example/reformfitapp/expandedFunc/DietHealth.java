@@ -7,18 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.webkit.DownloadListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.reformfitapp.ClassInfo;
 import com.example.reformfitapp.GlobalVariableApplication;
 import com.example.reformfitapp.MainBottomNaviService;
-import com.example.reformfitapp.MindbodyClassModel;
 import com.example.reformfitapp.R;
 
-public class YongjiuReportEx extends AppCompatActivity {
+public class DietHealth extends AppCompatActivity {
+
+
 
     WebView webView;
     View view;
@@ -27,22 +28,18 @@ public class YongjiuReportEx extends AppCompatActivity {
     ImageView initBack;
     ImageView initHome;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
         setContentView(R.layout.progress_bar);
 
-
-
-        view = getLayoutInflater().inflate(R.layout.activity_yongjiu_report_ex, null);
+        view = getLayoutInflater().inflate(R.layout.activity_diet_health, null);
 
 
 
@@ -50,7 +47,7 @@ public class YongjiuReportEx extends AppCompatActivity {
         initBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                YongjiuReportEx.this.finish();
+                DietHealth.this.finish();
             }
         });
 
@@ -70,41 +67,14 @@ public class YongjiuReportEx extends AppCompatActivity {
             }
         });
 
-        String measurementId = (String) getIntent().getStringExtra("MeasurementId");
 
-
-        String phoneNum;
-                //TODO: get phone number
-        /*if(((GlobalVariableApplication)getApplication()).getLogIn()){
-            phoneNum = ((GlobalVariableApplication)getApplication()).getMindbodyClientResponseModel().getMobilePhone();
-        *///}
-        //else{
-
-        phoneNum = "14379876631";
-        //}
-
-
-        YongjiuReportDetail yongjiuReportDetail = new YongjiuReportDetail(getApplicationContext(), phoneNum, measurementId);
 
         webView = (WebView) view.findViewById(R.id.webview);
-        yongjiuReportDetail.reportRequest(webView, new YongjiuReportDetail.VolleyResponseListener() {
-            @Override
-            public void onError(String message) {
-                Toast.makeText(getApplicationContext(), message.toString(), Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void onResponse(String response) {
-
-
-                webView.setWebViewClient(new WebViewClient());
-                webView.getSettings().setJavaScriptEnabled(true);
-                webView.getSettings().setStandardFontFamily((String) "Time New Roman");
-                webView.loadUrl(response);
-                setContentView(view);
-
-            }
-        });
+        webView.setWebViewClient(new WebViewClient());
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("https://eats.reformfit.ca");
+        setContentView(view);
 
     }
 }

@@ -37,6 +37,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.reformfitapp.ClassInfo;
 import com.example.reformfitapp.ClientUpdateElement;
 import com.example.reformfitapp.CreditCardInfo;
 import com.example.reformfitapp.GlobalVariableApplication;
@@ -54,6 +55,7 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -541,6 +543,7 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
             }
         });
 
+
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -565,6 +568,7 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
                                     Log.d("login", "success");
 
                                     dialog.setContentView(R.layout.progress_bar);
+                                    dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
                                     dialog.setCanceledOnTouchOutside(false);
 
                                     userID = firebaseAuth.getCurrentUser().getUid();
@@ -585,6 +589,11 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
                                                         @Override
                                                         public void onError(String message) {
                                                             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                            Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                            dialog.setCancelable(true);
+                                                            dialog.dismiss();
                                                         }
 
                                                         @Override
@@ -593,6 +602,11 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
                                                                 @Override
                                                                 public void onError(String message) {
                                                                     Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+
+                                                                    dialog.setCancelable(true);
+                                                                    dialog.dismiss();
                                                                 }
 
                                                                 @Override
@@ -651,32 +665,39 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
                                                     });
 
                                                     Log.d("response", "DocumentSnapshot data: " + document.getData().get("ClientId"));
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                    dialog.setCancelable(true);
+                                                    dialog.dismiss();
+
 
                                                 } else {
                                                     Log.d("response", "No such document");
+
+
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                    dialog.setCancelable(true);
+                                                    dialog.dismiss();
                                                 }
                                             } else {
                                                 Log.d("response", "get failed with ", task.getException());
+
+                                                Toast.makeText(getApplicationContext(), "Something wrong, try this later", Toast.LENGTH_SHORT).show();
+
+                                                dialog.setCancelable(true);
+                                                dialog.dismiss();
                                             }
                                         }
                                     });
-
-
-
-
-
-
-
-                                    /*
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    updateUI(user);*/
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.d("login", task.getException().toString());
 
                                     Toast.makeText(getApplicationContext(), "Authentication failed.", Toast.LENGTH_SHORT).show();
 
-                                }
+
+                                     }
                             }
                         });
 
@@ -825,6 +846,7 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
 
                                                 previousDialog.dismiss();
                                                 dialog.setContentView(R.layout.progress_bar);
+                                                dialog.getWindow().setLayout(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
 
                                                 dialog.setCancelable(false);
 
@@ -839,6 +861,25 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
                                                     @Override
                                                     public void onError(String message) {
                                                         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                        Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_SHORT).show();
+                                                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                                        user.delete()
+                                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                    @Override
+                                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                                        if (task.isSuccessful()) {
+                                                                            Log.d("firebase", "User account deleted.");
+                                                                        }
+                                                                    }
+                                                                });
+
+
+                                                        dialog.setCancelable(true);
+                                                        dialog.dismiss();
+
+
+
                                                     }
 
                                                     @Override
@@ -847,6 +888,22 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
                                                             @Override
                                                             public void onError(String message) {
                                                                 Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                                                                Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_SHORT).show();
+                                                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                                                user.delete()
+                                                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                            @Override
+                                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                                if (task.isSuccessful()) {
+                                                                                    Log.d("firebase", "User account deleted.");
+                                                                                }
+                                                                            }
+                                                                        });
+
+                                                                dialog.setCancelable(true);
+                                                                dialog.dismiss();
+
                                                             }
 
                                                             @Override
@@ -921,6 +978,14 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
                                             }
                                             else{
                                                 Log.d("register", task.getException().toString());
+                                                if(task.getException().toString().equals("com.google.firebase.auth.FirebaseAuthInvalidCredentialsException: The email address is badly formatted.")){
+
+                                                    Toast.makeText(getApplicationContext(), "The email address is badly formatted", Toast.LENGTH_LONG).show();
+                                                }
+                                                else{
+                                                    Toast.makeText(getApplicationContext(), "Something wrong, try again", Toast.LENGTH_LONG).show();
+
+                                                }
                                             }
                                         }
                                     });
@@ -939,6 +1004,7 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
                 }
             }
         });
+
 
         dialog.show();
     }
@@ -1547,103 +1613,6 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
 
     }
 
-//    public void showCreateDebitCard(String title){
-//        final Dialog dialog = new Dialog(PassPurchasePage.this);
-//        dialog.setContentView(R.layout.debit_card_registration_pop_up);
-//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//
-//        MaterialButton apply = dialog.findViewById(R.id.confirm_button);
-//        MaterialButton cancel = dialog.findViewById(R.id.cancel_button);
-//        TextView popupTitle = dialog.findViewById(R.id.popup_title);
-//
-//        popupTitle.setText(title);
-//
-//        RadioButton checking = dialog.findViewById(R.id.checking);
-//        RadioButton saving = dialog.findViewById(R.id.saving);
-//        TextInputEditText branch_number = dialog.findViewById(R.id.input_text_branch_number);
-//        TextInputEditText transit_number = dialog.findViewById(R.id.input_text_transit_number);
-//        TextInputEditText account_number = dialog.findViewById(R.id.input_text_account_number);
-//        TextInputEditText client_name = dialog.findViewById(R.id.input_text_name);
-//
-//
-//
-//
-//
-//
-//
-//        cancel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dialog.dismiss();
-//            }
-//        });
-//
-//        apply.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                showLoadingBar();
-//                mindbodyService.getAuthToken(new MindbodyService.AuthTokenResponseListener() {
-//                    @Override
-//                    public void onError(String errorMessage) {
-//                        Toast.makeText(PassPurchasePage.this, errorMessage, Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    @Override
-//                    public void onResponse(String authToken) {
-//                        Toast.makeText(PassPurchasePage.this, authToken, Toast.LENGTH_SHORT).show();
-//                        String accountType = new String();
-//                        if (checking.isChecked()){
-//                            accountType = "Checking";
-//
-//                        }
-//                        else if (saving.isChecked()){
-//                            accountType = "Savings";
-//                        }
-//
-//                        HashMap<String,Object> params = new HashMap<>();
-//                        params.put("Test",false);
-//                        params.put("ClientId",clientId);
-//                        params.put("NameOnAccount",client_name.getText().toString());
-//                        params.put("RoutingNumber",branch_number.getText().toString()+transit_number.getText().toString());
-//                        params.put("AccountNumber",account_number.getText().toString());
-//                        params.put("AccountType", accountType);
-//                        mindbodyService.postAddClientDirectDebit(new MindbodyService.AddClientDirectDebitInfoListener() {
-//                            @Override
-//                            public void onError(String errorMessage) {
-//                                Toast.makeText(PassPurchasePage.this, errorMessage, Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                            @Override
-//                            public void onResponse(JSONObject response) {
-//
-//                                String branchNumber = branch_number.getText().toString();
-//                                String transitNumber = transit_number.getText().toString();
-//                                String accountNumber = account_number.getText().toString();
-//
-//                                dDirectBranchingNumber = branchNumber;
-//                                dDirectTransitNumber = transitNumber;
-//                                dDirectAccountNumber =accountNumber;
-//                                stopLoadingBar();
-//                                dialog.dismiss();
-//
-//                            }
-//                        },params);
-//
-//
-//
-//
-//
-//                    }
-//                });
-//
-//            }
-//        });
-//
-//        dialog.show();
-//
-//
-//    }
-
     public void showCreateDebitCard(String title){
         final Dialog dialog = new Dialog(context);
         dialog.setContentView(R.layout.debit_card_registration_pop_up);
@@ -2094,7 +2063,6 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
         });
 
         apply.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
 

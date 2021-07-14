@@ -1,27 +1,19 @@
 package com.example.reformfitapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MineInfoPage2#newInstance} factory method to
+ * Use the {@link ThirdMain#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class MineInfoPage2 extends Fragment {
+public class ThirdMain extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -32,9 +24,7 @@ public class MineInfoPage2 extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    LinearLayout linearLayout;
-
-    public MineInfoPage2() {
+    public ThirdMain() {
         // Required empty public constructor
     }
 
@@ -44,11 +34,11 @@ public class MineInfoPage2 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment MineInfoPage2.
+     * @return A new instance of fragment thirdMain.
      */
     // TODO: Rename and change types and number of parameters
-    public static MineInfoPage2 newInstance(String param1, String param2) {
-        MineInfoPage2 fragment = new MineInfoPage2();
+    public static ThirdMain newInstance(String param1, String param2) {
+        ThirdMain fragment = new ThirdMain();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -69,9 +59,6 @@ public class MineInfoPage2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
-
-
-        return inflater.inflate(R.layout.fragment_mine_info_page2, container, false);
+        return inflater.inflate(R.layout.fragment_third_main, container, false);
     }
 }
