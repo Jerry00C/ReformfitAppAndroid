@@ -1,5 +1,6 @@
 package com.example.reformfitapp.purchaseFragment;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -108,7 +109,7 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
                              Bundle savedInstanceState) {
 
         locationId = 1;
-        contractId = 354;
+        contractId = 353;
         name_serviceId_pair =new HashMap<>();
         name_contractId_pair=new HashMap<>();
         service_category = "Classes"; /* correspond to the two type of class format */
@@ -280,6 +281,7 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
         return current_view;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
 

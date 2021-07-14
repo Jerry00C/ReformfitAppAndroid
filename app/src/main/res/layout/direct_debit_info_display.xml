@@ -51,7 +51,7 @@
             android:id="@+id/payment_method"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="付款方式"
+            android:text="@string/display_info_directdebit_title"
             android:textColor="@color/yellow"
             android:textSize="18sp"
 
@@ -80,7 +80,7 @@
 
             android:textColor="#DEDEDE"
             android:textSize="16sp"
-            android:text="Branch Number:"
+            android:text="@string/display_info_directdebit_branchn"
 
             app:layout_constraintTop_toBottomOf="@id/divider1_2"
             app:layout_constraintStart_toStartOf="@id/vertGuideline4_1"
@@ -105,7 +105,7 @@
 
             android:textColor="#DEDEDE"
             android:textSize="16sp"
-            android:text="Transit Number:"
+            android:text="@string/display_info_directdebit_transitn"
 
             app:layout_constraintTop_toBottomOf="@id/info_third"
             app:layout_constraintStart_toStartOf="@id/vertGuideline4_1"
@@ -131,7 +131,7 @@
 
             android:textColor="#DEDEDE"
             android:textSize="16sp"
-            android:text="Account Number:"
+            android:text="@string/display_info_directdebit_accountn"
 
             app:layout_constraintTop_toBottomOf="@id/info_fourth"
             app:layout_constraintStart_toStartOf="@id/vertGuideline4_1"

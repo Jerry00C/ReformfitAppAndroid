@@ -4,13 +4,12 @@
     <string name="copy"> <u>copy</u></string>
     <string name="init_map"> <u>查看地图</u></string>
     <string name="init_heartrate_link"> <u>链接</u></string>
-    <string name="agree_clickable"> <u>服务条款</u></string>
+
     <string name="create_an_account"> <u>注册新用户</u></string>
     <string name="all_video"> <u>查看全部</u></string>
     <string name="chooser_title">Navigate</string>
     <string name="title_activity_service_tabbed">ServiceTabbed</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+
     <string name="tab_text_3">Tab 3</string>
     <string name="luanma">和了飞书治极很，深体门便标将想，决C听因扭。按几速个压确要，明拉写面改始反，近W罐度态。 就华将易林该，积标无才样心，代居呀红。约学委如界从包领万际打明理，青别再带八照证认果高件口眼，除张丽个马抖没呀议呆吵。六六元问效少北养自，除器积较面山，加去3旱内准伶。量于布据件因十参，想具引出要劳，我设C属杨领。 元力边县法热方二车里列再，花水又看村红万应报。认元此料眼好问种平历分须，美劳间低看指战选格断业，她原孟达历度僚接E杠。 打度引记而品级年切及，平先物十拉过省争，交将该县茅抛京。物每政带北强走见局作，专农打况保管色样素，严基录直积不展杠。习传话转统外备自社切团习解方，导养日现干医志影箩磨选。 小关育集好从圆，些从住E名苗。质技制到家性新数报即了，取更平于下他火生速，厂各Z张弦芳连五飞。构期律决以商军，就较命进青活，示4提什红。那门形院结部而意京这工不样展发厂，层利造查表今O用做格况思声。至斯着五片济声广究，下适政术打置带要，及连I热确县决。明处多立转县米，今革始切平，热8节称次。联加出的方活，难她正方便都，京承响却。 但信军识拉查阶半，要段在片长安眼特，细李I联律心。记用相族处气件流江素，金他权必它别因格单，华门询材线抗伸岗。问还说细调备火现厂较身，教性家提极存一认文，江持屈更但丽龙查变。两完连江断象好月，争被织社十机京"
                         </string>
@@ -27,12 +26,203 @@
     <string name="BMI_link"><u>查看Health Canada官网</u></string>
     <string name="TDEE_link"><u>查看BMR公式</u></string>
 
+    <!--TabbedActivityPurchase  -->
+    <string name="tab_text_1">团课</string>
+    <string name="tab_text_2">私课</string>
+
+    <!--        group class purchase fragment-->
+    <!--            xml layout      -->
+    <!--                memberships-->
+    <string name="FGCP_membership_title">连续包月会员</string>
+    <!--                    membership option1-->
+    <string name="FGCP_mem_option1">Premier BURN!</string>
+    <string name="FGCP_mem_info_1_1">12个月后免费取消</string>
+    <string name="FGCP_mem_info_1_2">可冻结账户4次</string>
+    <string name="FGCP_mem_info_1_3">免费线上live课程</string>
+    <string name="FGCP_mem_option1_price">$189/月</string>
+    <!--                    membership option2-->
+    <string name="FGCP_mem_option2">Elite BURN!</string>
+    <string name="FGCP_mem_info_2_1">6个月后免费取消</string>
+    <string name="FGCP_mem_info_2_2">可冻结账户2次</string>
+    <string name="FGCP_mem_info_2_3">免费线上live课程</string>
+    <string name="FGCP_mem_option2_price">$209/月</string>
+    <!--                    membership option3-->
+    <string name="FGCP_mem_option3">Master BURN!</string>
+    <string name="FGCP_mem_info_3_1">3个月后免费取消</string>
+    <string name="FGCP_mem_info_3_2">可冻结账户1次</string>
+    <string name="FGCP_mem_option3_price">$219/月</string>
+
+    <!--                passes-->
+    <string name="FGCP_pass_title">次卡会员</string>
+    <!--                    pass option1-->
+    <string name="FGCP_pass_option1">10 Class Card</string>
+    <string name="FGCP_pass_info_1_1">20次店内团课</string>
+    <string name="FGCP_pass_info_1_2">有效期6个月</string>
+    <string name="FGCP_pass_option1_price">$499</string>
+    <!--                    pass option2-->
+    <string name="FGCP_pass_option2">10 Class Card</string>
+    <string name="FGCP_pass_info_2_1">10次店内团课</string>
+    <string name="FGCP_pass_info_2_2">有效期3个月</string>
+    <string name="FGCP_pass_option2_price">$269</string>
+    <!--                    pass option3-->
+    <string name="FGCP_pass_option3">1 Month Unlimited</string>
+    <string name="FGCP_pass_info_3_1">一个月无限店内团课</string>
+    <string name="FGCP_pass_info_3_2">有效期3个月</string>
+    <string name="FGCP_pass_option3_price">$299</string>
+
+    <!--                    pass option4-->
+    <string name="FGCP_pass_option4">5 Class Card</string>
+    <string name="FGCP_pass_info_4_1">1次店内团课</string>
+    <string name="FGCP_pass_info_4_2">有效期7天</string>
+    <string name="FGCP_pass_option4_price">$30</string>
+
+    <!--        private lesson purchase fragment-->
+    <!--            xml layout      -->
+    <!--                1on1 lesson-->
+    <string name="plp_1on1_title">1–1私教套餐</string>
+    <!--                1on1 option1-->
+    <string name="plp_1on1_option1">100-Session Pack</string>
+    <string name="plp_1on1_info_1_1">100节精品私教课</string>
+    <string name="plp_1on1_info_1_2">有效期12个月</string>
+    <string name="plp_1on1_option1_price">$6500</string>
+    <!--                1on1 option2-->
+    <string name="plp_1on1_option2">75-Session Pack</string>
+    <string name="plp_1on1_info_2_1">75节精品私教课</string>
+    <string name="plp_1on1_info_2_2">有效期12个月</string>
+    <string name="plp_1on1_option2_price">$5062.5</string>
+    <!--                1on1 option3-->
+    <string name="plp_1on1_option3">50-Session Pack</string>
+    <string name="plp_1on1_info_3_1">50节精品私教课</string>
+    <string name="plp_1on1_info_3_2">有效期12个月</string>
+    <string name="plp_1on1_option3_price">$3500</string>
+
+    <!--                1on1 option4-->
+    <string name="plp_1on1_option4">Single Session</string>
+    <string name="plp_1on1_info_4_1">单节精品私教课</string>
+    <string name="plp_1on1_info_4_2">有效期14天</string>
+    <string name="plp_1on1_option4_price">$75</string>
+
+    <!--            comp prep-->
+    <string name="plp_prep_title">健身备赛套餐</string>
+    <!--                prep option1-->
+    <string name="plp_prep_option1">20-Week Prep</string>
+    <string name="plp_prep_info_1_1">20次1小时备赛周验</string>
+    <string name="plp_prep_info_1_2">20周定制训练计划</string>
+    <string name="plp_prep_info_1_3">20周饮食调控</string>
+    <string name="plp_prep_option1_price">$3300</string>
+    <!--                prep option2-->
+    <string name="plp_prep_option2">16-Week Prep</string>
+    <string name="plp_prep_info_2_1">16次1小时备赛周验</string>
+    <string name="plp_prep_info_2_2">16周定制训练计划</string>
+    <string name="plp_prep_info_2_3">16周饮食调控</string>
+    <string name="plp_prep_option2_price">$2680</string>
+    <!--                prep option3-->
+    <string name="plp_prep_option3">12-Week Prep</string>
+    <string name="plp_prep_info_3_1">12次1小时备赛周验</string>
+    <string name="plp_prep_info_3_2">12周定制训练计划</string>
+    <string name="plp_prep_info_3_3">12周饮食调控</string>
+    <string name="plp_prep_option3_price">$2040</string>
+
+    <!--                prep option4-->
+    <string name="plp_prep_option4">4-Week Prep</string>
+    <string name="plp_prep_info_4_1">4次1小时备赛周验</string>
+    <string name="plp_prep_info_4_2">4周定制训练计划</string>
+    <string name="plp_prep_info_4_3">4周饮食调控</string>
+    <string name="plp_prep_option4_price">$700</string>
+
+
+    <!--        pass purchase page-->
+    <!--            xml layout   (some shared with membership purchase page and private lesson)   -->
+    <string name="ppp_layout_confirm_button">前往付款</string>
+    <string name="ppp_layout_price_title">费用</string>
+    <string name="ppp_layout_promocode_ask">Promo Code:</string>
+    <string name="ppp_layout_giftcard_ask">Gift Card:</string>
+    <string name="ppp_layout_subtotal">小计:</string>
+    <string name="ppp_layout_tax">HST:</string>
+    <string name="ppp_layout_total">总计:</string>
+    <string name="ppp_layout_agreement_title">付款协议</string>
+    <string name="ppp_layout_i_have_read">我已阅读并同意相关</string>
+    <string name="agree_clickable"> <u>服务条款</u></string>
+    <string name="ppp_layout_type_full_name">Type your full name to confirm</string>
+    <string name="ppp_layout_final_agreement_text">By typing my name and clicking 前往付款, I agree that the text inputted into the field
+        above will be the electronic representation of my signature for the purpose of agreeing to the autopay and the associated terms and conditions alt-
+        just the same as a pen-and paper signature
+    </string>
+    <!--            java file       -->
+    <string name="ppp_activity_proceed_to_purchase">Proceed to purchase</string>
+    <!--                in dialogs       -->
+    <string name="ppp_activity_dialog_enter_valid_number">Please enter valid card number</string>
+    <string name="ppp_activity_dialog_enter_valid_branchn">Please enter valid branching number</string>
+    <string name="ppp_activity_dialog_enter_valid_month">Please enter valid month</string>
+    <string name="ppp_activity_dialog_enter_valid_year">Please enter valid year</string>
+    <!--                in added layout       -->
+    <string name="display_info_directdebit_title">付款方式</string>
+    <string name="display_info_directdebit_branchn">Branch Number:</string>
+    <string name="display_info_directdebit_transitn">Transit Number:</string>
+    <string name="display_info_directdebit_accountn">Account Number:</string>
+
+    <!--        membership purchase page-->
+    <!--            xml layout      -->
+    <string name="mpp_layout_payment_arrangement">费用安排</string>
+    <string name="mpp_layout_first_payment_arrangement">首月费用 课时费用</string>
+    <string name="mpp_layout_activation_date">激活时间:</string>
+    <string name="mpp_layout_payment_per_month">月费</string>
+
+    <!--            java file       -->
+    <!--            shared with ppp-->
+    <!--                in dialogs       -->
+    <!--            shared with mpp-->
+
+    <!--     dialogs   -->
+    <!--        agreement-->
+    <string name="dialog_agreement_content">OUR CONDITION We highly recommend you to consult a qualified physician before engaging in training.
+        You warrant and represent that you are not subject to any illness or condition, which may make the participation of fitness activity dangerous or harmful
+        to you. you agree to disclose to our trainer of any conditions or changes in your health while participating in your training that may affect your ability
+        to exercise safely and with minimal risk or injury. You acknowledge that our trainer cannot provide medical advice. You agree that if you feel dizziness, nauseous
+        , or experience pain or discomfort at any time during training, you will immediately stop  and infom our trainer. DEFAULT if you breach any payment on time
+        , you will be in default and your right to receive classes will be suspended immediately. ReformFIT reserves the right to immediately cancel your</string>
+    <string name="dialog_agreement_cancel">关闭</string>
+    <string name="dialog_agreement_confirm">发送至邮件</string>
+
+
+    <!--        bsdf-->
+    <string name="dialog_bsdf_choose_payment_method">Please choose a payment method</string>
+    <string name="dialog_bsdf_credit_card">信用卡</string>
+    <string name="dialog_bsdf_direct_debit">借记卡</string>
+    <string name="dialog_bsdf_cancel">取消</string>
+
+
+
+    <!--        back from purchase webview-->
+    <string name="back_from_purchase_webview_text">Go Back</string>
+
+    <!--        fragment_payment_history-->
+    <string name="fph_payment_method">付款方式</string>
+    <string name="fph_credit_card_number">信用卡号:</string>
+    <string name="fph_credit_card_date">有效日期:</string>
+    <string name="fph_dd_branchn">Branch Number:</string>
+    <string name="fph_dd_transitn">Transit Number:</string>
+    <string name="fph_dd_accountn">Account Number:</string>
+    <string name="fph_payment_history">付款记录</string>
+
+
+
+
 
     <string-array name="exercise_level_list">
         <item>久坐，没啥运动</item>
-        <item>轻量，每周运动1-3次</item>
-        <item>中强度，每周运动3-5次</item>
-        <item>高强度，每周运动6-7次</item>
+        <item>轻量，每周运动1–3次</item>
+        <item>中强度，每周运动3–5次</item>
+        <item>高强度，每周运动6–7次</item>
         <item>极强，无时无刻都在运动</item>
     </string-array>
+
+
+    <string-array name="credit_card_type_list">
+        <item>Visa</item>
+        <item>MasterCard</item>
+        <item>American Express</item>
+        <item>Discover</item>
+    </string-array>
+
 </resources>

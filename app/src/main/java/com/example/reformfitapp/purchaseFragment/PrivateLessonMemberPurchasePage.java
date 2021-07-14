@@ -150,9 +150,13 @@ public class PrivateLessonMemberPurchasePage extends AppCompatActivity implement
         float tax_amount = calculateTax(priceInFloat,taxRate);
         float total_amount = calculateTotal(priceInFloat,tax_amount);
 
-        subtotal.setText("$"+priceInFloat);
-        taxAmount.setText("$"+tax_amount);
-        total.setText("$"+total_amount);
+        String subtotalInString ="$"+ priceInFloat;
+        String taxInString = "$"+tax_amount;
+        String totalInString = "$"+total_amount;
+
+        subtotal.setText(subtotalInString);
+        taxAmount.setText(taxInString);
+        total.setText(totalInString);
 
         agreementClickable.setOnClickListener(this);
         confirmButton.setOnClickListener(this);
@@ -247,42 +251,7 @@ public class PrivateLessonMemberPurchasePage extends AppCompatActivity implement
         Intent newIntent = new Intent(this,PrivateLessonPurchaseWebview.class);
         newIntent.putExtra("url",url);
         startActivity(newIntent);
-//        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-//        WebView webView = new WebView(this);
-//        webView.loadUrl(url);
-//        webView.setWebViewClient(new WebViewClient(){
-//            @Override
-//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//                view.loadUrl(url);
-//                return true;
-//            }
-//        });
-//        dialog.setView(webView);
-//        dialog.setNegativeButton("close", new DialogInterface.OnClickListener() {
-//            @Override
-//            public void onClick(DialogInterface dialog, int which) {
-//                dialog.dismiss();
-//            }
-//        });
-//        dialog.show();
-//
-////        final Dialog dialog = new Dialog(PrivateLessonMemberPurchasePage.this);
-////        dialog.setContentView(R.layout.private_lesson_purchase_page_dialog);
-////        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-////
-//        WebView webView = dialog.findViewById(R.id.webView);
-//        webView.setWebViewClient(new WebViewClient(){
-//            @Override
-//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-//                view.loadUrl(url);
-//                return true;
-//            }
-//        });
-//        webView.loadUrl(url);
-//
-//        WebSettings webSettings = webView.getSettings();
-//        webSettings.setJavaScriptEnabled(true);
-////        dialog.show();
+
     }
     public void showLoginDialog(String title) {
         final Dialog dialog = new Dialog(PrivateLessonMemberPurchasePage.this){
@@ -537,7 +506,7 @@ public class PrivateLessonMemberPurchasePage extends AppCompatActivity implement
         apply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (agreement_check_box.isChecked()==true) {
+                if (agreement_check_box.isChecked()) {
 
                     String email_text;
                     String password_text;

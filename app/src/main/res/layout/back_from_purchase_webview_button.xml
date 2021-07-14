@@ -22,7 +22,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go back"
+        android:text="@string/back_from_purchase_webview_text"
         android:textColor="@color/yellow"
         app:layout_constraintStart_toEndOf="@id/init_home"
         app:layout_constraintTop_toTopOf="@id/init_home"

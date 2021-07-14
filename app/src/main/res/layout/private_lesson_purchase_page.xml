@@ -17,7 +17,7 @@
         app:cornerRadius="0dp"
         android:backgroundTint="@color/yellow"
         android:textColor="@color/black"
-        android:text="前往付款"
+        android:text="@string/ppp_layout_confirm_button"
         android:id="@+id/confirm_purchase_button"
         />
     <androidx.constraintlayout.widget.Guideline
@@ -116,7 +116,6 @@
                         app:layout_constraintStart_toEndOf="@id/pass_purchase_icon"
                         app:layout_constraintTop_toTopOf="@+id/pass_purchase_icon"
                         android:textSize="20sp"
-                        android:text="place_holder"
                         android:id="@+id/purchase_title"
 
                         />
@@ -133,7 +132,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="20次店内团课"
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="@id/info_icon_1_1"
@@ -162,7 +160,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="有效期6个月"
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintTop_toTopOf="@id/info_icon_1_2"
@@ -192,7 +189,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="有效期6个月"
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintTop_toTopOf="@id/info_icon_1_3"
@@ -267,7 +263,7 @@
                         android:id="@+id/pass_price_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="费用"
+                        android:text="@string/ppp_layout_price_title"
                         android:textColor="@color/yellow"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toBottomOf="@+id/pass_price_icon"
@@ -296,9 +292,9 @@
                         android:id="@+id/before_tax"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="6dp"
+                        android:layout_marginStart="6dp"
                         android:layout_marginTop="6dp"
-                        android:text="小计:"
+                        android:text="@string/ppp_layout_subtotal"
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
@@ -308,8 +304,8 @@
                         android:id="@+id/first_subtotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="3dp"
-                        android:text="$(place holder)"
+                        android:layout_marginEnd="3dp"
+
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="@+id/before_tax"
@@ -322,7 +318,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="6dp"
                         android:layout_marginTop="6dp"
-                        android:text="HST:"
+                        android:text="@string/ppp_layout_tax"
                         android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
@@ -332,8 +328,8 @@
                         android:id="@+id/first_tax"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginRight="3dp"
-                        android:text="$(place holder)"
+                        android:layout_marginEnd="3dp"
+
                         android:textColor="@color/white"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="@+id/tax"
@@ -369,7 +365,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="6dp"
                         android:layout_marginTop="6dp"
-                        android:text="总计:"
+                        android:text="@string/ppp_layout_total"
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
@@ -380,8 +376,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="3dp"
-                        android:layout_marginRight="3dp"
-                        android:text="$(place holder)"
+
                         android:textColor="@color/white"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toBottomOf="@+id/overall"
@@ -465,7 +460,7 @@
                         app:layout_constraintStart_toEndOf="@id/service_agreement_icon"
                         app:layout_constraintTop_toTopOf="@+id/service_agreement_icon"
                         android:textSize="18sp"
-                        android:text="服务协议"
+                        android:text="@string/ppp_layout_agreement_title"
                         android:id="@+id/agreement_title"
                         />
 
@@ -474,7 +469,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="我已阅读并同意相关"
+                        android:text="@string/ppp_layout_i_have_read"
                         android:textColor="@color/grey"
                         android:textSize="14sp"
 
@@ -524,9 +519,9 @@
                         app:layout_constraintTop_toBottomOf="@id/divider2_1"
                         android:background="@null"
                         android:text=""
-                        android:hint="Type your full name to confirm"
+                        android:hint="@string/ppp_layout_type_full_name"
                         android:textColorHint="@color/white"
-                        android:textSize="15dp"
+                        android:textSize="15sp"
                         android:textColor="@color/white"
                         android:inputType="text"
                         android:layout_marginTop="3dp"/>
@@ -547,19 +542,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        android:text=",Parties shall take co-ordinated measures to maintain migratory waterbird species in a favourable
-conservation status or to restore them to such a status. To this end, they shall apply within the limits of
-their national jurisdiction the measures prescribed in Article III, together with the specific actions
-determined in the Action Plan provided for in Article IV, of this Agreement,Parties shall take co-ordinated measures to maintain migratory waterbird species in a favourable
-conservation status or to restore them to such a status. To this end, they shall apply within the limits of
-their national jurisdiction the measures prescribed in Article III, together with the specific actions
-determined in the Action Plan provided for in Article IV, of this Agreement,Parties shall take co-ordinated measures to maintain migratory waterbird species in a favourable
-conservation status or to restore them to such a status. To this end, they shall apply within the limits of
-their national jurisdiction the measures prescribed in Article III, together with the specific actions
-determined in the Action Plan provided for in Article IV, of this Agreement，Parties shall take co-ordinated measures to maintain migratory waterbird species in a favourable
-conservation status or to restore them to such a status. To this end, they shall apply within the limits of
-their national jurisdiction the measures prescribed in Article III, together with the specific actions
-determined in the Action Plan provided for in Article IV, of this Agreement"
+                        android:text="@string/ppp_layout_final_agreement_text"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="@id/divider2_2"
                         app:layout_constraintHorizontal_bias="0.0"

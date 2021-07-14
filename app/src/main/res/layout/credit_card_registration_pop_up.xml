@@ -57,8 +57,11 @@
                     android:id="@+id/buttonHeight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
                     android:orientation="horizontal"
-                    app:layout_constraintGuide_end="50dp" />
+                    app:layout_constraintGuide_end="50dp"
+                    app:layout_constraintTop_toBottomOf="@id/postal_warning"
+                    tools:visibility="gone" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/cancel_button"
@@ -91,6 +94,17 @@
                     app:layout_constraintTop_toTopOf="@id/buttonHeight" />
 
                 <TextView
+                    android:id="@+id/star1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView46"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/textView46" />
+
+                <TextView
                     android:id="@+id/textView46"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
@@ -98,7 +112,7 @@
                     android:paddingVertical="5dp"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="@+id/input_text_credit_card"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintStart_toEndOf="@+id/star1"
                     app:layout_constraintTop_toTopOf="@+id/input_text_credit_card" />
 
                 <EditText
@@ -110,7 +124,7 @@
                     android:ems="10"
                     android:gravity="right"
                     android:hint="请输入信用卡号"
-                    android:inputType="textEmailAddress"
+                    android:inputType="number"
                     android:paddingVertical="5dp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline58"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -132,118 +146,132 @@
                     app:layout_constraintGuide_percent="0.96"
                     />
 
+
                 <EditText
                     android:id="@+id/input_text_postal_code"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="8dp"
-                    android:layout_marginTop="12dp"
+
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:background="@drawable/null_drawable"
-                    android:paddingVertical="5dp"
                     android:ems="10"
                     android:gravity="right"
                     android:hint="请输入邮编"
                     android:inputType="textPostalAddress"
-                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
-                    app:layout_constraintStart_toEndOf="@+id/textView60"
-                    app:layout_constraintTop_toBottomOf="@+id/input_text_province"
+                    android:paddingVertical="5dp"
                     app:layout_constraintBottom_toTopOf="@id/buttonHeight"
-                    android:layout_marginBottom="20dp"/>
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/textView60"
+                    app:layout_constraintTop_toBottomOf="@+id/province_warning"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <EditText
                     android:id="@+id/input_text_date_valid"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/null_drawable"
                     android:ems="10"
                     android:gravity="right"
-                    android:paddingVertical="5dp"
                     android:hint="请输入年份"
-                    android:inputType="textPassword"
+                    android:inputType="date"
+                    android:paddingVertical="5dp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline58"
                     app:layout_constraintStart_toEndOf="@+id/textView47"
-                    app:layout_constraintTop_toBottomOf="@+id/input_text_credit_card"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/card_number_warning" />
 
                 <EditText
                     android:id="@+id/input_text_cvv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/null_drawable"
                     android:ems="10"
                     android:gravity="right"
-                    android:paddingVertical="5dp"
                     android:hint="请输入月份"
-                    android:inputType="textPassword"
+                    android:inputType="date"
+                    android:paddingVertical="5dp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline58"
                     app:layout_constraintStart_toEndOf="@+id/textView48"
-                    app:layout_constraintTop_toBottomOf="@+id/input_text_date_valid" />
+                    app:layout_constraintTop_toBottomOf="@+id/year_warning" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/input_text_line_2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/null_drawable"
-                    android:ems="10"
-                    android:gravity="right"
-                    android:hint="请输入信用卡类型"
-                    android:inputType="numberDecimal"
+                    android:textAlignment="textEnd"
                     app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintStart_toEndOf="@+id/textView53"
-                    app:layout_constraintTop_toBottomOf="@+id/input_text_address"
-                    android:paddingVertical="5dp"/>
+                    app:layout_constraintTop_toBottomOf="@+id/address_warning" />
+
+
 
                 <EditText
                     android:id="@+id/input_text_city"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="10dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/null_drawable"
                     android:ems="10"
                     android:gravity="right"
                     android:hint="请输入城市"
+                    android:inputType="text"
                     android:paddingVertical="5dp"
-                    android:inputType="numberDecimal"
                     app:layout_constraintEnd_toStartOf="@+id/guideline58"
                     app:layout_constraintStart_toEndOf="@+id/textView57"
-                    app:layout_constraintTop_toBottomOf="@+id/input_text_line_2" />
+                    app:layout_constraintTop_toBottomOf="@+id/card_type_warning" />
 
                 <EditText
                     android:id="@+id/input_text_province"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="8dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/null_drawable"
                     android:ems="10"
                     android:gravity="right"
                     android:hint="请输入省份"
+                    android:inputType="textPostalAddress"
                     android:paddingVertical="5dp"
-                    android:inputType="phone"
                     app:layout_constraintEnd_toStartOf="@+id/guideline58"
                     app:layout_constraintStart_toEndOf="@+id/textView59"
-                    app:layout_constraintTop_toBottomOf="@+id/input_text_city"
-                    />
+                    app:layout_constraintTop_toBottomOf="@+id/city_warning" />
 
                 <EditText
                     android:id="@+id/input_text_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/null_drawable"
                     android:ems="10"
                     android:gravity="right"
                     android:hint="请输入姓"
-                    android:paddingVertical="5dp"
                     android:inputType="textPersonName"
+                    android:paddingVertical="5dp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline58"
                     app:layout_constraintStart_toEndOf="@+id/textView49"
-                    app:layout_constraintTop_toBottomOf="@+id/input_text_cvv" />
+                    app:layout_constraintTop_toBottomOf="@+id/month_warning" />
+
+                <TextView
+                    android:id="@+id/star2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView47"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/textView47" />
+
+
+
+
+
 
                 <TextView
                     android:id="@+id/textView47"
@@ -253,8 +281,19 @@
                     android:paddingVertical="5dp"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="@+id/input_text_date_valid"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintStart_toEndOf="@+id/star2"
                     app:layout_constraintTop_toTopOf="@+id/input_text_date_valid" />
+
+                <TextView
+                    android:id="@+id/star3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView48"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/textView48" />
 
                 <TextView
                     android:id="@+id/textView48"
@@ -264,8 +303,23 @@
                     android:paddingVertical="5dp"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="@+id/input_text_cvv"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintStart_toEndOf="@+id/star3"
                     app:layout_constraintTop_toTopOf="@+id/input_text_cvv" />
+
+
+                <TextView
+                    android:id="@+id/star4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView49"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/textView49" />
+
+
+
 
                 <TextView
                     android:id="@+id/textView49"
@@ -275,19 +329,61 @@
                     android:text="Name: "
                     android:paddingVertical="5dp"
                     app:layout_constraintBottom_toBottomOf="@+id/input_text_name"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintStart_toEndOf="@+id/star4"
                     app:layout_constraintTop_toTopOf="@+id/input_text_name" />
+
+                <TextView
+                    android:id="@+id/star5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView61"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/textView61" />
+
+
+
+                <TextView
+                    android:id="@+id/star6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView53"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/textView53" />
+
+
 
                 <TextView
                     android:id="@+id/textView53"
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
+                    android:layout_height="wrap_content"
                     android:text="Card Type:  "
                     android:textColor="@color/black"
                     android:paddingVertical="5dp"
                     app:layout_constraintBottom_toBottomOf="@+id/input_text_line_2"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintStart_toEndOf="@+id/star6"
                     app:layout_constraintTop_toTopOf="@+id/input_text_line_2" />
+
+                <TextView
+                    android:id="@+id/star7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView57"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/textView57" />
+
+
+
+
+
 
                 <TextView
                     android:id="@+id/textView57"
@@ -297,20 +393,54 @@
                     android:textColor="@color/black"
                     android:paddingVertical="5dp"
                     app:layout_constraintBottom_toBottomOf="@+id/input_text_city"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintStart_toEndOf="@+id/star7"
                     app:layout_constraintTop_toTopOf="@+id/input_text_city" />
+
+
+                <TextView
+                    android:id="@+id/star8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView59"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/textView59" />
+
+
 
                 <TextView
                     android:id="@+id/textView59"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
+                    android:paddingVertical="5dp"
                     android:text="Province："
                     android:textColor="@color/black"
-                    android:paddingVertical="5dp"
                     app:layout_constraintBottom_toBottomOf="@+id/input_text_province"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintStart_toEndOf="@+id/star8"
                     app:layout_constraintTop_toTopOf="@+id/input_text_province"
-                    />
+                    app:layout_constraintVertical_bias="0.0" />
+
+
+                <TextView
+                    android:id="@+id/star9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:gravity="center"
+                    android:text="*"
+                    android:textColor="@color/red"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView60"
+                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintTop_toTopOf="@+id/textView60" />
+
+
+
+
+
+
+
+
 
                 <TextView
                     android:id="@+id/textView60"
@@ -320,7 +450,7 @@
                     android:textColor="@color/black"
                     android:paddingVertical="5dp"
                     app:layout_constraintBottom_toBottomOf="@+id/input_text_postal_code"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintStart_toEndOf="@+id/star9"
                     app:layout_constraintTop_toTopOf="@+id/input_text_postal_code" />
 
 
@@ -385,6 +515,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/input_text_province" />
 
                 <View
+                    android:id="@+id/view17"
                     android:layout_width="0dp"
                     android:layout_height="1dp"
                     android:background="@color/grey"
@@ -410,23 +541,115 @@
                     android:paddingVertical="5dp"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="@+id/input_text_address"
-                    app:layout_constraintStart_toStartOf="@+id/guideline57"
+                    app:layout_constraintStart_toEndOf="@+id/star5"
                     app:layout_constraintTop_toTopOf="@+id/input_text_address" />
 
                 <EditText
                     android:id="@+id/input_text_address"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/null_drawable"
                     android:ems="10"
                     android:gravity="right"
-                    android:paddingVertical="5dp"
                     android:hint="请输入地址"
-                    android:inputType="textPersonName"
+                    android:inputType="textPostalAddress"
+                    android:paddingVertical="5dp"
                     app:layout_constraintEnd_toStartOf="@+id/guideline58"
                     app:layout_constraintStart_toEndOf="@+id/textView61"
+                    app:layout_constraintTop_toBottomOf="@+id/name_warning" />
+
+                <TextView
+                    android:id="@+id/card_number_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_credit_card" />
+
+                <TextView
+                    android:id="@+id/year_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                <TextView
+                    android:id="@+id/month_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_cvv" />
+
+                <TextView
+                    android:id="@+id/name_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
                     app:layout_constraintTop_toBottomOf="@+id/input_text_name" />
+
+                <TextView
+                    android:id="@+id/address_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_address" />
+
+                <TextView
+                    android:id="@+id/card_type_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_line_2" />
+
+                <TextView
+                    android:id="@+id/city_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_city" />
+
+                <TextView
+                    android:id="@+id/province_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_province" />
+
+                <TextView
+                    android:id="@+id/postal_warning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="TextView"
+                    android:textColor="@color/red"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@id/buttonHeight"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline58"
+                    app:layout_constraintTop_toBottomOf="@+id/input_text_postal_code" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

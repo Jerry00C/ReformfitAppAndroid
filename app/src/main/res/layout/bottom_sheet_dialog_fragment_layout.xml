@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="20dp">
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -19,7 +18,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:gravity="center"
-            android:text="Please choose a payment method "
+            android:text="@string/dialog_bsdf_choose_payment_method"
             android:textColor="@color/grey"
             android:textSize="16sp" />
 
@@ -29,7 +28,7 @@
             android:layout_height="48dp"
             android:backgroundTint="@color/white"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:text="信用卡"
+            android:text="@string/dialog_bsdf_credit_card"
             android:textColor="@color/black"
             android:id="@+id/credit_card"/>
 
@@ -38,7 +37,7 @@
             android:layout_height="48dp"
             android:backgroundTint="@color/white"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:text="借记卡"
+            android:text="@string/dialog_bsdf_direct_debit"
             android:textColor="@color/black"
             android:id="@+id/debit_card"/>
         <View
@@ -51,7 +50,7 @@
             android:layout_height="48dp"
             android:backgroundTint="@color/white"
             style="@style/Widget.AppCompat.Button.Borderless"
-            android:text="取消"
+            android:text="@string/dialog_bsdf_cancel"
             android:textColor="@color/black"
             android:id="@+id/cancel"/>
 
