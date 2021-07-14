@@ -2,11 +2,15 @@ package com.example.reformfitapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
 import com.livechatinc.inappchat.ChatWindowConfiguration;
+import com.livechatinc.inappchat.ChatWindowErrorType;
 import com.livechatinc.inappchat.ChatWindowView;
+import com.livechatinc.inappchat.models.NewMessageModel;
 
 import java.util.HashMap;
 
@@ -23,29 +27,62 @@ public class LiveChat extends AppCompatActivity {
         setContentView(R.layout.activity_live_chat);
 
 
-        HashMap<String, String> customParamsMap = null;
-        configuration = new ChatWindowConfiguration(
-                "your_licence_number",
-                "group_id",
-                "Visitor name",
-                "visitor@email.com",
-                customParamsMap
-        );
 
         startFullScreenChat();
 
 
-        ChatWindowView chatWindowView = new ChatWindowView(LiveChat.this);
-        emmbeddedChatWindow.findViewById(R.id.embedded_chat_window);
 
 
     }
 
     public void startFullScreenChat() {
+        String visitorName = "";
+        String visitorEmail = "";
+        if(((GlobalVariableApplication) getApplication()).getLogIn()){
+
+            MindbodyClientResponseModel mindbodyClientResponseModel = ((GlobalVariableApplication) getApplication()).getMindbodyClientResponseModel();
+            visitorName = mindbodyClientResponseModel.getFirstName();
+            visitorEmail = mindbodyClientResponseModel.getEmail();
+        }
+
+        HashMap<String, String> customParamsMap = null;
+        ChatWindowConfiguration configuration = new ChatWindowConfiguration(
+                "12951837",
+                "",
+                visitorName,
+                visitorEmail,
+                customParamsMap
+        );
         if (fullScreenChatWindow == null) {
-            fullScreenChatWindow = ChatWindowView.createAndAttachChatWindowInstance(LiveChat.this);
+            ChatWindowView fullScreenChatWindow = ChatWindowView.createAndAttachChatWindowInstance(LiveChat.this);
             fullScreenChatWindow.setUpWindow(configuration);
-            fullScreenChatWindow.setUpListener((ChatWindowView.ChatWindowEventsListener) getApplicationContext());
+            fullScreenChatWindow.onBackPressed();
+            fullScreenChatWindow.setUpListener(new ChatWindowView.ChatWindowEventsListener() {
+                @Override
+                public void onChatWindowVisibilityChanged(boolean visible) {
+
+                }
+
+                @Override
+                public void onNewMessage(NewMessageModel message, boolean windowVisible) {
+
+                }
+
+                @Override
+                public void onStartFilePickerActivity(Intent intent, int requestCode) {
+
+                }
+
+                @Override
+                public boolean onError(ChatWindowErrorType errorType, int errorCode, String errorDescription) {
+                    return false;
+                }
+
+                @Override
+                public boolean handleUri(Uri uri) {
+                    return false;
+                }
+            });
             fullScreenChatWindow.initialize();
         }
         fullScreenChatWindow.showChatWindow();
@@ -54,7 +91,32 @@ public class LiveChat extends AppCompatActivity {
     public void startEmmbeddedChat(View view) {
         if (!emmbeddedChatWindow.isInitialized()) {
             emmbeddedChatWindow.setUpWindow(configuration);
-            emmbeddedChatWindow.setUpListener((ChatWindowView.ChatWindowEventsListener) getApplicationContext());
+            emmbeddedChatWindow.setUpListener(new ChatWindowView.ChatWindowEventsListener() {
+                @Override
+                public void onChatWindowVisibilityChanged(boolean visible) {
+
+                }
+
+                @Override
+                public void onNewMessage(NewMessageModel message, boolean windowVisible) {
+
+                }
+
+                @Override
+                public void onStartFilePickerActivity(Intent intent, int requestCode) {
+
+                }
+
+                @Override
+                public boolean onError(ChatWindowErrorType errorType, int errorCode, String errorDescription) {
+                    return false;
+                }
+
+                @Override
+                public boolean handleUri(Uri uri) {
+                    return false;
+                }
+            });
             emmbeddedChatWindow.initialize();
         }
         emmbeddedChatWindow.showChatWindow();

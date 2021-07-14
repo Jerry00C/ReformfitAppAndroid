@@ -6,14 +6,12 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -22,17 +20,12 @@ import android.widget.Toast;
 
 import com.example.reformfitapp.expandedFunc.BMICalculator;
 import com.example.reformfitapp.expandedFunc.BMRCalculator;
-import com.example.reformfitapp.expandedFunc.BlogNews;
+import com.example.reformfitapp.expandedFunc.blogNews.BlogNews;
 import com.example.reformfitapp.expandedFunc.DietHealth;
 import com.example.reformfitapp.expandedFunc.TDEECalculator;
 import com.example.reformfitapp.expandedFunc.YongjiuHealth;
-import com.example.reformfitapp.expandedFunc.YongjiuReport;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;

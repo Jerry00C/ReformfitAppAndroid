@@ -28,7 +28,13 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.livechatinc.inappchat.ChatWindowConfiguration;
+import com.livechatinc.inappchat.ChatWindowErrorType;
+import com.livechatinc.inappchat.ChatWindowView;
+import com.livechatinc.inappchat.models.NewMessageModel;
+
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class LocationInfo extends AppCompatActivity {
     ViewPager viewPager;
@@ -75,6 +81,9 @@ public class LocationInfo extends AppCompatActivity {
     ImageView initBack;
 
     TextView initPurchase;
+    TextView initLiveChat;
+    private ChatWindowView fullScreenChatWindow;
+    private String licenceNumber = "12951837";
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -188,6 +197,7 @@ public class LocationInfo extends AppCompatActivity {
 
 
         initPurchase = view.findViewById(R.id.init_purchase);
+        initLiveChat = view.findViewById(R.id.init_liveChat);
 
 
         fetchInfo();
@@ -506,6 +516,18 @@ public class LocationInfo extends AppCompatActivity {
             }
         });
 
+        initLiveChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent switchActivity = new Intent(getApplicationContext(), LiveChat.class);
+                switchActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(switchActivity);*/
+
+                startFullScreenChat();
+            }
+        });
+
 
         frameLayout.removeAllViews();
         frameLayout.addView(view);
@@ -517,8 +539,69 @@ public class LocationInfo extends AppCompatActivity {
     }
 
 
+    public void startFullScreenChat() {
+        String visitorName = "";
+        String visitorEmail = "";
+        if(((GlobalVariableApplication) getApplication()).getLogIn()){
 
+            MindbodyClientResponseModel mindbodyClientResponseModel = ((GlobalVariableApplication) getApplication()).getMindbodyClientResponseModel();
+            visitorName = mindbodyClientResponseModel.getFirstName();
+            visitorEmail = mindbodyClientResponseModel.getEmail();
+        }
 
+        HashMap<String, String> customParamsMap = null;
+        ChatWindowConfiguration configuration = new ChatWindowConfiguration(
+                licenceNumber,
+                "",
+                visitorName,
+                visitorEmail,
+                customParamsMap
+        );
+
+        if (fullScreenChatWindow == null) {
+            fullScreenChatWindow = ChatWindowView.createAndAttachChatWindowInstance(LocationInfo.this);
+            fullScreenChatWindow.setUpWindow(configuration);
+            fullScreenChatWindow.onBackPressed();
+            fullScreenChatWindow.setUpListener(new ChatWindowView.ChatWindowEventsListener() {
+                @Override
+                public void onChatWindowVisibilityChanged(boolean visible) {
+
+                }
+
+                @Override
+                public void onNewMessage(NewMessageModel message, boolean windowVisible) {
+
+                }
+
+                @Override
+                public void onStartFilePickerActivity(Intent intent, int requestCode) {
+
+                }
+
+                @Override
+                public boolean onError(ChatWindowErrorType errorType, int errorCode, String errorDescription) {
+                    return false;
+                }
+
+                @Override
+                public boolean handleUri(Uri uri) {
+                    return false;
+                }
+            });
+            fullScreenChatWindow.initialize();
+        }
+        fullScreenChatWindow.showChatWindow();
+    }
+    @Override
+    public void onBackPressed() {
+
+        if(fullScreenChatWindow != null && fullScreenChatWindow.onBackPressed()){
+
+        }
+        else{
+            super.onBackPressed();
+        }
+    }
 
 
     private void serviceTabCall(int pos){

@@ -1414,7 +1414,8 @@
             android:paddingVertical="8dp"
             android:text="在线客服"
             android:textAlignment="center"
-            android:textColor="@color/black">
+            android:textColor="@color/black"
+            android:id="@+id/init_liveChat">
 
         </TextView>
 

@@ -53,6 +53,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.livechatinc.inappchat.ChatWindowConfiguration;
+import com.livechatinc.inappchat.ChatWindowErrorType;
+import com.livechatinc.inappchat.ChatWindowView;
+import com.livechatinc.inappchat.models.NewMessageModel;
 
 import org.jetbrains.annotations.NotNull;
 import org.w3c.dom.Text;
@@ -134,6 +138,12 @@ public class ClassInfo extends AppCompatActivity {
     MindbodyClassModel classEx;
     String classId;
 
+
+    TextView initPurchase;
+    TextView initLiveChat;
+    private ChatWindowView fullScreenChatWindow;
+
+    private String licenceNumber = "12951837";
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -582,7 +592,98 @@ public class ClassInfo extends AppCompatActivity {
 
 
 
+        initPurchase = findViewById(R.id.init_purchase);
+        initLiveChat = findViewById(R.id.init_liveChat);
+
+        initPurchase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent switchActivity = new Intent(getApplicationContext(), TabbedActivityPurchase.class);
+                switchActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(switchActivity);
+            }
+        });
+
+        initLiveChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent switchActivity = new Intent(getApplicationContext(), LiveChat.class);
+                switchActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(switchActivity);*/
+
+                startFullScreenChat();
+            }
+        });
+
+
+
         initialize();
+    }
+
+    private void startFullScreenChat() {
+        String visitorName = "";
+        String visitorEmail = "";
+        if(((GlobalVariableApplication) getApplication()).getLogIn()){
+
+            MindbodyClientResponseModel mindbodyClientResponseModel = ((GlobalVariableApplication) getApplication()).getMindbodyClientResponseModel();
+            visitorName = mindbodyClientResponseModel.getFirstName();
+            visitorEmail = mindbodyClientResponseModel.getEmail();
+        }
+
+        HashMap<String, String> customParamsMap = null;
+        ChatWindowConfiguration configuration = new ChatWindowConfiguration(
+                licenceNumber,
+                "",
+                visitorName,
+                visitorEmail,
+                customParamsMap
+        );
+
+        if (fullScreenChatWindow == null) {
+            fullScreenChatWindow = ChatWindowView.createAndAttachChatWindowInstance(ClassInfo.this);
+            fullScreenChatWindow.setUpWindow(configuration);
+            fullScreenChatWindow.onBackPressed();
+            fullScreenChatWindow.setUpListener(new ChatWindowView.ChatWindowEventsListener() {
+                @Override
+                public void onChatWindowVisibilityChanged(boolean visible) {
+
+                }
+
+                @Override
+                public void onNewMessage(NewMessageModel message, boolean windowVisible) {
+
+                }
+
+                @Override
+                public void onStartFilePickerActivity(Intent intent, int requestCode) {
+
+                }
+
+                @Override
+                public boolean onError(ChatWindowErrorType errorType, int errorCode, String errorDescription) {
+                    return false;
+                }
+
+                @Override
+                public boolean handleUri(Uri uri) {
+                    return false;
+                }
+            });
+            fullScreenChatWindow.initialize();
+        }
+        fullScreenChatWindow.showChatWindow();
+    }
+    @Override
+    public void onBackPressed() {
+
+        if(fullScreenChatWindow != null && fullScreenChatWindow.onBackPressed()){
+
+        }
+        else{
+            super.onBackPressed();
+        }
     }
 
     private boolean checkLateCancel(int cancelOffset, long startTimestamp){
@@ -629,7 +730,7 @@ public class ClassInfo extends AppCompatActivity {
     }
 
 
-    public void showLoginDialog(String title) {
+    private void showLoginDialog(String title) {
         final Dialog dialog = new Dialog(ClassInfo.this);
         dialog.setContentView(R.layout.sign_in_dialog_new);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -814,7 +915,7 @@ public class ClassInfo extends AppCompatActivity {
     }
 
 
-    public void showCreateAccountDialog(String title,Dialog previousDialog){
+    private void showCreateAccountDialog(String title,Dialog previousDialog){
         final Dialog dialog = new Dialog(ClassInfo.this);
 
         dialog.setContentView(R.layout.signup_dialog_new);
@@ -1082,7 +1183,7 @@ public class ClassInfo extends AppCompatActivity {
     }
 
 
-    public void showAgreementDialog(String title, String text){
+    private void showAgreementDialog(String title, String text){
         final Dialog dialog = new Dialog(ClassInfo.this);
         dialog.setContentView(R.layout.agreement_page);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

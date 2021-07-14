@@ -1,8 +1,7 @@
-package com.example.reformfitapp.expandedFunc;
+package com.example.reformfitapp.expandedFunc.blogNews;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
@@ -20,10 +19,7 @@ import com.example.reformfitapp.GlobalVariableApplication;
 import com.example.reformfitapp.MainBottomNaviService;
 import com.example.reformfitapp.R;
 
-public class BlogEx1 extends AppCompatActivity {
-
-    TextView component1;
-    TextView component2;
+public class BlogEx3 extends AppCompatActivity {
 
 
 
@@ -37,6 +33,15 @@ public class BlogEx1 extends AppCompatActivity {
 
 
 
+    TextView initBack2;
+    TextView initTop;
+
+    TextView blgText1;
+    TextView blgText2;
+    TextView blgText3;
+    TextView blgTextLs;
+
+
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +50,15 @@ public class BlogEx1 extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        setContentView(R.layout.activity_blog_ex1);
+
+        setContentView(R.layout.activity_blog_ex3);
 
 
         initBack = findViewById(R.id.init_back);
         initBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BlogEx1.this.finish();
+                BlogEx3.this.finish();
             }
         });
 
@@ -73,16 +79,6 @@ public class BlogEx1 extends AppCompatActivity {
         });
 
 
-
-        component1 = findViewById(R.id.component1);
-        component1.setText(Html.fromHtml(getString(R.string.blog_component1)));
-
-
-        component1 = findViewById(R.id.component2);
-        component1.setText(Html.fromHtml(getString(R.string.blog_component2)));
-
-
-
         scrollView = (ScrollView) findViewById(R.id.scrollView);
         thresh = findViewById(R.id.thresh);
         constraintLayout = findViewById(R.id.constraintLayout);
@@ -93,15 +89,52 @@ public class BlogEx1 extends AppCompatActivity {
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
 
                 if(scrollY >= thresh.getTop() - 85){
-                    constraintLayout.setBackgroundColor(getColor(R.color.black));
+                    constraintLayout.setBackgroundColor(getResources().getColor(R.color.black));
                 }
                 else{
-                    constraintLayout.setBackgroundColor(getColor(R.color.transparent));
+                    constraintLayout.setBackgroundColor(getResources().getColor(R.color.transparent));
 
                 }
             }
         });
 
 
+        initBack2 = findViewById(R.id.init_back2);
+        initBack2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BlogEx3.this.finish();
+            }
+        });
+
+
+        initTop = findViewById(R.id.init_top);
+        initTop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                scrollView.post(new Runnable() {
+                    public void run() {
+
+
+                        scrollView.smoothScrollTo(0, 0);
+                        constraintLayout.setBackgroundColor(getResources().getColor(R.color.transparent));
+                    }
+                });
+
+            }
+        });
+
+
+        blgText1 = findViewById(R.id.blg_text1);
+        blgText2 = findViewById(R.id.blg_text2);
+        blgText3 = findViewById(R.id.blg_text3);
+        blgTextLs = findViewById(R.id.blg_text_ls);
+
+        blgText1.setText(Html.fromHtml(getString(R.string.blg3_text1)));
+        blgText2.setText(Html.fromHtml(getString(R.string.blg3_text2)));
+        blgText3.setText(Html.fromHtml(getString(R.string.blg3_text3)));
+        blgTextLs.setText(Html.fromHtml(getString(R.string.blg3_text_ls)));
     }
 }

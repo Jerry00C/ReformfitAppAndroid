@@ -1444,7 +1444,8 @@
             android:paddingVertical="8dp"
             android:text="免费体验"
             android:textAlignment="center"
-            android:textColor="@color/black">
+            android:textColor="@color/black"
+            android:id="@+id/init_liveChat">
 
         </TextView>
 
@@ -1457,7 +1458,8 @@
             android:paddingVertical="8dp"
             android:text="购买课包"
             android:textAlignment="center"
-            android:textColor="@color/black">
+            android:textColor="@color/black"
+            android:id="@+id/init_purchase">
 
         </TextView>
 

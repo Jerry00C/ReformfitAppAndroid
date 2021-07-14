@@ -1,6 +1,398 @@
 <resources>
     <string name="app_name">ReformfitApp</string>
 
+    <!--                          Fat Shredder                          -->
+
+
+    <string name="fs_tab1">DESCRIPTION</string>
+    <string name="fs_tab2">NOTE</string>
+
+    <string name="fs_title"><![CDATA[<big>FAT Shredder</big><small><sup>TM</sup></small>]]></string>
+
+
+    <string name="fs_class_intro_title">Class Introduction</string>
+    <string name="fs_class_intro">50 minute, 2 trainers to a maximum 24 client occupancy. Combines circuit training, interval training and functional training for a optimal fat loss. Each class is composed of 12 different exercises that work every muscle in the body. Helps burn calories and increase fat loss in  people of all fitness levels. Every class is unique and you’ll never see two identical classes in the same month. Over hundreds of exercises to pick from, keeping classes different and engaging. Complete heart rate tracking available on screen with total calories burned and current heart rate.</string>
+
+    <string name="fs_class_benefit_title">Class Benefit</string>
+    <string name="fs_class_benefit">Intense calorie burn. Total body fat loss. Full body muscle endurance work. Improving Metabolic Conditioning. Improved Cardiovascular Ability. After Burn Effect (EPOC), 400-800 calories burned per class. A group class creating a team dynamic backed with electrifying EDM music to boost your performance to new heights.</string>
+
+
+    <string name="fs_heart_rate_title"></string>
+    <string name="fs_heart_rate">Prior to class, please put on your heart rate monitor. The monitor should be placed on the upper arm region with heart rate monitor interface facing up to ensure your current heart rate, calories burned and rewards points will be displayed on screen during class. Once your session is complete you will receive an email report with all data after a class is finished.</string>
+
+
+    <string name="fs_class_faq_title">F&amp;Q</string>
+    <string name="fs_class_faq"> <![CDATA[
+        <font color=#dedede> 1. At what frequency should I do Fat Shredder?</font>
+        <font color=#848484><br></br>A: We recommend the average person to attend 1-2 fat-shredders along with 1-2 muscle &amp; tone for best result. Avoid over exercising because too much exercise is known to prevent muscles from fully recovering before your next workout. Negatives of overtraining will include: lack of energy during your workout, reduced workout efficiency and maybe reduction in muscle mass from too much physical stress.</font>
+        <br></br>
+
+        <font color=#dedede><br></br>2. I am new to fitness, am I able to handle this class?</font>
+        <font color=#848484><br></br>A: Yes, it fits people of all level of fitness. However, we recommend taking a single 90-minute basic foundations personal training session with one of our fitness coaches before you begin our classes. Please contact our customer support for more detail.</font>
+        <br></br>
+
+
+        <font color=#dedede><br></br>3. I want to lose weight, would it be better if I workout with empty stomach?</font>
+        <font color=#848484><br></br>A: NO. Even if you are controlling carbohydrate intake overall, you should eat a good amount of carbohydrates 1-2 hours before your class to maintain your blood sugar level for the duration of your workout. As well, consume some carbohydrates after each class to increase muscle recovery.  Negatives of not consuming sufficient amounts of food and carbohydrates before you workout include feeling dizzy, vomiting and lack of concentration during classes. Remember carbohydrates are NOT bad for you.</font>
+        <br></br>
+
+        <font color=#dedede><br></br>4. Why are my muscles sore/not sore after a class?</font>
+        <font color=#848484><br></br>A: During intense exercise, there may not be enough oxygen available to complete the process of muscle recovery, so a substance called lactate is made. Your body can convert this lactate to energy without using oxygen. But this lactate or lactic acid can sometimes build up in your bloodstream faster than you can burn it off. That is the cause of your muscle sore.</font>
+        <br></br>
+
+        <font color=#dedede><br></br>5. How to minimize muscle soreness after a class?</font>
+        <font color=#848484><br></br>A: Fat shredder utilizes every functional muscle in the entire body. You will feel soreness after your very first couple of classes, however the cool down stretch at the end of each class will help reduce lactate accumulation. To ensure better recovery after your workouts we recommend doing the stretches with your trainer after each class.</font>
+        <br></br>
+
+        <font color=#dedede><br></br>6. What should I do if I feel discomfort when attempting a certain exercise.</font>
+        <font color=#848484><br></br>A: This is a common occurrence as different people have different body types, different muscular endurance, different mobility and even different varying degrees of flexibility. If you feel uncomfortable attempting any exercise, stop and let your trainer know and your trainer will find an easier alternative exercise for you to do.</font>
+        <br></br>
+
+        <font color=#dedede><br></br>7. My heart rate monitor is not giving me accurate estimates, what should I do?</font>
+        <font color=#848484><br></br>A: Firstly, make sure you are putting in sufficient effort when doing your exercises in order to see your heart rate scores rise. If, however, your heart rate is still not coming up on the display, tell your trainer and we will replace your heart rate monitor immediately.</font>]]>
+  </string>
+
+    <string name="fs_class_warning_title">Things to Know</string>
+    <string name="fs_class_warning">1. Members can reserve their spots at most up to 14 days prior to a class via the ReformFIT mobile APP or through our website
+        \nPLEASE NOTE: A $12 late penalty fee will be applied if you do not cancel your class booking within 6 hours before class starts OR if you are 15 minutes late to class or more.
+        \n
+        \n2. If a class is full, you may join the class waitlist through the ReformFIT mobile APP or website.
+        \n
+        \nWhen a spot in the class becomes available:
+        \n\t1) 6 hours or MORE prior to class, the first person on the waitlist will automatically move into the class.
+        \n
+        \n\t2) LESS than 6 hours before class, the waitlist will expire and our system will NOT move anyone from Waitlist. Anyone who wants the empty spot needs to manually enrol themselves into this class. Once you have added yourself to this class, please make sure you show up on time, otherwise the $12 late penalty fee will be charged as per our previous guidelines.
+        \n
+        \n3. It is MANDATORY to wear in-door exercise footwear and training clothes. If you have long hair, please tie it back (free hairbands are given at our front desk). We DO NOT allow outdoor shoes or high heel shoes as they may damage our gym facilities as well as out your health and the health of other members at potential risk.
+        \n
+        \n4 If at anytime you feel uncomfortable during class, stop exercising immediately and notify your trainer. Please avoid training on an empty stomach before workout, ensure you have had plenty of water before exercising and if possible some food 30 minutes after training.
+        \n
+        \n5. Do you have more important questions? If so, please contact our customer service representatives.
+       </string>
+
+
+    <!--                          Blog Ex 1                          -->
+
+
+    <string name="blg1_title">Muscle Hypertrophy vs Muscle Endurance</string>
+    <string name="blg1_time">Posted on May 12, 2021 | In</string>
+    <string name="blg1_tip">Exercises Tips</string>
+    <string name="blg1_intro">In the fitness and weight-training world, people are often wondering how many reps of each exercise they should be doing or how heavy they should be lifting in order to achieve their goal. These goals often include muscle hypertrophy or muscle endurance. Understanding the difference between the two can help you decide which is right for you. </string>
+    <string name="blg1_title1">Muscle Hypertrophy</string>
+    <string name="blg1_text1">Muscle hypertrophy refers to an increase in your muscle mass overtime, in particular the physical size and strength of your muscles. For instance, measuring the circumference of your arms in week 1 of your training and seeing physical growth in measurement the following weeks is an indication of muscle hypertrophy. Exercises that help with muscle hypertrophy (growth) is by lifting heavier weights at least 2–3 days a week and alternating between upper-body and lower-body days. However, allowing your body recovery time in between is important because rest and recovery is essential for muscle growth. Lifting heavy weights consistently along with proper nutrition and lifestyle can help increase your overall physical body size.</string>
+
+    <string name="blg1_title2">Muscle Endurance</string>
+    <string name="blg1_text2">Muscle endurance is the ability of a muscle or group of muscles to perform a repeated activity for an extended period of time. Therefore, the higher your muscle endurance, the greater number of repetitions you could do in a particular exercise. For instance, on week 1 you were able to perform 15 push ups straight and on week 2 you can now complete 20 push ups straight. This is an indication of your muscle endurance improving. Lacking muscle endurance can be seen when your muscles tire out easily and a reduced amount of work those muscle groups can perform. Exercises that often involve muscle endurance include but not limited to: walking, cycling, resistance training, swimming, circuit training, holding a plank etc. </string>
+
+
+    <string name="blg1_shTitle1">Type of Training</string>
+    <string name="blg1_shTitle2">% of 1 Rep-Max(RM)*</string>
+    <string name="blg1_shTitle3">Sets</string>
+    <string name="blg1_shTitle4">Reps</string>
+
+    <string name="blg1_shContent00">Hypertrophy</string>
+    <string name="blg1_shContent01">Endurance</string>
+    <string name="blg1_shContent10">60 – 75%</string>
+    <string name="blg1_shContent11">50 – 60%</string>
+    <string name="blg1_shContent20">3 – 5</string>
+    <string name="blg1_shContent21">3</string>
+    <string name="blg1_shContent30">8 – 12</string>
+    <string name="blg1_shContent31">15 – 20</string>
+
+    <string name="blg1_text3">
+ <![CDATA[<font color=#dedede>One Rep Max</font><font color=#848484> : The maximum amount of weight you can lift from one single repetition of a certain exercise</font>]]>
+  </string>
+    <string name="blg1_text4">
+ <![CDATA[<font color=#dedede>Example:</font><font color=#848484> 50% of 1 RM = RM x 0.5 will give you the weight you should be lifting at to improve muscle endurance. Complete 3 sets of 15-20 reps at 50% of your 1 Rep Max. Circuit training and HIIT workouts at ReformFIT is a great way to improve your muscle endurance. </font>]]>
+  </string>
+
+    <string name="blg1_text_ls">At ReformFIT, we offer a variety of classes with an extensive selection of fitness equipment and weights that can help you achieve your goals of muscle hypertrophy or muscle endurance! Our experienced instructors can help you figure out what exercise is best for your fitness goals.</string>
+
+
+    <!--                                   Blog Ex 2                                -->
+
+
+    <string name="blg2_title">Knee Hyperextension: What It is and How To Improve It</string>
+
+    <string name="blg2_time">Posted on April 5, 2021 | In </string>
+    <string name="blg2_tip">Exercises Tips</string>
+
+    <string name="blg2_title1">WHAT IS IT?</string>
+    <string name="blg2_text1"><![CDATA[<font color=#848484> Knee Hyperextension happens when the knee joint is </font><font color=#dedede>excessively straightened, resulting in high stress on the entire knee from the structure to the back of the knee joint.</font><font color=#848484> This occurs when the knee joint is bent the wrong way and too far backwards. This often occurs in individuals who perform high impact exercises or are athletes.</font>]]></string>
+
+    <string name="blg2_title2">CAUSES</string>
+    <string name="blg2_text2"><![CDATA[<font color=#848484> The cause of knee hyperextensions often occurs from high impact exercises that require </font><font color=#dedede>jumping and landing hard or abrupt stop</font> <font color=#848484> in running as well as contact sports. </font><font color=#dedede>Improper form during exercising</font><font color=#848484> and</font><font color=#dedede> awkward placement of your knees</font><font color=#848484>  can also increase risk of Knee Hyperextension.</font>]]></string>
+
+    <string name="blg2_title3">SYMPTOMS</string>
+    <string name="blg2_text3"><![CDATA[<font color=#848484> Some of the common symptoms of an Extended Knee include </font><font color=#dedede>localized knee pain, swelling, bruising, knee instability, limited knee movement and popping sound from knee joint.</font><font color=#848484>
+        <br></br>
+        <br></br>Knee hyperextension can range from a mild strain to a severe injury to the knee structure. It is important to provide immediate attention to prevent long-term injuries.]]></string>
+
+
+    <string name="blg2_title4">HOW TO IMPROVE IT?</string>
+    <string name="blg2_text4">If you are experiencing a Hyperextended Knee, you can follow the acronym, RICE that can provide you with some immediate relief.</string>
+
+
+    <string name="blg2_title41">R – Rest</string>
+    <string name="blg2_text41">Take a break from high intensity/impact training activities and allow the body to rest and recover. Ensure that swelling and pain subsides before resuming. You may perform gentle, low impact activities to keep the body moving during your recovery period.</string>
+
+
+    <string name="blg2_title42">I – Ice</string>
+    <string name="blg2_text42">Ice the affected knee for 15 minutes multiple times throughout the day. Ice can reduce inflammation by bringing down the swelling and help manage pain. Use a towel to cover ice to prevent direct skin contact, which can cause irritation and discomfort.</string>
+
+
+    <string name="blg2_title43">C – Compress</string>
+    <string name="blg2_text43">Provide compression to the affected knee to improve blood circulation that can help bring down swelling and pain further.</string>
+
+
+    <string name="blg2_title44">E – Elevate</string>
+    <string name="blg2_text44">Elevate your leg above heart level whenever possible. When sleeping, plop a pillow under your legs to allow elevation. </string>
+
+
+    <string name="blg2_title5">LONG TERM PREVENTION</string>
+    <string name="blg2_text5">To prevent Knee Hyperextension, it is important to be mindful of knee posture when performing everyday activities and exercises.
+        \n
+        \n\t\t\u2022Performing strengthening exercises regularly to improve knee flexors and extensors.
+        \n\t\t\u2022Improving quads and hamstring muscles can also protect the knee joints.
+        \n\t\t\u2022Strengthening your core muscles could also provide more stability and prevention of knee misplacement.
+        \n\t\t\u2022Ensuring that you have an adequate warm up routine before high impact exercises and a good cool down afterwards.
+        </string>
+
+
+    <string name="blg2_title6">TRY IT OUT</string>
+    <string name="blg2_text6"><![CDATA[<font color=#848484>Join one of our </font><font color=#dedede>workout classes today at ReformFIT that are lead by our experienced trainers </font></font><font color=#848484>to help you prevent and avoid Knee Hyperextension as we always provide proper form correction and clear directions.</font>]]></string>
+
+    <!--                           Blog Ex 3                  -->
+
+    <string name="blg3_title">Strength Training and Effective Weight Loss</string>
+
+    <string name="blg3_time">Posted on March 9, 2021In</string>
+    <string name="blg3_tip">Exercises Tips</string>
+
+    <string name="blg3_title1">STRENGTH TRAINING AND EFFECTIVE WEIGHT LOSS</string>
+    <string name="blg3_text1"><![CDATA[<font color=#848484>Over the years, most people believed that doing intensive cardio is the only effective way for weight loss. However, new science has shown that effective healthy weight loss requires burning fat while gaining muscle mass and weight training is the way to achieve this. Well, you may say: </font><font color=#dedede>“I seem to burn more calories in a cardio workout versus a weight training workout.”</font><font color=#848484> Yes, you’re right! If you were to compare a 30-minute high intensity cardio to a 30-minute weight training session, you would most likely burn more calories for the same amount of time and effort. However, weight training provides more of the long-term benefits to weight loss rather than just the workout itself. For instance you are often times burning more calories after the workout from weight training than cardio.
+        <br></br><br></br>Below are a few important benefits of weight training for weight loss.</font>]]></string>
+
+    <string name="blg3_title2">AFTERBURN</string>
+    <string name="blg3_text2"><![CDATA[<font color=#848484>A few posts back, we talked about what the</font><font color=#dedede> Afterburn</font><font color=#848484> Effect is and how when your <font/><font color=#dedede>EPOC, Excess Post Exercise Oxygen Consumption</font><font color=#848484> increases, it creates the Afterburn Effect resulting in an increased metabolic rate for up to 24 hours after your strength training workout, hence burning more calories! So, hitting the weight section at the gym can not only help you burn calories from the workout but you are greatly benefiting from the Afterburn Effect so essentially you are burning more calories and fat effectively to support your weight loss journey in the long run.</font>]]></string>
+
+    <string name="blg3_title3">INCREASE LEAN MUSCLE MASS, BASAL METABOLIC RATE &amp; LONG TERM FAT LOSS</string>
+    <string name="blg3_text3"><![CDATA[<font color=#848484>When consistently incorporating weight training into your exercise routine, it has shown that your lean muscle mass increases. </font><font color=#dedede>As we age, our lean muscle mass decreases and if we don’t do anything about it, we start to lose muscle and it will be replaced by fat.</font><font color=#848484> So without much diet changes, if you were to strength train consistently, it will be beneficial in weight loss and maintaining the body shape you want by building more muscle and preventing fat gain.</font>
+
+        <br></br><br></br><font color=#848484>Another great benefit related to increased muscle mass is that </font><font color=#dedede>the more lean muscle mass you have, the greater your basal metabolic rate.</font><font color=#dedede> Your basal metabolic rate is the amount of calories your body burns naturally without moving your body. So if you weight train consistently, you will be burning more calories on your rest day, then the average person who does not weight train.</font>]]></string>
+
+    <string name="blg3_title4">PREVENT OSTEOPOROSIS OR BONE CONDITIONS</string>
+    <string name="blg3_text4">Strength training not only builds your muscles but it also helps build stronger and denser bones! It has some incredible benefits on bone health by increasing bone density, improving joint flexibility, and also reduces risk of fractures.</string>
+
+
+    <string name="blg3_text_ls">Join one of our workout classes today at ReformFIT lead by our experienced trainers to help you consistently strength train in a way and effective way.</string>
+
+
+
+    <!--                                Blog  Ex 4                         -->
+
+    <string name="blg4_title">What is Pelvic Tilt? Learn How to Improve It</string>
+    <string name="blg4_time">Posted on February 10, 2021 | In </string>
+    <string name="blg4_tips">Exercises Tips</string>
+
+    <string name="blg4_title1">PELVIC TILT</string>
+    <string name="blg4_text1">The pelvic is the lower part of your torso where your mid section connects to your legs. It is an essential body part that helps with day-to-day function such as walking, running, and lifting things off of the ground.  Your pelvis also helps with proper posture and should be in a neutral position.
+        \n\nAn anterior pelvic tilt is when your pelvis is misaligned and is rotated forward and causes your spine to curve resulting in an arched back, poor and incorrect posture, tightness in your thighs and pelvis, pains in the lower back, hips, and knees. An anterior pelvic tilt is caused by the shortening of the hip flexors and the lengthening of the hip extensors and is often known as Lower Crossed Syndrome (LCS). If left untreated, it may result long term pains and aches in your lower body muscles.</string>
+
+    <string name="blg4_title2">HOW TO SELF-DETERMINE USING THE THOMAS TEST</string>
+    <string name="blg4_text2">Using Thomos test, you can self-determine if you have a pelvic tilt.
+        \n\n\t\t1.Lie flat on your back on a table or an elevated flat surface where your legs can hang off of the edge.
+        \n\t\t2.Pull one of your legs in towards your chest
+        \n\t\t3.If you have a correct and neutral pelvis, your resting leg will remain on the table with no issues, however if you have trouble keeping your resting leg flat or require adjustments to keep it flat, it may be an indication of a pelvic tilt. Your front thigh muscle will also feel tight.
+        \n\t\t4.Repeat with the other leg.</string>
+
+    <string name="blg4_title3">CAUSES OF PELVIC TILT</string>
+    <string name="blg4_text3">A pelvic tilt is often caused by excessive sitting such as working a desk job that requires being sedentary for long hours or studying for long periods of time without enough exercise or stretching to relieve the tightness of muscles from sitting all day. If left untreated, it may result long term pains and aches in your lower body muscles, bad posture and a curved spine.</string>
+
+    <string name="blg4_title4">HOW TO IMPROVE IT</string>
+    <string name="blg4_text4">There are many simple exercises that can be done at home to help improve a pelvic tilt and reverse it back to a neutral position.
+        \n\t\t1.Half Kneeling Hip Flexor Stretch
+        \n\t\t\t\t1.Simply kneel on a soft surface such as a yoga mat where your knee touches the ground and have your forward leg planted in front into a lunge position with front leg in a 90-degree angle.
+        \n\t\t\t\t2.Having your hands on your hips, tilt and force your pelvis forward while squeezing your glutes and abs. Hold for 30 seconds and repeat 3 times on each side.
+        \n\t\t2.Glute Bridge
+        \n\t\t\t\t1.Lie on your back with your back planted flat on the ground and your legs bent with your feet flat to the ground shoulder-width apart.
+        \n\t\t\t\t2.Have your heels as close to your bum as possible and thrust your hips upwards until your upper body to your knees are in a straight line.
+        \n\t\t\t\t3.Make sure you are activating your glutes and core muscle by squeezing and tightening them
+        \n\t\t\t\t4.Hold for 3 seconds and slowly lower the hips back to the ground, repeat 10-15 times
+        \n\t\t3.Squat
+        \n\t\t\t\t1.Stand shoulder width apart with your toes pointed forward
+        \n\t\t\t\t2.Lower yourself to a sitting position while engaging your core, having your chest tall and keeping your thighs parallel to the ground.
+        \n\t\t\t\t3.Push back up to standing and tilting your pelvis forward by tightening and squeezing your glutes together.
+        \n\t\t\t\t4.Repeat 10-15 times.
+        \n\t\t4.Join one of our virtual workout classes today at ReformFIT to keep the body moving and in improving a pelvic tilt with our experienced trainers. </string>
+
+
+
+    <!--                                Blog  Ex 5                         -->
+
+
+    <string name="blg5_title">Squats Vs. Deadlifts – Let’s Talk the Difference</string>
+    <string name="blg5_time">Posted on January 5, 2021 | In </string>
+    <string name="blg5_tips">Exercises Tips</string>
+
+
+    <string name="blg5_text">Squats and Deadlifts are both highly effective ways of strength training your lower body muscles. Both exercises are intended to strengthen muscle groups within your legs and glutes, however, depending on your positioning and the types of squats or deadlifts being performed, certain muscle groups are more activated than others. Take a look at the following tables to learn more and figure out which forms and exercises are best for you!</string>
+
+
+    <string name="blg5_f1_title">Main Muscle Groups Targeted:</string>
+    <string name="blg5_f1_0">DEADLIFTS</string>
+    <string name="blg5_f1_01">Glutes</string>
+    <string name="blg5_f1_02">Hips</string>
+    <string name="blg5_f1_03">Core</string>
+    <string name="blg5_f1_04">Hamstrings</string>
+    <string name="blg5_f1_05">Back</string>
+    <string name="blg5_f1_06">Trapezius</string>
+
+    <string name="blg5_f1_1">SQUATS</string>
+    <string name="blg5_f1_11">Glutes</string>
+    <string name="blg5_f1_12">Hips</string>
+    <string name="blg5_f1_13">Core</string>
+    <string name="blg5_f1_14">Hamstrings</string>
+    <string name="blg5_f1_15">Quadriceps</string>
+    <string name="blg5_f1_16">Calves</string>
+
+
+    <string name="blg5_title1">DEADLIFTS</string>
+    <string name="blg5_text1">Adding deadlifts into your exercise routine not only strengthen your legs and glutes but also activate your back, core and other upper body parts. When compared to a squat, the deadlift is more technical and require more form correction to prevent injuries and ensure the right muscle groups are being used. Depending on which muscle groups you’d like to work on, there are different variations of deadlifts that can greater target certain muscle groups as displayed in the chart below.</string>
+
+    <string name="blg5_f2_0">MUSCLE GROUPS</string>
+    <string name="blg5_f2_01">Lower Back</string>
+    <string name="blg5_f2_02">Hamstrings</string>
+    <string name="blg5_f2_03">Quads</string>
+    <string name="blg5_f2_04">Glutes</string>
+    <string name="blg5_f2_05">Traps</string>
+    <string name="blg5_f2_06">Lats</string>
+    <string name="blg5_f2_07">Forearm</string>
+    <string name="blg5_f2_08">Core</string>
+    <string name="blg5_f2_09">Coordination and balance</string>
+
+
+    <string name="blg5_f2_1">Conventional Deadlift</string>
+    <string name="blg5_f2_2">Sumo Deadlift</string>
+    <string name="blg5_f2_3">Romanian Deadlift</string>
+    <string name="blg5_f2_41">Single Leg Deadlift</string>
+
+    <string name="blg5_f_1">\u2713</string>
+    <string name="blg5_f_2">\u2713\u2713</string>
+    <string name="blg5_f_3">\u2713\u2713\u2713</string>
+
+
+    <string name="blg5_title2">SQUATS</string>
+    <string name="blg5_text2">Squats are always been the go-to exercise for building stronger legs as it is effective, beginner to expert friendly, and has many variations. Squats can be done with weights or just body weight. Today, we will just talk about the few most popular forms of squats and provide you with the difference between them in terms of targeting certain muscle groups and the difference between hip and quad dominant.</string>
+
+    <string name="blg5_f3_1">MUSCLE GROUPS</string>
+    <string name="blg5_f3_11">Glutes</string>
+    <string name="blg5_f3_12">Quads</string>
+    <string name="blg5_f3_13">Hips</string>
+    <string name="blg5_f3_14">Calves</string>
+    <string name="blg5_f3_15">Core</string>
+
+
+    <string name="blg5_f3_2">Basic Squat (Shoulder width)</string>
+    <string name="blg5_f3_3">Sumo Squat (Wide stance)</string>
+    <string name="blg5_f3_4">Jump Squat</string>
+
+
+
+    <string name="blg5_title3">Quad or Hip Dominant Squats?</string>
+    <string name="blg5_text3">There are two types of popular squat, Quad or Hip dominant squats. When doing a Quad dominant squat, your torso is more upright and your glutes are angled straight to the ground and more pressure is on the quads. When doing a Hip dominant squat, your torso is more forward and you’re sitting your glutes more behind the body and pushing your hips back. Try the 2 variations yourself and feel the difference in muscle engagement!</string>
+
+
+
+    <string name="blg5_title4">Try it out!</string>
+    <string name="blg5_text4"><![CDATA[<font color=#848484>Now that you know the difference between deadlifts and squats, it is time to put it into action! Join one of our workout classes today at </font><font color=#dedede>ReformFIT </font><font color=#848484>to experience the different forms and types taught by our knowledgeable trainers! In our Bootcamp classes, proper form correction and clear directions are given to give you the best workout and prevent injuries.</font>]]></string>
+
+    <string name="blg5_note">Swipe on table for more \u003C-\u003E</string>
+
+
+
+
+    <!--                                Blog  Ex 6                         -->
+
+    <string name="blg6_title">Make the Switch to HIIT, High Intensity Interval Training</string>
+    <string name="blg6_time">Posted on December 7, 2020 | In</string>
+    <string name="blg6_tips">Group Training</string>
+
+
+    <string name="blg6_text">Over the years, HIIT has gained a lot of popularity and it’s mainly due to the many benefits it has! HIIT workouts involve short periods (30-60seconds) of intense exercise followed by low intensity recovery periods. In a shorter period of time than your traditional cardio exercise like running, you are able to improve more muscle groups at once, burn more fat, and improve strength, endurance and cardio in a single workout.
+        \n\nAn effective HIIT workout can range from anywhere between 5 to 30 minutes. At ReformFIT, our workouts are 50 minutes in total including a 10-minute warm up and cool down making it an ideal length!
+        \n\nBelow are 5 health-supporting benefits of High-Intensity Interval Training.</string>
+
+
+    <string name="blg6_title1">1. AFTERBURN EFFECT</string>
+    <string name="blg6_text1"><![CDATA[<font color=#848484>During a HIIT workout, the goal is to push your heart rate and intensity up to 50–60% VO2 Max. This results in stimulating EPOC (Excess Post-Exercise Oxygen Consumption) and is known as the </font><font color=#dedede>Afterburn Effect</font><font color=#848484>¹. By stimulating a higher EPOC through HIIT, it consumes more oxygen, which creates a bigger deficit in the body. As a result, your metabolic rates can increase up to 24 hours after a HIIT workout to replenish oxygen, ATP and rebuilding muscles, making it burn more calories and fat long after the workout is over!</font>]]></string>
+
+
+    <string name="blg6_title2">2. BURN MORE CALORIES IN A SHORTER TIME</string>
+    <string name="blg6_text2">A study has shown that a 30-minute HIIT workout was able to burn more calories than the traditional weight training, running and biking workout that would last much longer². So not only are you saving time but also being more efficient with your body during a HIIT workout.</string>
+
+
+    <string name="blg6_title3">3. WEIGHT LOSS</string>
+    <string name="blg6_text3">Since HIIT burns more calories during and after the workout in a shorter period of time, it can be a great way to help with weight loss along side proper nutrition and lifestyle changes.</string>
+
+
+    <string name="blg6_title4">4. TARGETS MORE MUSCLE GROUPS</string>
+    <string name="blg6_text4">Due to the type of exercises used in HIIT, you are more likely to utilize different muscle groups to perform each exercise. For instance, in one single HIIT workout, you will be performing exercises that targets, lower body, upper body, core and full body such as burpees, squats, push-ups etc.</string>
+
+
+    <string name="blg6_title5">5. LOWERS BLOOD PRESSURE and BLOOD SUGAR LEVELS</string>
+    <string name="blg6_text5">Research has shown that performing HIIT workouts 5 days a week for six weeks resulted in improvements in blood pressure and better control in blood sugar levels³. That being said, this type of exercise can be helpful in improving overall health, and can play a role in preventing chronic illnesses such as cardiovascular disease and diabetes.</string>
+
+
+    <string name="blg6_refer">¹LaForgia, J., Withers, R. T., &amp; Gore, C. J. (2006). Effects of exercise intensity and duration on the excess post-exercise oxygen consumption. Journal of sports sciences, 24(12), 1247–1264. https://doi.org/10.1080/02640410600552064
+        \n\n²Falcone, P. H., Tai, C. Y., Carson, L. R., Joy, J. M., Mosman, M. M., McCann, T. R., Crona, K. P., Kim, M. P., &amp; Moon, J. R. (2015). Caloric expenditure of aerobic, resistance, or combined high-intensity interval training using a hydraulic resistance system in healthy men. Journal of strength and conditioning research, 29(3), 779–785. https://doi.org/10.1519/JSC.
+        \n\n³Fergal Grace, Peter Herbert, Adrian D. Elliott, Jo Richards, Alexander Beaumont, Nicholas F. Sculthorpe. High intensity interval training (HIIT) improves resting blood pressure, metabolic (MET) capacity and heart rate reserve without compromising cardiac function in sedentary aging men (2018).Experimental Gerontology, 109, 75-81,</string>
+
+
+    <!--                                Blog  Ex 7                         -->
+
+    <string name="blg7_title">Finding Balance During COVID: Food, Lifestyle and Exercise</string>
+    <string name="blg7_time">Posted on November 1, 2020 | In</string>
+    <string name="blg7_tips">Diet &amp; Nutrition</string>
+
+
+    <string name="blg7_text">Now that we are entering Wave 2 of COVID-19, it is crucial to re-learn how to find balance in our day-to-day life. Many of you can relate to how much life has changed since COVID-19 began and we must put in extra effort to find balance and make life enjoyable and healthy again! In the following, 5 tips and recommendations will be provided to help you maintain and rebuild healthy habits in food choices, lifestyle and exercise! </string>
+
+
+    <string name="blg7_title1">1. FOOD CHOICES</string>
+    <string name="blg7_text1"><![CDATA[<font color=#848484>To maintain a healthy life and healthy weight, it is important to be smart about your food choices. The path to weight loss and management begins with a well-balanced diet of high quality, nutrient dense foods; however, it is also necessary to</font><font color=#dedede> allow</font><font color=#848484> yourself to eat empty calorie foods in moderation to develop a sustainable, balanced lifestyle.
+        <br></br><br></br>So where do you start? First, an easy step is to simply become more aware of each meal and ask yourself, “Is my meal well-balanced with high quality carbohydrates, proteins, and fats?” If not, notice which category is the highest and adjust by following the </font><font color=#dedede>Magic Plate/Bowl Theory</font><font color=#848484>. This is an easy tool to guide you in making each of your meals more balanced! Eating a balanced diet will help in weight loss and management, and is one way to ensure you are getting enough </font><font color=#dedede>essential nutrients </font><font color=#848484>to stay healthy and strong.</font>]]></string>
+
+
+    <string name="blg7_title2">2. MEAL PREP</string>
+    <string name="blg7_text2"><![CDATA[<font color=#848484>If making your own meals is too hard or time consuming, then subscribing to a Meal Prep Service such as </font><font color=#fcd91b>ReformFIT EATS</font><font color=#848484>, is a great idea that can be a helpful and healthy way for weight management! Some Meal Prep Services are great at creating meals that are suitable for your body’s unique needs and health goals!
+        <br></br><br></br>Learn more about </font><font color=#fcd91b>ReformFIT EATS</font><font color=#848484> today and receive your first delicious meal!</font>]]></string>
+
+
+    <string name="blg7_title3">3. SLOW DOWN</string>
+    <string name="blg7_text3"><![CDATA[<font color=#848484>We live in such a fast paced society that we often-think moving fast and eating fast is the way to save time and do more. However, the opposite is true! When we move too fast and eat too fast, we end up putting the body into a “stress response” and it actually ends up </font><font color=#dedede>slowing your metabolism and digestion</font><font color=#848484>, which increases fat storage and makes it harder to maintain a healthy weight! So when eating, take your time to chew your food and enjoy it! When doing day-to-day activities, make sure to slow down and take a break to refresh before continuing.</font>]]></string>
+
+
+    <string name="blg7_title4">4. GET MORE VITAMIN N (NATURE)</string>
+    <string name="blg7_text4"><![CDATA[<font color=#848484>Even with quarantine in effect and many places being shut down, it is </font><font color=#dedede>ESSENTIAL</font><font color=#848484> to get outside to connect with nature and get a strong source of Vitamin D. You can simply go for a 15-minute brisk walk and get some fresh air to reduce stress and even boost your immune system! Staying indoors all day can affect your overall health negatively. If getting outside everyday is not possible, add a plant to your home to remove excess CO2 and open windows to allow fresh air to enter!</font>]]></string>
+
+
+    <string name="blg7_title5">5. STAY ACTIVE</string>
+    <string name="blg7_text5"><![CDATA[<font color=#848484>Physical exercise is proven to provide many health benefits ranging from improving physical, brain, and mental health. All of these are also essential for weight loss and management. Challenge yourself this week and </font><font color=#dedede>join one of our virtual workouts at ReformFIT</font><font color=#848484> to maintain a healthy balance of movement in your day-to-day routine!</font>]]></string>
+
+
+
+<!--                          Blog News                          -->
+
+    <string name="blg_new_title">万锦实验点</string>
+    <string name="blg_new_update_tag">NEW</string>
+    <string name="blg_new_intro2">WHAT IS IT? Knee Hyperextension happens when the knee joint is excessively straightened, resulting in high stress on the entire knee from the structure to the back of the knee</string>
+    <string name="blg_new_intro3">STRENGTH TRAINING AND EFFECTIVE WEIGHT LOSS Over the years, most people believed that doing intensive cardio is the only effective way for weight loss. However, new science has shown that</string>
+    <string name="blg_new_intro4">PELVIC TILT The pelvic is the lower part of your torso where your mid section connects to your legs. It is an essential body part that helps with day-to-day function</string>
+    <string name="blg_new_intro5">Squats and Deadlifts are both highly effective ways of strength training your lower body muscles. Both exercises are intended to strengthen muscle groups within your legs and glutes, however, depending</string>
+    <string name="blg_new_intro6">Over the years, HIIT has gained a lot of popularity and it’s mainly due to the many benefits it has! HIIT workouts involve short periods (30–60seconds) of intense exercise followed</string>
+    <string name="blg_new_intro7">Now that we are entering Wave 2 of COVID-19, it is crucial to re-learn how to find balance in our day-to-day life. Many of you can relate to how much</string>
+
     <string name="copy"> <u>copy</u></string>
     <string name="init_map"> <u>查看地图</u></string>
     <string name="init_heartrate_link"> <u>链接</u></string>
@@ -36,12 +428,5 @@
         <item>极强，无时无刻都在运动</item>
     </string-array>
 
-
-    <string name="blog_component1">
- <![CDATA[<font color=#dedede>One Rep Max</font><font color=#848484> : The maximum amount of weight you can lift from one single repetition of a certain exercise</font>]]>
-  </string>
-    <string name="blog_component2">
- <![CDATA[<font color=#dedede>Example:</font><font color=#848484> 50% of 1 RM = RM x 0.5 will give you the weight you should be lifting at to improve muscle endurance. Complete 3 sets of 15-20 reps at 50% of your 1 Rep Max. Circuit training and HIIT workouts at ReformFIT is a great way to improve your muscle endurance. </font>]]>
-  </string>
 
 </resources>

@@ -3,19 +3,22 @@ package com.example.reformfitapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,6 +58,8 @@ public class MainBottomNaviService extends AppCompatActivity implements BottomNa
     TextView textView;
     int currPos = 0;
 
+    ThirdMain thirdMain;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -78,6 +83,7 @@ public class MainBottomNaviService extends AppCompatActivity implements BottomNa
         mineInfoPage1 = new MineInfoPage1();
         videoMain = new VideoMain();
         serviceTabFragment = new ServiceTabFragment();
+        thirdMain = new ThirdMain();
 
         slide_up = AnimationUtils.loadAnimation(getApplicationContext(),
                 R.anim.sliding_up);
@@ -181,6 +187,12 @@ public class MainBottomNaviService extends AppCompatActivity implements BottomNa
                 return true;
 
 
+            case R.id.navigation_purchase:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, thirdMain).commitNow();
+
+                showDialog();
+
+                return true;
 
             case R.id.navigation_video:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, videoMain).commitNow();
@@ -193,6 +205,42 @@ public class MainBottomNaviService extends AppCompatActivity implements BottomNa
 
 
 
+    public void showDialog(){
+        final Dialog dialog = new Dialog(MainBottomNaviService.this){
+
+        };
+
+
+        dialog.setContentView(R.layout.third_main_warning_dialog);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager()
+                .getDefaultDisplay()
+                .getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        dialog.getWindow().setLayout((int) ((int)width*0.5), WindowManager.LayoutParams.WRAP_CONTENT);
+
+        TextView initCancel = dialog.findViewById(R.id.init_cancel);
+        initCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bottomNavigationView.setSelectedItemId(R.id.navigation_location);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, location_main).commitNow();
+                dialog.dismiss();
+
+            }
+        });
+        dialog.show();
+
+
+
+
+
+    }
     @Override
     public void onBackPressed() {
 

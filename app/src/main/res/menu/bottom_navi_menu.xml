@@ -5,12 +5,12 @@
     <item
         android:id="@+id/navigation_location"
         android:icon="@drawable/speaker_icon"
-        android:title="门店" />
+        android:title="Store" />
 
     <item
         android:id="@+id/navigation_class"
         android:icon="@drawable/speaker_icon"
-        android:title="课表" />
+        android:title="Schedule" />
 
     <item
         android:id="@+id/holder"
@@ -21,11 +21,11 @@
     <item
         android:id="@+id/navigation_purchase"
         android:icon="@drawable/speaker_icon"
-        android:title="购买" />
+        android:title="Community" />
 
     <item
         android:id="@+id/navigation_video"
         android:icon="@drawable/speaker_icon"
-        android:title="视频" />
+        android:title="Video" />
 
 </menu>

@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -38,6 +39,8 @@ public class FatBurnInfo extends AppCompatActivity {
     private ImageView[] dots = new ImageView[imageId.length];
     private int custom_position = 0;
 
+    TextView title;
+
     TextView classDes;
     ImageView classDesImage;
 
@@ -62,6 +65,10 @@ public class FatBurnInfo extends AppCompatActivity {
 
     TextView heartRateDes;
     ImageView heartRateDesImage;
+
+
+    TextView warnDes;
+    ImageView warnDesImage;
 
 
     ImageView initBack;
@@ -135,6 +142,9 @@ public class FatBurnInfo extends AppCompatActivity {
             }
         });
 
+
+        title = findViewById(R.id.title);
+        title.setText(Html.fromHtml(getString(R.string.fs_title)));
 
 
         scrollView = (ScrollView) findViewById(R.id.scrollview);
@@ -407,13 +417,14 @@ public class FatBurnInfo extends AppCompatActivity {
 
 
         faqDes = findViewById(R.id.faq_des);
+        faqDes.setText(Html.fromHtml(getString(R.string.fs_class_faq)));
         faqDesImage = findViewById(R.id.faq_des_image);
 
         faqDes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(faqDes.getMaxLines() != 3){
-                    faqDes.setMaxLines(3);
+                if(faqDes.getMaxLines() != 4){
+                    faqDes.setMaxLines(4);
                 }
                 else{
                     faqDes.setMaxLines(Integer.MAX_VALUE);
@@ -424,8 +435,8 @@ public class FatBurnInfo extends AppCompatActivity {
         faqDesImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(faqDes.getMaxLines() != 3){
-                    faqDes.setMaxLines(3);
+                if(faqDes.getMaxLines() != 4){
+                    faqDes.setMaxLines(4);
                 }
                 else{
                     faqDes.setMaxLines(Integer.MAX_VALUE);
@@ -435,8 +446,6 @@ public class FatBurnInfo extends AppCompatActivity {
         });
 
 
-        TextView warnDes;
-        ImageView warnDesImage;
 
 
         warnDes = findViewById(R.id.warn_des);
@@ -466,6 +475,7 @@ public class FatBurnInfo extends AppCompatActivity {
 
             }
         });
+
 
     }
 
