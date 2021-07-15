@@ -79,6 +79,8 @@ public class FragmentPaymentHistory extends Fragment implements PaymentMethodBot
     private String routing_number, branch_number,transit_number, account_number,year_month, cardNumber;
     private int synchronizeOnResponseCount;
 
+    private ImageView arrowDownModifier;
+
 
     public FragmentPaymentHistory() {
         // Required empty public constructor
@@ -206,6 +208,81 @@ public class FragmentPaymentHistory extends Fragment implements PaymentMethodBot
             }
         });
 
+        arrowDownModifier = current_view.findViewById(R.id.downArrowModifier);
+
+        arrowDownModifier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                long today = MaterialDatePicker.todayInUtcMilliseconds();
+                Calendar calendar  = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+                calendar.clear();
+                calendar.setTimeInMillis(today);
+                calendar.roll(Calendar.MONTH, -1);
+                long halfYear = calendar.getTimeInMillis();
+                calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+                calendar.roll(Calendar.DATE,1);
+                long tomorrow = calendar.getTimeInMillis();
+
+                //String startDate = (String) android.text.format.DateFormat.format("yyyy-MM-dd", date);
+
+
+
+                MaterialDatePicker.Builder<Pair<Long, Long>> builder = MaterialDatePicker.Builder.dateRangePicker();
+
+                CalendarConstraints.Builder constraintsBuilder = new CalendarConstraints.Builder();
+                CalendarConstraints.DateValidator dateValidator_start = DateValidatorPointForward.from(halfYear);
+                CalendarConstraints.DateValidator dateValidator_end = DateValidatorPointBackward.before(tomorrow);
+                ArrayList<CalendarConstraints.DateValidator> listOfValidators = new ArrayList<>();
+                listOfValidators.add(dateValidator_start);
+                listOfValidators.add(dateValidator_end);
+                CalendarConstraints.DateValidator validators = CompositeDateValidator.allOf(listOfValidators);
+                constraintsBuilder.setValidator(validators);
+
+
+        /*Pair<Long, Long> pair = new Pair<>(startDate_timestamp, System.currentTimeMillis());
+
+        builder.setSelection(pair);*/
+                builder.setTitleText("选择会员激活日期");
+                builder.setTheme(R.style.MaterialCalendarTheme);
+                builder.setCalendarConstraints(constraintsBuilder.build());
+
+
+                final MaterialDatePicker<Pair<Long, Long>> materialDatePicker = builder.build();
+
+                materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Pair<Long, Long>>() {
+                    @Override
+                    public void onPositiveButtonClick(Pair<Long, Long> selection) {
+                        Date date = new Date(selection.first);
+                        startDate = (String) android.text.format.DateFormat.format("yyyy-MM-dd", date);
+
+
+                        Date date2 = new Date(selection.second);
+                        endDate = (String) android.text.format.DateFormat.format("yyyy-MM-dd", date2);
+
+
+
+                        Log.d("startDate", startDate);
+                        Log.d("endDate", endDate);
+
+                        materialDatePicker.dismiss();
+
+                        swipeView.setRefreshing(true);
+                        refreshPurchaseHistory(startDate,endDate);
+
+
+
+
+                    }
+                });
+
+
+
+
+                materialDatePicker.show(getChildFragmentManager(),"DATE_PICKER");
+
+            }
+        });
+
 
 
         payment_modifer.setOnClickListener(new View.OnClickListener() {
@@ -265,6 +342,9 @@ public class FragmentPaymentHistory extends Fragment implements PaymentMethodBot
     }
 
     public void refreshPurchaseHistory(){
+        if(((GlobalVariableApplication)getActivity().getApplication()).getLogIn()){
+            clientId = ((GlobalVariableApplication)getActivity().getApplication()).getClientId();
+        }
         mindbodyService.getAuthToken(new MindbodyService.AuthTokenResponseListener() {
             @Override
             public void onError(String errorMessage) {
@@ -360,16 +440,26 @@ public class FragmentPaymentHistory extends Fragment implements PaymentMethodBot
                     @Override
                     public void onError(String errorMessage) {
                         Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+                        Log.d("History error", errorMessage);
                         synchronizeCount("history");
 
                     }
 
                     @Override
                     public void onResponse(List<PaymentHistoryElement> paymentHistoryList) {
+                        TextView emptyMessage = current_view.findViewById(R.id.empty_message);
 
-                        PaymentHistoryRecViewAdapter adapter = new PaymentHistoryRecViewAdapter();
-                        adapter.setPayment_his_element_list(paymentHistoryList);
-                        payment_history_viewer.setAdapter(adapter);
+                        if (paymentHistoryList.isEmpty()) {
+                            emptyMessage.setVisibility(View.VISIBLE);
+                        }
+                        else{
+                            emptyMessage.setVisibility(View.GONE);
+
+                            PaymentHistoryRecViewAdapter adapter = new PaymentHistoryRecViewAdapter();
+                            adapter.setPayment_his_element_list(paymentHistoryList);
+                            payment_history_viewer.setAdapter(adapter);
+
+                        }
 
                         synchronizeCount("history");
 
@@ -461,5 +551,65 @@ public class FragmentPaymentHistory extends Fragment implements PaymentMethodBot
 
 
         }
+    }
+
+    public void setUpDatePicker() {
+        long today = MaterialDatePicker.todayInUtcMilliseconds();
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        calendar.clear();
+        calendar.setTimeInMillis(today);
+        calendar.roll(Calendar.MONTH, -1);
+        long halfYear = calendar.getTimeInMillis();
+        calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+        calendar.roll(Calendar.DATE, 1);
+        long tomorrow = calendar.getTimeInMillis();
+
+        //String startDate = (String) android.text.format.DateFormat.format("yyyy-MM-dd", date);
+
+
+        MaterialDatePicker.Builder<Pair<Long, Long>> builder = MaterialDatePicker.Builder.dateRangePicker();
+
+        CalendarConstraints.Builder constraintsBuilder = new CalendarConstraints.Builder();
+        CalendarConstraints.DateValidator dateValidator_start = DateValidatorPointForward.from(halfYear);
+        CalendarConstraints.DateValidator dateValidator_end = DateValidatorPointBackward.before(tomorrow);
+        ArrayList<CalendarConstraints.DateValidator> listOfValidators = new ArrayList<>();
+        listOfValidators.add(dateValidator_start);
+        listOfValidators.add(dateValidator_end);
+        CalendarConstraints.DateValidator validators = CompositeDateValidator.allOf(listOfValidators);
+        constraintsBuilder.setValidator(validators);
+
+
+        /*Pair<Long, Long> pair = new Pair<>(startDate_timestamp, System.currentTimeMillis());
+
+        builder.setSelection(pair);*/
+        builder.setTitleText("选择会员激活日期");
+        builder.setTheme(R.style.MaterialCalendarTheme);
+        builder.setCalendarConstraints(constraintsBuilder.build());
+
+
+        final MaterialDatePicker<Pair<Long, Long>> materialDatePicker = builder.build();
+
+        materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Pair<Long, Long>>() {
+            @Override
+            public void onPositiveButtonClick(Pair<Long, Long> selection) {
+                Date date = new Date(selection.first);
+                startDate = (String) android.text.format.DateFormat.format("yyyy-MM-dd", date);
+
+
+                Date date2 = new Date(selection.second);
+                endDate = (String) android.text.format.DateFormat.format("yyyy-MM-dd", date2);
+
+
+                Log.d("startDate", startDate);
+                Log.d("endDate", endDate);
+
+                materialDatePicker.dismiss();
+
+                swipeView.setRefreshing(true);
+                refreshPurchaseHistory(startDate, endDate);
+
+
+            }
+        });
     }
 }

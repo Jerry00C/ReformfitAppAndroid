@@ -209,6 +209,20 @@ public class PrivateLessonMemberPurchasePage extends AppCompatActivity implement
             case "Single Session":
                 showPurchaseWebViewActivity("https://google.com");
                 break;
+            case "20-Week Prep":
+                showPurchaseWebViewActivity("https://google.com");
+                break;
+            case "16-Week Prep":
+                showPurchaseWebViewActivity("https://google.com");
+                break;
+            case "12-Week Prep":
+                showPurchaseWebViewActivity("https://google.com");
+                break;
+            case "4-Week Prep":
+                showPurchaseWebViewActivity("https://google.com");
+                break;
+
+
             default:
                 break;
         }

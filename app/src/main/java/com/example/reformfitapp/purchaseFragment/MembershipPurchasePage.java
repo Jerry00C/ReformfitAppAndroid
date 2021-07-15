@@ -66,6 +66,7 @@ import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClic
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -431,6 +432,14 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
         if(((GlobalVariableApplication)getApplication()).getLogIn()){
 
             clientId = ((GlobalVariableApplication)getApplication()).getClientId();
+            contractId = contractData.getContract_id();
+            serviceId = contractData.getServiceId();
+
+            initialContractElement = new ContractElement();
+            initialContractElement.setClientId(clientId);
+            initialContractElement.setContractId(contractId);
+            initialContractElement.setLocation(1);
+            initialContractElement.setTest(false);
 
         }
         else{
@@ -1216,100 +1225,7 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
 
     }
 
-//    public void showCreateDebitCard(String title){
-//        final Dialog dialog = new Dialog(MembershipPurchasePage.this);
-//        dialog.setContentView(R.layout.debit_card_registration_pop_up);
-//        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//
-//        MaterialButton apply = dialog.findViewById(R.id.confirm_button);
-//        MaterialButton cancel = dialog.findViewById(R.id.cancel_button);
-//        TextView popupTitle = dialog.findViewById(R.id.popup_title);
-//
-//        popupTitle.setText(title);
-//
-//        RadioButton checking = dialog.findViewById(R.id.checking);
-//        RadioButton saving = dialog.findViewById(R.id.saving);
-//        TextInputEditText branch_number = dialog.findViewById(R.id.input_text_branch_number);
-//        TextInputEditText transit_number = dialog.findViewById(R.id.input_text_transit_number);
-//        TextInputEditText account_number = dialog.findViewById(R.id.input_text_account_number);
-//        TextInputEditText client_name = dialog.findViewById(R.id.input_text_name);
-//
-//
-//
-//
-//
-//
-//
-//        cancel.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dialog.dismiss();
-//            }
-//        });
-//
-//        apply.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mindbodyService.getAuthToken(new MindbodyService.AuthTokenResponseListener() {
-//                    @Override
-//                    public void onError(String errorMessage) {
-//                        Toast.makeText(MembershipPurchasePage.this, errorMessage, Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    @Override
-//                    public void onResponse(String authToken) {
-//                        Toast.makeText(MembershipPurchasePage.this, authToken, Toast.LENGTH_SHORT).show();
-//                        String accountType = new String();
-//                        if (checking.isChecked()){
-//                            accountType = "Checking";
-//
-//                        }
-//                        else if (saving.isChecked()){
-//                            accountType = "Savings";
-//                        }
-//
-//                        HashMap<String,Object> params = new HashMap<>();
-//                        params.put("Test",false);
-//                        params.put("ClientId",clientId);
-//                        params.put("NameOnAccount",client_name.getText().toString());
-//                        params.put("RoutingNumber",branch_number.getText().toString()+transit_number.getText().toString());
-//                        params.put("AccountNumber",account_number.getText().toString());
-//                        params.put("AccountType", accountType);
-//                        mindbodyService.postAddClientDirectDebit(new MindbodyService.AddClientDirectDebitInfoListener() {
-//                            @Override
-//                            public void onError(String errorMessage) {
-//                                Toast.makeText(MembershipPurchasePage.this, errorMessage, Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                            @Override
-//                            public void onResponse(JSONObject response) {
-//
-//                                String branchNumber = branch_number.getText().toString();
-//                                String transitNumber = transit_number.getText().toString();
-//                                String accountNumber = account_number.getText().toString();
-//
-//                                dDirectBranchingNumber = branchNumber;
-//                                dDirectTransitNumber = transitNumber;
-//                                dDirectAccountNumber =accountNumber;
-//                                dialog.dismiss();
-//
-//                            }
-//                        },params);
-//
-//
-//
-//
-//
-//                    }
-//                });
-//
-//            }
-//        });
-//
-//        dialog.show();
-//
-//
-//    }
+
 
     public void showCreateDebitCard(String title){
         final Dialog dialog = new Dialog(context);
@@ -1496,6 +1412,8 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                 @Override
                                 public void onError(String errorMessage) {
                                     Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+                                    Log.d("changeDebitError",errorMessage);
+                                    dialog.dismiss();
                                 }
 
                                 @Override
@@ -1508,6 +1426,14 @@ public class MembershipPurchasePage extends AppCompatActivity implements View.On
                                     dDirectBranchingNumber = branchNumber;
                                     dDirectTransitNumber = transitNumber;
                                     dDirectAccountNumber =accountNumber;
+                                    TextView branchingNumberDisplay = directDebitDisplayer.findViewById(R.id.info_third_display);
+                                    branchingNumberDisplay.setText(dDirectBranchingNumber);
+
+                                    TextView transitNumberDisplay = directDebitDisplayer.findViewById(R.id.info_fourth_display);
+                                    transitNumberDisplay.setText(dDirectTransitNumber);
+
+                                    TextView accountNumberDisplay = directDebitDisplayer.findViewById(R.id.info_fifth_display);
+                                    accountNumberDisplay.setText(dDirectAccountNumber);
                                     stopLoadingBar();
                                     dialog.dismiss();
 

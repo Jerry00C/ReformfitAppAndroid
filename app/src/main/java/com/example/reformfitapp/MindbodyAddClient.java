@@ -91,6 +91,10 @@ public class MindbodyAddClient {
         String url = baseUrl + "client/addclient";
 
 
+        //TODO:delete
+        params.put("BirthDate","2010-10-01");
+
+
 
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.POST, url, new JSONObject(params), new Response.Listener<JSONObject> () {
             @Override

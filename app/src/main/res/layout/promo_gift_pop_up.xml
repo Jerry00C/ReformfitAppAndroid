@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="300dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -81,7 +80,7 @@
             app:cornerRadius="0dp"
             android:backgroundTint="@color/grey"
             android:textColor="@color/white"
-            android:text="取消"
+            android:text="@string/dialog_bsdf_cancel"
             android:id="@+id/cancel_button"/>
 
         <com.google.android.material.button.MaterialButton
@@ -96,7 +95,7 @@
             app:cornerRadius="0dp"
             android:backgroundTint="@color/yellow"
             android:textColor="@color/black"
-            android:text="确认"
+            android:text="@string/confirm"
             android:id="@+id/confirm_button"
             />
 

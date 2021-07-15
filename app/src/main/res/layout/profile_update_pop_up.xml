@@ -82,7 +82,7 @@
             app:cornerRadius="0dp"
             android:backgroundTint="@color/grey"
             android:textColor="@color/white"
-            android:text="取消"
+            android:text="@string/dialog_bsdf_cancel"
             android:id="@+id/cancel_button"/>
 
         <com.google.android.material.button.MaterialButton
@@ -92,7 +92,7 @@
             android:backgroundTint="@color/yellow"
             android:insetTop="0dp"
             android:insetBottom="0dp"
-            android:text="确认"
+            android:text="@string/confirm"
             android:textColor="@color/black"
             app:cornerRadius="0dp"
             app:layout_constraintBottom_toBottomOf="parent"

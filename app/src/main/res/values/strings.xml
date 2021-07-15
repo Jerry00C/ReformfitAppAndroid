@@ -596,6 +596,56 @@
     <string name="fph_dd_transitn">Transit Number:</string>
     <string name="fph_dd_accountn">Account Number:</string>
     <string name="fph_payment_history">付款记录</string>
+  <string name="fph_empty_message"><b>No Purchase</b></string>
+
+
+
+  <!--                                        third main warning                      -->
+    <string name="tmw_text1"></string>
+    <string name="tmw_text2"></string>
+
+
+
+    <!--                                    signup dialog new                           -->
+
+    <string name="sud_0"></string>
+    <string name="sud_10"></string>
+    <string name="sud_11"></string>
+    <string name="sud_20"></string>
+    <string name="sud_21"></string>
+    <string name="sud_30"></string>
+    <string name="sud_31"></string>
+    <string name="sud_40"></string>
+    <string name="sud_41"></string>
+    <string name="sud_50"></string>
+    <string name="sud_51"></string>
+    <string name="sud_60"></string>
+    <string name="sud_61"></string>
+    <string name="sud_70"></string>
+    <string name="sud_71"></string>
+    <string name="sud_80"></string>
+    <string name="sud_81"></string>
+    <string name="sud_90"></string>
+    <string name="sud_91"></string>
+    <string name="sud__0"></string>
+    <string name="sud__1"></string>
+    <string name="sud___b0"></string>
+    <string name="sud___b1"></string>
+
+
+    <!--                                    signin dialog new                               -->
+
+
+
+    <string name="sid_0"></string>
+    <string name="sid_10"></string>
+    <string name="sid_11"></string>
+    <string name="sid_20"></string>
+    <string name="sid_21"></string>
+    <string name="sid__0"></string>
+    <string name="sid___b0"></string>
+    <string name="sid___b1"></string>
+
 
 
 

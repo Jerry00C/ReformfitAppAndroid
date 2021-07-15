@@ -1804,6 +1804,7 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
                                 @Override
                                 public void onError(String errorMessage) {
                                     Toast.makeText(context, errorMessage, Toast.LENGTH_SHORT).show();
+                                    stopLoadingBar();
                                 }
 
                                 @Override
@@ -1813,9 +1814,21 @@ public class PassPurchasePage extends AppCompatActivity implements View.OnClickL
                                     String transitNumber = transit_number.getText().toString();
                                     String accountNumber = account_number.getText().toString();
 
+
                                     dDirectBranchingNumber = branchNumber;
                                     dDirectTransitNumber = transitNumber;
                                     dDirectAccountNumber =accountNumber;
+
+                                    TextView branchingNumberDisplay = directDebitDisplayer.findViewById(R.id.info_third_display);
+                                    branchingNumberDisplay.setText(dDirectBranchingNumber);
+
+                                    TextView transitNumberDisplay = directDebitDisplayer.findViewById(R.id.info_fourth_display);
+                                    transitNumberDisplay.setText(dDirectTransitNumber);
+
+                                    TextView accountNumberDisplay = directDebitDisplayer.findViewById(R.id.info_fifth_display);
+                                    accountNumberDisplay.setText(dDirectAccountNumber);
+
+
                                     stopLoadingBar();
                                     dialog.dismiss();
 
