@@ -115,12 +115,12 @@
 
                         <ImageView
                             android:id="@+id/imageView22"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_weight="1"
                             app:layout_constraintStart_toStartOf="@+id/guideline36"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/burn_group_service" />
+                            app:srcCompat="@drawable/ico_private_service" />
 
                         <androidx.constraintlayout.widget.Guideline
                             android:id="@+id/guideline36"
@@ -184,10 +184,10 @@
 
                         <ImageView
                             android:id="@+id/imageView3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_marginTop="2dp"
-                            android:src="@drawable/burn_group_service"
+                            android:src="@drawable/ico_course_intro"
                             app:layout_constraintLeft_toRightOf="@+id/guideline9"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -217,13 +217,13 @@
 
                         <ImageView
                             android:id="@+id/class_des_image"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
                             android:clickable="true"
                             app:layout_constraintEnd_toEndOf="@+id/class_des"
                             app:layout_constraintStart_toStartOf="@+id/class_des"
                             app:layout_constraintTop_toBottomOf="@+id/class_des"
-                            app:srcCompat="@drawable/down_arrow" />
+                            app:srcCompat="@drawable/ico_arrow_down" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -262,10 +262,10 @@
 
                         <ImageView
                             android:id="@+id/imageView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_marginTop="2dp"
-                            android:src="@drawable/burn_group_service"
+                            android:src="@drawable/ico_class_effect"
                             app:layout_constraintLeft_toRightOf="@+id/guideline15"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -296,13 +296,13 @@
 
                         <ImageView
                             android:id="@+id/class_effect_image"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
                             android:clickable="true"
                             app:layout_constraintEnd_toEndOf="@+id/class_effect_text"
                             app:layout_constraintStart_toStartOf="@+id/class_effect_text"
                             app:layout_constraintTop_toBottomOf="@+id/class_effect_text"
-                            app:srcCompat="@drawable/down_arrow" />
+                            app:srcCompat="@drawable/ico_arrow_down" />
 
                         <androidx.gridlayout.widget.GridLayout
 
@@ -318,14 +318,18 @@
 
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_muscle_tone"
                                 app:layout_column="0"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0" />
 
                             <ImageView
-                                android:paddingTop="3dp"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
                                 android:src="@drawable/burn_group_service"
                                 app:layout_column="1"
                                 app:layout_columnWeight="1"
@@ -333,14 +337,18 @@
 
 
                             <ImageView
-                                android:paddingTop="3dp"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
                                 android:src="@drawable/burn_group_service"
                                 app:layout_column="2"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0" />
 
                             <ImageView
-                                android:paddingTop="3dp"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
                                 android:src="@drawable/burn_group_service"
                                 app:layout_column="3"
                                 app:layout_columnWeight="1"
@@ -350,7 +358,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/image1"
-                                android:paddingBottom="8dp"
                                 android:text="更衣室"
                                 android:textAlignment="gravity"
                                 android:textColor="@color/white"
@@ -410,262 +417,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/black3"
-                    app:cardCornerRadius="10dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingVertical="10dp">
-
-
-                        <androidx.constraintlayout.widget.Guideline
-                            android:id="@+id/guideline28"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintGuide_percent="0.04" />
-
-                        <androidx.constraintlayout.widget.Guideline
-                            android:id="@+id/guideline29"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintGuide_percent="0.96" />
-
-                        <ImageView
-                            android:id="@+id/imageView12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:src="@drawable/burn_group_service"
-                            app:layout_constraintLeft_toRightOf="@+id/guideline28"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:id="@+id/textView37"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="心率检测"
-                            android:textColor="@color/yellow"
-                            app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-                            app:layout_constraintStart_toEndOf="@+id/imageView12"
-                            app:layout_constraintTop_toTopOf="@+id/imageView12" />
-
-                        <TextView
-                            android:id="@+id/heartRateDes"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:maxLines="3"
-                            android:text="@string/luanma"
-                            android:textColor="@color/grey"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline29"
-                            app:layout_constraintStart_toStartOf="@+id/guideline28"
-                            app:layout_constraintTop_toBottomOf="@+id/textView37" />
-
-                        <ImageView
-                            android:id="@+id/init_heartRateDesImage"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintEnd_toEndOf="@+id/heartRateDes"
-                            app:layout_constraintStart_toStartOf="@+id/heartRateDes"
-                            app:layout_constraintTop_toBottomOf="@+id/heartRateDes"
-                            app:srcCompat="@drawable/down_arrow" />
-
-
-                        <!--TODO:心率区间-->
-
-
-                        <include
-                            android:id="@+id/include"
-                            layout="@layout/heart_rate_list"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline29"
-                            app:layout_constraintStart_toStartOf="@+id/guideline28"
-                            app:layout_constraintTop_toBottomOf="@+id/init_heartRateDesImage" />
-
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:text="@string/init_heartrate_link"
-                            android:textAlignment="center"
-                            android:textColor="@color/yellow"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline29"
-                            app:layout_constraintStart_toStartOf="@+id/guideline28"
-                            app:layout_constraintTop_toBottomOf="@+id/include">
-
-                        </TextView>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="10dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/black3"
-                    app:cardCornerRadius="10dp">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingVertical="10dp">
-
-
-                        <androidx.constraintlayout.widget.Guideline
-                            android:id="@+id/guideline31"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintGuide_percent="0.04" />
-
-                        <androidx.constraintlayout.widget.Guideline
-                            android:id="@+id/guideline32"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            app:layout_constraintGuide_percent="0.96" />
-
-                        <ImageView
-                            android:id="@+id/imageView15"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:src="@drawable/burn_group_service"
-                            app:layout_constraintLeft_toRightOf="@+id/guideline31"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="适合人群"
-                            android:textColor="@color/yellow"
-                            app:layout_constraintBottom_toBottomOf="@+id/imageView15"
-                            app:layout_constraintStart_toEndOf="@+id/imageView15"
-                            app:layout_constraintTop_toTopOf="@+id/imageView15" />
-
-
-                        <androidx.gridlayout.widget.GridLayout
-
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:paddingHorizontal="20dp"
-                            app:columnCount="4"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline32"
-                            app:layout_constraintStart_toStartOf="@+id/guideline31"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView15"
-                            app:rowCount="2">
-
-
-                            <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
-                                app:layout_column="0"
-                                app:layout_columnWeight="1"
-                                app:layout_row="0" />
-
-                            <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
-                                app:layout_column="1"
-                                app:layout_columnWeight="1"
-                                app:layout_row="0"
-
-                                />
-
-                            <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
-                                app:layout_column="2"
-                                app:layout_columnWeight="1"
-                                app:layout_row="0"
-
-                                />
-
-                            <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
-                                app:layout_column="3"
-                                app:layout_columnWeight="1"
-                                app:layout_row="0"
-
-                                />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/image1"
-                                android:paddingBottom="8dp"
-                                android:text="更衣室"
-                                android:textAlignment="center"
-                                android:textColor="@color/white"
-                                android:textSize="10sp"
-                                app:layout_column="0"
-                                app:layout_columnWeight="1"
-                                app:layout_gravity="center"
-                                app:layout_row="1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/image1"
-                                android:text="更衣室"
-                                android:textAlignment="center"
-                                android:textColor="@color/white"
-                                android:textSize="10sp"
-                                app:layout_column="1"
-                                app:layout_columnWeight="1"
-                                app:layout_gravity="center"
-                                app:layout_row="1" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/image1"
-                                android:text="更衣室"
-                                android:textAlignment="center"
-                                android:textColor="@color/white"
-                                android:textSize="10sp"
-                                app:layout_column="2"
-                                app:layout_columnWeight="1"
-                                app:layout_gravity="center"
-                                app:layout_row="1" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/image1"
-                                android:text="更衣室"
-                                android:textAlignment="center"
-                                android:textColor="@color/white"
-                                android:textSize="10sp"
-                                app:layout_column="3"
-                                app:layout_columnWeight="1"
-                                app:layout_gravity="center"
-                                app:layout_row="1" />
-
-
-                        </androidx.gridlayout.widget.GridLayout>
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/step"
@@ -698,10 +449,10 @@
 
                         <ImageView
                             android:id="@+id/imageView5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_marginTop="2dp"
-                            android:src="@drawable/burn_group_service"
+                            android:src="@drawable/ico_lecture_steps"
                             app:layout_constraintLeft_toRightOf="@+id/guideline12"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -949,10 +700,10 @@
 
                         <ImageView
                             android:id="@+id/imageView21"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_marginTop="2dp"
-                            app:layout_constraintStart_toStartOf="@+id/guideline40"
+                            app:layout_constraintStart_toStartOf="@drawable/ico_faq"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/burn_group_service" />
 
@@ -971,14 +722,14 @@
 
                         <ImageView
                             android:id="@+id/faq_des_image"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
                             android:layout_weight="1"
                             android:clickable="true"
                             app:layout_constraintEnd_toEndOf="@+id/faq_des"
                             app:layout_constraintStart_toStartOf="@+id/faq_des"
                             app:layout_constraintTop_toBottomOf="@+id/faq_des"
-                            app:srcCompat="@drawable/down_arrow" />
+                            app:srcCompat="@drawable/ico_arrow_down" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -1014,10 +765,10 @@
 
                         <ImageView
                             android:id="@+id/imageView23"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_marginTop="2dp"
-                            app:layout_constraintStart_toStartOf="@+id/guideline43"
+                            app:layout_constraintStart_toStartOf="@drawable/ico_warning"
                             app:layout_constraintTop_toTopOf="parent"
                             app:srcCompat="@drawable/burn_group_service" />
 
@@ -1033,13 +784,13 @@
 
                         <ImageView
                             android:id="@+id/warn_des_image"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
                             android:clickable="true"
                             app:layout_constraintEnd_toEndOf="@+id/warn_des"
                             app:layout_constraintStart_toStartOf="@+id/warn_des"
                             app:layout_constraintTop_toBottomOf="@+id/warn_des"
-                            app:srcCompat="@drawable/down_arrow" />
+                            app:srcCompat="@drawable/ico_arrow_down" />
 
                         <TextView
                             android:id="@+id/warn_des"
@@ -1092,10 +843,10 @@
 
                         <ImageView
                             android:id="@+id/imageView10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_marginTop="2dp"
-                            android:src="@drawable/burn_group_service"
+                            android:src="@drawable/ico_more_service"
                             app:layout_constraintLeft_toRightOf="@+id/guideline24"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -1124,15 +875,19 @@
 
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_group_service"
                                 app:layout_column="0"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0" />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_body_form_group_class"
                                 app:layout_column="1"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0"
@@ -1140,8 +895,10 @@
                                 />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_online_service"
                                 app:layout_column="2"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0"
@@ -1149,8 +906,10 @@
                                 />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_healthy_food"
                                 app:layout_column="3"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0"
