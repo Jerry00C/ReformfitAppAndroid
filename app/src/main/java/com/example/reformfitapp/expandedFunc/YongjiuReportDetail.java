@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -39,6 +40,7 @@ public class YongjiuReportDetail {
     String userToken;
     protected String phoneNum;
     protected String measurementId;
+
 
 
     public YongjiuReportDetail(Context context, String phoneNum, String measurementId) {
@@ -86,12 +88,20 @@ public class YongjiuReportDetail {
 
 
 
-    public String getReport2(String measurementIdEx, WebView webView){
+    public String getReport2(String measurementIdEx, boolean english){
 
         long timestamp = System.currentTimeMillis() / 1000L;
         String userToken2 = "third." + measurementIdEx+ "." + app_id + "."+ timestamp + "."+ md5(app_id + app_secret + timestamp + measurementIdEx);
 
-        String url =  "https://c.youjiuhealth.com/index.html#/pages/report/show/show?id=" + measurementIdEx + "&token=" + userToken2 + "&lang=en_CA";
+
+        String url =  null;
+
+        if(english){
+            url = "https://c.youjiuhealth.com/index.html#/pages/report/show/show?id=" + measurementIdEx + "&token=" + userToken2 + "&lang=en_CA";
+        }
+        else{
+            url = "https://c.youjiuhealth.com/index.html#/pages/report/show/show?id=" + measurementIdEx + "&token=" + userToken2 + "&lang=zh_CN";
+        }
 
 
        return url;
@@ -124,7 +134,7 @@ public class YongjiuReportDetail {
     }
 
 
-    public void reportRequest(WebView webView, VolleyResponseListener volleyResponseListener){
+    public void reportRequest(VolleyResponseListener volleyResponseListener, boolean english){
 
         getUserToken(new VolleyResponseListener() {
             @Override
@@ -139,7 +149,7 @@ public class YongjiuReportDetail {
                 Log.d("response",response.toString());
 
 
-                String url = getReport2(measurementId, webView);
+                String url = getReport2(measurementId, english);
 
 
                 volleyResponseListener.onResponse(url);

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -11,6 +12,7 @@ import android.webkit.DownloadListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.reformfitapp.GlobalVariableApplication;
@@ -26,6 +28,11 @@ public class YongjiuReportEx extends AppCompatActivity {
 
     ImageView initBack;
     ImageView initHome;
+
+    String measurementId;
+    String phoneNum;
+
+    TextView initLangChange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +77,27 @@ public class YongjiuReportEx extends AppCompatActivity {
             }
         });
 
-        String measurementId = (String) getIntent().getStringExtra("MeasurementId");
+
+        initLangChange = view.findViewById(R.id.init_langChange);
+        initLangChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(initLangChange.getText().equals(getResources().getString(R.string.yjEx_init_text1))){
+                    initLangChange.setText(getResources().getString(R.string.yjEx_init_text2));
+                    refresh(false);
+
+                }
+                else{
+                    initLangChange.setText(getResources().getString(R.string.yjEx_init_text1));
+                    refresh(true);
+
+                }
+            }
+        });
+
+        measurementId = (String) getIntent().getStringExtra("MeasurementId");
 
 
-        String phoneNum;
                 //TODO: get phone number
         /*if(((GlobalVariableApplication)getApplication()).getLogIn()){
             phoneNum = ((GlobalVariableApplication)getApplication()).getMindbodyClientResponseModel().getMobilePhone();
@@ -87,7 +111,7 @@ public class YongjiuReportEx extends AppCompatActivity {
         YongjiuReportDetail yongjiuReportDetail = new YongjiuReportDetail(getApplicationContext(), phoneNum, measurementId);
 
         webView = (WebView) view.findViewById(R.id.webview);
-        yongjiuReportDetail.reportRequest(webView, new YongjiuReportDetail.VolleyResponseListener() {
+        yongjiuReportDetail.reportRequest(new YongjiuReportDetail.VolleyResponseListener() {
             @Override
             public void onError(String message) {
                 Toast.makeText(getApplicationContext(), message.toString(), Toast.LENGTH_SHORT).show();
@@ -104,7 +128,40 @@ public class YongjiuReportEx extends AppCompatActivity {
                 setContentView(view);
 
             }
-        });
+        }, true);
+
+    }
+
+
+    private void refresh(boolean english){
+
+        YongjiuReportDetail yongjiuReportDetail = new YongjiuReportDetail(getApplicationContext(), phoneNum, measurementId);
+
+        webView = (WebView) view.findViewById(R.id.webview);
+        yongjiuReportDetail.reportRequest(new YongjiuReportDetail.VolleyResponseListener() {
+            @Override
+            public void onError(String message) {
+                Toast.makeText(getApplicationContext(), message.toString(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onResponse(String response) {
+
+
+                webView.setWebViewClient(new WebViewClient());
+                webView.getSettings().setJavaScriptEnabled(true);
+                webView.getSettings().setStandardFontFamily((String) "Time New Roman");
+
+                Log.d("url", response);
+                webView.loadUrl(response);
+                setContentView(view);
+
+            }
+        }, english);
+
+
+
+
 
     }
 }

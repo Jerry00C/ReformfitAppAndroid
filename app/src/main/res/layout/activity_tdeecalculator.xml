@@ -215,6 +215,7 @@
                             app:layout_constraintStart_toStartOf="@+id/guideline15"
                             app:layout_constraintTop_toTopOf="parent" />
 
+
                         <TextView
                             android:id="@+id/textView17"
                             android:layout_width="0dp"
@@ -224,10 +225,8 @@
                             android:text="元素"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="@+id/textView31"
-                            app:layout_constraintEnd_toStartOf="@+id/textView20"
-                            app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toStartOf="@+id/textView31"
+                            app:layout_constraintEnd_toEndOf="@+id/textView74"
+                            app:layout_constraintStart_toStartOf="@+id/textView74"
                             app:layout_constraintTop_toBottomOf="@+id/warning_text" />
 
                         <TextView
@@ -238,13 +237,10 @@
                             android:text="全称"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView17"
-                            app:layout_constraintEnd_toEndOf="@+id/textView32"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline16"
-                            app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@+id/textView17"
-                            app:layout_constraintStart_toStartOf="@+id/textView32"
-                            app:layout_constraintTop_toTopOf="@+id/textView17" />
+                            app:layout_constraintTop_toTopOf="@+id/textView17"
+                            app:layout_constraintEnd_toEndOf="@+id/textView75"
+                            app:layout_constraintStart_toStartOf="@+id/textView75"
+                            tools:layout_editor_absoluteX="188dp" />
 
                         <TextView
                             android:id="@+id/textView31"
@@ -254,11 +250,9 @@
                             android:text="BMR"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            app:layout_constraintEnd_toEndOf="@+id/textView71"
-                            app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toStartOf="@+id/textView71"
+                            app:layout_constraintEnd_toEndOf="@+id/textView74"
+                            app:layout_constraintStart_toStartOf="@+id/textView74"
                             app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
 
                         <TextView
                             android:id="@+id/textView32"
@@ -268,13 +262,10 @@
                             android:text="Basal Metabolic Rate"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView31"
-                            app:layout_constraintEnd_toEndOf="@+id/textView73"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline16"
-                            app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@+id/textView31"
-                            app:layout_constraintStart_toStartOf="@+id/textView73"
-                            app:layout_constraintTop_toTopOf="@+id/textView31" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView20"
+                            app:layout_constraintEnd_toEndOf="@+id/textView75"
+                            app:layout_constraintStart_toStartOf="@+id/textView75"
+                            tools:layout_editor_absoluteX="150dp" />
 
                         <TextView
                             android:id="@+id/textView71"
@@ -284,11 +275,9 @@
                             android:text="TEF"
                             android:textAlignment="center"
                             android:textColor="@color/white"
+                            app:layout_constraintTop_toBottomOf="@+id/textView31"
                             app:layout_constraintEnd_toEndOf="@+id/textView74"
-                            app:layout_constraintEnd_toStartOf="@+id/textView73"
-                            app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toStartOf="@+id/textView74"
-                            app:layout_constraintTop_toBottomOf="@+id/textView31" />
+                            app:layout_constraintStart_toStartOf="@+id/textView74" />
 
                         <TextView
                             android:id="@+id/textView73"
@@ -298,11 +287,10 @@
                             android:text="Thermic Effect of Food"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView71"
                             app:layout_constraintEnd_toEndOf="@+id/textView75"
-                            app:layout_constraintStart_toEndOf="@+id/textView71"
                             app:layout_constraintStart_toStartOf="@+id/textView75"
-                            app:layout_constraintTop_toTopOf="@+id/textView71" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
 
                         <TextView
                             android:id="@+id/textView74"
@@ -313,11 +301,8 @@
                             android:text="NEAT"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            app:layout_constraintEnd_toStartOf="@+id/textView75"
-                            app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="@+id/guideline15"
                             app:layout_constraintTop_toBottomOf="@+id/textView71" />
-
 
                         <TextView
                             android:id="@+id/textView75"
@@ -327,11 +312,9 @@
                             android:text="Non-Exervice Activity Thermogenesis"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView74"
                             app:layout_constraintEnd_toStartOf="@+id/guideline16"
-                            app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toEndOf="@+id/textView74"
-                            app:layout_constraintTop_toTopOf="@+id/textView74" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView73" />
 
                         <TextView
                             android:id="@+id/textView76"
@@ -342,8 +325,6 @@
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             app:layout_constraintEnd_toEndOf="@+id/textView74"
-                            app:layout_constraintEnd_toStartOf="@+id/textView77"
-                            app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="@+id/textView74"
                             app:layout_constraintTop_toBottomOf="@+id/textView74" />
 
@@ -356,8 +337,6 @@
                             android:textAlignment="center"
                             android:textColor="@color/white"
                             app:layout_constraintEnd_toEndOf="@+id/textView75"
-                            app:layout_constraintEnd_toStartOf="@+id/guideline16"
-                            app:layout_constraintHorizontal_bias="1.0"
                             app:layout_constraintStart_toEndOf="@+id/textView76"
                             app:layout_constraintStart_toStartOf="@+id/textView75"
                             app:layout_constraintTop_toBottomOf="@+id/textView75" />

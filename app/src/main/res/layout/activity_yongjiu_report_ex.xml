@@ -14,7 +14,7 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         app:layout_constraintVertical_bias="1.0" />
@@ -23,17 +23,17 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:paddingBottom="5dp">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintGuide_percent="0.04"
-            android:id="@+id/guidelin"
-            android:orientation="vertical"/>
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
 
 
         <TextView
@@ -55,6 +55,29 @@
             android:layout_marginVertical="5dp"
             app:layout_constraintStart_toStartOf="@+id/guidelin"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/init_langChange"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/yjEx_init_text1"
+            android:background="@color/white"
+            android:clickable="true"
+
+            android:textColor="@color/grey"
+            android:gravity="center"
+            android:paddingHorizontal="5dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline77"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline77"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

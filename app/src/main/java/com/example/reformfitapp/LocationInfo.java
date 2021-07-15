@@ -82,6 +82,7 @@ public class LocationInfo extends AppCompatActivity {
 
     TextView initPurchase;
     TextView initLiveChat;
+    TextView initLiveChat2;
     private ChatWindowView fullScreenChatWindow;
     private String licenceNumber = "12951837";
 
@@ -198,6 +199,7 @@ public class LocationInfo extends AppCompatActivity {
 
         initPurchase = view.findViewById(R.id.init_purchase);
         initLiveChat = view.findViewById(R.id.init_liveChat);
+        initLiveChat2 = view.findViewById(R.id.init_liveChat2);
 
 
         fetchInfo();
@@ -517,6 +519,18 @@ public class LocationInfo extends AppCompatActivity {
         });
 
         initLiveChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*Intent switchActivity = new Intent(getApplicationContext(), LiveChat.class);
+                switchActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                startActivity(switchActivity);*/
+
+                startFullScreenChat();
+            }
+        });
+
+        initLiveChat2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /*Intent switchActivity = new Intent(getApplicationContext(), LiveChat.class);

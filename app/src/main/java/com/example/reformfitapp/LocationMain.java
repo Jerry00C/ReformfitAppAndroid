@@ -55,6 +55,8 @@ public class LocationMain extends Fragment {
     View view2;
     FloatingActionButton floatingActionButton;
 
+    TextView announcement;
+
     public VideoView getSimpleVideoView() {
         return simpleVideoView;
     }
@@ -142,6 +144,9 @@ public class LocationMain extends Fragment {
 
 
         startVideo();
+
+        announcement = view.findViewById(R.id.announcement_text);
+        announcement.setSelected(true);
 
 
         init_burn_group_service = view.findViewById(R.id.burn_group_service);

@@ -896,16 +896,25 @@
                             app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
                         <TextView
-                            android:id="@+id/textView12"
+                            android:id="@+id/waning_des"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:text="和了飞书治极很，深体门便标将想，决C听因扭。按几速个压确要，明拉写面改始反，近W罐度态。 就华将易林该，积标无才样心，代居呀红。约学委如界从包领万际打明理，青别再带八照证认果高件口眼，除张丽个马抖没呀议呆吵。六六元问效少北养自，除器积较面山，加去3旱内准伶。量于布据件因十参，想具引出要劳，我设C属杨领。 元力边县法热方二车里列再，花水又看村红万应报。认元此料眼好问种平历分须，美劳间低看指战选格断业，她原孟达历度僚接E杠。 打度引记而品级年切及，平先物十拉过省争，交将该县茅抛京。物每政带北强走见局作，专农打况保管色样素，严基录直积不展杠。习传话转统外备自社切团习解方，导养日现干医志影箩磨选。 小关育集好从圆，些从住E名苗。质技制到家性新数报即了，取更平于下他火生速，厂各Z张弦芳连五飞。构期律决以商军，就较命进青活，示4提什红。那门形院结部而意京这工不样展发厂，层利造查表今O用做格况思声。至斯着五片济声广究，下适政术打置带要，及连I热确县决。明处多立转县米，今革始切平，热8节称次。联加出的方活，难她正方便都，京承响却。 但信军识拉查阶半，要段在片长安眼特，细李I联律心。记用相族处气件流江素，金他权必它别因格单，华门询材线抗伸岗。问还说细调备火现厂较身，教性家提极存一认文，江持屈更但丽龙查变。两完连江断象好月，争被织社十机京"
-                            android:textColor="@color/white"
-
+                            android:textColor="@color/grey"
+                            android:maxLines="3"
                             app:layout_constraintEnd_toStartOf="@+id/guideline16"
                             app:layout_constraintStart_toStartOf="@+id/guideline15"
                             app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+                        <ImageView
+                            android:id="@+id/waning_des_image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/down_arrow"
+                            app:layout_constraintEnd_toEndOf="@+id/waning_des"
+                            app:layout_constraintStart_toStartOf="@+id/waning_des"
+                            app:layout_constraintTop_toBottomOf="@+id/waning_des" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -1025,17 +1034,17 @@
                             app:layout_constraintVertical_bias="0.0" />
 
                         <TextView
-                            android:id="@+id/textView19"
+                            android:id="@+id/init_liveChat2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="点击发起对话"
+                            android:clickable="true"
                             android:textColor="@color/white"
                             app:layout_constraintBottom_toBottomOf="@+id/textView16"
                             app:layout_constraintEnd_toStartOf="@+id/guideline19"
                             app:layout_constraintTop_toTopOf="@+id/textView16"
                             app:layout_constraintVertical_bias="1.0" />
 
-                        <!--TODO: 外接小助手-->
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>

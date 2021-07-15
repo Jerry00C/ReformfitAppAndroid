@@ -1090,6 +1090,7 @@ public class ProfilePage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+                ProfilePage.this.finish();
 
             }
         });
