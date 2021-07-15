@@ -1,75 +1,6 @@
 <resources>
     <string name="app_name">ReformfitApp</string>
 
-    <!--                          Fat Shredder                          -->
-
-
-    <string name="fs_tab1">DESCRIPTION</string>
-    <string name="fs_tab2">NOTE</string>
-
-    <string name="fs_title"><![CDATA[<big>FAT Shredder</big><small><sup>TM</sup></small>]]></string>
-
-
-    <string name="fs_class_intro_title">Class Introduction</string>
-    <string name="fs_class_intro">50 minute, 2 trainers to a maximum 24 client occupancy. Combines circuit training, interval training and functional training for a optimal fat loss. Each class is composed of 12 different exercises that work every muscle in the body. Helps burn calories and increase fat loss in  people of all fitness levels. Every class is unique and you’ll never see two identical classes in the same month. Over hundreds of exercises to pick from, keeping classes different and engaging. Complete heart rate tracking available on screen with total calories burned and current heart rate.</string>
-
-    <string name="fs_class_benefit_title">Class Benefit</string>
-    <string name="fs_class_benefit">Intense calorie burn. Total body fat loss. Full body muscle endurance work. Improving Metabolic Conditioning. Improved Cardiovascular Ability. After Burn Effect (EPOC), 400-800 calories burned per class. A group class creating a team dynamic backed with electrifying EDM music to boost your performance to new heights.</string>
-
-
-    <string name="fs_heart_rate_title"></string>
-    <string name="fs_heart_rate">Prior to class, please put on your heart rate monitor. The monitor should be placed on the upper arm region with heart rate monitor interface facing up to ensure your current heart rate, calories burned and rewards points will be displayed on screen during class. Once your session is complete you will receive an email report with all data after a class is finished.</string>
-
-
-    <string name="fs_class_faq_title">F&amp;Q</string>
-    <string name="fs_class_faq"> <![CDATA[
-        <font color=#dedede> 1. At what frequency should I do Fat Shredder?</font>
-        <font color=#848484><br></br>A: We recommend the average person to attend 1-2 fat-shredders along with 1-2 muscle &amp; tone for best result. Avoid over exercising because too much exercise is known to prevent muscles from fully recovering before your next workout. Negatives of overtraining will include: lack of energy during your workout, reduced workout efficiency and maybe reduction in muscle mass from too much physical stress.</font>
-        <br></br>
-
-        <font color=#dedede><br></br>2. I am new to fitness, am I able to handle this class?</font>
-        <font color=#848484><br></br>A: Yes, it fits people of all level of fitness. However, we recommend taking a single 90-minute basic foundations personal training session with one of our fitness coaches before you begin our classes. Please contact our customer support for more detail.</font>
-        <br></br>
-
-
-        <font color=#dedede><br></br>3. I want to lose weight, would it be better if I workout with empty stomach?</font>
-        <font color=#848484><br></br>A: NO. Even if you are controlling carbohydrate intake overall, you should eat a good amount of carbohydrates 1-2 hours before your class to maintain your blood sugar level for the duration of your workout. As well, consume some carbohydrates after each class to increase muscle recovery.  Negatives of not consuming sufficient amounts of food and carbohydrates before you workout include feeling dizzy, vomiting and lack of concentration during classes. Remember carbohydrates are NOT bad for you.</font>
-        <br></br>
-
-        <font color=#dedede><br></br>4. Why are my muscles sore/not sore after a class?</font>
-        <font color=#848484><br></br>A: During intense exercise, there may not be enough oxygen available to complete the process of muscle recovery, so a substance called lactate is made. Your body can convert this lactate to energy without using oxygen. But this lactate or lactic acid can sometimes build up in your bloodstream faster than you can burn it off. That is the cause of your muscle sore.</font>
-        <br></br>
-
-        <font color=#dedede><br></br>5. How to minimize muscle soreness after a class?</font>
-        <font color=#848484><br></br>A: Fat shredder utilizes every functional muscle in the entire body. You will feel soreness after your very first couple of classes, however the cool down stretch at the end of each class will help reduce lactate accumulation. To ensure better recovery after your workouts we recommend doing the stretches with your trainer after each class.</font>
-        <br></br>
-
-        <font color=#dedede><br></br>6. What should I do if I feel discomfort when attempting a certain exercise.</font>
-        <font color=#848484><br></br>A: This is a common occurrence as different people have different body types, different muscular endurance, different mobility and even different varying degrees of flexibility. If you feel uncomfortable attempting any exercise, stop and let your trainer know and your trainer will find an easier alternative exercise for you to do.</font>
-        <br></br>
-
-        <font color=#dedede><br></br>7. My heart rate monitor is not giving me accurate estimates, what should I do?</font>
-        <font color=#848484><br></br>A: Firstly, make sure you are putting in sufficient effort when doing your exercises in order to see your heart rate scores rise. If, however, your heart rate is still not coming up on the display, tell your trainer and we will replace your heart rate monitor immediately.</font>]]>
-  </string>
-
-    <string name="fs_class_warning_title">Things to Know</string>
-    <string name="fs_class_warning">1. Members can reserve their spots at most up to 14 days prior to a class via the ReformFIT mobile APP or through our website
-        \nPLEASE NOTE: A $12 late penalty fee will be applied if you do not cancel your class booking within 6 hours before class starts OR if you are 15 minutes late to class or more.
-        \n
-        \n2. If a class is full, you may join the class waitlist through the ReformFIT mobile APP or website.
-        \n
-        \nWhen a spot in the class becomes available:
-        \n\t1) 6 hours or MORE prior to class, the first person on the waitlist will automatically move into the class.
-        \n
-        \n\t2) LESS than 6 hours before class, the waitlist will expire and our system will NOT move anyone from Waitlist. Anyone who wants the empty spot needs to manually enrol themselves into this class. Once you have added yourself to this class, please make sure you show up on time, otherwise the $12 late penalty fee will be charged as per our previous guidelines.
-        \n
-        \n3. It is MANDATORY to wear in-door exercise footwear and training clothes. If you have long hair, please tie it back (free hairbands are given at our front desk). We DO NOT allow outdoor shoes or high heel shoes as they may damage our gym facilities as well as out your health and the health of other members at potential risk.
-        \n
-        \n4 If at anytime you feel uncomfortable during class, stop exercising immediately and notify your trainer. Please avoid training on an empty stomach before workout, ensure you have had plenty of water before exercising and if possible some food 30 minutes after training.
-        \n
-        \n5. Do you have more important questions? If so, please contact our customer service representatives.
-       </string>
-
 
     <!--                          Blog Ex 1                          -->
 
@@ -392,6 +323,766 @@
     <string name="blg_new_intro5">Squats and Deadlifts are both highly effective ways of strength training your lower body muscles. Both exercises are intended to strengthen muscle groups within your legs and glutes, however, depending</string>
     <string name="blg_new_intro6">Over the years, HIIT has gained a lot of popularity and it’s mainly due to the many benefits it has! HIIT workouts involve short periods (30–60seconds) of intense exercise followed</string>
     <string name="blg_new_intro7">Now that we are entering Wave 2 of COVID-19, it is crucial to re-learn how to find balance in our day-to-day life. Many of you can relate to how much</string>
+
+
+    <!--                                BMI calculator                     -->
+    <string name="bmi_tab1"></string>
+    <string name="bmi_tab2"></string>
+
+    <string name="bmi_title"></string>
+    <string name="bmi_intro"></string>
+    <string name="bmi_title1"></string>
+    <string name="bmi_f_0"></string>
+    <string name="bmi_f_01"></string>
+    <string name="bmi_f_02"></string>
+    <string name="bmi_f_03"></string>
+    <string name="bmi_f_04"></string>
+    <string name="bmi_f_05"></string>
+
+    <string name="bmi_f_1"></string>
+    <string name="bmi_f_11"></string>
+    <string name="bmi_f_12"></string>
+    <string name="bmi_f_13"></string>
+    <string name="bmi_f_14"></string>
+    <string name="bmi_f_15"></string>
+
+    <string name="bmi_title2"></string>
+    <string name="bmi_f2_0"></string>
+    <string name="bmi_f2_1"></string>
+    <string name="bmi_f2_2"></string>
+    <string name="bmi_f2_3"></string>
+    <string name="bmi_f2_4"></string>
+    <string name="bmi_f2_5"></string>
+    <string name="bmi_f2_6"></string>
+    <string name="bmi_title3"></string>
+    <string name="bmi_text3"></string>
+
+    <string name="bmi_link"></string>
+    <string name="bmi_cal"></string>
+
+
+    <!--                        BMR  Calculator                         -->
+    <string name="bmr_tab1"></string>
+    <string name="bmr_tab2"></string>
+
+    <string name="bmr_title"></string>
+    <string name="bmr_intro"></string>
+    <string name="bmr_title1"></string>
+
+    <string name="bmr_f_0"></string>
+    <string name="bmr_f_01"></string>
+    <string name="bmr_f_02"></string>
+    <string name="bmr_f_03"></string>
+    <string name="bmr_f_04"></string>
+    <string name="bmr_f_05"></string>
+
+    <string name="bmr_f_1"></string>
+    <string name="bmr_f_11"></string>
+    <string name="bmr_f_12"></string>
+    <string name="bmr_f_13"></string>
+    <string name="bmr_f_14"></string>
+    <string name="bmr_f_15"></string>
+
+
+    <string name="bmr_title2"></string>
+    <string name="bmr_f2_0"></string>
+    <string name="bmr_f2_1"></string>
+    <string name="bmr_f2_2"></string>
+    <string name="bmr_f2_3"></string>
+    <string name="bmr_f2_4"></string>
+    <string name="bmr_f2_5"></string>
+    <string name="bmr_f2_6"></string>
+    <string name="bmr_f2_7"></string>
+    <string name="bmr_f2_8"></string>
+    <string name="bmr_f2_9"></string>
+    <string name="bmr_f2_10"></string>
+    <string name="bmr_f2_11"></string>
+    <string name="bmr_f2_12"></string>
+    <string name="bmr_f2_13"></string>
+    <string name="bmr_f2_14"></string>
+    <string name="bmr_f2_15"></string>
+
+    <string name="bmr_title3"></string>
+    <string name="bmr_text3"></string>
+
+    <string name="bmr_link"></string>
+    <string name="bmr_cal"></string>
+
+
+    <!--                Class Info               -->
+    <string name="cInfo_title"></string>
+    <string name="cInfo_tab1"></string>
+    <string name="cInfo_tab2"></string>
+
+    <string name="cInfo1_title"></string>
+    <string name="cInfo1_text"></string>
+    <string name="cInfo1_title11"></string>
+    <string name="cInfo1_text11"></string>
+    <string name="cInfo1_title12"></string>
+    <string name="cInfo1_text12"></string>
+
+    <string name="cInfo2_title"></string>
+    <string name="cInfo2_text"></string>
+
+    <string name="cInfo3_title"></string>
+    <string name="cInfo3_text"></string>
+    <string name="cInfo3_text31"></string>
+    <string name="cInfo3_text32"></string>
+    <string name="cInfo3_text33"></string>
+    <string name="cInfo3_text34"></string>
+
+
+    <string name="cInfo4_title"></string>
+    <string name="cInfo4_text"></string>
+    <string name="cInfo4_link"></string>
+
+
+    <string name="cInfo5_title"></string>
+    <string name="cInfo5_text"></string>
+    <string name="cInfo5_text1"></string>
+    <string name="cInfo5_text2"></string>
+    <string name="cInfo5_text3"></string>
+
+
+    <string name="cInfo6_title"></string>
+    <string name="cInfo6_text"></string>
+    <string name="cInfo6_text1"></string>
+    <string name="cInfo6_text2"></string>
+    <string name="cInfo6_text3"></string>
+
+
+    <string name="cInfo7_title"></string>
+    <string name="cInfo7_text"></string>
+
+
+    <string name="cInfo8_title"></string>
+    <string name="cInfo8_text"></string>
+
+
+
+    <string name="cInfo9_title"></string>
+    <string name="cInfo9_text"></string>
+    <string name="cInfo9_text1"></string>
+    <string name="cInfo9_text2"></string>
+    <string name="cInfo9_text3"></string>
+
+    <string name="cInfo_init_text"></string>
+    <string name="cInfo_init_text2"></string>
+    <string name="cInfo_init_text3"></string>
+
+
+    <!--                   Diet Health                     -->
+    <string name="dietH_title"></string>
+
+    <!--                          Fat Shredder                          -->
+
+
+    <string name="fs_tab1">DESCRIPTION</string>
+    <string name="fs_tab2">NOTE</string>
+
+    <string name="fs_title"><![CDATA[<big>FAT Shredder</big><small><sup>TM</sup></small>]]></string>
+
+
+    <string name="fs_class_intro_title">Class Introduction</string>
+    <string name="fs_class_intro">50 minute, 2 trainers to a maximum 24 client occupancy. Combines circuit training, interval training and functional training for a optimal fat loss. Each class is composed of 12 different exercises that work every muscle in the body. Helps burn calories and increase fat loss in  people of all fitness levels. Every class is unique and you’ll never see two identical classes in the same month. Over hundreds of exercises to pick from, keeping classes different and engaging. Complete heart rate tracking available on screen with total calories burned and current heart rate.</string>
+
+    <string name="fs_class_benefit_title">Class Benefit</string>
+    <string name="fs_class_benefit">Intense calorie burn. Total body fat loss. Full body muscle endurance work. Improving Metabolic Conditioning. Improved Cardiovascular Ability. After Burn Effect (EPOC), 400-800 calories burned per class. A group class creating a team dynamic backed with electrifying EDM music to boost your performance to new heights.</string>
+
+
+    <string name="fs_heart_rate_title"></string>
+    <string name="fs_heart_rate">Prior to class, please put on your heart rate monitor. The monitor should be placed on the upper arm region with heart rate monitor interface facing up to ensure your current heart rate, calories burned and rewards points will be displayed on screen during class. Once your session is complete you will receive an email report with all data after a class is finished.</string>
+
+
+    <string name="fs_class_faq_title">F&amp;Q</string>
+    <string name="fs_class_faq"> <![CDATA[
+        <font color=#dedede> 1. At what frequency should I do Fat Shredder?</font>
+        <font color=#848484><br></br>A: We recommend the average person to attend 1-2 fat-shredders along with 1-2 muscle &amp; tone for best result. Avoid over exercising because too much exercise is known to prevent muscles from fully recovering before your next workout. Negatives of overtraining will include: lack of energy during your workout, reduced workout efficiency and maybe reduction in muscle mass from too much physical stress.</font>
+        <br></br>
+
+        <font color=#dedede><br></br>2. I am new to fitness, am I able to handle this class?</font>
+        <font color=#848484><br></br>A: Yes, it fits people of all level of fitness. However, we recommend taking a single 90-minute basic foundations personal training session with one of our fitness coaches before you begin our classes. Please contact our customer support for more detail.</font>
+        <br></br>
+
+
+        <font color=#dedede><br></br>3. I want to lose weight, would it be better if I workout with empty stomach?</font>
+        <font color=#848484><br></br>A: NO. Even if you are controlling carbohydrate intake overall, you should eat a good amount of carbohydrates 1-2 hours before your class to maintain your blood sugar level for the duration of your workout. As well, consume some carbohydrates after each class to increase muscle recovery.  Negatives of not consuming sufficient amounts of food and carbohydrates before you workout include feeling dizzy, vomiting and lack of concentration during classes. Remember carbohydrates are NOT bad for you.</font>
+        <br></br>
+
+        <font color=#dedede><br></br>4. Why are my muscles sore/not sore after a class?</font>
+        <font color=#848484><br></br>A: During intense exercise, there may not be enough oxygen available to complete the process of muscle recovery, so a substance called lactate is made. Your body can convert this lactate to energy without using oxygen. But this lactate or lactic acid can sometimes build up in your bloodstream faster than you can burn it off. That is the cause of your muscle sore.</font>
+        <br></br>
+
+        <font color=#dedede><br></br>5. How to minimize muscle soreness after a class?</font>
+        <font color=#848484><br></br>A: Fat shredder utilizes every functional muscle in the entire body. You will feel soreness after your very first couple of classes, however the cool down stretch at the end of each class will help reduce lactate accumulation. To ensure better recovery after your workouts we recommend doing the stretches with your trainer after each class.</font>
+        <br></br>
+
+        <font color=#dedede><br></br>6. What should I do if I feel discomfort when attempting a certain exercise.</font>
+        <font color=#848484><br></br>A: This is a common occurrence as different people have different body types, different muscular endurance, different mobility and even different varying degrees of flexibility. If you feel uncomfortable attempting any exercise, stop and let your trainer know and your trainer will find an easier alternative exercise for you to do.</font>
+        <br></br>
+
+        <font color=#dedede><br></br>7. My heart rate monitor is not giving me accurate estimates, what should I do?</font>
+        <font color=#848484><br></br>A: Firstly, make sure you are putting in sufficient effort when doing your exercises in order to see your heart rate scores rise. If, however, your heart rate is still not coming up on the display, tell your trainer and we will replace your heart rate monitor immediately.</font>]]>
+  </string>
+
+    <string name="fs_class_warning_title">Things to Know</string>
+    <string name="fs_class_warning">1. Members can reserve their spots at most up to 14 days prior to a class via the ReformFIT mobile APP or through our website
+        \nPLEASE NOTE: A $12 late penalty fee will be applied if you do not cancel your class booking within 6 hours before class starts OR if you are 15 minutes late to class or more.
+        \n
+        \n2. If a class is full, you may join the class waitlist through the ReformFIT mobile APP or website.
+        \n
+        \nWhen a spot in the class becomes available:
+        \n\t1) 6 hours or MORE prior to class, the first person on the waitlist will automatically move into the class.
+        \n
+        \n\t2) LESS than 6 hours before class, the waitlist will expire and our system will NOT move anyone from Waitlist. Anyone who wants the empty spot needs to manually enrol themselves into this class. Once you have added yourself to this class, please make sure you show up on time, otherwise the $12 late penalty fee will be charged as per our previous guidelines.
+        \n
+        \n3. It is MANDATORY to wear in-door exercise footwear and training clothes. If you have long hair, please tie it back (free hairbands are given at our front desk). We DO NOT allow outdoor shoes or high heel shoes as they may damage our gym facilities as well as out your health and the health of other members at potential risk.
+        \n
+        \n4 If at anytime you feel uncomfortable during class, stop exercising immediately and notify your trainer. Please avoid training on an empty stomach before workout, ensure you have had plenty of water before exercising and if possible some food 30 minutes after training.
+        \n
+        \n5. Do you have more important questions? If so, please contact our customer service representatives.
+       </string>
+
+
+    <!--                Location Info             -->
+
+    <string name="lInfo_title"></string>
+    <string name="lInfo_tab1"></string>
+    <string name="lInfo_tab2"></string>
+
+    <string name="lInfo1_title"></string>
+    <string name="lInfo1_text0"></string>
+    <string name="lInfo1_text1"></string>
+    <string name="lInfo1_text2"></string>
+    <string name="lInfo1_text3"></string>
+    <string name="lInfo1_text4"></string>
+    <string name="lInfo1_text5"></string>
+
+    <string name="lInfo2_title0"></string>
+    <string name="lInfo2_text00"></string>
+    <string name="lInfo2_text01"></string>
+    <string name="lInfo2_text02"></string>
+
+    <string name="lInfo2_title1"></string>
+    <string name="lInfo2_text1"></string>
+    <string name="lInfo2_text10"></string>
+    <string name="lInfo2_text11"></string>
+    <string name="lInfo2_text12"></string>
+    <string name="lInfo2_text13"></string>
+    <string name="lInfo2_text14"></string>
+    <string name="lInfo2_text15"></string>
+    <string name="lInfo2_text16"></string>
+    <string name="lInfo2_text17"></string>
+
+
+
+
+    <string name="lInfo3_title"></string>
+    <string name="lInfo3_text"></string>
+    <string name="lInfo3_text1"></string>
+    <string name="lInfo3_text2"></string>
+    <string name="lInfo3_text3"></string>
+
+
+    <string name="lInfo4_title"></string>
+    <string name="lInfo4_text"></string>
+
+    <string name="lInfo5_title"></string>
+    <string name="lInfo5_text"></string>
+    <string name="lInfo5_text1"></string>
+    <string name="lInfo5_text2"></string>
+    <string name="lInfo5_text3"></string>
+    <string name="lInfo5_text4"></string>
+    <string name="lInfo5_text5"></string>
+
+    <string name="lInfo6_title"></string>
+    <string name="lInfo6_link"></string>
+
+
+    <string name="lInfo7_title"></string>
+    <string name="lInfo7_text"></string>
+    <string name="lInfo7_text1"></string>
+    <string name="lInfo7_text2"></string>
+    <string name="lInfo7_text3"></string>
+
+
+
+    <!--                    Main bottom Navi Service                      -->
+
+    <string name="mBot_title"></string>
+
+
+
+    <!--                    Private Class Info             -->
+
+
+    <string name="psInfo_tab1"></string>
+    <string name="psInfo_tab2"></string>
+    <string name="psInfo_title"></string>
+
+    <string name="psInfo1_title"></string>
+    <string name="psInfo1_text"></string>
+
+
+    <string name="psInfo2_title"></string>
+    <string name="psInfo2_text"></string>
+    <string name="psInfo2_text1"></string>
+    <string name="psInfo2_text2"></string>
+    <string name="psInfo2_text3"></string>
+    <string name="psInfo2_text4"></string>
+
+
+    <string name="psInfo3_title"></string>
+    <string name="psInfo3_text"></string>
+    <string name="psInfo3_link"></string>
+
+
+    <string name="psInfo4_title"></string>
+    <string name="psInfo4_text"></string>
+    <string name="psInfo4_text1"></string>
+    <string name="psInfo4_text2"></string>
+    <string name="psInfo4_text3"></string>
+
+
+    <string name="psInfo5_title"></string>
+    <string name="psInfo5_text"></string>
+    <string name="psInfo5_text1"></string>
+    <string name="psInfo5_text2"></string>
+    <string name="psInfo5_text3"></string>
+    <string name="psInfo5_text4"></string>
+
+
+    <string name="psInfo6_title"></string>
+    <string name="psInfo6_text"></string>
+
+
+    <string name="psInfo7_title"></string>
+    <string name="psInfo7_text"></string>
+
+
+    <string name="psInfo8_title"></string>
+    <string name="psInfo8_text"></string>
+    <string name="psInfo8_text1"></string>
+    <string name="psInfo8_text2"></string>
+    <string name="psInfo8_text3"></string>
+
+
+
+
+
+<!--                     private Training Info               -->
+    <string name="pcInfo_title"></string>
+    <string name="pcInfo_tab1"></string>
+    <string name="pcInfo_tab2"></string>
+
+    <string name="pcInfo1_title"></string>
+    <string name="pcInfo1_text0"></string>
+    <string name="pcInfo1_text01"></string>
+    <string name="pcInfo1_title1"></string>
+
+    <string name="pcInfo1_text1"></string>
+    <string name="pcInfo1_text2"></string>
+
+
+    <string name="pcInfo2_title"></string>
+    <string name="pcInfo2_text"></string>
+
+
+  <string name="pcInfo3_title"></string>
+  <string name="pcInfo3_text"></string>
+  <string name="pcInfo3_text1"></string>
+  <string name="pcInfo3_text2"></string>
+  <string name="pcInfo3_text3"></string>
+
+
+  <string name="pcInfo4_title"></string>
+  <string name="pcInfo4_text"></string>
+  <string name="pcInfo4_text1"></string>
+  <string name="pcInfo4_text2"></string>
+  <string name="pcInfo4_text3"></string>
+  <string name="pcInfo4_text4"></string>
+
+
+  <string name="pcInfo5_title"></string>
+  <string name="pcInfo5_text"></string>
+
+
+  <string name="pcInfo6_title"></string>
+  <string name="pcInfo6_text"></string>
+
+
+  <string name="pcInfo7_title"></string>
+  <string name="pcInfo7_text"></string>
+  <string name="pcInfo7_text1"></string>
+  <string name="pcInfo7_text2"></string>
+  <string name="pcInfo7_text3"></string>
+
+
+
+
+<!--                         Profile Page                 -->
+
+    <string name="pp_title"></string>
+    <string name="pp_text"></string>
+
+    <string name="pp1_text"></string>
+    <string name="pp1_text1"></string>
+    <string name="pp1_text2"></string>
+    <string name="pp1_text3"></string>
+    <string name="pp1_text4"></string>
+    <string name="pp1_text5"></string>
+    <string name="pp1_text6"></string>
+
+
+<!--                          Service Tabbed                -->
+
+
+    <string name="st_title"></string>
+    <string name="st_init_text1"></string>
+    <string name="st_init_text2"></string>
+
+
+
+<!--                               Shape Class Info                 -->
+
+    <string name="ssInfo_tab1"></string>
+    <string name="ssInfo_tab2"></string>
+    <string name="ssInfo_title"></string>
+
+
+    <string name="ssInfo1_title"></string>
+    <string name="ssInfo1_text"></string>
+
+
+    <string name="ssInfo2_title"></string>
+    <string name="ssInfo2_text"></string>
+    <string name="ssInfo2_text1"></string>
+    <string name="ssInfo2_text2"></string>
+    <string name="ssInfo2_text3"></string>
+    <string name="ssInfo2_text4"></string>
+
+
+    <string name="ssInfo3_title"></string>
+    <string name="ssInfo3_text"></string>
+    <string name="ssInfo3_link"></string>
+
+
+    <string name="ssInfo4_title"></string>
+    <string name="ssInfo4_text"></string>
+    <string name="ssInfo4_text1"></string>
+    <string name="ssInfo4_text2"></string>
+    <string name="ssInfo4_text3"></string>
+
+
+    <string name="ssInfo5_title"></string>
+    <string name="ssInfo5_text"></string>
+    <string name="ssInfo5_text1"></string>
+    <string name="ssInfo5_text2"></string>
+    <string name="ssInfo5_text3"></string>
+
+
+    <string name="ssInfo6_title"></string>
+    <string name="ssInfo6_text"></string>
+
+
+    <string name="ssInfo7_title"></string>
+    <string name="ssInfo7_text"></string>
+
+
+    <string name="ssInfo8_title"></string>
+    <string name="ssInfo8_text"></string>
+    <string name="ssInfo8_text1"></string>
+    <string name="ssInfo8_text2"></string>
+    <string name="ssInfo8_text3"></string>
+
+
+
+<!--                    TDEE Calculator                   -->
+
+
+    <string name="tdee_tab1"></string>
+    <string name="tdee_tab2"></string>
+
+    <string name="tdee_title"></string>
+    <string name="tdee_intro"></string>
+
+    <string name="tdee1_title"></string>
+    <string name="tdee1_text1"></string>
+    <string name="tdee1_text2"></string>
+    <string name="tdee1_text3"></string>
+    <string name="tdee1_text4"></string>
+    <string name="tdee1_text5"></string>
+    <string name="tdee1_text01"></string>
+    <string name="tdee1_text02"></string>
+    <string name="tdee1_text03"></string>
+    <string name="tdee1_text04"></string>
+    <string name="tdee1_text05"></string>
+
+    <string name="tdee3_title"></string>
+    <string name="tdee3_text11"></string>
+    <string name="tdee3_text12"></string>
+    <string name="tdee3_text13"></string>
+    <string name="tdee3_text14"></string>
+    <string name="tdee3_text15"></string>
+    <string name="tdee3_text16"></string>
+    <string name="tdee3_text2"></string>
+    <string name="tdee3_text21"></string>
+    <string name="tdee3_text22"></string>
+    <string name="tdee3_text23"></string>
+    <string name="tdee3_text24"></string>
+    <string name="tdee3_text25"></string>
+    <string name="tdee3_text3"></string>
+    <string name="tdee3_text4"></string>
+    <string name="tdee3_link"></string>
+
+    <string name="tdee4_title"></string>
+    <string name="tdee4_text"></string>
+
+    <string name="tdee_cal"></string>
+
+
+
+
+<!--                         Yongjiu Health Ex              -->
+
+
+    <string name="yjEx_title"></string>
+    <string name="yjEx_init_text1">中</string>
+    <string name="yjEx_init_text2">English</string>
+
+
+
+
+<!--                 BSFD  History             -->
+
+    <string name="bsfdH_text"></string>
+    <string name="bsfdH_text2"></string>
+
+
+
+    <!--                 BSFD  Upcoming             -->
+
+
+    <string name="bsfdU_text"></string>
+    <string name="bsfdU_text2"></string>
+    <string name="bsfdU_text3"></string>
+
+
+
+
+    <!--                 BSFD  Upcoming Online             -->
+
+    <string name="bsfdUO_text"></string>
+    <string name="bsfdUO_text1"></string>
+    <string name="bsfdUO_text2"></string>
+    <string name="bsfdUO_text3"></string>
+
+
+    <!--                 BSFD  Upcoming Waitlist             -->
+
+    <string name="bsfdUW_text"></string>
+    <string name="bsfdUW_text1"></string>
+    <string name="bsfdUW_text2"></string>
+
+
+<!--                      Class History Template                    -->
+
+    <string name="chTem_text"></string>
+    <string name="chTem_text1"></string>
+    <string name="chTem_text2"></string>
+    <string name="chTem_text3"></string>
+    <string name="chTem_text4"></string>
+    <string name="chTem_text5"></string>
+    <string name="chTem_text6"></string>
+
+
+
+
+<!--                     Fragment BMI                          -->
+    <string name="bmiF_title"></string>
+    <string name="bmiF_text"></string>
+    <string name="bmiF_text1"></string>
+    <string name="bmiF_text2"></string>
+    <string name="bmiF_text3"></string>
+    <string name="bmiF_text4"></string>
+    <string name="bmiF_text5"></string>
+    <string name="bmiF_text6"></string>
+    <string name="bmiF_text7"></string>
+    <string name="bmiF_text8"></string>
+    <string name="bmiF_text9"></string>
+    <string name="bmiF_link"></string>
+    <string name="bmiF_init_text"></string>
+    <string name="bmiF_init_text1"></string>
+
+
+<!--                      Fragment BMR                        -->
+
+    <string name="bmrF_title"></string>
+    <string name="bmrF_text"></string>
+    <string name="bmrF_text1"></string>
+    <string name="bmrF_text2"></string>
+    <string name="bmrF_text3"></string>
+    <string name="bmrF_text4"></string>
+    <string name="bmrF_text5"></string>
+    <string name="bmrF_text6"></string>
+    <string name="bmrF_text7"></string>
+    <string name="bmrF_text8"></string>
+    <string name="bmrF_text9"></string>
+    <string name="bmrF_text10"></string>
+    <string name="bmrF_text11"></string>
+    <string name="bmrF_text12"></string>
+    <string name="bmrF_text13"></string>
+    <string name="bmrF_text14"></string>
+    <string name="bmrF_text15"></string>
+    <string name="bmrF_link"></string>
+    <string name="bmrF_init_text"></string>
+    <string name="bmrF_init_text2"></string>
+
+
+
+<!--                    Fragment Loaction Main                       -->
+
+    <string name="lmF_tab"></string>
+    <string name="lmF_tab2"></string>
+
+    <string name="lmF1_text"></string>
+    <string name="lmF1_text1"></string>
+    <string name="lmF1_text2"></string>
+    <string name="lmF1_text3"></string>
+    <string name="lmF1_text4"></string>
+    <string name="lmF1_text5"></string>
+
+    <string name="lmF2_text"></string>
+    <string name="lmF2_text2"></string>
+
+
+<!--                    Fragment Mine Info                        -->
+
+    <string name="miF_text"></string>
+    <string name="miF_text2"></string>
+
+
+    <!--                    Fragment Mine Info 1                       -->
+
+    <string name="mi1F1_text"></string>
+    <string name="mi1F1_text1"></string>
+    <string name="mi1F1_text2"></string>
+
+    <string name="mi1F2_text"></string>
+    <string name="mi1F2_text1"></string>
+    <string name="mi1F2_text2"></string>
+    <string name="mi1F2_text3"></string>
+    <string name="mi1F2_text4"></string>
+    <string name="mi1F2_text5"></string>
+    <string name="mi1F2_text6"></string>
+    <string name="mi1F2_text7"></string>
+
+
+    <!--                    Fragment Mine Info 3                       -->
+
+    <string name="mi3F_text"></string>
+    <string name="mi3F_text2"></string>
+    <string name="mi3F_text3"></string>
+    <string name="mi3F_text4"></string>
+
+
+
+    <!--                Fragment Private Class                -->
+
+
+    <string name="pcF_text"></string>
+    <string name="pcF_text1"></string>
+    <string name="pcF_text2"></string>
+
+
+
+
+    <!--                Fragment TDEE                -->
+
+
+    <string name="tdeeF_title"></string>
+    <string name="tdeeF_text"></string>
+    <string name="tdeeF_text1"></string>
+    <string name="tdeeF_text2"></string>
+    <string name="tdeeF_text3"></string>
+    <string name="tdeeF_text4"></string>
+    <string name="tdeeF_text5"></string>
+    <string name="tdeeF_text6"></string>
+    <string name="tdeeF_text7"></string>
+    <string name="tdeeF_text8"></string>
+    <string name="tdeeF_text9"></string>
+    <string name="tdeeF_text10"></string>
+    <string name="tdeeF_text11"></string>
+    <string name="tdeeF_text12"></string>
+    <string name="tdeeF_text13"></string>
+    <string name="tdeeF_text14"></string>
+    <string name="tdeeF_text15"></string>
+    <string name="tdeeF_text16"></string>
+
+    <string name="tdeeF_link"></string>
+
+    <string name="tdeeF_init_text"></string>
+    <string name="tdeeF_init_text2"></string>
+
+
+
+
+
+    <!--                   Video All Fragment            -->
+
+
+    <string name="vaF_title"></string>
+    <string name="vaF_text"></string>
+    <string name="vaF_text1"></string>
+    <string name="vaF_text2"></string>
+
+
+
+    <!--                  Video Main Fragment            -->
+
+    <string name="vmF_tab"></string>
+    <string name="vmF_tab1"></string>
+
+
+    <string name="vmF_title"></string>
+    <string name="vmF_text"></string>
+    <string name="vmF_text1"></string>
+    <string name="vmF_text2"></string>
+    <string name="vmF_init_text"></string>
+
+
+
+
+  <!--           Group Class Cardview             -->
+
+
+  <string name="gc_text"></string>
+  <string name="gc_text1"></string>
+  <string name="gc_text2"></string>
+  <string name="gc_text3"></string>
+  <string name="gc_text4"></string>
+  <string name="gc_text5"></string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <string name="copy"> <u>copy</u></string>
     <string name="init_map"> <u>查看地图</u></string>
