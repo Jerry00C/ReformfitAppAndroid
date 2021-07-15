@@ -27,6 +27,8 @@ public class TabbedActivityPurchase extends AppCompatActivity {
     ImageView initBack;
     ImageView initHome;
 
+    private ChatWindowView fullScreenChatWindow;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +64,7 @@ public class TabbedActivityPurchase extends AppCompatActivity {
         });
 
 
-        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager(), fullScreenChatWindow);
         ViewPager viewPager = findViewById(R.id.view_pager);
 
         viewPager.setAdapter(sectionsPagerAdapter);
@@ -71,4 +73,17 @@ public class TabbedActivityPurchase extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+
+        if(fullScreenChatWindow != null && fullScreenChatWindow.onBackPressed()){
+
+        }
+        else{
+            super.onBackPressed();
+        }
+    }
+
+
 }

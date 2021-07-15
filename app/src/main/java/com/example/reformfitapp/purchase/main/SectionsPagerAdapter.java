@@ -24,9 +24,14 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
     private final Context mContext;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+
+    private ChatWindowView fullScreenChatWindow;
+
+    public SectionsPagerAdapter(Context context, FragmentManager fm, ChatWindowView fullScreenChatWindow) {
         super(fm);
         mContext = context;
+
+        this.fullScreenChatWindow = fullScreenChatWindow;
     }
 
     @Override
@@ -35,7 +40,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // Return a PlaceholderFragment (defined as a static inner class below).
         switch(position) {
             case 0:
-                return new GroupClassFragmentPurchase();
+                return new GroupClassFragmentPurchase(fullScreenChatWindow);
             case 1:
                 return new PrivateLessonFragmentPurchase();
             default:

@@ -1117,11 +1117,14 @@
     <!--            xml layout      -->
     <!--                memberships-->
     <string name="FGCP_membership_title">连续包月会员</string>
+    <string name="FGCP_Monthly_unlimited_class">每月无限团课</string>
+    <string name="FGCP_live_chat">客服</string>
     <!--                    membership option1-->
     <string name="FGCP_mem_option1">Premier BURN!</string>
     <string name="FGCP_mem_info_1_1">12个月后免费取消</string>
     <string name="FGCP_mem_info_1_2">可冻结账户4次</string>
     <string name="FGCP_mem_info_1_3">免费线上live课程</string>
+
     <string name="FGCP_mem_option1_price">$189/月</string>
     <!--                    membership option2-->
     <string name="FGCP_mem_option2">Elite BURN!</string>

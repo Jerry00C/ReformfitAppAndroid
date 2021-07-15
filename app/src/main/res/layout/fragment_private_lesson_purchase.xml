@@ -95,9 +95,9 @@
                             app:layout_constraintTop_toTopOf="@id/info_first"/>
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_purchase_option"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ico_1on1_private_lesson"
                             app:layout_constraintStart_toStartOf="@+id/vertGuideline1_1"
                             app:layout_constraintTop_toTopOf="@+id/horGuideline1_1"
                             android:id="@+id/one_on_one_private_icon"/>
@@ -106,14 +106,13 @@
                             android:id="@+id/payment_method"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="@string/plp_1on1_title"
                             android:textColor="@color/yellow"
                             android:textSize="18sp"
                             app:layout_constraintBottom_toBottomOf="@+id/one_on_one_private_icon"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.07"
-                            app:layout_constraintStart_toEndOf="@id/one_on_one_private_icon"
 
+                            app:layout_constraintStart_toEndOf="@id/one_on_one_private_icon"
                             app:layout_constraintTop_toTopOf="@+id/one_on_one_private_icon" />
 
                         <View
@@ -140,45 +139,46 @@
                             app:layout_constraintTop_toBottomOf="@id/divider" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/info_icon_1_1"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="16dp"
                             android:src="@drawable/ic_info_icon_2"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            app:layout_constraintTop_toBottomOf="@id/info_first"
-                            android:layout_marginTop="12dp"
-                            android:id="@+id/info_icon_1_1"/>
+                            app:layout_constraintTop_toBottomOf="@id/info_first" />
+
                         <TextView
+                            android:id="@+id/purchase_info_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="@string/plp_1on1_info_1_1"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="@id/info_icon_1_1"
                             app:layout_constraintStart_toEndOf="@id/info_icon_1_1"
-                            app:layout_constraintTop_toTopOf="@+id/info_icon_1_1"
-                            android:id="@+id/purchase_info_1"/>
+                            app:layout_constraintTop_toTopOf="@+id/info_icon_1_1" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_1_1"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            android:layout_marginTop="6dp"
                             android:id="@+id/info_icon_1_2"
-                            />
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/ic_info_icon_2"
+                            app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                            app:layout_constraintTop_toBottomOf="@id/info_icon_1_1" />
 
                         <TextView
+                            android:id="@+id/purchase_info_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="@string/plp_1on1_info_1_2"
                             android:textColor="@color/white"
                             android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_1_2"
                             app:layout_constraintBottom_toBottomOf="@+id/info_icon_1_2"
                             app:layout_constraintStart_toEndOf="@id/info_icon_1_2"
-                            android:id="@+id/purchase_info_2"
-                            />
+                            app:layout_constraintTop_toTopOf="@id/info_icon_1_2" />
 
                         <TextView
                             android:id="@+id/info_first_display"
@@ -217,7 +217,7 @@
                             android:id="@+id/one_on_one_option2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="16dp"
                             android:text="@string/plp_1on1_option2"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
@@ -226,45 +226,46 @@
                             app:layout_constraintTop_toBottomOf="@id/info_icon_1_2" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/info_icon_2_1"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="12dp"
                             android:src="@drawable/ic_info_icon_2"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            app:layout_constraintTop_toBottomOf="@id/one_on_one_option2"
-                            android:layout_marginTop="12dp"
-                            android:id="@+id/info_icon_2_1"/>
+                            app:layout_constraintTop_toBottomOf="@id/one_on_one_option2" />
+
                         <TextView
+                            android:id="@+id/purchase_info_2_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="@string/plp_1on1_info_2_1"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="@id/info_icon_2_1"
                             app:layout_constraintStart_toEndOf="@id/info_icon_2_1"
-                            app:layout_constraintTop_toTopOf="@+id/info_icon_2_1"
-                            android:id="@+id/purchase_info_2_1"/>
+                            app:layout_constraintTop_toTopOf="@+id/info_icon_2_1" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_2_1"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            android:layout_marginTop="6dp"
                             android:id="@+id/info_icon_2_2"
-                            />
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/ic_info_icon_2"
+                            app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                            app:layout_constraintTop_toBottomOf="@id/info_icon_2_1" />
 
                         <TextView
+                            android:id="@+id/purchase_info_2_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="@string/plp_1on1_info_2_2"
                             android:textColor="@color/white"
                             android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_2_2"
                             app:layout_constraintBottom_toBottomOf="@+id/info_icon_2_2"
                             app:layout_constraintStart_toEndOf="@id/info_icon_2_2"
-                            android:id="@+id/purchase_info_2_2"
-                            />
+                            app:layout_constraintTop_toTopOf="@id/info_icon_2_2" />
 
                         <TextView
                             android:id="@+id/one_on_one_option2_price"
@@ -303,7 +304,7 @@
                             android:id="@+id/one_on_one_option3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="16dp"
                             android:text="@string/plp_1on1_option3"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
@@ -312,45 +313,46 @@
                             app:layout_constraintTop_toBottomOf="@id/info_icon_2_2" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/info_icon_3_1"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="16dp"
                             android:src="@drawable/ic_info_icon_2"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            app:layout_constraintTop_toBottomOf="@id/one_on_one_option3"
-                            android:layout_marginTop="12dp"
-                            android:id="@+id/info_icon_3_1"/>
+                            app:layout_constraintTop_toBottomOf="@id/one_on_one_option3" />
+
                         <TextView
+                            android:id="@+id/purchase_info_3_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="@string/plp_1on1_info_3_1"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="@id/info_icon_3_1"
                             app:layout_constraintStart_toEndOf="@id/info_icon_3_1"
-                            app:layout_constraintTop_toTopOf="@+id/info_icon_3_1"
-                            android:id="@+id/purchase_info_3_1"/>
+                            app:layout_constraintTop_toTopOf="@+id/info_icon_3_1" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_3_1"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            android:layout_marginTop="6dp"
                             android:id="@+id/info_icon_3_2"
-                            />
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/ic_info_icon_2"
+                            app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                            app:layout_constraintTop_toBottomOf="@id/info_icon_3_1" />
 
                         <TextView
+                            android:id="@+id/purchase_info_3_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="@string/plp_1on1_info_3_2"
                             android:textColor="@color/white"
                             android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_3_2"
                             app:layout_constraintBottom_toBottomOf="@+id/info_icon_3_2"
                             app:layout_constraintStart_toEndOf="@id/info_icon_3_2"
-                            android:id="@+id/purchase_info_3_2"
-                            />
+                            app:layout_constraintTop_toTopOf="@id/info_icon_3_2" />
 
                         <TextView
                             android:id="@+id/one_on_one_option3_price"
@@ -389,7 +391,7 @@
                             android:id="@+id/one_on_one_option4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
+                            android:layout_marginTop="16dp"
                             android:text="@string/plp_1on1_option4"
                             android:textColor="#DEDEDE"
                             android:textSize="16sp"
@@ -398,45 +400,46 @@
                             app:layout_constraintTop_toBottomOf="@id/info_icon_3_2" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/info_icon_4_1"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="16dp"
                             android:src="@drawable/ic_info_icon_2"
                             app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            app:layout_constraintTop_toBottomOf="@id/one_on_one_option4"
-                            android:layout_marginTop="12dp"
-                            android:id="@+id/info_icon_4_1"/>
+                            app:layout_constraintTop_toBottomOf="@id/one_on_one_option4" />
+
                         <TextView
+                            android:id="@+id/purchase_info_4_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="@string/plp_1on1_info_4_1"
                             android:textColor="@color/white"
                             android:textSize="14sp"
                             app:layout_constraintBottom_toBottomOf="@id/info_icon_4_1"
                             app:layout_constraintStart_toEndOf="@id/info_icon_4_1"
-                            app:layout_constraintTop_toTopOf="@+id/info_icon_4_1"
-                            android:id="@+id/purchase_info_4_1"/>
+                            app:layout_constraintTop_toTopOf="@+id/info_icon_4_1" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_4_1"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
-                            android:layout_marginTop="6dp"
                             android:id="@+id/info_icon_4_2"
-                            />
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginTop="12dp"
+                            android:src="@drawable/ic_info_icon_2"
+                            app:layout_constraintStart_toStartOf="@id/vertGuideline1_1"
+                            app:layout_constraintTop_toBottomOf="@id/info_icon_4_1" />
 
                         <TextView
+                            android:id="@+id/purchase_info_4_2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:text="@string/plp_1on1_info_4_2"
                             android:textColor="@color/white"
                             android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_4_2"
                             app:layout_constraintBottom_toBottomOf="@+id/info_icon_4_2"
                             app:layout_constraintStart_toEndOf="@id/info_icon_4_2"
-                            android:id="@+id/purchase_info_4_2"
-                            />
+                            app:layout_constraintTop_toTopOf="@id/info_icon_4_2" />
 
                         <TextView
                             android:id="@+id/one_on_one_option4_price"
@@ -461,14 +464,24 @@
                             app:layout_constraintTop_toTopOf="@+id/one_on_one_option4_price"
                             />
 
+                        <ImageView
+                            android:id="@+id/imageView39"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/ico_faq"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView12"
+                            app:layout_constraintEnd_toStartOf="@+id/textView12"
+                            app:layout_constraintTop_toTopOf="@id/textView12" />
 
-
-
-
-
-
-
-
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/FGCP_live_chat"
+                            android:textColor="@color/white_background"
+                            app:layout_constraintEnd_toStartOf="@+id/vertGuideline1_2"
+                            app:layout_constraintTop_toTopOf="@+id/horGuideline1_1" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -483,548 +496,7 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginVertical="18dp">
 
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/vertGuideline1_outer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.04" />
-
-                <androidx.constraintlayout.widget.Guideline
-                    android:id="@+id/vertGuideline2_outer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layout_constraintGuide_percent="0.96
-" />
-
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardView5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    app:cardBackgroundColor="#242424"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintEnd_toEndOf="@id/vertGuideline2_outer"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/vertGuideline1_outer"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingVertical="12dp">
-
-
-                        <androidx.constraintlayout.widget.Guideline
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:id="@+id/vertGuideline2_1"
-                            app:layout_constraintGuide_percent="0.04"
-                            />
-                        <androidx.constraintlayout.widget.Guideline
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:id="@+id/vertGuideline2_2"
-                            app:layout_constraintGuide_percent="0.96"
-                            />
-
-                        <androidx.constraintlayout.widget.Guideline
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:id="@+id/horGuideline2_1"
-                            app:layout_constraintGuide_begin="0dp"
-                            />
-
-                        <View
-                            android:id="@+id/comp_prep_clickable"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_5_3"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.0"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/comp_prep_option1"
-                            app:layout_constraintVertical_bias="0.0" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_purchase_option"
-                            app:layout_constraintStart_toStartOf="@+id/vertGuideline2_1"
-                            app:layout_constraintTop_toTopOf="@+id/horGuideline2_1"
-                            android:id="@+id/comp_prep_icon"/>
-
-                        <TextView
-                            android:id="@+id/comp_prep_title"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_title"
-                            android:textColor="@color/yellow"
-                            android:textSize="18sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/comp_prep_icon"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="0.07"
-                            app:layout_constraintStart_toEndOf="@id/comp_prep_icon"
-
-                            app:layout_constraintTop_toTopOf="@+id/comp_prep_icon" />
-
-                        <View
-                            android:id="@+id/divide2"
-                            android:layout_width="0dp"
-                            android:layout_height="2dp"
-                            android:background="@color/grey"
-                            app:layout_constraintStart_toStartOf="@id/comp_prep_icon"
-                            app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
-                            app:layout_constraintTop_toBottomOf="@id/comp_prep_icon"
-                            android:layout_marginTop="12dp"
-                            />
-
-                        <TextView
-                            android:id="@+id/comp_prep_option1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/plp_prep_option1"
-                            android:textColor="#DEDEDE"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            app:layout_constraintTop_toBottomOf="@id/divide2" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            app:layout_constraintTop_toBottomOf="@id/comp_prep_option1"
-                            android:layout_marginTop="12dp"
-                            android:id="@+id/info_icon_5_1"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_1_1"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_5_1"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_5_1"
-                            app:layout_constraintTop_toTopOf="@+id/info_icon_5_1"
-                            android:id="@+id/purchase_info_5_1"/>
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_5_1"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="6dp"
-                            android:id="@+id/info_icon_5_2"
-
-                            />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_1_2"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_5_2"
-                            app:layout_constraintBottom_toBottomOf="@+id/info_icon_5_2"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_5_2"
-                            android:id="@+id/purchase_info_5_2"
-                            />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_5_2"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="6dp"
-                            android:id="@+id/info_icon_5_3"
-                            />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_1_3"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_5_3"
-                            app:layout_constraintBottom_toBottomOf="@+id/info_icon_5_3"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_5_3"
-                            android:id="@+id/purchase_info_5_3"
-                            />
-
-                        <TextView
-                            android:id="@+id/comp_prep_option1_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="@+id/comp_prep_option1"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_5_3"
-                            app:layout_constraintEnd_toStartOf="@id/proceedIcon5"
-                            android:text="@string/plp_prep_option1_price"
-                            android:textColor="#DEDEDE"
-                            android:textSize="14sp"
-
-                            />
-
-                        <ImageView
-                            android:id="@+id/proceedIcon5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_purchase_proceed"
-                            app:layout_constraintBottom_toBottomOf="@+id/comp_prep_option1_price"
-                            app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
-                            app:layout_constraintTop_toTopOf="@+id/comp_prep_option1_price"
-                            app:layout_constraintVertical_bias="0.5" />
-
-                        <View
-                            android:id="@+id/comp_prep_option2_clickable"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_6_3"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/comp_prep_option2"/>
-
-
-                        <TextView
-                            android:id="@+id/comp_prep_option2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/plp_prep_option2"
-                            android:textColor="#DEDEDE"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_5_3" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            app:layout_constraintTop_toBottomOf="@id/comp_prep_option2"
-                            android:layout_marginTop="12dp"
-                            android:id="@+id/info_icon_6_1"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_2_1"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_6_1"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_6_1"
-                            app:layout_constraintTop_toTopOf="@+id/info_icon_6_1"
-                            android:id="@+id/purchase_info_6_1"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_6_1"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="6dp"
-                            android:id="@+id/info_icon_6_2"
-
-
-                            />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_2_2"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_6_2"
-                            app:layout_constraintBottom_toBottomOf="@+id/info_icon_6_2"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_6_2"
-                            android:id="@+id/purchase_info_6_2"
-                            />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_6_2"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="6dp"
-                            android:id="@+id/info_icon_6_3"
-                            />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_2_3"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_6_3"
-                            app:layout_constraintBottom_toBottomOf="@+id/info_icon_6_3"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_6_3"
-                            android:id="@+id/purchase_info_6_3"
-                            />
-
-                        <TextView
-                            android:id="@+id/comp_prep_option2_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="@+id/comp_prep_option2"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_6_3"
-                            app:layout_constraintEnd_toStartOf="@id/proceedIcon6"
-                            android:text="@string/plp_prep_option2_price"
-                            android:textColor="#DEDEDE"
-                            android:textSize="14sp"
-
-                            />
-
-                        <ImageView
-                            android:id="@+id/proceedIcon6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_purchase_proceed"
-                            app:layout_constraintBottom_toBottomOf="@+id/comp_prep_option2_price"
-                            app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
-                            app:layout_constraintTop_toTopOf="@+id/comp_prep_option2_price"
-                            />
-
-                        <View
-                            android:id="@+id/comp_prep_option3_clickable"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_7_3"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/comp_prep_option3"/>
-
-
-                        <TextView
-                            android:id="@+id/comp_prep_option3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/plp_prep_option3"
-                            android:textColor="#DEDEDE"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_6_3" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            app:layout_constraintTop_toBottomOf="@id/comp_prep_option3"
-                            android:layout_marginTop="12dp"
-                            android:id="@+id/info_icon_7_1"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_3_1"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_7_1"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_7_1"
-                            app:layout_constraintTop_toTopOf="@+id/info_icon_7_1"
-                            android:id="@+id/purchase_info_7_1"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_7_1"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="6dp"
-                            android:id="@+id/info_icon_7_2"
-
-
-                            />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_3_2"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_7_2"
-                            app:layout_constraintBottom_toBottomOf="@+id/info_icon_7_2"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_7_2"
-                            android:id="@+id/purchase_info_7_2"
-                            />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_7_2"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="6dp"
-                            android:id="@+id/info_icon_7_3"
-                            />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_3_3"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_7_3"
-                            app:layout_constraintBottom_toBottomOf="@+id/info_icon_7_3"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_7_3"
-                            android:id="@+id/purchase_info_7_3"
-                            />
-
-                        <TextView
-                            android:id="@+id/comp_prep_option3_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="@+id/comp_prep_option3"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_7_3"
-                            app:layout_constraintEnd_toStartOf="@id/proceedIcon7"
-                            android:text="@string/plp_prep_option3_price"
-                            android:textColor="#DEDEDE"
-                            android:textSize="14sp"
-
-                            />
-
-                        <ImageView
-                            android:id="@+id/proceedIcon7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_purchase_proceed"
-                            app:layout_constraintBottom_toBottomOf="@+id/comp_prep_option3_price"
-                            app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
-                            app:layout_constraintTop_toTopOf="@+id/comp_prep_option3_price"
-                            />
-
-                        <View
-                            android:id="@+id/comp_prep_option4_clickable"
-                            android:layout_width="0dp"
-                            android:layout_height="0dp"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_8_3"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/comp_prep_option4"/>
-
-
-                        <TextView
-                            android:id="@+id/comp_prep_option4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="12dp"
-                            android:text="@string/plp_prep_option4"
-                            android:textColor="#DEDEDE"
-                            android:textSize="16sp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_7_3" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            app:layout_constraintTop_toBottomOf="@id/comp_prep_option4"
-                            android:layout_marginTop="12dp"
-                            android:id="@+id/info_icon_8_1"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_4_1"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_8_1"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_8_1"
-                            app:layout_constraintTop_toTopOf="@+id/info_icon_8_1"
-                            android:id="@+id/purchase_info_8_1"/>
-
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_8_1"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="6dp"
-                            android:id="@+id/info_icon_8_2"
-                            />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_4_2"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_8_2"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_8_2"
-                            app:layout_constraintTop_toTopOf="@+id/info_icon_8_2"
-                            android:id="@+id/purchase_info_8_2"/>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_info_icon_2"
-                            app:layout_constraintTop_toBottomOf="@id/info_icon_8_2"
-                            app:layout_constraintStart_toStartOf="@id/vertGuideline2_1"
-                            android:layout_marginTop="6dp"
-                            android:id="@+id/info_icon_8_3"
-                            />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/plp_prep_info_4_3"
-                            android:textColor="@color/white"
-                            android:textSize="14sp"
-                            app:layout_constraintTop_toTopOf="@id/info_icon_8_3"
-                            app:layout_constraintBottom_toBottomOf="@+id/info_icon_8_3"
-                            app:layout_constraintStart_toEndOf="@id/info_icon_8_3"
-                            android:id="@+id/purchase_info_8_3"
-                            />
-
-                        <TextView
-                            android:id="@+id/comp_prep_option4_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintTop_toTopOf="@+id/comp_prep_option4"
-                            app:layout_constraintBottom_toBottomOf="@id/info_icon_8_3"
-                            app:layout_constraintEnd_toStartOf="@id/proceedIcon8"
-                            android:text="@string/plp_prep_option4_price"
-                            android:textColor="#DEDEDE"
-                            android:textSize="14sp"
-
-                            />
-
-                        <ImageView
-                            android:id="@+id/proceedIcon8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_purchase_proceed"
-                            app:layout_constraintBottom_toBottomOf="@+id/comp_prep_option4_price"
-                            app:layout_constraintEnd_toEndOf="@id/vertGuideline2_2"
-                            app:layout_constraintTop_toTopOf="@+id/comp_prep_option4_price"
-                            />
-
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-                </com.google.android.material.card.MaterialCardView>
-
-
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </LinearLayout>

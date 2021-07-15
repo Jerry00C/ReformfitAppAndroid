@@ -129,10 +129,10 @@
 
                         <ImageView
                             android:id="@+id/imageView3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_marginTop="2dp"
-                            android:src="@drawable/burn_group_service"
+                            android:src="@drawable/ico_fat_shredder"
                             app:layout_constraintLeft_toRightOf="@+id/guideline9"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -162,13 +162,13 @@
 
                         <ImageView
                             android:id="@+id/class_des_image"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:clickable="true"
                             app:layout_constraintEnd_toEndOf="@+id/class_des"
                             app:layout_constraintStart_toStartOf="@+id/class_des"
                             app:layout_constraintTop_toBottomOf="@+id/class_des"
-                            app:srcCompat="@drawable/down_arrow" />
+                            app:srcCompat="@drawable/ico_arrow_down" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -644,12 +644,12 @@
 
                         <ImageView
                             android:id="@+id/imageView21"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_marginTop="2dp"
                             app:layout_constraintStart_toStartOf="@+id/guideline40"
                             app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/burn_group_service" />
+                            app:srcCompat="@drawable/ico_faq" />
 
                         <TextView
                             android:id="@+id/faq_des"
@@ -666,14 +666,14 @@
 
                         <ImageView
                             android:id="@+id/faq_des_image"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_weight="1"
                             android:clickable="true"
                             app:layout_constraintEnd_toEndOf="@+id/faq_des"
                             app:layout_constraintStart_toStartOf="@+id/faq_des"
                             app:layout_constraintTop_toBottomOf="@+id/faq_des"
-                            app:srcCompat="@drawable/down_arrow" />
+                            app:srcCompat="@drawable/ico_arrow_down" />
 
                         <TextView
                             android:id="@+id/textView87"

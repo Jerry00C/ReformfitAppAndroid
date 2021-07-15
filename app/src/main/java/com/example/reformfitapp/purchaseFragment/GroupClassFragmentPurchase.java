@@ -6,18 +6,25 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
+import com.example.reformfitapp.GlobalVariableApplication;
+import com.example.reformfitapp.MindbodyClientResponseModel;
 import com.example.reformfitapp.R;
+import com.livechatinc.inappchat.ChatWindowConfiguration;
+import com.livechatinc.inappchat.ChatWindowErrorType;
+import com.livechatinc.inappchat.ChatWindowView;
+import com.livechatinc.inappchat.models.NewMessageModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +32,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,8 +78,20 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
 
     private boolean synchronizeBoolean = false;
 
+
+    private ChatWindowView fullScreenChatWindow;
+    private String licenceNumber = "12951837";
+
+
     public GroupClassFragmentPurchase() {
         // Required empty public constructor
+    }
+
+
+    public GroupClassFragmentPurchase(ChatWindowView fullScreenChatWindow) {
+        // Required empty public constructor
+
+        this.fullScreenChatWindow = fullScreenChatWindow;
     }
 
     /**
@@ -259,6 +279,17 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
 
         current_view= inflater.inflate(R.layout.fragment_group_class_purchase, container, false);
 
+        ImageView FAQ1 = current_view.findViewById(R.id.imageView40);
+        ImageView FAQ2 = current_view.findViewById(R.id.imageView39);
+
+        TextView FAQText1 = current_view.findViewById(R.id.textView13);
+        TextView FAQText2 = current_view.findViewById(R.id.textView12);
+
+        FAQ1.setOnClickListener(this);
+        FAQ2.setOnClickListener(this);
+        FAQText1.setOnClickListener(this);
+        FAQText2.setOnClickListener(this);
+
         PB_clickable =current_view.findViewById(R.id.PBclickable);
         EB_clickable = current_view.findViewById(R.id.EBclickable);
         MB_clickable = current_view.findViewById(R.id.MBclickable);
@@ -307,13 +338,19 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
 
                 break;
             case R.id.PBclickable:
-                initializeChosenOptionMembership(R.id.memOption1, R.id.PBinfo1, R.id.PBinfo2, R.id.PBinfo3);
+                initializeChosenOptionMembership(R.id.memOption1, R.id.PBinfo1, R.id.PBinfo2, R.id.PBinfo3, R.id.PBinfo4);
                 break;
             case R.id.EBclickable:
-                initializeChosenOptionMembership(R.id.memOption2, R.id.EBinfo1, R.id.EBinfo2, R.id.EBinfo3);
+                initializeChosenOptionMembership(R.id.memOption2, R.id.EBinfo1, R.id.EBinfo2, R.id.EBinfo3, R.id.EBinfo4);
                 break;
             case R.id.MBclickable:
-                initializeChosenOptionMembership(R.id.memOption3, R.id.MBinfo1, R.id.MBinfo3);
+                initializeChosenOptionMembership(R.id.memOption3, R.id.MBinfo1, R.id.MBinfo3, R.id.MBinfo4);
+                break;
+            case R.id.imageView40:
+            case R.id.imageView39:
+            case R.id.textView13:
+            case R.id.textView12:
+                startFullScreenChat();
                 break;
 
 
@@ -409,6 +446,31 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
         switchToMembershipPurchasePage(pass_name, descriptions);
 
     }
+
+    private void initializeChosenOptionMembership(int purchase_title, int info1, int info2, int info3, int info4){
+        TextView pass_name_view = current_view.findViewById(purchase_title);
+        TextView description1_view = current_view.findViewById(info1);
+        TextView description2_view = current_view.findViewById(info2);
+        TextView description3_view = current_view.findViewById(info3);
+        TextView description4_view = current_view.findViewById(info4);
+
+
+        //   TODO: official version must set the title passed-in as the displayed name
+//        String pass_name = pass_name_view.getText().toString();
+        String pass_name = test_contract_name;
+
+        String description1 = description1_view.getText().toString();
+        String description2 = description2_view.getText().toString();
+        String description3 = description3_view.getText().toString();
+        String description4 = description4_view.getText().toString();
+        ArrayList<String> descriptions = new ArrayList<>();
+        descriptions.add(description1);
+        descriptions.add(description2);
+        descriptions.add(description3);
+        descriptions.add(description4);
+        switchToMembershipPurchasePage(pass_name, descriptions);
+
+    }
     public void showLoadingBar() {
         loadingDialog = new Dialog(context);
         loadingDialog.setContentView(R.layout.progress_bar);
@@ -431,6 +493,64 @@ public class GroupClassFragmentPurchase extends Fragment implements View.OnClick
             stopLoadingBar();
         }
     }
+
+    public void startFullScreenChat() {
+        String visitorName = "";
+        String visitorEmail = "";
+        if(((GlobalVariableApplication)getActivity().getApplication()).getLogIn()){
+
+            MindbodyClientResponseModel mindbodyClientResponseModel = ((GlobalVariableApplication) getActivity().getApplication()).getMindbodyClientResponseModel();
+            visitorName = mindbodyClientResponseModel.getFirstName();
+            visitorEmail = mindbodyClientResponseModel.getEmail();
+        }
+
+        HashMap<String, String> customParamsMap = null;
+        ChatWindowConfiguration configuration = new ChatWindowConfiguration(
+                licenceNumber,
+                "",
+                visitorName,
+                visitorEmail,
+                customParamsMap
+        );
+
+        if (fullScreenChatWindow == null) {
+            fullScreenChatWindow = ChatWindowView.createAndAttachChatWindowInstance(GroupClassFragmentPurchase.this);
+            fullScreenChatWindow.setUpWindow(configuration);
+            fullScreenChatWindow.onBackPressed();
+            fullScreenChatWindow.setUpListener(new ChatWindowView.ChatWindowEventsListener() {
+                @Override
+                public void onChatWindowVisibilityChanged(boolean visible) {
+
+                }
+
+                @Override
+                public void onNewMessage(NewMessageModel message, boolean windowVisible) {
+
+                }
+
+                @Override
+                public void onStartFilePickerActivity(Intent intent, int requestCode) {
+
+                }
+
+                @Override
+                public boolean onError(ChatWindowErrorType errorType, int errorCode, String errorDescription) {
+                    return false;
+                }
+
+                @Override
+                public boolean handleUri(Uri uri) {
+                    return false;
+                }
+            });
+            fullScreenChatWindow.initialize();
+        }
+        fullScreenChatWindow.showChatWindow();
+    }
+
+
+
+
 
 
 }

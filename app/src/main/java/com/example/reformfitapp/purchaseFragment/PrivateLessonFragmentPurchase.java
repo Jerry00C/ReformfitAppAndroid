@@ -90,20 +90,14 @@ public class PrivateLessonFragmentPurchase extends Fragment implements View.OnCl
         pack_50_session = current_view.findViewById(R.id.one_on_one_option3_clickable);
         pack_1_session = current_view.findViewById(R.id.one_on_one_option4_clickable);
 
-        pack_20_week = current_view.findViewById(R.id.comp_prep_clickable);
-        pack_16_week = current_view.findViewById(R.id.comp_prep_option2_clickable);
-        pack_12_week = current_view.findViewById(R.id.comp_prep_option3_clickable);
-        pack_4_week = current_view.findViewById(R.id.one_on_one_option4_clickable);
+
 
         pack_100_session.setOnClickListener(this);
         pack_75_session.setOnClickListener(this);
         pack_50_session.setOnClickListener(this);
         pack_1_session.setOnClickListener(this);
 
-        pack_20_week.setOnClickListener(this);
-        pack_16_week.setOnClickListener(this);
-        pack_12_week.setOnClickListener(this);
-        pack_4_week.setOnClickListener(this);
+
         return current_view;
     }
 
@@ -122,17 +116,7 @@ public class PrivateLessonFragmentPurchase extends Fragment implements View.OnCl
             case  R.id.one_on_one_option4_clickable:
                 initializeChosenOptionMembership(R.id.one_on_one_option4, R.id.purchase_info_4_1,R.id.purchase_info_4_2,R.id.one_on_one_option4_price);
                 break;
-            case R.id.comp_prep_clickable:
-                initializeChosenOptionPass(R.id.comp_prep_option1,R.id.purchase_info_5_1,R.id.purchase_info_5_2,R.id.purchase_info_5_3,R.id.comp_prep_option1_price);
-                break;
-            case  R.id.comp_prep_option2_clickable:
-                initializeChosenOptionPass(R.id.comp_prep_option2, R.id.purchase_info_6_1,R.id.purchase_info_6_2, R.id.purchase_info_6_3,R.id.comp_prep_option2_price);
-                break;
-            case  R.id.comp_prep_option3_clickable:
-                initializeChosenOptionPass(R.id.comp_prep_option3, R.id.purchase_info_7_1,R.id.purchase_info_7_2,R.id.purchase_info_7_3,R.id.comp_prep_option3_price);
-                break;
-            case  R.id.comp_prep_option4_clickable:
-                initializeChosenOptionPass(R.id.comp_prep_option4, R.id.purchase_info_8_1,R.id.purchase_info_8_2,R.id.purchase_info_8_3,R.id.comp_prep_option4_price);
+            default:
                 break;
         }
 
