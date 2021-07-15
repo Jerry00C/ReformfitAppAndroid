@@ -80,12 +80,12 @@
 
 
                                     <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_centerHorizontal="true"
+                                        android:layout_width="15dp"
+                                        android:layout_height="15dp"
+                                        android:layout_centerVertical="true"
                                         android:layout_marginLeft="0dp"
                                         android:layout_toRightOf="@+id/city_list_text"
-                                        android:src="@drawable/down_arrow" />
+                                        android:src="@drawable/ico_arrow_down" />
                                 </RelativeLayout>
 
 
@@ -113,12 +113,12 @@
 
 
                                     <ImageView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_centerHorizontal="true"
+                                        android:layout_width="15dp"
+                                        android:layout_height="15dp"
+                                        android:layout_centerVertical="true"
                                         android:layout_marginLeft="0dp"
                                         android:layout_toRightOf="@+id/location_list_text"
-                                        android:src="@drawable/down_arrow"/>
+                                        android:src="@drawable/ico_arrow_down"/>
 
                                 </RelativeLayout>
 
@@ -202,10 +202,10 @@
 
                                     <ImageView
                                         android:id="@+id/burn_group_service_icon"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         android:layout_centerHorizontal="true"
-                                        android:src="@drawable/burn_group_service">
+                                        android:src="@drawable/ico_group_service">
 
                                     </ImageView>
 
@@ -230,10 +230,10 @@
 
                                     <ImageView
                                         android:id="@+id/shape_group_service_icon"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         android:layout_centerHorizontal="true"
-                                        android:src="@drawable/burn_group_service">
+                                        android:src="@drawable/ico_body_form_group_class">
 
                                     </ImageView>
 
@@ -258,10 +258,10 @@
 
                                     <ImageView
                                         android:id="@+id/one_on_one_service_icon"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         android:layout_centerHorizontal="true"
-                                        android:src="@drawable/burn_group_service">
+                                        android:src="@drawable/ico_private_service">
 
                                     </ImageView>
 
@@ -286,10 +286,10 @@
 
                                     <ImageView
                                         android:id="@+id/online_group_service_icon"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         android:layout_centerHorizontal="true"
-                                        android:src="@drawable/burn_group_service">
+                                        android:src="@drawable/ico_online_service">
 
                                     </ImageView>
 
@@ -314,10 +314,10 @@
 
                                     <ImageView
                                         android:id="@+id/healthy_diet_service_icon"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
                                         android:layout_centerHorizontal="true"
-                                        android:src="@drawable/burn_group_service">
+                                        android:src="@drawable/ico_healthy_food">
 
                                     </ImageView>
 
@@ -403,12 +403,12 @@
 
                                         <ImageView
                                             android:id="@+id/location_icon"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
+                                            android:layout_width="20dp"
+                                            android:layout_height="20dp"
                                             android:layout_below="@+id/location1_image"
                                             android:layout_alignParentEnd="true"
                                             android:layout_marginEnd="10dp"
-                                            android:src="@drawable/burn_group_service" />
+                                            android:src="@drawable/ico_map" />
 
 
                                     </RelativeLayout>

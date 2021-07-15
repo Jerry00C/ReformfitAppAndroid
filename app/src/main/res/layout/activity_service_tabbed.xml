@@ -68,6 +68,7 @@
                 app:tabIndicatorColor="@color/yellow"
                 app:tabIndicatorFullWidth="false"
                 app:tabIndicatorHeight="5dp"
+                app:tabPaddingBottom="2dp"
                 app:tabSelectedTextColor="@color/white"
                 app:tabTextColor="@color/grey" />
         </com.google.android.material.appbar.AppBarLayout>

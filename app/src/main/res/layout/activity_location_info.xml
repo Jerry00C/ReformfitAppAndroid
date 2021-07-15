@@ -140,9 +140,9 @@
 
                         <ImageView
                             android:id="@+id/imageView2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_in_location_service"
                             app:layout_constraintLeft_toRightOf="@+id/guideline5"
                             app:layout_constraintTop_toTopOf="@+id/guideline7" />
 
@@ -288,9 +288,9 @@
 
                         <ImageView
                             android:id="@+id/imageView3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_course_intro"
                             app:layout_constraintLeft_toRightOf="@+id/guideline9"
                             app:layout_constraintTop_toTopOf="@+id/guideline11" />
 
@@ -317,10 +317,10 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
                             android:layout_marginTop="16dp"
-                            android:src="@drawable/burn_group_service"
+                            android:src="@drawable/ico_location_facilities"
                             app:layout_constraintLeft_toRightOf="@+id/guideline9"
                             app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
@@ -406,15 +406,19 @@
 
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_locker_room"
                                 app:layout_column="0"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0" />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_locker"
                                 app:layout_column="1"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0"
@@ -422,8 +426,10 @@
                                 />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_shower_room"
                                 app:layout_column="2"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0"
@@ -431,8 +437,10 @@
                                 />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_body_checker"
                                 app:layout_column="3"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0"
@@ -443,7 +451,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/image1"
-                                android:paddingBottom="8dp"
                                 android:text="更衣室"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
@@ -496,8 +503,11 @@
 
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_heartrate_ring"
                                 app:layout_column="0"
                                 app:layout_columnWeight="1"
                                 app:layout_row="2"
@@ -505,8 +515,11 @@
                                 />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:layout_marginTop="8dp"
+                                android:src="@drawable/ico_wifi"
                                 app:layout_column="1"
                                 app:layout_columnWeight="1"
                                 app:layout_row="2"
@@ -514,8 +527,11 @@
                                 />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:layout_marginTop="8dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_rest_room"
                                 app:layout_column="2"
                                 app:layout_columnWeight="1"
                                 app:layout_row="2"
@@ -523,10 +539,13 @@
                                 />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:layout_marginTop="8dp"
+                                android:src="@drawable/ico_rest_area"
                                 app:layout_column="3"
                                 app:layout_columnWeight="1"
+                                app:layout_gravity="center"
                                 app:layout_row="2"
 
                                 />
@@ -631,9 +650,9 @@
 
                         <ImageView
                             android:id="@+id/imageView5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_lecture_steps"
                             app:layout_constraintLeft_toRightOf="@+id/guideline12"
                             app:layout_constraintTop_toTopOf="@+id/guideline14" />
 
@@ -879,9 +898,9 @@
 
                         <ImageView
                             android:id="@+id/imageView6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_warning"
                             app:layout_constraintLeft_toRightOf="@+id/guideline15"
                             app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
@@ -902,19 +921,9 @@
                             android:layout_marginTop="16dp"
                             android:text="和了飞书治极很，深体门便标将想，决C听因扭。按几速个压确要，明拉写面改始反，近W罐度态。 就华将易林该，积标无才样心，代居呀红。约学委如界从包领万际打明理，青别再带八照证认果高件口眼，除张丽个马抖没呀议呆吵。六六元问效少北养自，除器积较面山，加去3旱内准伶。量于布据件因十参，想具引出要劳，我设C属杨领。 元力边县法热方二车里列再，花水又看村红万应报。认元此料眼好问种平历分须，美劳间低看指战选格断业，她原孟达历度僚接E杠。 打度引记而品级年切及，平先物十拉过省争，交将该县茅抛京。物每政带北强走见局作，专农打况保管色样素，严基录直积不展杠。习传话转统外备自社切团习解方，导养日现干医志影箩磨选。 小关育集好从圆，些从住E名苗。质技制到家性新数报即了，取更平于下他火生速，厂各Z张弦芳连五飞。构期律决以商军，就较命进青活，示4提什红。那门形院结部而意京这工不样展发厂，层利造查表今O用做格况思声。至斯着五片济声广究，下适政术打置带要，及连I热确县决。明处多立转县米，今革始切平，热8节称次。联加出的方活，难她正方便都，京承响却。 但信军识拉查阶半，要段在片长安眼特，细李I联律心。记用相族处气件流江素，金他权必它别因格单，华门询材线抗伸岗。问还说细调备火现厂较身，教性家提极存一认文，江持屈更但丽龙查变。两完连江断象好月，争被织社十机京"
                             android:textColor="@color/grey"
-                            android:maxLines="3"
                             app:layout_constraintEnd_toStartOf="@+id/guideline16"
                             app:layout_constraintStart_toStartOf="@+id/guideline15"
                             app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-                        <ImageView
-                            android:id="@+id/waning_des_image"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/down_arrow"
-                            app:layout_constraintEnd_toEndOf="@+id/waning_des"
-                            app:layout_constraintStart_toStartOf="@+id/waning_des"
-                            app:layout_constraintTop_toBottomOf="@+id/waning_des" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -961,9 +970,9 @@
 
                         <ImageView
                             android:id="@+id/imageView7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_contact"
                             app:layout_constraintLeft_toRightOf="@+id/guideline18"
                             app:layout_constraintTop_toTopOf="@+id/guideline20" />
 
@@ -1091,9 +1100,9 @@
 
                         <ImageView
                             android:id="@+id/imageView8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_map"
                             app:layout_constraintLeft_toRightOf="@+id/guideline21"
                             app:layout_constraintTop_toTopOf="@+id/guideline23" />
 
@@ -1183,9 +1192,9 @@
 
                         <ImageView
                             android:id="@+id/imageView10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_more_service"
                             app:layout_constraintLeft_toRightOf="@+id/guideline24"
                             app:layout_constraintTop_toTopOf="@+id/guideline26" />
 
@@ -1206,7 +1215,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:paddingHorizontal="20dp"
-                            app:columnCount="4"
+                            app:columnCount="5"
                             app:layout_constraintEnd_toStartOf="@+id/guideline25"
                             app:layout_constraintStart_toStartOf="@+id/guideline24"
                             app:layout_constraintTop_toBottomOf="@+id/imageView10"
@@ -1214,15 +1223,19 @@
 
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_group_service"
                                 app:layout_column="0"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0" />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_body_form_group_class"
                                 app:layout_column="1"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0"
@@ -1230,8 +1243,10 @@
                                 />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_private_service"
                                 app:layout_column="2"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0"
@@ -1239,9 +1254,23 @@
                                 />
 
                             <ImageView
-                                android:paddingTop="3dp"
-                                android:src="@drawable/burn_group_service"
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_online_service"
                                 app:layout_column="3"
+                                app:layout_columnWeight="1"
+                                app:layout_row="0"
+
+                                />
+
+
+                            <ImageView
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                app:layout_gravity="center"
+                                android:src="@drawable/ico_healthy_food"
+                                app:layout_column="4"
                                 app:layout_columnWeight="1"
                                 app:layout_row="0"
 
@@ -1251,13 +1280,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/image1"
-                                android:paddingBottom="8dp"
                                 android:text="更衣室"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="10sp"
                                 app:layout_column="0"
                                 app:layout_columnWeight="1"
+                                app:layout_gravity="center"
                                 app:layout_row="1" />
 
                             <TextView
@@ -1287,7 +1316,6 @@
                                 app:layout_gravity="center"
                                 app:layout_row="1" />
 
-
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -1297,13 +1325,26 @@
                                 android:textColor="@color/white"
                                 android:textSize="10sp"
                                 app:layout_column="3"
+                                app:layout_columnWeight="1"
+                                app:layout_gravity="center"
+                                app:layout_row="1" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/image1"
+                                android:text="更衣室"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="10sp"
+                                app:layout_column="4"
                                 app:layout_columnWeight="1"
                                 app:layout_gravity="center"
                                 app:layout_row="1" />
 
 
                         </androidx.gridlayout.widget.GridLayout>
-
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

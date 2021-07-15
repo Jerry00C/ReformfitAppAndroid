@@ -168,19 +168,40 @@ public class YongjiuHealth extends AppCompatActivity {
 
                         if(musIndConvert < 1 && musIndConvert > 0){
 
-                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_baseline_star_half_24));
+                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ico_start_half_s));
                             musIndConvert = 0;
 
                         }
                         else if(musIndConvert == 0.0){
 
 
-                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_baseline_star_empty_24));
+                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ico_start_empty_s));
                         }
                         else{
 
 
-                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_baseline_star_24));
+                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ico_start_full_s ));
+
+                            musIndConvert -= 1;
+                        }
+
+
+                        //TODO: delete
+                        if(musIndConvert < 1 && musIndConvert > 0 && index > 3){
+
+                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ico_start_half));
+                            musIndConvert = 0;
+
+                        }
+                        else if(musIndConvert == 0.0){
+
+
+                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ico_start_empty));
+                        }
+                        else{
+
+
+                            imageView.setImageDrawable(ContextCompat.getDrawable(getApplicationContext(),R.drawable.ico_start_full));
 
                             musIndConvert -= 1;
                         }

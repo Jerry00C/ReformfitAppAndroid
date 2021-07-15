@@ -130,9 +130,9 @@
 
                         <ImageView
                             android:id="@+id/imageView20"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_fat_shredder"
                             app:layout_constraintStart_toStartOf="@+id/guideline53"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -311,9 +311,9 @@
 
                         <ImageView
                             android:id="@+id/image1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_fat_shredder"
                             app:layout_constraintStart_toStartOf="@+id/guideline60"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -494,9 +494,9 @@
 
                         <ImageView
                             android:id="@+id/imageView4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_fat_shredder"
                             app:layout_constraintStart_toStartOf="@+id/guideline1"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -678,9 +678,9 @@
 
                         <ImageView
                             android:id="@+id/imageView8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/burn_group_service"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/ico_fat_shredder"
                             app:layout_constraintStart_toStartOf="@+id/guideline6"
                             app:layout_constraintTop_toTopOf="parent" />
 

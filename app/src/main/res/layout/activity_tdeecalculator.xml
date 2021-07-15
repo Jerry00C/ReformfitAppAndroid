@@ -220,14 +220,13 @@
                             android:id="@+id/textView17"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="8dp"
                             android:background="@drawable/sheet_boarder_header"
                             android:text="元素"
                             android:textAlignment="center"
                             android:textColor="@color/white"
+                            app:layout_constraintBottom_toTopOf="@+id/textView31"
                             app:layout_constraintEnd_toEndOf="@+id/textView74"
-                            app:layout_constraintStart_toStartOf="@+id/textView74"
-                            app:layout_constraintTop_toBottomOf="@+id/warning_text" />
+                            app:layout_constraintStart_toStartOf="@+id/textView74" />
 
                         <TextView
                             android:id="@+id/textView20"
@@ -235,12 +234,12 @@
                             android:layout_height="wrap_content"
                             android:background="@drawable/sheet_boarder_header"
                             android:text="全称"
+                            android:layout_marginTop="8dp"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            app:layout_constraintTop_toTopOf="@+id/textView17"
                             app:layout_constraintEnd_toEndOf="@+id/textView75"
                             app:layout_constraintStart_toStartOf="@+id/textView75"
-                            tools:layout_editor_absoluteX="188dp" />
+                            app:layout_constraintTop_toBottomOf="@+id/warning_text" />
 
                         <TextView
                             android:id="@+id/textView31"
@@ -250,9 +249,9 @@
                             android:text="BMR"
                             android:textAlignment="center"
                             android:textColor="@color/white"
+                            app:layout_constraintBottom_toTopOf="@+id/textView71"
                             app:layout_constraintEnd_toEndOf="@+id/textView74"
-                            app:layout_constraintStart_toStartOf="@+id/textView74"
-                            app:layout_constraintTop_toBottomOf="@+id/textView17" />
+                            app:layout_constraintStart_toStartOf="@+id/textView74" />
 
                         <TextView
                             android:id="@+id/textView32"
@@ -275,7 +274,7 @@
                             android:text="TEF"
                             android:textAlignment="center"
                             android:textColor="@color/white"
-                            app:layout_constraintTop_toBottomOf="@+id/textView31"
+                            app:layout_constraintBottom_toTopOf="@+id/textView74"
                             app:layout_constraintEnd_toEndOf="@+id/textView74"
                             app:layout_constraintStart_toStartOf="@+id/textView74" />
 
@@ -295,14 +294,15 @@
                         <TextView
                             android:id="@+id/textView74"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="0dp"
                             android:background="@drawable/sheet_border_content"
                             android:paddingHorizontal="3dp"
                             android:text="NEAT"
-                            android:textAlignment="center"
+                            android:gravity="center"
                             android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/textView75"
                             app:layout_constraintStart_toStartOf="@+id/guideline15"
-                            app:layout_constraintTop_toBottomOf="@+id/textView71" />
+                            app:layout_constraintTop_toTopOf="@+id/textView75" />
 
                         <TextView
                             android:id="@+id/textView75"
